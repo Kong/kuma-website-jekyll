@@ -10,3 +10,4 @@ yarn-error.log
 # Jekyll
 dist
 .jekyll-cache
+.jekyll-metadata
