@@ -1,0 +1,11 @@
+source: app
+destination: dist
+permanlink: pretty
+timezone: America/San_Francisco
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    guess_lang: true
+incremental: true
