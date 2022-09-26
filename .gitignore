@@ -6,3 +6,7 @@ yarn-error.log
 
 # Created with `vale sync`
 .github/styles/Google
+
+# Jekyll
+dist
+.jekyll-cache
