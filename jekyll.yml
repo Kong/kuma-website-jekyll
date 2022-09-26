@@ -9,3 +9,8 @@ kramdown:
     css_class: "highlight"
     guess_lang: true
 incremental: true
+
+# Site settings
+logo: "/assets/images/brand/kuma-logo-new.svg"
+repo: "https://github.com/kumahq/kuma"
+title: "Kuma"
