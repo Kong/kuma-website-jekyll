@@ -22,7 +22,7 @@
       </a>
     </div>
 
-    {% assign current_page_root = page.url | remove_first: '/' | split: '/' | first %}
+    {% assign current_page_root = page.url | remove: '.html' | remove_first: '/' | split: '/' | first %}
 
     <div class="links">
       <nav class="nav-links can-hide">
