@@ -2,6 +2,10 @@
 layout: default
 title: Blog | {{ site.title }}
 subTitle: Stay up to date on the latest {{ site.title }} news.
+permalink: /blog/
+pagination:
+  enabled: true
+  permalink: '/page/:num/'
 ---
 
 <div class="page-container page-container--blog">
@@ -19,7 +23,7 @@ subTitle: Stay up to date on the latest {{ site.title }} news.
     <div class="lg:flex lg:space-x-8 lg:items-start">
       <div class="blog-content-area lg:w-2/3">
         <div class="blog-index-list">
-          {% for post in site.posts %}
+          {% for post in paginator.posts %}
             <article class="blog-article">
 
               <div class="blog-article__content-wrapper {% if post.headerImage %} has-image {% endif %}">
@@ -89,5 +93,65 @@ subTitle: Stay up to date on the latest {{ site.title }} news.
         </div>
       </div>
     </div>
+
+    {% if paginator.total_pages > 1 %}
+      <div class="pagination-wrapper">
+        <ul class="pagination">
+          {% if paginator.previous_page %}
+            <li class="page-item">
+              <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Prev</a>
+            </li>
+          {% else %}
+            <li class="disabled">
+              <a>Prev</a>
+            </li>
+          {% endif %}
+
+          {% if paginator.first_page and paginator.previous_page and paginator.first_page != paginator.previous_page %}
+            <li class="page-item">
+              <a href="{{ paginator.first_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ paginator.first_page }}</a>
+            </li>
+          {% endif %}
+
+          {% assign first_trail_page = paginator.page_trail | map: 'num' | first | minus: paginator.first_page %}
+          {% if first_trail_page >= 2  %}
+            <li class="page-item disabled">
+              <a>...</a>
+            </li>
+          {% endif %}
+
+          {% if paginator.page_trail %}
+            {% for trail in paginator.page_trail %}
+              <li class="page-item {% if page.url == trail.path %} active {% endif %}">
+                <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
+              </li>
+            {% endfor %}
+          {% endif %}
+
+          {% assign last_trail_page = paginator.page_trail | map: 'num' | last | minus: paginator.last_page | abs %}
+          {% if last_trail_page >= 2  %}
+            <li class="page-item disabled">
+              <a>...</a>
+            </li>
+          {% endif %}
+
+          {% if paginator.last_page and paginator.next_page and paginator.last_page != paginator.next_page %}
+            <li class="page-item">
+              <a href="{{ paginator.last_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ paginator.last_page }}</a>
+            </li>
+          {% endif %}
+
+          {% if paginator.next_page %}
+            <li class="page-item">
+              <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
+            </li>
+          {% else %}
+            <li class="disabled">
+              <a>Next</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      {% endif %}
   </div>
 </div>
