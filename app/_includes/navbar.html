@@ -22,11 +22,13 @@
       </a>
     </div>
 
+    {% assign current_path = page.url | remove: 'index.html' %}
+
     <div class="links">
       <nav class="nav-links can-hide">
         {% for item in site.data.navigation %}
           <div class="nav-item nav-item--{{item.key}}">
-            <a href="{{item.url}}" class="nav-link">{{item.text}}</a>
+            <a href="{{item.url}}" class="nav-link {% if item.url == current_path %} router-link-exact-active router-link-active {% endif %}">{{item.text}}</a>
           </div>
         {% endfor %}
       </nav>
