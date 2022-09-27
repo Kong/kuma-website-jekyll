@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<main class="page">
+  <div class="theme-default-content content__default">
+    {{ content }}
+  </div>
+
+  <footer class="page-edit">
+    {% if page.last_modified_at %}
+      <div class="last-updated">
+        <span class="prefix">Last Updated: </span>
+        <span class="time">
+          {{ page.last_modified_at | date: '%-m/%-d/%Y, %H:%M:%S %p' }}
+        </span>
+      </div>
+    {% endif %}
+  </footer>
+</main>

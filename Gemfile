@@ -10,4 +10,5 @@ gem "webrick", "~> 1.7"
 
 group :jekyll_plugins do
   gem 'jekyll-paginate-v2'
+  gem 'jekyll-last-modified-at'
 end
