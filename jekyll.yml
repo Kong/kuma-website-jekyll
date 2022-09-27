@@ -15,6 +15,14 @@ logo: "/assets/images/brand/kuma-logo-new.svg"
 repo: "https://github.com/kumahq/kuma"
 title: "Kuma"
 
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+
 # Pagination
 pagination:
   # Site-wide kill switch, disabled here it doesn't run at all
