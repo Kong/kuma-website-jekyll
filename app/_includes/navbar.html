@@ -22,13 +22,14 @@
       </a>
     </div>
 
-    {% assign current_path = page.url | remove: 'index.html' %}
+    {% assign current_page_root = page.url | remove_first: '/' | split: '/' | first %}
 
     <div class="links">
       <nav class="nav-links can-hide">
         {% for item in site.data.navigation %}
           <div class="nav-item nav-item--{{item.key}}">
-            <a href="{{item.url}}" class="nav-link {% if item.url == current_path %} router-link-exact-active router-link-active {% endif %}">{{item.text}}</a>
+            {% assign item_root = item.url | remove_first: '/' | split: '/' | first %}
+            <a href="{{item.url}}" class="nav-link {% if current_page_root == item_root %} router-link-exact-active router-link-active {% endif %}">{{item.text}}</a>
           </div>
         {% endfor %}
       </nav>
