@@ -1,0 +1,65 @@
+<div class="form-wrapper">
+  <form class="form-vertical" method="post" action="{{ site.pardot.serviceMeshConFormEndpoint }}">
+    <input
+        v-for="(key, value) in formHiddenFields"
+        :name="value"
+        :value="key"
+        type="hidden"
+        />
+    <input type="hidden" name="pardot-link" value="i{{ site.pardot.serviceMeshConFormEndpoint }}" />
+
+     <!-- first, last name -->
+    <div class="field-group lg:flex lg:-mx-2">
+      <!-- first name -->
+      <div class="form-stack w-full lg:w-1/2 m-2">
+        <label for="first_name" class="sr-only">First Name</label>
+        <span class="form-note-wrapper">
+          <input id="first_name" name="first_name" type="text" placeholder="First Name" required="required" />
+          <!-- <span class="note note--error">This field is required.</span> -->
+        </span>
+      </div>
+
+      <!-- last name -->
+      <div class="form-stack w-full lg:w-1/2 m-2">
+        <label for="last_name" class="sr-only">Last Name</label>
+        <span class="form-note-wrapper">
+          <input id="last_name" name="last_name" type="text" placeholder="Last Name" required="required" />
+          <!-- <span class="note note--error">This field is required.</span> -->
+        </span>
+      </div>
+    </div>
+
+    <div class="field-group lg:flex lg:-mx-2">
+      <!-- company -->
+      <div class="form-stack w-full lg:w-1/2 m-2">
+        <label for="Company" class="sr-only">Company</label>
+        <input id="Company" name="Company" type="text" placeholder="Company"/>
+      </div>
+
+      <!-- email -->
+      <div class="form-stack w-full lg:w-1/2 m-2">
+        <label for="email" class="sr-only">Email</label>
+        <span class="form-note-wrapper">
+          <input id="email" name="email" type="email" placeholder="Work Email" required="required" />
+          <!-- <span class="note note--error"></span> -->
+        </span>
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <button type="submit" name="submit" class="btn">
+        <span>Register Now</span>
+      </button>
+    </div>
+  </form>
+
+  <!-- <div class="tip custom-block"> -->
+  <!--   <p class="custom-block-title">Thank you!</p> -->
+  <!--   <p>Please check your inbox for your exclusive ServiceMeshCon offers.</p> -->
+  <!-- </div> -->
+
+  <!-- <div class="danger custom-block"> -->
+  <!--   <p class="custom-block-title">Whoops!</p> -->
+  <!--   <p>Something went wrong! Please try again later.</p> -->
+  <!-- </div> -->
+</div>
