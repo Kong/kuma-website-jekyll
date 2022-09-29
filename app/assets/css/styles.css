@@ -276,3 +276,88 @@
   text-decoration: none;
   border: none;
 }
+
+
+/* Community */
+
+.community-form {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+.inline-list {
+  display: block;
+  overflow: hidden;
+  list-style: none;
+  margin: 10px 0 0 0 !important;
+  padding: 0;
+}
+.inline-list li {
+  display: inline-block;
+}
+.inline-list li:not(:last-of-type) {
+  border-right: 1px solid #ccc;
+  margin-right: 8px;
+  padding-right: 10px;
+}
+.inline-list a {
+  display: block;
+}
+.inline-list .icon {
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.community-form .note {
+  margin-top: 10px !important;
+}
+.community-form .form-stacked .btn {
+  margin-top: 0.8rem;
+}
+.community-form .form-wrapper .custom-block {
+  box-shadow: 0 0 0 1px #ccc, 0 3px 6px 0 #eaecef;
+  padding: 20px;
+}
+.community-form .form-wrapper .custom-block.tip {
+  background-color: #fff;
+}
+.community-form button.is-sending {
+  position: relative;
+  background-color: #3fa66a !important;
+  cursor: not-allowed;
+}
+.community-form button.is-sending span:not(.is-hidden) {
+  display: block;
+  position: absolute;
+  left: calc(50% - 12px);
+}
+.community-form .is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.community-form .form-wrapper form {
+  border-radius: 0;
+  overflow: visible;
+}
+.community-form .inline-list {
+  display: block;
+  overflow: hidden;
+  list-style: none;
+  margin: 10px 0 0 0 !important;
+  padding: 0;
+}
+.community-form .inline-list li {
+  display: inline-block;
+}
+.community-form .inline-list li:not(:last-of-type) {
+  border-right: 1px solid #ccc;
+  margin-right: 8px;
+  padding-right: 10px;
+}
+.community-form .inline-list a {
+  display: block;
+}
+.community-form .inline-list .icon {
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
