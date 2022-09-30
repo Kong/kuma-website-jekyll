@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get circuit-breaker
 
 Show a single CircuitBreaker resource

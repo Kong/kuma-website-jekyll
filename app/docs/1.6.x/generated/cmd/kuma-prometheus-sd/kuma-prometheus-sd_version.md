@@ -1,3 +1,5 @@
+---
+---
 ## kuma-prometheus-sd version
 
 Print version

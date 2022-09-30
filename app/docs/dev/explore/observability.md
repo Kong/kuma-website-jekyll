@@ -1,3 +1,5 @@
+---
+---
 # Observability
 
 This page will describe how to configure different observability tools to work with Kuma.

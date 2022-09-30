@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get traffic-permission
 
 Show a single TrafficPermission resource

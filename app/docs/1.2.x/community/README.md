@@ -1,3 +1,5 @@
+---
+---
 # Community
 
 Kuma is an open-source product that can be downloaded and used freely in accordance to the Apache License Version 2.0.

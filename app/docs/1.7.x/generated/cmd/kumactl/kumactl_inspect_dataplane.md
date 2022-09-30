@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect dataplane
 
 Inspect Dataplane

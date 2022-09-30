@@ -1,3 +1,5 @@
+---
+---
 # Data plane proxy specification
 
 The [`Dataplane`](../explore/dpp.md#dataplane-entity) entity includes the networking and naming configuration that a data-plane proxy (`kuma-dp`) must have attempting to connect to the control-plane (`kuma-cp`).

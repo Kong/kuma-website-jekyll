@@ -1,3 +1,5 @@
+---
+---
 ## kumactl install
 
 Install various Kuma components.

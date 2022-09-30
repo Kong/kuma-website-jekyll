@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect meshgateway
 
 Inspect MeshGateway

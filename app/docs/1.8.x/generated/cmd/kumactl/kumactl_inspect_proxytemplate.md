@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect proxytemplate
 
 Inspect ProxyTemplate

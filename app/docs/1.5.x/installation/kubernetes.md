@@ -1,3 +1,5 @@
+---
+---
 # Kubernetes
 
 To install and run Kuma on Kubernetes execute the following steps:

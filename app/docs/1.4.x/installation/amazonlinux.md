@@ -1,3 +1,5 @@
+---
+---
 # Amazon Linux
 
 :::tip

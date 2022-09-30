@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get proxytemplates
 
 Show ProxyTemplate

@@ -1,3 +1,5 @@
+---
+---
 # Service Discovery
 
 This page explains how communication between the components of Kuma handles service traffic. Communication is handled between the data plane proxy (`kuma-dp`) and the control plane (`kuma-cp`), and between multiple instances of the data plane proxy.

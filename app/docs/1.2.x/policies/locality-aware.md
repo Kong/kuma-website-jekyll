@@ -1,3 +1,5 @@
+---
+---
 # Locality Aware Load Balancing
 
 A [multi-zone deployment](/docs/1.2.3/documentation/deployments/) can enable locality aware load balancing in a particular [Mesh](/docs/1.2.3/policies/mesh/) to ensure optimal service backend routing. This feature relies on the following service tags to make decisions of selecting the destination service endpoint:

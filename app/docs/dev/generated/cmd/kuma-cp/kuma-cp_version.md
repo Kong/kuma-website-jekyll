@@ -1,3 +1,5 @@
+---
+---
 ## kuma-cp version
 
 Print version

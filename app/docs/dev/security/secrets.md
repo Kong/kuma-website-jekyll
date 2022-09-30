@@ -1,3 +1,5 @@
+---
+---
 # Secrets
 
 The `Secret` resource enables users to store sensitive data.

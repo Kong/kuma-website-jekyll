@@ -1,3 +1,5 @@
+---
+---
 ## kumactl generate
 
 Generate resources, tokens, etc

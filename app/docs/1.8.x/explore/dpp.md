@@ -1,3 +1,5 @@
+---
+---
 # Data plane proxy
 
 A **data plane proxy (DPP)** is the part of Kuma that runs next to each workload that is a member of the mesh.

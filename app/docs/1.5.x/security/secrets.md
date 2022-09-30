@@ -1,3 +1,5 @@
+---
+---
 # Secrets
 
 Kuma provides a built-in interface to store sensitive information such as TLS keys and tokens that can be used later on by any policy at runtime. This functionality is being implemented by introducing a `Secret` resource.

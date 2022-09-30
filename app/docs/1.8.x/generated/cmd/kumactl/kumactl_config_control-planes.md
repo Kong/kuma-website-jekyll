@@ -1,3 +1,5 @@
+---
+---
 ## kumactl config control-planes
 
 Manage known Control Planes

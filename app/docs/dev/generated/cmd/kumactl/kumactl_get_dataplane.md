@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get dataplane
 
 Show a single Dataplane resource

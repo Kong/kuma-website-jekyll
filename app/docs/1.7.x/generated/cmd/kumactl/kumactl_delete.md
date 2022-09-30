@@ -1,3 +1,5 @@
+---
+---
 ## kumactl delete
 
 Delete Kuma resources

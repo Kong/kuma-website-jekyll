@@ -1,3 +1,5 @@
+---
+---
 # Deployments
 
 The deployment modes that Kuma provides are quite unique in the Service Mesh landscape and have been developed thanks to the guidance of our enterprise users, especially when it comes to the distributed one.

@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect traffic-trace
 
 Inspect TrafficTrace

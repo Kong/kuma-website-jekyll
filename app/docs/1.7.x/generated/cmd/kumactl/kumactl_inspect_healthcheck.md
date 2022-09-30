@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect healthcheck
 
 Inspect HealthCheck

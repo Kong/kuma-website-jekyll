@@ -1,3 +1,5 @@
+---
+---
 ## kuma-dp version
 
 Print version

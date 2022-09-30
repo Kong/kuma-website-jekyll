@@ -1,3 +1,5 @@
+---
+---
 ## kumactl uninstall
 
 Uninstall various Kuma components.

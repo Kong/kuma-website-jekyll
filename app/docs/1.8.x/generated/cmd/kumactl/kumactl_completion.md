@@ -1,3 +1,5 @@
+---
+---
 ## kumactl completion
 
 Output shell completion code for bash, fish or zsh

@@ -1,3 +1,5 @@
+---
+---
 # Traffic Route
 
 This policy lets you configure routing rules for the traffic in the mesh. It supports weighted routing and can be used to implement versioning across services or to support deployment strategies such as blue/green or canary.

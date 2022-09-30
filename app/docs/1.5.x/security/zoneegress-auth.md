@@ -1,3 +1,5 @@
+---
+---
 # Zone Egress authentication
 
 To obtain a configuration from the control plane, a zone egress must

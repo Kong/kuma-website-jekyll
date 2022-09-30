@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect
 
 Inspect Kuma resources

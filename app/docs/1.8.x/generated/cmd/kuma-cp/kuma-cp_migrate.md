@@ -1,3 +1,5 @@
+---
+---
 ## kuma-cp migrate
 
 Migrate database to which Control Plane is connected

@@ -1,3 +1,5 @@
+---
+---
 # Data plane proxy
 
 When Kuma (`kuma-cp`) runs, it waits for the data plane proxies to connect and register themselves.

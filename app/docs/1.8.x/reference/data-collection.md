@@ -1,3 +1,5 @@
+---
+---
 # Kuma data collection
 
 Kuma can collect information about your deployment to continuously improve the product and gather anonymous feedback. The collected data is sent to Kong servers securely for storage and aggregation.

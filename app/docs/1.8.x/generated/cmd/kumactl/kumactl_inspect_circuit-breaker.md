@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect circuit-breaker
 
 Inspect CircuitBreaker

@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get fault-injection
 
 Show a single FaultInjection resource

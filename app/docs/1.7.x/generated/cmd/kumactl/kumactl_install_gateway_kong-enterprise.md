@@ -1,3 +1,5 @@
+---
+---
 ## kumactl install gateway kong-enterprise
 
 Install Kong ingress gateway on Kubernetes

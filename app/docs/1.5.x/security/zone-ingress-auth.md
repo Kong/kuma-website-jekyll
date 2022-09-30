@@ -1,3 +1,5 @@
+---
+---
 # Zone Ingress authentication
 
 To obtain a configuration from the control-plane, a zone ingress must authenticate itself. There are several authentication methods availble.

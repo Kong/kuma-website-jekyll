@@ -1,3 +1,5 @@
+---
+---
 ## kumactl apply
 
 Create or modify Kuma resources

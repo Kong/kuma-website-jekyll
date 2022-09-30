@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get secrets
 
 Show Secret

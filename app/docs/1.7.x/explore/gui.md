@@ -1,3 +1,5 @@
+---
+---
 # GUI
 
 Kuma now ships with a basic web-based GUI that will serve as a visual overview of your dataplanes, meshes, and various traffic policies.

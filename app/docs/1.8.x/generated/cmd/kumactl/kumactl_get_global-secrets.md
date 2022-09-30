@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get global-secrets
 
 Show GlobalSecret

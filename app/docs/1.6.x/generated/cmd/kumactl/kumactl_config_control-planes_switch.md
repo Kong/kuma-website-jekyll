@@ -1,3 +1,5 @@
+---
+---
 ## kumactl config control-planes switch
 
 Switch active Control Plane

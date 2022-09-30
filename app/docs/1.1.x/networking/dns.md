@@ -1,3 +1,5 @@
+---
+---
 # Kuma DNS
 
 The Kuma control plane deploys its Domain Name Service resolver on UDP port `5653` (resembling the standard port `53`). Its purpose is to allow for decoupling the service name resolving from the underlying infrastructure and thus make Kuma more flexible. When Kuma is deployed as a distributed control plane, the Kuma DNS enables cross-cluster service discovery.

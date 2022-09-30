@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get secret
 
 Show a single Secret resource

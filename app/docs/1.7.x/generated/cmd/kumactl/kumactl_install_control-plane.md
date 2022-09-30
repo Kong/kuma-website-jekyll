@@ -1,3 +1,5 @@
+---
+---
 ## kumactl install control-plane
 
 Install Kuma Control Plane on Kubernetes

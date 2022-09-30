@@ -1,3 +1,5 @@
+---
+---
 # Kuma data collection
 
 Kuma collects some data about your deployment by default. The collected data is sent to Kong servers for storage and aggregation. You can disable data collection when you install the control plane.

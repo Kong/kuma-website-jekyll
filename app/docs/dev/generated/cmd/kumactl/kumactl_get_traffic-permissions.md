@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get traffic-permissions
 
 Show TrafficPermission

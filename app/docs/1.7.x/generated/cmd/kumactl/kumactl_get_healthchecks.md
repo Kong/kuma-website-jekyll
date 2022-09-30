@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get healthchecks
 
 Show HealthCheck

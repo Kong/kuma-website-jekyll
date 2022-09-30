@@ -1,3 +1,5 @@
+---
+---
 ## kumactl generate dataplane-token
 
 Generate Dataplane Token

@@ -1,3 +1,5 @@
+---
+---
 # Locality Aware Load Balancing
 
 A [multi-zone deployment](/docs/1.3.1/documentation/deployments/) can enable locality aware load balancing in a particular [Mesh](/docs/1.3.1/policies/mesh/) to ensure optimal service backend routing. This feature relies on the `kuma.io/zone` service tag to select the destination service endpoint.

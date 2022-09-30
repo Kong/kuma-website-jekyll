@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect rate-limit
 
 Inspect RateLimit

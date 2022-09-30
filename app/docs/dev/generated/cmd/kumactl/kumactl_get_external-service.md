@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get external-service
 
 Show a single ExternalService resource

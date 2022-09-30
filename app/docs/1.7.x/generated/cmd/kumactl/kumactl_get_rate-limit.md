@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get rate-limit
 
 Show a single RateLimit resource

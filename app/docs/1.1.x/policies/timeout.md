@@ -1,3 +1,5 @@
+---
+---
 # Timeout
 
 This policy enables Kuma to set timeouts on the outbound connections depending on the protocol.

@@ -1,3 +1,5 @@
+---
+---
 ## kumactl config view
 
 Show kumactl config

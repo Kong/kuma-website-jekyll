@@ -1,3 +1,5 @@
+---
+---
 ## kumactl completion fish
 
 Output shell completions for fish

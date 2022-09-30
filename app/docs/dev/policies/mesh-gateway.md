@@ -1,3 +1,5 @@
+---
+---
 # MeshGateway
 
 `MeshGateway` is a policy used to configure [Kuma's builtin gateway](../explore/gateway.md#builtin).

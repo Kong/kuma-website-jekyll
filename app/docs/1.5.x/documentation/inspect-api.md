@@ -1,3 +1,5 @@
+---
+---
 # Inspect API
 
 Starting with version 1.5.0, Kuma offers the Inspect API to improve the policy debugging experience.

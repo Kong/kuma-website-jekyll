@@ -1,3 +1,5 @@
+---
+---
 # Transparent Proxying
 
 In order to automatically intercept traffic from and to a service through a `kuma-dp` data plane proxy instance, Kuma utilizes a transparent proxying using [`iptables`](https://linux.die.net/man/8/iptables).

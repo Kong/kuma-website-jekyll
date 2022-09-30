@@ -1,3 +1,5 @@
+---
+---
 # Gateway
 
 Kuma Gateway is a Kuma component that routes network traffic from outside a Kuma mesh to services inside the mesh.

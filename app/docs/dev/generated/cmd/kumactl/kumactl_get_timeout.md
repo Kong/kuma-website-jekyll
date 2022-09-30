@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get timeout
 
 Show a single Timeout resource

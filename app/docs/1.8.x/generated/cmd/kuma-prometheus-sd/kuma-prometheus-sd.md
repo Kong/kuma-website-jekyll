@@ -1,3 +1,5 @@
+---
+---
 ## kuma-prometheus-sd
 
 [DEPRECATED] Prometheus service discovery adapter for native integration with Kuma

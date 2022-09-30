@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get traffic-trace
 
 Show a single TrafficTrace resource

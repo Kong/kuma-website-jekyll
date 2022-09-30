@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get traffic-log
 
 Show a single TrafficLog resource

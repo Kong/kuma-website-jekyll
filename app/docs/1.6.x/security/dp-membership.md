@@ -1,3 +1,5 @@
+---
+---
 # Data plane proxy membership
 
 Data plane proxy membership constraints let us define a set of rules that are executed when a data plane proxy is joining a mesh.

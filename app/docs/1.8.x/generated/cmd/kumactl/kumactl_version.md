@@ -1,3 +1,5 @@
+---
+---
 ## kumactl version
 
 Print version

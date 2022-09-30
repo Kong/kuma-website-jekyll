@@ -1,3 +1,5 @@
+---
+---
 # OpenShift
 
 To install and run Kuma on OpenShift execute the following steps:

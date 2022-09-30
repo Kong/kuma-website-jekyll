@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect traffic-log
 
 Inspect TrafficLog

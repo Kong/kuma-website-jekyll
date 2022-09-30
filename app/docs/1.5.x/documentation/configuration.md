@@ -1,3 +1,5 @@
+---
+---
 # Configuration
 
 You configure the control plane, data plane, and CLI (kumactl) for Kuma separately. Here's what to do.

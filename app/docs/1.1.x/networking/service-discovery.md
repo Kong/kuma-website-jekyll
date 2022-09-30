@@ -1,3 +1,5 @@
+---
+---
 # Service Discovery
 
 Here we are going to be exploring the communication between `kuma-dp` and `kuma-cp`, and the communication between multiple `kuma-dp` to handle our service traffic.

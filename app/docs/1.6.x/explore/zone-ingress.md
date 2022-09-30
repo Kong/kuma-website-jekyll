@@ -1,3 +1,5 @@
+---
+---
 # Zone Ingress
 
 To implement cross-zone communication when Kuma is deployed in a [multi-zone](../deployments/multi-zone.md) mode, there is a new proxy type `ZoneIngress`.

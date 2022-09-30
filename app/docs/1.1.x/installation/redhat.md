@@ -1,3 +1,5 @@
+---
+---
 # RedHat
 
 To install and run Kuma on RedHat (**x86_64**) execute the following steps:

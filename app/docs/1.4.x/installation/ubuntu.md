@@ -1,3 +1,5 @@
+---
+---
 # Ubuntu
 
 To install and run Kuma on Ubuntu (**amd64**) execute the following steps:

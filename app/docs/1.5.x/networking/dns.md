@@ -1,3 +1,5 @@
+---
+---
 # DNS
 
 Kuma ships with DNS resolver to provide service naming - a mapping of hostname to Virtual IPs (VIPs) of services registered in Kuma.

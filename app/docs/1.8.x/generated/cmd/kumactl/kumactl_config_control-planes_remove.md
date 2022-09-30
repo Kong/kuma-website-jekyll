@@ -1,3 +1,5 @@
+---
+---
 ## kumactl config control-planes remove
 
 Remove a Control Plane

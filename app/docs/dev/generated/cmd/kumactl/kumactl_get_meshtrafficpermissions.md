@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get meshtrafficpermissions
 
 Show MeshTrafficPermission

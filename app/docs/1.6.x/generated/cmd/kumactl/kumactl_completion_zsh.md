@@ -1,3 +1,5 @@
+---
+---
 ## kumactl completion zsh
 
 Output shell completions for zsh

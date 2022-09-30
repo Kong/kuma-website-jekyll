@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect timeout
 
 Inspect Timeout

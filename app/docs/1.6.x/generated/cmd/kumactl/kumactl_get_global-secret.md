@@ -1,3 +1,5 @@
+---
+---
 ## kumactl get global-secret
 
 Show a single GlobalSecret resource

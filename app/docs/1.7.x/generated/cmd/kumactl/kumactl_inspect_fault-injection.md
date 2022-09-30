@@ -1,3 +1,5 @@
+---
+---
 ## kumactl inspect fault-injection
 
 Inspect FaultInjection

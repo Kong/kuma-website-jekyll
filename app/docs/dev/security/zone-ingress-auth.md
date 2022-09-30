@@ -1,3 +1,5 @@
+---
+---
 # Zone ingress authentication
 
 To obtain a configuration from the control plane,
