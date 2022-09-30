@@ -5,4 +5,4 @@ arch: amd64
 
 # Redhat
 
-!!!include(install_os.md)!!!
+!!!include(install_os)!!!

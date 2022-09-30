@@ -7,13 +7,13 @@ title: How Kuma works
 When building any modern digital application, we will inevitably introduce services that will communicate with each other by making requests on the network.
 
 <center>
-<img src="/images/docs/diagram-before-after-full-r1.png" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/diagram-before-after-full-r1.png" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 For example, think of any application that communicates with a database to store or retrieve data, or think of a more complex microservice-oriented application that makes many requests across different services to execute its operations:
 
 <center>
-<img src="/images/docs/0.4.0/diagram-02.jpg" alt="" style="width: 550px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/diagram-02.jpg" alt="" style="width: 550px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 Every time our services communicate over the network, we put the end-user experience at risk. As we all know the network between different services can be slow and unpredictable. It can be insecure, hard to trace, and pose many other problems (e.g., routing, versioning, canary deployments). In one sentence, our applications are one step away from being unreliable.
@@ -39,7 +39,7 @@ Teams that adopt the sidecar proxy model will either build a control plane from 
 Unlike a data plane proxy (DP), the control plane (CP) is never on the execution path of the requests that the services exchange with each other, and it's being used as a source of truth to dynamically configure the underlying data plane proxies that in the meanwhile we have deployed alongside every instance of every service that is part of the Mesh:
 
 <center>
-<img src="/images/docs/0.4.0/diagram-03.jpg" alt="" style="width: 550px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/diagram-03.jpg" alt="" style="width: 550px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ::: tip
@@ -57,7 +57,7 @@ By outsourcing all the connectivity, security, and routing concerns to a sidecar
 By reducing the code that our teams create and maintain, we can modernize our applications piece by piece without ever needing to bite more than we can chew.
 
 <center>
-<img src="/images/docs/0.5.0/diagram-04.jpg" alt="" style=" padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.5.0/diagram-04.jpg" alt="" style=" padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ## Dependencies
@@ -71,7 +71,7 @@ Kuma (`kuma-cp`) is one single executable written in GoLang that can be installe
 Out of the box, Kuma ships with a bundled [Envoy](https://www.envoyproxy.io/) data plane proxy ready to use for our services, so that you don't have to worry about putting all the pieces together.
 
 ::: tip
-Kuma ships with an executable `kuma-dp` that executes the bundled `envoy` executable to create the data plane proxy. For details, see the [Overview](what-is-kuma.md).
+Kuma ships with an executable `kuma-dp` that executes the bundled `envoy` executable to create the data plane proxy. For details, see the [Overview](what-is-kuma).
 :::
 
 [Install Kuma](/install/) and follow the instructions to get up and running in a few steps.
@@ -85,7 +85,7 @@ Until now, Service Mesh has been considered to be the last step of architecture 
 In reality, we want Service Mesh to be available *before* we implement other transitions so that we can keep the network both secure and observable in the process. With Kuma, Service Mesh is indeed the **first step** towards modernization.
 
 <center>
-<img src="/images/docs/0.5.0/diagram-05.jpg" alt="" style=" padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.5.0/diagram-05.jpg" alt="" style=" padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 Unlike other control planes, Kuma natively runs across every platform - Kubernetes, VMs and Bare Metal - and it's not limited in scope (like many other control planes that only work on Kubernetes only). Kuma can run on both existing brownfield applications (that are most likely running on VMs), as well as new and modern greenfield applications that may be running on containers and Kubernetes.
@@ -116,10 +116,10 @@ Kuma exists today to provide a pragmatic journey to implementing Service Mesh fo
 * **Enterprise-Ready**: Used by mission critical enterprise use-cases that require uptime and stability.
 
 <center>
-<img src="/images/docs/0.6.0/distributed-deployment.jpg" alt="" style="width: 700px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.6.0/distributed-deployment.jpg" alt="" style="width: 700px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
-To learn more about the single and multi-zone deployments of Kuma you can ready the [deployments guide](./deployments.md).
+To learn more about the single and multi-zone deployments of Kuma you can ready the [deployments guide](./deployments).
 
 ::: tip
 **Real-Time Support**: The Kuma community provides channels for real-time communication and support that you can explore in our [Community](/community) page. It also provides dedicated [Enterprise Support](/enterprise) delivered by [Kong](https://konghq.com).

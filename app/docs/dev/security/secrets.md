@@ -9,7 +9,7 @@ Sensitive information is anything a user considers non-public, e.g.:
 * passwords
 
 Secrets belong to a specific [`Mesh`](../../policies/mesh) resource, and cannot be shared across different `Meshes`.
-[Policies](../policies/introduction.md) use secrets at runtime.
+[Policies](../policies/introduction) use secrets at runtime.
 
 :::tip
 Kuma leverages `Secret` resources internally for certain operations,
@@ -111,7 +111,7 @@ Kuma provides two types of Secrets.
 ### Mesh-scoped Secrets
 
 Mesh-scoped Secrets are bound to a given Mesh.
-Only this kind of Secrets can be used in Mesh Policies like [Provided CA](../policies/mutual-tls.md#usage-of-provided-ca) or TLS setting in [External Service](../policies/external-services.md).
+Only this kind of Secrets can be used in Mesh Policies like [Provided CA](../policies/mutual-tls.md#usage-of-provided-ca) or TLS setting in [External Service](../policies/external-services).
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab "Kubernetes"

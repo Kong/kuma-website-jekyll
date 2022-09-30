@@ -191,12 +191,12 @@ spec:
 **3. Configure Grafana to visualize the logs**
 
 To visualise your **containers' logs** and your **access logs** you need to have a Grafana up and running.
-You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](traffic-metrics.md).
+You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](traffic-metrics).
 
 If you have installed Grafana yourself you can configure a new datasource with url:`http://loki.kuma-logging:3100` so Grafana will be able to retrieve the logs from Loki.
 
 <center>
-<img src="/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 At this point you can visualize your **containers' logs** and your **access logs** in Grafana by choosing the loki datasource in the [explore section](https://grafana.com/docs/grafana/latest/explore/).
@@ -208,7 +208,7 @@ To learn more about the search syntax check the [Loki docs](https://grafana.com/
 
 **1. Install Loki**
 
-To install Loki use the instructions on the official [Loki Github repository](https://github.com/grafana/loki/blob/v1.5.0/docs/installation/README.md).
+To install Loki use the instructions on the official [Loki Github repository](https://github.com/grafana/loki/blob/v1.5.0/docs/installation/README).
 
 **2. Update the mesh**
 
@@ -230,10 +230,10 @@ logging:
 **3. Configure Grafana to visualize the logs**
 
 To visualise your **containers' logs** and your **access logs** you need to have a Grafana up and running. 
-You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](traffic-metrics.md).
+You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](traffic-metrics).
 
 <center>
-<img src="/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 At this point you can visualize your **containers' logs** and your **access logs** in Grafana by choosing the loki datasource in the [explore section](https://grafana.com/docs/grafana/latest/explore/).
@@ -249,7 +249,7 @@ To learn more about the search syntax check the [Loki docs](https://grafana.com/
 Having your Logs and Traces in the same visualisation tool can come really handy. By adding the traceId in your app logs you can visualize your logs and the related Jaeger traces. 
 To learn more about it go read this [article](https://grafana.com/blog/2020/05/22/new-in-grafana-7.0-trace-viewer-and-integrations-with-jaeger-and-zipkin/).
 
-To set up tracing see the [traffic-trace policy](traffic-trace.md).
+To set up tracing see the [traffic-trace policy](traffic-trace).
 :::
 
 You can also forward the access logs to a collector (such as logstash) that can further transmit them into systems like Splunk, ELK and Datadog.

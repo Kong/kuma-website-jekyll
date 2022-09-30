@@ -25,6 +25,6 @@ Uninstall various Kuma components.
 
 ### SEE ALSO
 
-* [kumactl](kumactl.md)	 - Management tool for Kuma
-* [kumactl uninstall transparent-proxy](kumactl_uninstall_transparent-proxy.md)	 - Uninstall Transparent Proxy pre-requisites on the host
+* [kumactl](kumactl)	 - Management tool for Kuma
+* [kumactl uninstall transparent-proxy](kumactl_uninstall_transparent-proxy)	 - Uninstall Transparent Proxy pre-requisites on the host
 

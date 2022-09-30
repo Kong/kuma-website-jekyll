@@ -4,11 +4,11 @@
 
 This policy enables tracing logging to a third party tracing solution. 
 
-Tracing is supported over HTTP, HTTP2, and gRPC protocols. You must [explicitly specify the protocol](protocol-support-in-kuma.md) for each service and data plane proxy you want to enable tracing for.
+Tracing is supported over HTTP, HTTP2, and gRPC protocols. You must [explicitly specify the protocol](protocol-support-in-kuma) for each service and data plane proxy you want to enable tracing for.
 
 You must also:
 
-1. [Add a tracing backend](#add-a-tracing-backend-to-the-mesh). You specify a tracing backend as a [`Mesh`](mesh.md) resource property.
+1. [Add a tracing backend](#add-a-tracing-backend-to-the-mesh). You specify a tracing backend as a [`Mesh`](mesh) resource property.
 2. [Add a TrafficTrace resource](#add-traffictrace-resource). You pass the backend to the `TrafficTrace` resource.
 
 Kuma currently supports the following trace exposition formats:
@@ -36,7 +36,7 @@ For HTTP you can also manually forward the following headers:
 
 ::: tip
 This assumes you already have a zipkin compatible collector running.
-If you haven't, read the [observability docs](../explore/observability.md).
+If you haven't, read the [observability docs](../explore/observability).
 :::
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -74,7 +74,7 @@ tracing:
       url: http://my-jaeger-collector:9411/api/v2/spans # Replace by any zipkin compatible collector address.
 ```
 
-Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api.md).
+Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api).
 :::
 ::::
 
@@ -124,7 +124,7 @@ tracing:
       port: 8126
 ```
 
-Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api.md).
+Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api).
 :::
 ::::
 
@@ -165,7 +165,7 @@ conf:
   backend: jaeger-collector # or the name of any backend defined for the mesh
 ```
 
-Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api.md).
+Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api).
 :::
 ::::
 

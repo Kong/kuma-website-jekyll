@@ -3,12 +3,12 @@
 # MeshGatewayRoute
 
 `MeshGatewayRoute` is a policy used to configure [Kuma's builtin gateway](../explore/gateway.md#builtin).
-It is used in combination with [`MeshGateway`](./mesh-gateway.md).
+It is used in combination with [`MeshGateway`](./mesh-gateway).
 
 `MeshGatewayRoute` is a new Kuma dataplane policy that replaces TrafficRoute for Kuma Gateway.
 It configures how a gateway should process network traffic.
 At the moment, it targets HTTP routing use cases.
-`MeshGatewayRoutes` are attached to gateways by matching their selector to the [`MeshGateway`](./mesh-gateway.md) listener tags.
+`MeshGatewayRoutes` are attached to gateways by matching their selector to the [`MeshGateway`](./mesh-gateway) listener tags.
 
 To define `MeshGatewayRoute` that attaches a route to a listener with a tag: `vhost=foo.example.com` and routes traffic to the backend service do:
 
@@ -104,4 +104,4 @@ For example, the following filters match `/prefix`, trim it from the path and se
 
 ## Reference
 
-The reference doc contains all options on [`MeshGatewayRoute`](../generated/resources/policy_meshgatewayroute.md).
+The reference doc contains all options on [`MeshGatewayRoute`](../generated/resources/policy_meshgatewayroute).

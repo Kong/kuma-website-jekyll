@@ -9,7 +9,7 @@ Welcome to the documentation for Kuma, a modern distributed **Control Plane** fo
 The word "Kuma" means "bear" in Japanese (クマ).
 
 <center>
-<img src="/images/diagrams/main-diagram@2x.png" alt="" style="width: 450px; padding-top: 10px"/>
+<img src="/assets/images/diagrams/main-diagram@2x.png" alt="" style="width: 450px; padding-top: 10px"/>
 </center>
 
 The core maintainer of Kuma is **Kong**, the maker of the popular open-source Kong Gateway 🦍.

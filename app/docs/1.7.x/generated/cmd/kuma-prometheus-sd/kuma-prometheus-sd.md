@@ -24,6 +24,6 @@ See: https://prometheus.io/docs/prometheus/latest/configuration/configuration/#k
 
 ### SEE ALSO
 
-* [kuma-prometheus-sd run](kuma-prometheus-sd_run.md)	 - Launch Kuma Prometheus SD adapter
-* [kuma-prometheus-sd version](kuma-prometheus-sd_version.md)	 - Print version
+* [kuma-prometheus-sd run](kuma-prometheus-sd_run)	 - Launch Kuma Prometheus SD adapter
+* [kuma-prometheus-sd version](kuma-prometheus-sd_version)	 - Print version
 

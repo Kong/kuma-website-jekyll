@@ -122,7 +122,7 @@ You can also provide the CA via environment variable `KUMA_CONTROL_PLANE_CA_CERT
 
 ### Authentication
 
-See [Data plane proxy authentication](./dp-auth.md) and [Zone Ingress authentication](./zone-ingress-auth.md).
+See [Data plane proxy authentication](./dp-auth) and [Zone Ingress authentication](./zone-ingress-auth).
 
 ## User to control plane communication
 
@@ -207,7 +207,7 @@ We can also hide the HTTP version of API Server by binding it to localhost `KUMA
 
 ### Authentication
 
-See [API Server authentication](./api-server-auth.md).
+See [API Server authentication](./api-server-auth).
 
 ## Control plane to control plane (Multizone)
 

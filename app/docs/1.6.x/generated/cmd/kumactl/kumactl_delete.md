@@ -30,5 +30,5 @@ kumactl delete TYPE NAME [flags]
 
 ### SEE ALSO
 
-* [kumactl](kumactl.md)	 - Management tool for Kuma
+* [kumactl](kumactl)	 - Management tool for Kuma
 

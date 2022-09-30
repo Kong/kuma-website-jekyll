@@ -33,4 +33,4 @@ To see if you may need to increase your control-plane's spec, there are two main
 
 For any large mesh using transparent-proxy it's highly recommended to use [reachable-services](../networking/transparent-proxying.md#reachable-services).
 
-You can also find tuning configuration in the [fine-tuning](fine-tuning.md) section of the docs.
+You can also find tuning configuration in the [fine-tuning](fine-tuning) section of the docs.

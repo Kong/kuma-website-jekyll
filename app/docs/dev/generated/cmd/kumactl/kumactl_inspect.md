@@ -51,4 +51,3 @@ Inspect Kuma resources.
 * [kumactl inspect zoneegresses](kumactl_inspect_zoneegresses.md)	 - Inspect Zone Egresses
 * [kumactl inspect zoneingress](kumactl_inspect_zoneingress.md)	 - Inspect ZoneIngress
 * [kumactl inspect zones](kumactl_inspect_zones.md)	 - Inspect Zones
-

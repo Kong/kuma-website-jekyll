@@ -2,7 +2,7 @@
 ---
 # Kubernetes Gateway API
 
-Kuma supports configuring [Built-in Gateway](gateway.md) using [Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/).
+Kuma supports configuring [Built-in Gateway](gateway) using [Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/).
 
 ## Installation
 
@@ -167,7 +167,7 @@ spec:
       - name: secret-tls
 ```
 
-Under the hood, Kuma CP copies the Secret to `kuma-system` namespace and converts it to [Kuma Secret](../security/secrets.md).
+Under the hood, Kuma CP copies the Secret to `kuma-system` namespace and converts it to [Kuma Secret](../security/secrets).
 It tracks all the changes to the secret and deletes it if the original secret is deleted.
 
 ## Multizone

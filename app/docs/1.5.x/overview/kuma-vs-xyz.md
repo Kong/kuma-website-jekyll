@@ -24,7 +24,7 @@ Kuma exists today to provide a pragmatic journey to implementing Service Mesh fo
 * **Enterprise-Ready**: Used by mission critical enterprise use-cases that require uptime and stability.
 
 <center>
-<img src="/images/docs/0.6.0/distributed-deployment.jpg" alt="" style="width: 700px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.6.0/distributed-deployment.jpg" alt="" style="width: 700px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 To learn more about the single and multi-zone deployments of Kuma you can ready the [deployments guide](/docs/latest/documentation/deployments).

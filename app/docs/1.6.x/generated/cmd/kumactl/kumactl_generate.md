@@ -25,11 +25,11 @@ Generate resources, tokens, etc.
 
 ### SEE ALSO
 
-* [kumactl](kumactl.md)	 - Management tool for Kuma
-* [kumactl generate dataplane-token](kumactl_generate_dataplane-token.md)	 - Generate Dataplane Token
-* [kumactl generate signing-key](kumactl_generate_signing-key.md)	 - Generate signing keys
-* [kumactl generate tls-certificate](kumactl_generate_tls-certificate.md)	 - Generate a TLS certificate
-* [kumactl generate user-token](kumactl_generate_user-token.md)	 - Generate User Token
-* [kumactl generate zone-ingress-token](kumactl_generate_zone-ingress-token.md)	 - Generate Zone Ingress Token
-* [kumactl generate zone-token](kumactl_generate_zone-token.md)	 - Generate Zone Token
+* [kumactl](kumactl)	 - Management tool for Kuma
+* [kumactl generate dataplane-token](kumactl_generate_dataplane-token)	 - Generate Dataplane Token
+* [kumactl generate signing-key](kumactl_generate_signing-key)	 - Generate signing keys
+* [kumactl generate tls-certificate](kumactl_generate_tls-certificate)	 - Generate a TLS certificate
+* [kumactl generate user-token](kumactl_generate_user-token)	 - Generate User Token
+* [kumactl generate zone-ingress-token](kumactl_generate_zone-ingress-token)	 - Generate Zone Ingress Token
+* [kumactl generate zone-token](kumactl_generate_zone-token)	 - Generate Zone Token
 

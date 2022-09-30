@@ -9,19 +9,19 @@ Welcome to the official documentation for Kuma, a modern distributed **Control P
 The word "Kuma" means "bear" in Japanese (クマ).
 
 <center>
-<img src="/images/diagrams/main-diagram@2x.png" alt="" style="width: 450px; padding-top: 10px"/>
+<img src="/assets/images/diagrams/main-diagram@2x.png" alt="" style="width: 450px; padding-top: 10px"/>
 </center>
 
 The core maintainer of Kuma is **Kong**, the maker of the popular open-source Kong Gateway 🦍.
 
 ## Get started
 
-[Read about service mesh](introduction/what-is-a-service-mesh.md)
+[Read about service mesh](introduction/what-is-a-service-mesh)
 
-[Read about Kuma](introduction/what-is-kuma.md)
+[Read about Kuma](introduction/what-is-kuma)
 
 [Install Kuma](/install/latest/)
 
-[Jump to the quickstart](quickstart/kubernetes.md)
+[Jump to the quickstart](quickstart/kubernetes)
 
-[Explore the API](reference/http-api.md)
+[Explore the API](reference/http-api)

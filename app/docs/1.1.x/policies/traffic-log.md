@@ -188,13 +188,13 @@ spec:
     
 **3. Configure Grafana to visualize the logs**
 
-If the [Traffic Metrics](traffic-metrics.md) policy is installed on your `kubernetes` node, you can configure a new 
+If the [Traffic Metrics](traffic-metrics) policy is installed on your `kubernetes` node, you can configure a new 
 datasource in Grafana to visualise your **containers' logs** and your **access logs**.
 
 Use the `kubectl port-forward` command to access Grafana.
 
 <center>
-<img src="/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 At this point you can visualize your **containers' logs** and your **access logs** in Grafana by choosing the loki 
@@ -204,7 +204,7 @@ datasource in the explore section.
 
 **1. Install Loki**
 
-To install Loki use the instructions on the official [Loki Github repository](https://github.com/grafana/loki/blob/v1.5.0/docs/installation/README.md).
+To install Loki use the instructions on the official [Loki Github repository](https://github.com/grafana/loki/blob/v1.5.0/docs/installation/README).
 
 **2. Update the mesh**
 
@@ -231,7 +231,7 @@ If you don't have Grafana you can install it by following the informations of th
 With Granana installed you can configure a new datasource so Grafana will be able to retrieve the logs from Loki.
 
 <center>
-<img src="/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 At this point you can visualize your **containers' logs** and your **access logs** in Grafana by choosing the loki 
@@ -243,10 +243,10 @@ datasource in the explore section.
 ::: tip
 **Nice to have**
 
-If you are also using the [Traffic Trace](traffic-trace.md) policy you can configure a new datasource for Jaeger to visualise your traces directly into Grafana.
+If you are also using the [Traffic Trace](traffic-trace) policy you can configure a new datasource for Jaeger to visualise your traces directly into Grafana.
 
 <center>
-<img src="/images/docs/jaeger_grafana_config.png" alt="Jaeger Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/jaeger_grafana_config.png" alt="Jaeger Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 Having your Logs and Traces in the same visualisation tool can come really handy. By adding the traceId in your app logs you can visualize your logs and the related Jaeger traces. 

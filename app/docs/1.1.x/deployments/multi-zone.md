@@ -24,7 +24,7 @@ In this deployment, a Kuma cluster is made of one global control plane and as ma
 * **Zone**: A zone identifies a Kubernetes cluster, a VPC, or any other cluster that we want to include in a Kuma service mesh.
 
 <center>
-<img src="/images/docs/0.6.0/distributed-diagram.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.6.0/distributed-diagram.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 In a multi-zone deployment mode, services will be running on multiple platforms, clouds, or Kubernetes clusters (which are identified as `zones` in Kuma). While all of them will be part of a Kuma mesh by connecting their data plane proxies to the local `remote` control plane in the same zone, implementing service to service connectivity would be tricky since a source service may not know where a destination service is being hosted at (for instance, in another zone).
@@ -174,7 +174,7 @@ Note that on Kubernetes, Kuma automatically tries to pick up the public address 
 ### Enable mTLS
 
 Cross-zone communication between services is only possible when mTLS is enabled, because Ingress is routing connections using SNI.
-Make sure you [enable mTLS](../policies/mutual-tls.md) and apply [Traffic Permission](../policies/traffic-permissions.md). 
+Make sure you [enable mTLS](../policies/mutual-tls) and apply [Traffic Permission](../policies/traffic-permissions). 
 
 ### Using the multi-zone deployment
 

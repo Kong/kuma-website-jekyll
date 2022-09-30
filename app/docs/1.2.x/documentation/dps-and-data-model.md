@@ -5,7 +5,7 @@
 When Kuma (`kuma-cp`) runs, it waits for the data plane proxies to connect and register themselves. In order for a data plane proxy to successfully run, there must exist at least one [`Mesh`](../../policies/mesh) in Kuma. By default the system generates a `default` Mesh when the control-plane is run for the first time.
 
 <center>
-<img src="/images/docs/0.5.0/diagram-10.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.5.0/diagram-10.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ## Dataplane Entity
@@ -17,7 +17,7 @@ To understand why the `Dataplane` entity is required, we must take a step back. 
 For example, if we have 6 replicas of a "Redis" service, then we must have one instances of `kuma-dp` running alongside each replica of the service, therefore 6 replicas of `kuma-dp` and 6 `Dataplane` entities as well.
 
 <center>
-<img src="/images/docs/0.4.0/diagram-11.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/diagram-11.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ::: tip
@@ -191,7 +191,7 @@ The `Dataplane` entity includes a few sections:
   * `outbound`: every outgoing request made by the service must also go thorugh the DP. This object specifies ports that the DP will have to listen to when accepting outgoing requests by the service: 
     * `port`: the port that the service needs to consume locally to make a request to the external service
     * `address`: the IP at which outbound listener is exposed. By default it is `127.0.0.1` since it should only be consumed by the app deployed next to the dataplane.
-    * `tags`: traffic on `port:address` will be sent to each data-plane that matches those tags. You can put many tags here. However, it is recommended to keep the list short and then use [`TrafficRoute`](../policies/traffic-route.md) for dynamic management of the traffic.
+    * `tags`: traffic on `port:address` will be sent to each data-plane that matches those tags. You can put many tags here. However, it is recommended to keep the list short and then use [`TrafficRoute`](../policies/traffic-route) for dynamic management of the traffic.
 
 ::: tip
 On Kubernetes this whole process is automated via transparent proxying and without changing your application's code. On Universal Kuma doesn't support transparent proxying yet, and the outbound service dependencies have to be manually specified in the [`Dataplane`](#dataplane-entity) entity. This also means that in Universal **you must update** your codebases to consume those external services on `127.0.0.1` on the port specified in the `outbound` section.

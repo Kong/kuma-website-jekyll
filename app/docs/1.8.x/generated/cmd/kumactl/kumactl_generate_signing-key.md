@@ -54,5 +54,5 @@ type: system.kuma.io/global-secret
 
 ### SEE ALSO
 
-* [kumactl generate](kumactl_generate.md)	 - Generate resources, tokens, etc
+* [kumactl generate](kumactl_generate)	 - Generate resources, tokens, etc
 

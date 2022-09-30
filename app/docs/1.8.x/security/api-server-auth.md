@@ -2,7 +2,7 @@
 ---
 # API server authentication
 
-Kuma exposes API server on [ports](../networking/networking.md) `5681` and `5682` (protected by TLS).
+Kuma exposes API server on [ports](../networking/networking) `5681` and `5682` (protected by TLS).
 
 An authenticated user can be authorized to execute administrative actions such as
 * Managing administrative resources like Kuma Secrets on Universal
@@ -25,7 +25,7 @@ A user can be a part of many groups. Kuma adds two groups to a user automaticall
 
 Kuma creates an admin user token on the first start of the control plane.
 The admin user token is a user token issued for user `mesh-system:admin` that belongs to `mesh-system:admin` group.
-This group is [authorized by default](./api-access-control.md) to execute all administrative operations.
+This group is [authorized by default](./api-access-control) to execute all administrative operations.
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab "Kubernetes"
@@ -81,7 +81,7 @@ This group is [authorized by default](./api-access-control.md) to execute all ad
 3. Disable localhost is admin (optional)
 
    By default, all requests originated from localhost are authenticated as an `mesh-system:admin` user.
-   After you retrieve and store the admin token, [configure a control plane](../documentation/configuration.md) with `KUMA_API_SERVER_AUTHN_LOCALHOST_IS_ADMIN` set to `false`.
+   After you retrieve and store the admin token, [configure a control plane](../documentation/configuration) with `KUMA_API_SERVER_AUTHN_LOCALHOST_IS_ADMIN` set to `false`.
    :::
    ::::
 
@@ -279,7 +279,7 @@ kubectl delete secret admin-user-token -n kuma-namespace
 ```
 
 2. Disable bootstrap of the token
-   [Configure a control plane](../documentation/configuration.md) with `KUMA_API_SERVER_AUTHN_TOKENS_BOOTSTRAP_ADMIN_TOKEN` set to `false`.
+   [Configure a control plane](../documentation/configuration) with `KUMA_API_SERVER_AUTHN_TOKENS_BOOTSTRAP_ADMIN_TOKEN` set to `false`.
    :::
    ::: tab "Universal"
 1. Delete `admin-user-token` Global Secret
@@ -288,7 +288,7 @@ kumactl delete global-secret admin-user-token
 ```
 
 2. Disable bootstrap of the token
-   [Configure a control plane](../documentation/configuration.md) with `KUMA_API_SERVER_AUTHN_TOKENS_BOOTSTRAP_ADMIN_TOKEN` set to `false`.
+   [Configure a control plane](../documentation/configuration) with `KUMA_API_SERVER_AUTHN_TOKENS_BOOTSTRAP_ADMIN_TOKEN` set to `false`.
    :::
    ::::
 

@@ -51,5 +51,5 @@ kuma-dp run [flags]
 
 ### SEE ALSO
 
-* [kuma-dp](kuma-dp.md)	 - Dataplane manager for Envoy-based Service Mesh
+* [kuma-dp](kuma-dp)	 - Dataplane manager for Envoy-based Service Mesh
 

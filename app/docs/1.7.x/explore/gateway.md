@@ -27,12 +27,12 @@ Here's a visualization that shows how delegated and builtin gateways are differe
 
 Builtin with Kong Gateway to handle the inbound traffic:
 <center>
-<img src="/images/diagrams/builtin-gateway.webp" alt=""/>
+<img src="/assets/images/diagrams/builtin-gateway.webp" alt=""/>
 </center>
 
 Delegated with Kong Gateway:
 <center>
-<img src="/images/diagrams/delegated-gateway.webp" alt="" />
+<img src="/assets/images/diagrams/delegated-gateway.webp" alt="" />
 </center>
 
 The blue lines represent traffic not managed by Kuma and that needs to be configured in your Gateway.
@@ -78,7 +78,7 @@ For the latter, we need to expose a dedicated Kubernetes `Service` object with t
 We will follow these instructions to setup an echo service that is reached through Kong.
 These instructions are mostly taken from the [Kong docs](https://docs.konghq.com/kubernetes-ingress-controller/2.1.x/guides/getting-started/).
 
-To get started [install Kuma](../installation/kubernetes.md) on your cluster and have the `default` [namespace labelled with sidecar-injection](dpp-on-kubernetes.md).
+To get started [install Kuma](../installation/kubernetes) on your cluster and have the `default` [namespace labelled with sidecar-injection](dpp-on-kubernetes).
 
 Install [Kong using helm](https://docs.konghq.com/kubernetes-ingress-controller/2.1.x/deployment/k4k8s/#helm).
 
@@ -224,8 +224,8 @@ A builtin gateway `Dataplane` does not have either inbound or outbound configura
 
 To configure your gateway Kuma has these resources:
 
-- [MeshGateway](../policies/mesh-gateway.md) is used to configure listeners exposed by the gateway
-- [MeshGatewayRoute](../policies/mesh-gateway-route.md) is used to configure route to route traffic from listeners to other services.
+- [MeshGateway](../policies/mesh-gateway) is used to configure listeners exposed by the gateway
+- [MeshGatewayRoute](../policies/mesh-gateway-route) is used to configure route to route traffic from listeners to other services.
 
 ### Usage
 
@@ -364,7 +364,7 @@ Notice that listeners have tags like `Dataplanes`. This will be useful when bind
 
 :::tip
 These are Kuma policies so if you are running on multi-zone they need to be created on the Global CP.
-See the [dedicated section](../deployments/multi-zone.md) for detailed information.
+See the [dedicated section](../deployments/multi-zone) for detailed information.
 :::
 
 We will now define our routes which will take traffic and route it either to our `api` or our `frontend` depending on the path of the http request:
@@ -519,17 +519,17 @@ This can result in situations where different policies (of the same type) are us
 
 | Policy                                                    | GatewaySupport |
 | --------------------------------------------------------- | -------------- |
-| [Circuit Breaker](../policies/circuit-breaker.md)         | Full           |
-| [External Services](../policies/external-services.md)     | Full           |
-| [Fault Injection](../policies/fault-injection.md)         | Full           |
-| [Health Check](../policies/health-check.md)               | Full           |
-| [Proxy Template](../policies/proxy-template.md)           | Full           |
-| [Rate Limits](../policies/rate-limit.md)                  | Full           |
-| [Retries](../policies/retry.md)                           | Full           |
-| [Traffic Permissions](../policies/traffic-permissions.md) | Full           |
-| [Traffic Routes](../policies/traffic-route.md)            | None           |
-| [Traffic Log](../policies/traffic-log.md)                 | Partial        |
-| [Timeouts](../policies/timeout.md)                        | Full           |
-| [VirtualOutbounds](../policies/virtual-outbound.md)       | None           |
+| [Circuit Breaker](../policies/circuit-breaker)         | Full           |
+| [External Services](../policies/external-services)     | Full           |
+| [Fault Injection](../policies/fault-injection)         | Full           |
+| [Health Check](../policies/health-check)               | Full           |
+| [Proxy Template](../policies/proxy-template)           | Full           |
+| [Rate Limits](../policies/rate-limit)                  | Full           |
+| [Retries](../policies/retry)                           | Full           |
+| [Traffic Permissions](../policies/traffic-permissions) | Full           |
+| [Traffic Routes](../policies/traffic-route)            | None           |
+| [Traffic Log](../policies/traffic-log)                 | Partial        |
+| [Timeouts](../policies/timeout)                        | Full           |
+| [VirtualOutbounds](../policies/virtual-outbound)       | None           |
 
 You can find in each policy's dedicated information with regard to builtin gateway support.

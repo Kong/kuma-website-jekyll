@@ -145,7 +145,7 @@ The `port` field specifies the port where Kuma DNS accepts requests. Make sure t
 
 The `CIDR` field sets the IP range of virtual IPs. The default `240.0.0.0/4` is reserved for future IPv4 use IPv4 and is guaranteed to be non-routable. We strongly recommend to not change this value unless you have a specific need for a different IP range.
 
-The `serviceVipEnabled` field defines if there should be a vip generated for each `kuma.io/service`. This can be disabled for performance reason and [virtual-outbound](../policies/virtual-outbound.md) provides a more flexible way to do this.
+The `serviceVipEnabled` field defines if there should be a vip generated for each `kuma.io/service`. This can be disabled for performance reason and [virtual-outbound](../policies/virtual-outbound) provides a more flexible way to do this.
 
 ## How Kuma DNS works 
 
@@ -166,7 +166,7 @@ Kuma DNS is not a service discovery mechanism. Instead, it returns a single VIP 
 ::: tip
 The following setup will only work when `serviceVipEnabled=true` which will default to false and then fully removed in future versions of Kuma.
 
-The preferred way to define hostnames is using [virtual-outbounds](../policies/virtual-outbound.md).
+The preferred way to define hostnames is using [virtual-outbounds](../policies/virtual-outbound).
 Virtual-outbounds also makes it possible to define dynamic hostnames using specific tags or to expose services on a different port.
 :::
 

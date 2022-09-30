@@ -11,7 +11,7 @@ This is the simplest deployment mode for Kuma, and the default one.
 This mode implies that we can deploy Kuma and its data plane proxies in a standalone networking topology mode so that the service connectivity from every data plane proxy can be established directly to every other data plane proxy.
 
 <center>
-<img src="/images/docs/0.6.0/flat-diagram.png" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.6.0/flat-diagram.png" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 Although standalone mode can support complex multi-zone or hybrid deployments (Kubernetes + VMs) as long as the networking requirements are satisfied, typically in most use cases our connectivity cannot be flattened out across multiple zones. Therefore standalone mode is usually a great choice within the context of one zone (ie: within one Kubernetes cluster or one AWS VPC).

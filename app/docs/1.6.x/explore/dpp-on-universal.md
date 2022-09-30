@@ -128,7 +128,7 @@ lifecycle.
 
 #### Creation
 
-`Dataplane` resource is created using [HTTP API](../reference/http-api.md#dataplanes) or [kumactl](../explore/cli.md). 
+`Dataplane` resource is created using [HTTP API](../reference/http-api.md#dataplanes) or [kumactl](../explore/cli). 
 `Dataplane` resource is created before data plane proxy started. There is no support for templates, resource should be
 a valid `Dataplane` configuration. 
 

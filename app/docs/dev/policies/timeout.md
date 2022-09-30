@@ -13,7 +13,7 @@ This policy enables Kuma to set timeouts on the outbound connections depending o
 Specify the proxy to configure with the `sources` selector, and the outbound connections from the proxy with the `destinations` selector.
 
 The policy lets you configure timeouts for `HTTP`, `GRPC`, and `TCP` protocols.
-More about [Protocol support in Kuma](protocol-support-in-kuma.md). 
+More about [Protocol support in Kuma](protocol-support-in-kuma). 
 
 ## Configuration
 
@@ -148,7 +148,7 @@ http:
   maxStreamDuration: 0s
 ```
 
-If you still need to change inbound timeouts you can use a [ProxyTemplate](proxy-template.md):
+If you still need to change inbound timeouts you can use a [ProxyTemplate](proxy-template):
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab "Kubernetes"

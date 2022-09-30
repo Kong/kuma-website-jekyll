@@ -45,5 +45,5 @@ kumactl generate tls-certificate --type=server|client --hostname=HOST1[,HOST2...
 
 ### SEE ALSO
 
-* [kumactl generate](kumactl_generate.md)	 - Generate resources, tokens, etc
+* [kumactl generate](kumactl_generate)	 - Generate resources, tokens, etc
 

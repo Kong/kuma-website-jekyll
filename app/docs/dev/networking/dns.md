@@ -44,7 +44,7 @@ Kuma DNS is enabled by default whenever kuma-dp sidecar proxy is injected.
 :::
 ::: tab "Universal"
 
-Follow the instruction in [transparent proxying](transparent-proxying.md).
+Follow the instruction in [transparent proxying](transparent-proxying).
 
 :::
 ::::
@@ -53,8 +53,8 @@ Follow the instruction in [transparent proxying](transparent-proxying.md).
 
 This mode implements advanced networking techniques, so take special care for the following cases:
 
- * The mode can safely be used with the [Kuma CNI plugin](cni.md).
- * In mixed IPv4 and IPv6 environments, it's recommended that you specify an [IPv6 virtual IP CIDR](ipv6.md).
+ * The mode can safely be used with the [Kuma CNI plugin](cni).
+ * In mixed IPv4 and IPv6 environments, it's recommended that you specify an [IPv6 virtual IP CIDR](ipv6).
 
 ### Overriding the CoreDNS configuration
 
@@ -104,7 +104,7 @@ The `CIDR` field sets the IP range of virtual IPs. The default `240.0.0.0/4` is 
 
 The `domain` field specifies the default `.mesh` DNS zone that Kuma DNS provides resolution for. It's only relevant when `serviceVipEnabled` is set to `true`.
 
-The `serviceVipEnabled` field defines if there should be a vip generated for each `kuma.io/service`. This can be disabled for performance reason and [virtual-outbound](../policies/virtual-outbound.md) provides a more flexible way to do this.
+The `serviceVipEnabled` field defines if there should be a vip generated for each `kuma.io/service`. This can be disabled for performance reason and [virtual-outbound](../policies/virtual-outbound) provides a more flexible way to do this.
 
 ## Usage
 
@@ -167,6 +167,6 @@ Kuma DNS allocates a VIP for every service within a mesh. Then, it creates an ou
 ::: tip
 The following setup will work when `serviceVipEnabled=true` which is a default value.
 
-The preferred way to define hostnames is using [Virtual Outbounds](../policies/virtual-outbound.md).
+The preferred way to define hostnames is using [Virtual Outbounds](../policies/virtual-outbound).
 Virtual Outbounds also makes it possible to define dynamic hostnames using specific tags or to expose services on a different port.
 :::

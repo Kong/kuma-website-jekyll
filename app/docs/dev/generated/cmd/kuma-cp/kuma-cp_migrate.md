@@ -26,6 +26,6 @@ Migrate database to which Control Plane is connected. The database contains all 
 
 ### SEE ALSO
 
-* [kuma-cp](kuma-cp.md)	 - Universal Control Plane for Envoy-based Service Mesh
-* [kuma-cp migrate up](kuma-cp_migrate_up.md)	 - Apply the newest schema changes to the database.
+* [kuma-cp](kuma-cp)	 - Universal Control Plane for Envoy-based Service Mesh
+* [kuma-cp migrate up](kuma-cp_migrate_up)	 - Apply the newest schema changes to the database.
 

@@ -50,5 +50,5 @@ $ kumactl apply -f https://example.com/resource.yaml
 
 ### SEE ALSO
 
-* [kumactl](kumactl.md)	 - Management tool for Kuma
+* [kumactl](kumactl)	 - Management tool for Kuma
 

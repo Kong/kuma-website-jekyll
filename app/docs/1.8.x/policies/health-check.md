@@ -10,7 +10,7 @@ This policy enables Kuma to keep track of the health of every data plane proxy, 
 
 By creating an `HealthCheck` resource we can instruct a data plane proxy to keep track of the health status for any other data plane proxy. When health-checks are properly configured, a data plane proxy will never send a request to another data plane proxy that is considered unhealthy. When an unhealthy proxy returns to a healthy state, Kuma will resume sending requests to it again.
 
-This policy provides **active** checks. If you want to configure **passive** checks, please utilize the [Circuit Breaker](./circuit-breaker.md) policy. Data plane proxies with **active** checks will explicitly send requests to other data plane proxies to determine if target proxies are healthy or not. This mode generates extra traffic to other proxies and services as described in the policy configuration.
+This policy provides **active** checks. If you want to configure **passive** checks, please utilize the [Circuit Breaker](./circuit-breaker) policy. Data plane proxies with **active** checks will explicitly send requests to other data plane proxies to determine if target proxies are healthy or not. This mode generates extra traffic to other proxies and services as described in the policy configuration.
 
 ## Usage
 

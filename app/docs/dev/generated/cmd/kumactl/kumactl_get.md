@@ -77,4 +77,3 @@ Show Kuma resources.
 * [kumactl get zoneegress](kumactl_get_zoneegress.md)	 - Show a single ZoneEgress resource
 * [kumactl get zoneegresses](kumactl_get_zoneegresses.md)	 - Show ZoneEgress
 * [kumactl get zones](kumactl_get_zones.md)	 - Show Zone
-

@@ -15,7 +15,7 @@ To configure access logs in Kuma you need to:
 
 ::: tip
 In the rest of this page we assume you have already configured your observability tools to work with Kuma.
-If you haven't already read the [observability docs](../explore/observability.md).
+If you haven't already read the [observability docs](../explore/observability).
 :::
 
 ## Add a logging backend
@@ -206,7 +206,7 @@ All access log _command operators_ are valid to use with both `TCP` and `HTTP` t
 
 If a _command operator_ is specific to `HTTP` traffic, such as `%REQ(X?Y):Z%` or `%RESP(X?Y):Z%`, it will be replaced by a symbol "`-`" in case of `TCP` traffic.
 
-Internally, Kuma [determines traffic protocol](protocol-support-in-kuma.md) based on the value of `kuma.io/protocol` tag on the `inbound` interface of a `destination` `Dataplane`.
+Internally, Kuma [determines traffic protocol](protocol-support-in-kuma) based on the value of `kuma.io/protocol` tag on the `inbound` interface of a `destination` `Dataplane`.
 
 The default format string for `TCP` traffic is:
 

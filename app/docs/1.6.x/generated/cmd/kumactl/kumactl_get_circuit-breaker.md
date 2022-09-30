@@ -31,5 +31,5 @@ kumactl get circuit-breaker NAME [flags]
 
 ### SEE ALSO
 
-* [kumactl get](kumactl_get.md)	 - Show Kuma resources
+* [kumactl get](kumactl_get)	 - Show Kuma resources
 

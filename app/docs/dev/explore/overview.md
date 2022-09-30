@@ -24,14 +24,14 @@ A Kuma mesh consists of two main components:
 This is a high level visualization of a Kuma service mesh:
 
 <center>
-<img src="/images/docs/0.4.0/diagram-06.jpg" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/diagram-06.jpg" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 Communication happens between the control and data plane
 as well as between the services and their data plane proxies:
 
 <center>
-<img src="/images/docs/0.4.0/diagram-07.jpg" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/diagram-07.jpg" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ::: tip
@@ -60,7 +60,7 @@ There are two modes that the Kuma control plane can run in:
 When running in **Kubernetes** mode, Kuma stores all of its state and configuration on the underlying Kubernetes API Server.
 
 <center>
-<img src="/images/docs/0.5.0/diagram-08.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.5.0/diagram-08.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 The only step necessary to join your Kubernetes services to the mesh is enabling _sidecar injection_.
@@ -72,7 +72,7 @@ kuma.io/sidecar-injection: enabled
 ```
 
 ::: tip
-**Injection**: learn more about sidecar injection in the section on [`Dataplanes`](dpp-on-kubernetes.md).
+**Injection**: learn more about sidecar injection in the section on [`Dataplanes`](dpp-on-kubernetes).
 
 **Annotations**: see [the complete list of the Kubernetes annotations](../reference/kubernetes-annotations/).
 
@@ -165,7 +165,7 @@ spec:
 When running in **Universal** mode, Kuma requires a PostgreSQL database to store its state. This replaces the Kubernetes API. With Universal, you use `kumactl` to interact directly with the Kuma API server to manage policies.
 
 <center>
-<img src="/images/docs/0.5.0/diagram-09.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.5.0/diagram-09.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 Read [the docs about the PostgreSQL backend](../../documentation/configuration#postgres) for more details.

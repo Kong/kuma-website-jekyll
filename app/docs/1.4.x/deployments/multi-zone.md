@@ -7,7 +7,7 @@
 Kuma supports running your service mesh in multiple zones. It is even possible to run with a mix of Kubernetes and Universal zones. Your mesh environment can include multiple isolated service meshes (multi-tenancy), and workloads running in different regions, on different clouds, or in different datacenters. A zone can be a Kubernetes cluster, a VPC, or any other deployment you need to include in the same distributed mesh environment.
 
 <center>
-<img src="/images/docs/0.6.0/distributed-diagram.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.6.0/distributed-diagram.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ### How it works
@@ -19,7 +19,7 @@ The DNS resolver is embedded in each data plane proxy and configured through XDS
 The global control plane and the zone control planes communicate to synchronize resources such as Kuma policy configurations over Kuma Discovery Service (KDS), which is a protocol based on xDS.
 
 :::tip
-A zone ingress is not an API gateway. Instead, it is specific to internal cross-zone communication within the mesh. API gateways are supported in Kuma [gateway mode](../documentation/dps-and-data-model.md) which can be deployed in addition to zone ingresses.
+A zone ingress is not an API gateway. Instead, it is specific to internal cross-zone communication within the mesh. API gateways are supported in Kuma [gateway mode](../documentation/dps-and-data-model) which can be deployed in addition to zone ingresses.
 :::
 
 ### Components of a multi-zone deployment
@@ -54,7 +54,7 @@ A multi-zone deployment includes:
 
 It is not possible to route cross-zone traffic on a subset of dataplanes with the same `kuma.io/service`.
 
-This means that complex [Virtual-outbound](../policies/virtual-outbound.md) will not route any traffic across zones.
+This means that complex [Virtual-outbound](../policies/virtual-outbound) will not route any traffic across zones.
 
 
 ## Usage
@@ -115,7 +115,7 @@ The global control plane on Kubernetes must reside on its own Kubernetes cluster
     kuma-system   kuma-control-plane     ClusterIP      10.105.12.133   <none>           5681/TCP,443/TCP,5676/TCP,5677/TCP,5678/TCP,5679/TCP,5682/TCP,5653/UDP   90s
     ```
 
-    By default, it's exposed on [port 5685](../networking/networking.md). In this example the value is `35.226.196.103:5685`. You pass this as the value of `<global-kds-address>` when you set up the zone control planes.
+    By default, it's exposed on [port 5685](../networking/networking). In this example the value is `35.226.196.103:5685`. You pass this as the value of `<global-kds-address>` when you set up the zone control planes.
 
 :::
 ::: tab "Universal"
@@ -189,7 +189,7 @@ You need the following values to pass to each zone control plane setup:
     kumactl generate zone-ingress-token --zone=<zone-name> > /tmp/ingress-token
     ```
 
-   You can also generate the token [with the REST API](../security/zone-ingress-auth.md).
+   You can also generate the token [with the REST API](../security/zone-ingress-auth).
 
 3. Create an `ingress` data plane proxy configuration to allow `kuma-cp` services to be exposed for cross-zone communication:
 
@@ -227,7 +227,7 @@ The Ingress tab of the web UI also lists zone control planes that you deployed w
 
 #### Enable mTLS
 
-You must [enable mTLS](../policies/mutual-tls.md) for cross-zone communication.
+You must [enable mTLS](../policies/mutual-tls) for cross-zone communication.
 
 Kuma uses the Server Name Indication field, part of the TLS protocol, as a way to pass routing information cross zones. Thus, mTLS is mandatory to enable cross-zone service communication.
 
@@ -298,7 +298,7 @@ And if your HTTP clients take the standard default port 80, you can the port val
 ```
 
 Because Kuma on Kubernetes relies on transparent proxy, `kuma-dp` listens on port 80 for all virtual IPs that are assigned to services in the `.mesh` DNS zone. The DNS names are rendered RFC compatible by replacing underscores with dots.
-We can configure more flexible setup of hostnames and ports using [Virtual Outbound](../policies/virtual-outbound.md).
+We can configure more flexible setup of hostnames and ports using [Virtual Outbound](../policies/virtual-outbound).
 
 :::
 ::: tab "Universal"
@@ -339,7 +339,7 @@ networking:
       kuma.io/service: echo-server_echo-example_svc_1010
 ```
 
-Alternatively, you can just call `echo-server_echo-example_svc_1010.mesh` without defining `outbound` section if you configure [transparent proxy](../networking/transparent-proxying.md).
+Alternatively, you can just call `echo-server_echo-example_svc_1010.mesh` without defining `outbound` section if you configure [transparent proxy](../networking/transparent-proxying).
 
 :::
 ::::

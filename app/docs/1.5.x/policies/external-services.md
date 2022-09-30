@@ -151,7 +151,7 @@ In this example, when [locality aware load balancing](../locality-aware) is enab
 
 ### External Services and ZoneEgress
 
-In scenarios when traffic to external services needs to be sent through a unique set of hosts you will [configure ZoneEgress](../documentation/zoneegress.md).
+In scenarios when traffic to external services needs to be sent through a unique set of hosts you will [configure ZoneEgress](../documentation/zoneegress).
 
 For example when there is:
 * [disabled passthrough mode](mesh/#controlling-the-passthrough-mode)

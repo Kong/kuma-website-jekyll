@@ -14,7 +14,7 @@ Possible use cases are:
 Limitations:
 
 - Complex virtual outbounds do not work for cross-zone traffic. This is because only service tags are propagated across zones.
-- When duplicate `(hostname, port)` combinations are detected, the virtual outbound with the highest priority takes over. For more information, see [the documentation on how Kuma chooses the right policy](../policies/how-kuma-chooses-the-right-policy-to-apply.md). All duplicate instances are logged.
+- When duplicate `(hostname, port)` combinations are detected, the virtual outbound with the highest priority takes over. For more information, see [the documentation on how Kuma chooses the right policy](../policies/how-kuma-chooses-the-right-policy-to-apply). All duplicate instances are logged.
 
 `conf.host` and `conf.port` are processed as [go text templates](https://pkg.go.dev/text/template) with a key-value pair derived from `conf.parameters`.
 

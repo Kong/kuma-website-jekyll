@@ -31,5 +31,5 @@ kumactl install gateway kong-enterprise [flags]
 
 ### SEE ALSO
 
-* [kumactl install gateway](kumactl_install_gateway.md)	 - Install ingress gateway on Kubernetes
+* [kumactl install gateway](kumactl_install_gateway)	 - Install ingress gateway on Kubernetes
 

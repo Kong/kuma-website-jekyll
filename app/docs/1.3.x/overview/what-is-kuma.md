@@ -7,7 +7,7 @@ title: Introduction to Kuma
 Kuma is a platform agnostic open-source control plane for service mesh and microservices management, with support for Kubernetes, VM, and bare metal environments.
 
 <center>
-<img src="/images/diagrams/main-diagram@2x.png" alt="" style="width: 550px; padding-top: 10px"/>
+<img src="/assets/images/diagrams/main-diagram@2x.png" alt="" style="width: 550px; padding-top: 10px"/>
 </center>
 
 Kuma helps implement a service mesh approach to distributed deployments as part of the move from monolithic architectures to microservices. You can run a service mesh with Kuma before you start decomposing your monolith, which helps keep your network secure and observable as your architecture changes. Kuma is:
@@ -27,7 +27,7 @@ Bundling [Envoy](https://envoyproxy.io/) as the data plane, Kuma can instrument 
 Example of a multi-zone deployment for multiple Kubernetes clusters, or a hybrid Kubernetes/VM cluster:
 
 <center>
-<img src="/images/docs/distributed-diagram@2x.jpg" alt="" style="width: 700px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/distributed-diagram@2x.jpg" alt="" style="width: 700px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 The core maintainer of Kuma is **Kong**, the maker of the popular open-source Kong Gateway 🦍.

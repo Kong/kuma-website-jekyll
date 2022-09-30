@@ -12,7 +12,7 @@ Finally, you can follow the [Quickstart](#_4-quickstart) to take it from here an
 
 ### 1. Download Kuma
 
-!!!include(install_kumactl.md)!!!
+!!!include(install_kumactl)!!!
 
 ### 2. Run Kuma
 
@@ -25,7 +25,7 @@ We can install and run Kuma:
 ./kumactl install control-plane --cni-enabled | oc apply -f -
 ```
 
-Starting from version 4.1 OpenShift utilizes `nftables` instead of `iptables`. So using init container for redirecting traffic to the proxy no longer works. Instead, we use the `--cni-enabled` flag to install the [`kuma-cni`](../networking/cni.md).
+Starting from version 4.1 OpenShift utilizes `nftables` instead of `iptables`. So using init container for redirecting traffic to the proxy no longer works. Instead, we use the `--cni-enabled` flag to install the [`kuma-cni`](../networking/cni).
 :::
 
 ::: tab "OpenShift 3.11"
@@ -55,7 +55,7 @@ After updating `master-config.yaml` restart the cluster and install `control-pla
 :::
 ::::
 
-This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments.md) like "multi-zone".
+This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments) like "multi-zone".
 
 ::: tip
 It may take a while for OpenShift to start the Kuma resources, you can check the status by executing:

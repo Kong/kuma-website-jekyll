@@ -20,10 +20,10 @@ Run the following script to automatically detect the operating system and downlo
 
 <div class="language-sh">
 <pre><code>yum install -y tar gzip
-curl -L https://kuma.io/installer.sh | VERSION={{ $page.latestVersion }} sh -</code></pre>
+curl -L https://kuma.io/installer.sh | VERSION={{ page.latestVersion }} sh -</code></pre>
 </div>
 
-or you can <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + $page.latestVersion + '-centos-amd64.tar.gz'">download</a> the distribution manually.
+or you can <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-centos-amd64.tar.gz'">download</a> the distribution manually.
 
 Then extract the archive with:
 
@@ -33,7 +33,7 @@ tar xvzf kuma-*.tar.gz
 
 ### 2. Run Kuma
 
-Once downloaded, you will find the contents of Kuma in the `kuma-{{ $page.latestVersion }}` folder. In this folder, you will find - among other files - the `bin` directory that stores all the executables for Kuma. 
+Once downloaded, you will find the contents of Kuma in the `kuma-{{ page.latestVersion }}` folder. In this folder, you will find - among other files - the `bin` directory that stores all the executables for Kuma. 
 
 So we enter the `bin` folder by executing:
 

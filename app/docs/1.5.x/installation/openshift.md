@@ -20,7 +20,7 @@ To run Kuma on OpenShift, you need to download a compatible version of Kuma for 
 You can run the following script to automatically detect the operating system and download Kuma:
 
 <div class="language-sh">
-<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ $page.latestVersion }} sh -</code></pre>
+<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latestVersion }} sh -</code></pre>
 </div>
 
 :::
@@ -28,11 +28,11 @@ You can run the following script to automatically detect the operating system an
 
 You can also download the distribution manually. Download a distribution for the **client host** from where you will be executing the commands to access OpenShift:
 
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + $page.latestVersion + '-centos-amd64.tar.gz'">CentOS</a>
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + $page.latestVersion + '-rhel-amd64.tar.gz'">RedHat</a>
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + $page.latestVersion + '-debian-amd64.tar.gz'">Debian</a>
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + $page.latestVersion + '-ubuntu-amd64.tar.gz'">Ubuntu</a>
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + $page.latestVersion + '-darwin-amd64.tar.gz'">macOS</a> or run `brew install kumactl`
+* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-centos-amd64.tar.gz'">CentOS</a>
+* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-rhel-amd64.tar.gz'">RedHat</a>
+* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-debian-amd64.tar.gz'">Debian</a>
+* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-ubuntu-amd64.tar.gz'">Ubuntu</a>
+* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-darwin-amd64.tar.gz'">macOS</a> or run `brew install kumactl`
 
 and extract the archive with:
 
@@ -45,7 +45,7 @@ tar xvzf kuma-*.tar.gz
 
 ### 2. Run Kuma
 
-Once downloaded, you will find the contents of Kuma in the `kuma-{{ $page.latestVersion }}` folder. In this folder, you will find - among other files - the `bin` directory that stores the executables for Kuma, including the CLI client [`kumactl`](../documentation/cli/#kumactl).
+Once downloaded, you will find the contents of Kuma in the `kuma-{{ page.latestVersion }}` folder. In this folder, you will find - among other files - the `bin` directory that stores the executables for Kuma, including the CLI client [`kumactl`](../documentation/cli/#kumactl).
 
 ::: tip
 **Note**: On OpenShift - of all the Kuma binaries in the `bin` folder - we only need `kumactl`.

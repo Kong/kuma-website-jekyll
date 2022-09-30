@@ -2,7 +2,7 @@
 ---
 # API Server Authentication
 
-By default, Kuma exposes API Server on [ports](../networking/networking.md) `5681` and `5682` (protected by builtin TLS). This server is used for actions like
+By default, Kuma exposes API Server on [ports](../networking/networking) `5681` and `5682` (protected by builtin TLS). This server is used for actions like
 * Accessing policies and objects
 * Managing policies and objects (on Universal)
 * Accessing GUI
@@ -44,7 +44,7 @@ A user can be a part of many groups. On top of that, Kuma adds two groups automa
 ::: tab "Kubernetes"
 1. Access admin user token to be able to generate other user tokens
 
-In order to generate other user tokens, we need to authenticate as admin. When Kuma starts, it generates admin user token and stores it as a [Global Secret](secrets.md).
+In order to generate other user tokens, we need to authenticate as admin. When Kuma starts, it generates admin user token and stores it as a [Global Secret](secrets).
 
 Use `kubectl` to extract the admin token
 ```sh
@@ -81,7 +81,7 @@ kumactl generate user-token \
 ::: tab "Universal"
 1. Access admin user token to be able to generate other user tokens
 
-In order to generate other user tokens, we need to authenticate as admin. When Kuma starts, it generates admin user token and stores it as a [Global Secret](secrets.md).
+In order to generate other user tokens, we need to authenticate as admin. When Kuma starts, it generates admin user token and stores it as a [Global Secret](secrets).
 
 Execute the following command on the machine on which the control plane is deployed.
 ```sh
@@ -112,7 +112,7 @@ kumactl generate user-token \
 4. Disable localhost is admin
 
 By default, all requests that originates from localhost are authenticated as user of name `admin` that belongs to group `mesh-system:admin`.
-After you retrieve and store the admin token, it is recommended to [configure a control plane](../documentation/configuration.md) with `KUMA_API_SERVER_AUTHN_LOCALHOST_IS_ADMIN` set to `false`.
+After you retrieve and store the admin token, it is recommended to [configure a control plane](../documentation/configuration) with `KUMA_API_SERVER_AUTHN_LOCALHOST_IS_ADMIN` set to `false`.
 :::
 ::::
 
@@ -130,7 +130,7 @@ kubectl delete secret admin-user-token -n kuma-namespace
 ```
 
 2. Disable bootstrap of the token
-[Configure a control plane](../documentation/configuration.md) with `KUMA_API_SERVER_AUTHN_TOKENS_BOOTSTRAP_ADMIN_TOKEN` set to `false`.
+[Configure a control plane](../documentation/configuration) with `KUMA_API_SERVER_AUTHN_TOKENS_BOOTSTRAP_ADMIN_TOKEN` set to `false`.
 :::
 ::: tab "Universal"
 1. Delete `admin-user-token` Global Secret
@@ -139,7 +139,7 @@ kumactl delete global-secret admin-user-token
 ```
 
 2. Disable bootstrap of the token
-[Configure a control plane](../documentation/configuration.md) with `KUMA_API_SERVER_AUTHN_TOKENS_BOOTSTRAP_ADMIN_TOKEN` set to `false`.
+[Configure a control plane](../documentation/configuration) with `KUMA_API_SERVER_AUTHN_TOKENS_BOOTSTRAP_ADMIN_TOKEN` set to `false`.
 :::
 ::::
 

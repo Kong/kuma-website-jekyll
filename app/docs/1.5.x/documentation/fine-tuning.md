@@ -13,7 +13,7 @@ The result is that:
 * Smaller config is sent over a wire saving a lot of network bandwidth
 * Envoy only has to keep a couple of Clusters/Listeners which means much fewer statistics and lower memory usage.
 
-Follow the [transparent proxying](../networking/transparent-proxying.md) docs on how to configure it.
+Follow the [transparent proxying](../networking/transparent-proxying) docs on how to configure it.
 
 ## Postgres
 

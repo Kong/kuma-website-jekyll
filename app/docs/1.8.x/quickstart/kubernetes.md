@@ -48,7 +48,7 @@ Two different YAML files are available:
 
 ## Explore the mesh
 
-The demo app includes the `kuma.io/sidecar-injection` label enabled on the `kuma-demo` namespace. This means that Kuma [already knows](../explore/dpp-on-kubernetes.md) that it needs to automatically inject a sidecar proxy to every Kubernetes deployment in the `default` [Mesh](../policies/mesh/) resource:
+The demo app includes the `kuma.io/sidecar-injection` label enabled on the `kuma-demo` namespace. This means that Kuma [already knows](../explore/dpp-on-kubernetes) that it needs to automatically inject a sidecar proxy to every Kubernetes deployment in the `default` [Mesh](../policies/mesh/) resource:
 
 ```yaml
 apiVersion: v1
@@ -266,7 +266,7 @@ You can now explore the dashboards and see the metrics being populated over time
 
 ### Traffic logs and trace
 
-You can check out specific instructions on [Traffic Log](../policies/traffic-log.md) and [Traffic Trace](../policies/traffic-trace.md) policies in separate documents.
+You can check out specific instructions on [Traffic Log](../policies/traffic-log) and [Traffic Trace](../policies/traffic-trace) policies in separate documents.
 
 ## Next steps
 

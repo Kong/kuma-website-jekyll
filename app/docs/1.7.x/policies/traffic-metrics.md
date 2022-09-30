@@ -15,7 +15,7 @@ To collect metrics from Kuma, you need to expose metrics from proxies and applic
 
 ::: tip
 In the rest of this page we assume you have already configured your observability tools to work with Kuma.
-If you haven't already read the [observability docs](../explore/observability.md).
+If you haven't already read the [observability docs](../explore/observability).
 :::
 
 ## Expose metrics from data plane proxies
@@ -296,7 +296,7 @@ spec:
           kuma.io/service: dataplane-metrics
 ```
 
-If you have strict [traffic permissions](./traffic-permissions.md) you will want to allow the traffic from Grafana to Prometheus and from Prometheus to data plane proxy metrics:
+If you have strict [traffic permissions](./traffic-permissions) you will want to allow the traffic from Grafana to Prometheus and from Prometheus to data plane proxy metrics:
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -350,7 +350,7 @@ spec:
           kuma.io/service: dataplane-metrics
 ```
 
-If you have strict [traffic permissions](./traffic-permissions.md) you will want to allow the traffic from Grafana to Prometheus and from Prometheus to data plane proxy metrics:
+If you have strict [traffic permissions](./traffic-permissions) you will want to allow the traffic from Grafana to Prometheus and from Prometheus to data plane proxy metrics:
 
 ```yaml
 type: TrafficPermission

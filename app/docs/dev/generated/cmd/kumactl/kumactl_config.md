@@ -25,7 +25,7 @@ Manage kumactl config.
 
 ### SEE ALSO
 
-* [kumactl](kumactl.md)	 - Management tool for Kuma
-* [kumactl config control-planes](kumactl_config_control-planes.md)	 - Manage known Control Planes
-* [kumactl config view](kumactl_config_view.md)	 - Show kumactl config
+* [kumactl](kumactl)	 - Management tool for Kuma
+* [kumactl config control-planes](kumactl_config_control-planes)	 - Manage known Control Planes
+* [kumactl config view](kumactl_config_view)	 - Show kumactl config
 

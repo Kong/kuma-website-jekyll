@@ -143,4 +143,4 @@ destinations:
 :::
 ::::
 
-Remember, the `ExternalService` follows [the same rules](how-kuma-chooses-the-right-policy-to-apply.md) for matching policies as any other service in the mesh -- Kuma selects the most specific `TrafficPermission` for every `ExternalService`.
+Remember, the `ExternalService` follows [the same rules](how-kuma-chooses-the-right-policy-to-apply) for matching policies as any other service in the mesh -- Kuma selects the most specific `TrafficPermission` for every `ExternalService`.

@@ -30,5 +30,5 @@ kumactl config control-planes switch [flags]
 
 ### SEE ALSO
 
-* [kumactl config control-planes](kumactl_config_control-planes.md)	 - Manage known Control Planes
+* [kumactl config control-planes](kumactl_config_control-planes)	 - Manage known Control Planes
 

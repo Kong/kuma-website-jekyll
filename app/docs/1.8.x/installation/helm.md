@@ -34,11 +34,11 @@ At this point we can install and run Kuma using the following commands. We could
 helm install --create-namespace --namespace kuma-system kuma kuma/kuma
 ```
 
-This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments.md) like "multi-zone".
+This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments) like "multi-zone".
 
 ### Use Kuma
 
-!!!include(use_kuma_k8s.md)!!!
+!!!include(use_kuma_k8s)!!!
 
 ### Quickstart
 

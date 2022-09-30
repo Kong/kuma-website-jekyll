@@ -30,5 +30,5 @@ kumactl install tracing [flags]
 
 ### SEE ALSO
 
-* [kumactl install](kumactl_install.md)	 - Install various Kuma components.
+* [kumactl install](kumactl_install)	 - Install various Kuma components.
 

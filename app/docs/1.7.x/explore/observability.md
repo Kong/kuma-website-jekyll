@@ -15,9 +15,9 @@ This page will describe how to configure different observability tools to work w
 
 First, remember to configure Kuma appropriately for the tools in the observability stack:
 
-- [Traffic metrics](../policies/traffic-metrics.md) for telemetry
-- [`TrafficTrace`](../policies/traffic-trace.md) for tracing
-- [`TrafficLog`](../policies/traffic-log.md) for logging
+- [Traffic metrics](../policies/traffic-metrics) for telemetry
+- [`TrafficTrace`](../policies/traffic-trace) for tracing
+- [`TrafficLog`](../policies/traffic-log) for logging
 
 On Kubernetes, the stack can be installed with:
 
@@ -39,13 +39,13 @@ Control plane metrics are exposed on port `:5680` and available under the standa
 ## Configuring Prometheus
 
 The Kuma community has contributed a builtin service discovery to Prometheus, it is documented in the [Prometheus docs](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kuma_sd_config).
-This service discovery will connect to the control plane and retrieve all data planes with enabled metrics which Prometheus will scrape and retrieve metrics according to your [traffic metrics setup](../policies/traffic-metrics.md).
+This service discovery will connect to the control plane and retrieve all data planes with enabled metrics which Prometheus will scrape and retrieve metrics according to your [traffic metrics setup](../policies/traffic-metrics).
 
 ::: tip
 There are 2 ways you can run prometheus:
 
 1. Inside the mesh (default for [`kumactl install observability`](#demo-setup)). In this case you can use mTLS to retrieve the metrics. This provides high security but will require one prometheus per mesh and might not be accessible if your mesh becomes unavailable. It will also require one Prometheus deployment per Kuma mesh.
-2. Outside the mesh. In this case you'll need to specify `skipMTLS: true` in the [traffic metrics configuration](../policies/traffic-metrics.md). This is less secured but will ensure Prometheus is as available as possible. It is also easier to add to an existing setup with services in and outside the mesh.
+2. Outside the mesh. In this case you'll need to specify `skipMTLS: true` in the [traffic metrics configuration](../policies/traffic-metrics). This is less secured but will ensure Prometheus is as available as possible. It is also easier to add to an existing setup with services in and outside the mesh.
 
 In production, we recommend the second option as it provides better visibility when things go wrong, and it's usually acceptable for metrics to be less secure.
 :::
@@ -102,11 +102,11 @@ to a file on disk. Prometheus watches for changes to the file and updates its sc
         - /var/run/kuma-prometheus-sd/kuma.file_sd.json
     ```
 
-If you have [traffic metrics](../policies/traffic-metrics.md) enabled for your mesh, check the Targets page in the Prometheus dashboard.
+If you have [traffic metrics](../policies/traffic-metrics) enabled for your mesh, check the Targets page in the Prometheus dashboard.
 You should see a list of data plane proxies from your mesh. For example:
 
 <center>
-<img src="/images/docs/0.4.0/prometheus-targets.png" alt="A screenshot of Targets page on Prometheus UI" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/prometheus-targets.png" alt="A screenshot of Targets page on Prometheus UI" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ## Configuring Grafana
@@ -123,10 +123,10 @@ With Grafana installed you can configure a new datasource with url:`http://jaege
 Grafana will then be able to retrieve the traces from Jaeger.
 
 <center>
-<img src="/images/docs/jaeger_grafana_config.png" alt="Jaeger Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/jaeger_grafana_config.png" alt="Jaeger Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
-You can then add a [TrafficTrace policy](../policies/traffic-trace.md) to your mesh to start emitting traces.
+You can then add a [TrafficTrace policy](../policies/traffic-trace) to your mesh to start emitting traces.
 At this point you can visualize your traces in Grafana by choosing the jaeger datasource in the [explore section](https://grafana.com/docs/grafana/latest/explore/).
 
 #### Visualizing logs
@@ -138,10 +138,10 @@ To visualise your **containers' logs** and your **access logs** you need to have
 :::
 
 <center>
-<img src="/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
-You can then add a [TafficLog policy](../policies/traffic-log.md) to your mesh to start emitting access logs.
+You can then add a [TafficLog policy](../policies/traffic-log) to your mesh to start emitting access logs.
 At this point you can visualize your **containers' logs** and your **access logs** in Grafana by choosing the loki datasource in the [explore section](https://grafana.com/docs/grafana/latest/explore/).
 
 For example, running: `{container="kuma-sidecar"} |= "GET"` will show all GET requests on your cluster.
@@ -182,10 +182,10 @@ Kuma ships with default dashboards that are available to import from [the Grafan
 This dashboard lets you investigate the status of a single dataplane in the mesh.
 
 <center>
-<img src="/images/docs/0.4.0/kuma_dp1.jpeg" alt="Kuma Dataplane dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
-<img src="/images/docs/0.4.0/kuma_dp2.png" alt="Kuma Dataplane dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
-<img src="/images/docs/0.4.0/kuma_dp3.png" alt="Kuma Dataplane dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
-<img src="/images/docs/1.1.2/kuma_dp4.png" alt="Kuma Dataplane dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/kuma_dp1.jpeg" alt="Kuma Dataplane dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/kuma_dp2.png" alt="Kuma Dataplane dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/kuma_dp3.png" alt="Kuma Dataplane dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/1.1.2/kuma_dp4.png" alt="Kuma Dataplane dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ##### Kuma Mesh
@@ -193,7 +193,7 @@ This dashboard lets you investigate the status of a single dataplane in the mesh
 This dashboard lets you investigate the aggregated statistics of a single mesh.
 
 <center>
-<img src="/images/docs/1.1.2/grafana-dashboard-kuma-mesh.jpg" alt="Kuma Mesh dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/1.1.2/grafana-dashboard-kuma-mesh.jpg" alt="Kuma Mesh dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ##### Kuma Service to Service
@@ -201,8 +201,8 @@ This dashboard lets you investigate the aggregated statistics of a single mesh.
 This dashboard lets you investigate aggregated statistics from dataplanes of specified source services to dataplanes of specified destination service.
 
 <center>
-<img src="/images/docs/0.4.0/kuma_service_to_service.png" alt="Kuma Service to Service dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
-<img src="/images/docs/1.1.2/kuma_service_to_service_http.png" alt="Kuma Service to Service HTTP" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/kuma_service_to_service.png" alt="Kuma Service to Service dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/1.1.2/kuma_service_to_service_http.png" alt="Kuma Service to Service HTTP" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ##### Kuma CP
@@ -210,9 +210,9 @@ This dashboard lets you investigate aggregated statistics from dataplanes of spe
 This dashboard lets you investigate control plane statistics.
 
 <center>
-<img src="/images/docs/0.7.1/grafana-dashboard-kuma-cp1.png" alt="Kuma CP dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
-<img src="/images/docs/0.7.1/grafana-dashboard-kuma-cp2.png" alt="Kuma CP dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
-<img src="/images/docs/0.7.1/grafana-dashboard-kuma-cp3.png" alt="Kuma CP dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.7.1/grafana-dashboard-kuma-cp1.png" alt="Kuma CP dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.7.1/grafana-dashboard-kuma-cp2.png" alt="Kuma CP dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.7.1/grafana-dashboard-kuma-cp3.png" alt="Kuma CP dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ##### Kuma Service
@@ -220,7 +220,7 @@ This dashboard lets you investigate control plane statistics.
 This dashboard lets you investigate aggregated statistics for each service.
 
 <center>
-<img src="/images/docs/1.1.2/grafana-dashboard-kuma-service.jpg" alt="Kuma Service dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/1.1.2/grafana-dashboard-kuma-service.jpg" alt="Kuma Service dashboard" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ##### Service Map
@@ -228,7 +228,7 @@ This dashboard lets you investigate aggregated statistics for each service.
 This dashboard provides a topology view of your service traffic dependencies. It includes information such as number of requests and error rates.
 
 <center>
-<img src="/images/blog/kuma_1_3_0_service_map.png" alt="Kuma Service Map" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/blog/kuma_1_3_0_service_map.png" alt="Kuma Service Map" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 
@@ -249,7 +249,7 @@ Checkout the [Datadog agent docs](https://docs.datadoghq.com/agent/basic_agent_u
 
 ### Metrics
 
-Kuma exposes metrics with [traffic metrics](../policies/traffic-metrics.md) in Prometheus format.
+Kuma exposes metrics with [traffic metrics](../policies/traffic-metrics) in Prometheus format.
 
 You can add annotations to your pods to enable the Datadog agent to scrape metrics.
 
@@ -296,13 +296,13 @@ Checkout the [Datadog agent docs](https://docs.datadoghq.com/agent/basic_agent_u
 :::
 ::::
 
-Once the agent is configured to ingest traces you'll need to configure a [TrafficTrace](../policies/traffic-trace.md).
+Once the agent is configured to ingest traces you'll need to configure a [TrafficTrace](../policies/traffic-trace).
 
 ### Logs
 
 The best way to have Kuma and Datadog work together is with [TCP ingest](https://docs.datadoghq.com/agent/logs/?tab=tcpudp#custom-log-collection).
 
-Once your agent is configured with TCP ingest you can configure a [TrafficLog](../policies/traffic-log.md) for data plane proxies to send logs.
+Once your agent is configured with TCP ingest you can configure a [TrafficLog](../policies/traffic-log) for data plane proxies to send logs.
 
 ## Observability in multi-zone
 

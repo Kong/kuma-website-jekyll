@@ -215,4 +215,4 @@ Kuma DNS allocates a VIP for every service within a mesh. Then, it creates an ou
     },
 ```
 
-To define dynamic hostnames using specific tags or expose on a different port you should use [virtual-outbounds](../policies/virtual-outbound.md).
+To define dynamic hostnames using specific tags or expose on a different port you should use [virtual-outbounds](../policies/virtual-outbound).

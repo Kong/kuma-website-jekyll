@@ -10,7 +10,7 @@ You can configure how many requests are allowed in a specified time period, and 
 
 The policy is applied per service instance. This means that if a service `backend` has 3 instances rate limited to 100 requests per second, the overall service is rate limited to 300 requests per second.
 
-When rate limiting to an [ExternalService](../policies/external-services.md), the policy is applied per sending service instance.`
+When rate limiting to an [ExternalService](../policies/external-services), the policy is applied per sending service instance.`
 ## Usage
 
 :::: tabs :options="{ useUrlFragment: false }"
@@ -157,7 +157,7 @@ The service `backend` is configured with the following rate limiting hierarchy:
 
 `RateLimit`, when applied to a dataplane proxy bound Kuma service, is an [Inbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#inbound-connection-policy).
 
-When applied to an [ExternalService](../policies/external-services.md), `RateLimit` is an [Outbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#outbound-connection-policy). In this case, the only supported value for `destinations.match` is `kuma.io/service`.
+When applied to an [ExternalService](../policies/external-services), `RateLimit` is an [Outbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#outbound-connection-policy). In this case, the only supported value for `destinations.match` is `kuma.io/service`.
 
 ## Builtin Gateway support
 

@@ -520,7 +520,7 @@ spec:
 
 ### `kuma.io/transparent-proxying-inbound-v6-port`
 
-Define the port to use for [IPv6](../networking/ipv6.md) traffic. To turn off IPv6 set this to 0.
+Define the port to use for [IPv6](../networking/ipv6) traffic. To turn off IPv6 set this to 0.
 
 **Example**
 

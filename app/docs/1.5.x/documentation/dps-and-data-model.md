@@ -5,7 +5,7 @@
 When Kuma (`kuma-cp`) runs, it waits for the data plane proxies to connect and register themselves.
 
 <center>
-<img src="/images/docs/0.4.0/diagram-10.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/diagram-10.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ## Dataplane Entity
@@ -19,7 +19,7 @@ To understand why the `Dataplane` entity is required, we must take a step back. 
 For example, if we have 6 replicas of a "Redis" service, then we must have one instances of `kuma-dp` running alongside each replica of the service, therefore 6 replicas of `kuma-dp` and 6 `Dataplane` entities as well.
 
 <center>
-<img src="/images/docs/0.4.0/diagram-11.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/diagram-11.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ::: tip
@@ -36,11 +36,11 @@ When we start a new data plane proxy in Kuma, it needs to communicate a few thin
 ::: tip
 There exists special types of data planes proxies:
 
-- [ZoneIngress](./zone-ingress.md) which will enable inbound cross-zone traffic.
-- [ZoneEgress](./zoneegress.md) which allows isolating outgoing cross-zone
+- [ZoneIngress](./zone-ingress) which will enable inbound cross-zone traffic.
+- [ZoneEgress](./zoneegress) which allows isolating outgoing cross-zone
   traffic as well as any traffic going to external services available in local
   zone
-- [Gateway](./gateway.md) which will traffic external to the mesh to enter it.
+- [Gateway](./gateway) which will traffic external to the mesh to enter it.
 
 Because these dataplane types are specific and complex we will discuss them separately to "standard" dataplane proxies.
 :::
@@ -88,7 +88,7 @@ Each Kuma data plane proxy is associated with tags - or attributes - that can be
 A tag attributes a qualifier to the data plane proxy, and the tags that are reserved to Kuma are prefixed with `kuma.io` like:
 
 * `kuma.io/service`: Identifies the service name. On Kubernetes this tag is automatically created, while on Universal it must be specified manually.
-* `kuma.io/zone`: Identifies the zone name in a [multi-zone deployment](../deployments/multi-zone.md). This tag is automatically created and cannot be overwritten.
+* `kuma.io/zone`: Identifies the zone name in a [multi-zone deployment](../deployments/multi-zone). This tag is automatically created and cannot be overwritten.
 * `kuma.io/protocol`: Identifies [the protocol](../../policies/protocol-support-in-kuma) that is being exposed by the service and its data plane proxies. Accepted values are `tcp`, `http`, `http2`, `grpc` and `kafka`.
 
 ::: tip

@@ -31,5 +31,5 @@ kuma-cp version [flags]
 
 ### SEE ALSO
 
-* [kuma-cp](kuma-cp.md)	 - Universal Control Plane for Envoy-based Service Mesh
+* [kuma-cp](kuma-cp)	 - Universal Control Plane for Envoy-based Service Mesh
 

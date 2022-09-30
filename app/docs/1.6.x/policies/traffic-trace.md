@@ -4,11 +4,11 @@
 
 This policy enables tracing logging to a third party tracing solution. 
 
-Tracing is supported over HTTP, HTTP2, and gRPC protocols in a [`Mesh`](mesh.md). You must [explicitly specify the protocol](protocol-support-in-kuma.md) for each service and data plane proxy you want to enable tracing for.
+Tracing is supported over HTTP, HTTP2, and gRPC protocols in a [`Mesh`](mesh). You must [explicitly specify the protocol](protocol-support-in-kuma) for each service and data plane proxy you want to enable tracing for.
 
 You must also:
 
-1. [Add a tracing backend](#add-jaeger-backend). You specify a tracing backend as a [`Mesh`](mesh.md) resource property.
+1. [Add a tracing backend](#add-jaeger-backend). You specify a tracing backend as a [`Mesh`](mesh) resource property.
 1. [Add a TrafficTrace resource](#add-traffictrace-resource). You pass the backend to the `TrafficTrace` resource.
 
 Kuma currently supports the following backends:
@@ -63,7 +63,7 @@ tracing:
       url: http://jaeger-collector.kuma-tracing:9411/api/v2/spans
 ```
 
-Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api.md).
+Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api).
 :::
 ::::
 
@@ -141,7 +141,7 @@ tracing:
       port: 8126
 ```
 
-Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api.md).
+Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api).
 :::
 ::::
 
@@ -182,7 +182,7 @@ conf:
   backend: jaeger-collector # or the name of any backend defined for the mesh
 ```
 
-Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api.md).
+Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api).
 :::
 ::::
 
@@ -200,10 +200,10 @@ Services should also be instrumented to preserve the trace chain across requests
 ## Configure Grafana to visualize the logs
 
 To visualise your **traces** you need to have a Grafana up and running.
-You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](traffic-metrics.md).
+You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](traffic-metrics).
 
 With Grafana installed you can configure a new datasource with url:`http://jaeger-query.kuma-tracing/` so Grafana will be able to retrieve the traces from Jaeger.
 
 <center>
-<img src="/images/docs/jaeger_grafana_config.png" alt="Jaeger Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/jaeger_grafana_config.png" alt="Jaeger Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>

@@ -109,7 +109,7 @@ kuma-dp run \
 When xDS connection between proxy and kuma-cp is established, `Dataplane` resource will be created automatically by kuma-cp.
 
 To join the mesh in a graceful way, we need to first make sure the application is ready to serve traffic before it can be considered a valid traffic destination.
-By default, a proxy will be considered healthy regardless of its state. Consider using [service probes](../policies/service-health-probes.md)
+By default, a proxy will be considered healthy regardless of its state. Consider using [service probes](../policies/service-health-probes)
 to mark the data plane proxy as healthy only after all health checks are passed.
 
 #### Leaving the mesh
@@ -125,7 +125,7 @@ During the draining process, Envoy can still accept connections however:
 If the application next to the `kuma-dp` process quits immediately after the SIGTERM signal, there is a high chance that clients will still try to send traffic to this destination.
 To mitigate this, we need to support graceful shutdown in the application. For example, the application should wait X seconds to exit after receiving the first SIGTERM signal.
 
-Consider using [service probes](../policies/service-health-probes.md) to mark data plane proxy as unhealthy when it is in draining state.
+Consider using [service probes](../policies/service-health-probes) to mark data plane proxy as unhealthy when it is in draining state.
 
 If data plane proxy is shutdown gracefully, the `Dataplane` resource is automatically deleted by kuma-cp.
 
@@ -145,7 +145,7 @@ lifecycle.
 
 #### Joining the mesh
 
-`Dataplane` resource is created using [HTTP API](../reference/http-api.md#dataplanes) or [kumactl](../explore/cli.md).
+`Dataplane` resource is created using [HTTP API](../reference/http-api.md#dataplanes) or [kumactl](../explore/cli).
 `Dataplane` resource is created before data plane proxy started. There is no support for templates, resource should be
 a valid `Dataplane` configuration.
 

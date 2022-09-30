@@ -8,4 +8,4 @@ arch: amd64
 ::: tip
 If you only want the CLI, you can always use homebrew `brew install kumactl`.
 :::
-!!!include(install_os.md)!!!
+!!!include(install_os)!!!

@@ -20,7 +20,7 @@ To run Kuma on macOS you can choose among different installation methods:
 Run the following script to automatically detect the operating system and download Kuma:
 
 <div class="language-sh">
-<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ $page.latestVersion }} sh -</code></pre>
+<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latestVersion }} sh -</code></pre>
 </div>
 
 :::
@@ -28,7 +28,7 @@ Run the following script to automatically detect the operating system and downlo
 
 You can also download the distribution manually:
 
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + $page.latestVersion + '-darwin-amd64.tar.gz'">Download Kuma</a> or run `brew install kumactl`
+* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-darwin-amd64.tar.gz'">Download Kuma</a> or run `brew install kumactl`
 
 Then extract the archive with:
 
@@ -50,7 +50,7 @@ brew install kumactl
 
 ### 2. Run Kuma
 
-Once downloaded, you will find the contents of Kuma in the `kuma-{{ $page.latestVersion }}` folder. In this folder, you will find - among other files - the `bin` directory that stores all the executables for Kuma. 
+Once downloaded, you will find the contents of Kuma in the `kuma-{{ page.latestVersion }}` folder. In this folder, you will find - among other files - the `bin` directory that stores all the executables for Kuma. 
 
 So we enter the `bin` folder by executing:
 

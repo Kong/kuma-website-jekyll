@@ -2,7 +2,7 @@
 ---
 # Overview
 
-As we have [already learned](../documentation/introduction.md), Kuma is a universal control plane that can run across both modern environments like Kubernetes and more traditional VM-based ones.
+As we have [already learned](../documentation/introduction), Kuma is a universal control plane that can run across both modern environments like Kubernetes and more traditional VM-based ones.
 
 The first step is obviously to [download and install Kuma](/install/) on the platform of your choice. Different distributions will present different installation instructions that follow the best practices for the platform you have selected.
 
@@ -40,7 +40,7 @@ A minimal Kuma deployment involves one or more instances of the control-plane (`
 When running in **Universal** mode, Kuma will require a PostgreSQL database to store its state. The PostgreSQL database and schema will have to be initialized accordingly to the installation instructions:
 
 <center>
-<img src="/images/docs/0.5.0/diagram-09.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.5.0/diagram-09.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ## Kubernetes mode
@@ -51,10 +51,10 @@ When running on **Kubernetes**, Kuma will store all of its state and configurati
 kuma.io/sidecar-injection: enabled
 ```
 
-You can learn more about sidecar injection in the section on [Dataplanes](dpp-on-kubernetes.md).
+You can learn more about sidecar injection in the section on [Dataplanes](dpp-on-kubernetes).
 
 <center>
-<img src="/images/docs/0.5.0/diagram-08.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.5.0/diagram-08.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ### Specify Mesh for Pods
@@ -200,18 +200,18 @@ In both cases these tags will be see in the CLI and GUI tools when inspecting th
 
 ## Last but not least
 
-Once the `kuma-cp` process is started, it waits for [data-planes](dpp.md) to connect, while at the same time accepting user-defined configuration to start creating Service Meshes and configuring the behavior of those meshes via Kuma [Policies](../../policies/introduction).
+Once the `kuma-cp` process is started, it waits for [data-planes](dpp) to connect, while at the same time accepting user-defined configuration to start creating Service Meshes and configuring the behavior of those meshes via Kuma [Policies](../../policies/introduction).
 
 When we look at a typical Kuma installation, at a higher level it works like this:
 
 <center>
-<img src="/images/docs/0.4.0/diagram-06.jpg" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/diagram-06.jpg" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 When we unpack the underlying behavior, it looks like this:
 
 <center>
-<img src="/images/docs/0.4.0/diagram-07.jpg" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.4.0/diagram-07.jpg" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 ::: tip

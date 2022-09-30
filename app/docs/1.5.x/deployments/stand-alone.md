@@ -13,7 +13,7 @@ This is the simplest deployment mode for Kuma, and the default one.
 This mode implies that we can deploy Kuma and its data plane proxies in a standalone networking topology mode so that the service connectivity from every data plane proxy can be established directly to every other data plane proxy.
 
 <center>
-<img src="/images/docs/0.6.0/flat-diagram.png" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
+<img src="/assets/images/docs/0.6.0/flat-diagram.png" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
 Standalone mode is usually a great choice within the context of one zone (ie: within one Kubernetes cluster or one AWS VPC).
@@ -39,7 +39,7 @@ kumactl install control-plane | kubectl apply -f -
 
 **With zone egress**:
 
-It's possible to run [`ZoneEgress`](../documentation/zone-egress.md) for standalone deployment. In order to deploy Kuma with `ZoneEgress` run the install command with an additional parameter.
+It's possible to run [`ZoneEgress`](../documentation/zone-egress) for standalone deployment. In order to deploy Kuma with `ZoneEgress` run the install command with an additional parameter.
 ```sh
 kumactl install control-plane --egress-enabled | kubectl apply -f -
 ```
