@@ -23,6 +23,12 @@ defaults:
     values:
       layout: "post"
       permalink: "/blog/:year/:slug"
+  -
+    scope:
+      path: "docs"
+    values:
+      layout: "page"
+
 
 # Pagination
 pagination:
