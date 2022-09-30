@@ -2,7 +2,7 @@
   url: "/policies/"
   key: "policies"
 - text: "Docs"
-  url: "/docs/"
+  url: "/docs/1.8.x" # TODO: fixme
   key: "docs"
 - text: "Community"
   url: "/community/"
