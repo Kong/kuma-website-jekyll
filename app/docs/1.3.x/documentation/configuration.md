@@ -37,7 +37,7 @@ controlPlane:
   envVars:
     KUMA_XDS_SERVER_DATAPLANE_CONFIGURATION_REFRESH_INTERVAL: 5s
     KUMA_XDS_SERVER_DATAPLANE_STATUS_FLUSH_INTERVAL: 5s
-$ helm install --version 0.7.1 -f Values.yaml kuma kuma/kuma
+helm install --version 0.7.1 -f Values.yaml kuma kuma/kuma
 ```
 :::
 ::: tab "Universal"
@@ -48,7 +48,7 @@ cat kuma-cp.conf.overrides.yml
 xdsServer:
   dataplaneConfigurationRefreshInterval: 5s
   dataplaneStatusFlushInterval: 5s
-$ kuma-cp run -c kuma-cp.conf.overrides.yml
+kuma-cp run -c kuma-cp.conf.overrides.yml
 ```
 
 Or you can specify environment variables:
