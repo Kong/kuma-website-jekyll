@@ -1,0 +1,4 @@
+product: kuma
+release: 1.7.x
+generate: true
+items:
