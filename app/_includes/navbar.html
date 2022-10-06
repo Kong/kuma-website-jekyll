@@ -22,17 +22,8 @@
       </a>
     </div>
 
-    {% assign current_page_root = page.url | remove: '.html' | remove_first: '/' | split: '/' | first %}
-
     <div class="links">
-      <nav class="nav-links can-hide">
-        {% for item in site.data.navigation %}
-          <div class="nav-item nav-item--{{item.key}}">
-            {% assign item_root = item.url | remove_first: '/' | split: '/' | first %}
-            <a href="{{item.url}}" class="nav-link {% if current_page_root == item_root %} router-link-exact-active router-link-active {% endif %}">{{item.text}}</a>
-          </div>
-        {% endfor %}
-      </nav>
+      {% include nav_links.html can_hide=true %}
     </div>
 
   </div>

@@ -1,0 +1,20 @@
+<aside class="sidebar">
+  <form class="version-nav">
+    <label for="doc-version-selector">Version</label>
+    <select name="doc-version-selector" class="version-selector" id="version-selector">
+      {% for version in site.data.versions %}
+        <option value="{{ version.release }}"> 
+          {{ version.release }}
+          {% if version == site.data['latest_version'] %}
+            (latest)
+          {% endif %}
+        </option>
+      {% endfor %}
+    </select>
+  </form>
+
+  {% include nav_links.html %}
+
+  <!-- SidenavLinks -->
+  {% include sidebar_links.html %}
+</aside>
