@@ -1,7 +1,7 @@
 ---
 title: Kuma docs reorganized
 description: Only recent docs versions are published to the website
-date: 2021-4-16
+date: 2021-04-16
 tags:
   - Docs
 ---
