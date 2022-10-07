@@ -1,0 +1,6 @@
+{% assign item = include.item %}
+{% assign current_page =  page.url | remove: '.html' | append: '/' %}
+
+<!-- "#TODO: handle external links" -->
+{% assign url = '/docs/' | append: include.version | append: item.url %}
+<a href="{{ url }}" class="sidebar-link {% if current_page == url %} active {% endif %}">{{ item.text }}</a>
