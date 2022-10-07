@@ -2,4 +2,207 @@ product: kuma
 release: 1.3.x
 generate: true
 items:
-
+  - title: Introduction
+    items:
+      -
+        text: Introduction to Kuma
+        url: /overview/what-is-kuma/
+      -
+        text: What is Service Mesh?
+        url: /overview/what-is-a-service-mesh/
+      -
+        text: How Kuma works
+        url: /overview/why-kuma/
+      -
+        text: Deployments
+        url: /documentation/deployments/
+      -
+        text: Kuma data collection
+        url: /community/data-collection/
+      -
+        text: Enterprise
+        url: /other/enterprise/
+      -
+        text: License
+        url: /other/license/
+  - title: Install
+    items:
+      -
+        text: Kubernetes
+        url: /installation/kubernetes/
+      -
+        text: Helm
+        url: /installation/helm/
+      -
+        text: OpenShift
+        url: /installation/openshift/
+      -
+        text: Docker
+        url: /installation/docker/
+      -
+        text: Amazon Linux
+        url: /installation/amazonlinux/
+      -
+        text: AWS ECS
+        url: /installation/ecs/
+      -
+        text: RedHat
+        url: /installation/redhat/
+      -
+        text: CentOS
+        url: /installation/centos/
+      -
+        text: Debian
+        url: /installation/debian/
+      -
+        text: Ubuntu
+        url: /installation/ubuntu/
+      -
+        text: macOS
+        url: /installation/macos/
+  - title: Deploy
+    items:
+      -
+        text: Explore Kuma with the Kubernetes demo app
+        url: /quickstart/kubernetes/
+      -
+        text: Explore Kuma with the Universal demo app
+        url: /quickstart/universal/
+      -
+        text: Set up a standalone deployment
+        url: /deployments/stand-alone/
+      -
+        text: Set up a multi-zone deployment
+        url: /deployments/multi-zone/
+  - title: Explore
+    items:
+      -
+        text: Overview
+        url: /documentation/overview/
+      -
+        text: Backends
+        url: /documentation/backends/
+      -
+        text: DPs and Data Model
+        url: /documentation/dps-and-data-model/
+      -
+        text: CLI
+        url: /documentation/cli/
+      -
+        text: GUI
+        url: /documentation/gui/
+  - title: Networking
+    items:
+      -
+        text: Networking
+        url: /networking/networking/
+      -
+        text: Service Discovery
+        url: /networking/service-discovery/
+      -
+        text: DNS
+        url: /networking/dns/
+      -
+        text: Kuma CNI
+        url: /networking/cni/
+      -
+        text: Transparent Proxying
+        url: /networking/transparent-proxying/
+      -
+        text: IPv6 support
+        url: /networking/ipv6/
+  - title: Security
+    items:
+      -
+        text: Secure access across services
+        url: /security/certificates/
+      -
+        text: Secrets
+        url: /security/secrets/
+  - title: Monitor & manage
+    items:
+      -
+        text: Health checks
+        url: /documentation/health/
+      -
+        text: Fine-tuning
+        url: /documentation/fine-tuning/
+      -
+        text: Configuration
+        url: /documentation/configuration/
+  - title: Policies
+    items:
+      -
+        text: Introduction
+        url: /policies/introduction/
+      -
+        text: General notes about Kuma policies
+        url: /policies/general-notes-about-kuma-policies/
+      -
+        text: Applying Policies
+        url: /policies/applying-policies/
+      -
+        text: How Kuma chooses the right policy to apply
+        url: /policies/how-kuma-chooses-the-right-policy-to-apply/
+      -
+        text: Protocol support in Kuma
+        url: /policies/protocol-support-in-kuma/
+      -
+        text: Mesh
+        url: /policies/mesh/
+      -
+        text: Mutual TLS
+        url: /policies/mutual-tls/
+      -
+        text: Traffic Permissions
+        url: /policies/traffic-permissions/
+      -
+        text: Traffic Route
+        url: /policies/traffic-route/
+      -
+        text: Traffic Metrics
+        url: /policies/traffic-metrics/
+      -
+        text: Traffic Trace
+        url: /policies/traffic-trace/
+      -
+        text: Traffic Log
+        url: /policies/traffic-log/
+      -
+        text: Locality Aware Load Balancing
+        url: /policies/locality-aware/
+      -
+        text: Fault Injection
+        url: /policies/fault-injection/
+      -
+        text: Health Check
+        url: /policies/health-check/
+      -
+        text: Circuit Breaker
+        url: /policies/circuit-breaker/
+      -
+        text: Proxy Template
+        url: /policies/proxy-template/
+      -
+        text: External Service
+        url: /policies/external-services/
+      -
+        text: Retry
+        url: /policies/retry/
+      -
+        text: Timeout
+        url: /policies/timeout/
+      -
+        text: Rate Limit
+        url: /policies/rate-limit/
+      -
+        text: Virtual Outbound
+        url: /policies/virtual-outbound/
+  - title: Reference docs
+    items:
+      -
+        text: HTTP API
+        url: /documentation/http-api/
+      -
+        text: Annotations in Kubernetes mode
+        url: /documentation/kubernetes-annotations/
