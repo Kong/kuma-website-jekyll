@@ -3,8 +3,9 @@
 
 {% assign active_url =  page.url | remove: '.html' | append: '/' | remove: '/docs/' | remove: include.version | strip %}
 {% assign urls = item.items | flatten | map: 'url' | compact %}
+{% assign nested_urls = item.items | flatten | map: 'items' | map: 'url' | flatten | compact %}
 
-<!-- "#TODO: handle nested items" -->
+{% assign urls = urls | concat: nested_urls %}
 
 {% assign cssClasses = 'sidebar-group-items' %}
 {% unless urls contains active_url %}
@@ -14,9 +15,9 @@
 <section class="sidebar-group depth-{{ depth }} {% if item.items.size > 0 %} collapsable {% endif %} {% if depth != 0 %} is-sub-group {% endif %}">
   <button class="sidebar-heading">
     <span>{{ item.title }}</span>
-    <span class="arrow right"></span>
+    <span class="arrow {% if urls contains active_url %} down {% else %} right {% endif %}"></span>
   </button>
 
-  {% assign children_depth = depth + 1 %}
+  {% assign children_depth = depth | plus: 1 %}
   {% include sidebar_links.html nav_items=item.items depth=children_depth cssClass=cssClasses version=include.version %}
 </section>
