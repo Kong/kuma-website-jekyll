@@ -257,6 +257,81 @@ items:
       -
         text: License
         url: /reference/license/
+      - # Auto-generated
+        title: Resources
+        items:
+          -
+            text: Mesh
+            url: /generated/resources/other_mesh/
+          -
+            text: CircuitBreaker
+            url: /generated/resources/policy_circuit-breaker/
+          -
+            text: ExternalService
+            url: /generated/resources/policy_external-service/
+          -
+            text: FaultInjection
+            url: /generated/resources/policy_fault-injection/
+          -
+            text: HealthCheck
+            url: /generated/resources/policy_health-check/
+          -
+            text: MeshGateway
+            url: /generated/resources/policy_meshgateway/
+          -
+            text: MeshGatewayRoute
+            url: /generated/resources/policy_meshgatewayroute/
+          -
+            text: ProxyTemplate
+            url: /generated/resources/policy_proxy-template/
+          -
+            text: RateLimit
+            url: /generated/resources/policy_rate-limit/
+          -
+            text: Retry
+            url: /generated/resources/policy_retry/
+          -
+            text: Timeout
+            url: /generated/resources/policy_timeout/
+          -
+            text: TrafficLog
+            url: /generated/resources/policy_traffic-log/
+          -
+            text: TrafficPermission
+            url: /generated/resources/policy_traffic-permissions/
+          -
+            text: TrafficRoute
+            url: /generated/resources/policy_traffic-route/
+          -
+            text: TrafficTrace
+            url: /generated/resources/policy_traffic-trace/
+          -
+            text: VirtualOutbound
+            url: /generated/resources/policy_virtual-outbound/
+          -
+            text: Dataplane
+            url: /generated/resources/proxy_dataplane/
+          -
+            text: ZoneEgress
+            url: /generated/resources/proxy_zoneegress/
+          -
+            text: ZoneIngress
+            url: /generated/resources/proxy_zoneingress/
+      - # Auto-generated
+        title: Commands
+        items:
+          -
+            text: kuma-cp
+            url: /generated/cmd/kuma-cp/kuma-cp/
+          -
+            text: kuma-dp
+            url: /generated/cmd/kuma-dp/kuma-dp/
+          -
+            text: kuma-prometheus-sd
+            url: /generated/cmd/kuma-prometheus-sd/kuma-prometheus-sd/
+          -
+            text: kumactl
+            url: /generated/cmd/kumactl/kumactl/
   - title: Contribute
     items:
       -

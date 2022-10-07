@@ -263,3 +263,63 @@ items:
       -
         text: License
         url: /reference/license/
+      - # Auto-generated
+        title: Resources
+        items:
+          -
+            text: CircuitBreaker
+            url: /generated/resources/circuit-breaker/
+          -
+            text: ExternalService
+            url: /generated/resources/external-service/
+          -
+            text: FaultInjection
+            url: /generated/resources/fault-injection/
+          -
+            text: HealthCheck
+            url: /generated/resources/health-check/
+          -
+            text: MeshGatewayRoute
+            url: /generated/resources/meshgatewayroute/
+          -
+            text: ProxyTemplate
+            url: /generated/resources/proxy-template/
+          -
+            text: RateLimit
+            url: /generated/resources/rate-limit/
+          -
+            text: Retry
+            url: /generated/resources/retry/
+          -
+            text: Timeout
+            url: /generated/resources/timeout/
+          -
+            text: TrafficLog
+            url: /generated/resources/traffic-log/
+          -
+            text: TrafficPermission
+            url: /generated/resources/traffic-permissions/
+          -
+            text: TrafficRoute
+            url: /generated/resources/traffic-route/
+          -
+            text: TrafficTrace
+            url: /generated/resources/traffic-trace/
+          -
+            text: VirtualOutbound
+            url: /generated/resources/virtual-outbound/
+      - # Auto-generated
+        title: Commands
+        items:
+          -
+            text: kuma-cp
+            url: /generated/cmd/kuma-cp/kuma-cp/
+          -
+            text: kuma-dp
+            url: /generated/cmd/kuma-dp/kuma-dp/
+          -
+            text: kuma-prometheus-sd
+            url: /generated/cmd/kuma-prometheus-sd/kuma-prometheus-sd/
+          -
+            text: kumactl
+            url: /generated/cmd/kumactl/kumactl/

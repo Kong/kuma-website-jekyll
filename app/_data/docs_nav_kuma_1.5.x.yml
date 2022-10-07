@@ -216,3 +216,51 @@ items:
       -
         text: Kuma data collection
         url: /community/data-collection/
+      -
+        title: Policies
+        items:
+          -
+            text: Circuit Breaker
+            url: /generated/policies/circuit-breaker/
+          -
+            text: External Service
+            url: /generated/policies/external-services/
+          -
+            text: FaultInjection
+            url: /generated/policies/fault-injection/
+          -
+            text: HealthCheck
+            url: /generated/policies/health-check/
+          -
+            text: MeshGatewayRoute
+            url: /generated/policies/mesh-gateway-route/
+          -
+            text: MeshGateway
+            url: /generated/policies/mesh-gateway/
+          -
+            text: Proxy Template
+            url: /generated/policies/proxy-template/
+          -
+            text: Rate Limit
+            url: /generated/policies/rate-limit/
+          -
+            text: Retry
+            url: /generated/policies/retry/
+          -
+            text: Timeout
+            url: /generated/policies/timeout/
+          -
+            text: TrafficLog
+            url: /generated/policies/traffic-log/
+          -
+            text: TrafficPermission
+            url: /generated/policies/traffic-permissions/
+          -
+            text: TrafficRoute
+            url: /generated/policies/traffic-route/
+          -
+            text: TrafficTrace
+            url: /generated/policies/traffic-trace/
+          -
+            text: Virtual Outbound
+            url: /generated/policies/virtual-outbound/
