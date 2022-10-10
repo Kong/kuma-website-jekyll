@@ -1,6 +1,6 @@
 {% assign splits = page.url | split: '/' %}
 {% assign current_version = splits[2] %}
-{% assign latest_version = site.data['latest_version'].release %}
+{% assign latest_version = site.data.latest_version.release %}
 
 {% if current_version != latest_version %}
   <div>
@@ -16,7 +16,7 @@
           <a href="/docs/{{ latest_version }}/">Go here</a> to browse the documentation for the latest version.
         </p>
         {% if current_version != 'dev' %}
-          <p>Looking for even older versions? <a href="/blog/2021/2021-website-reorg/">Learn more</a>.</p>
+          <p>Looking for even older versions? <a href="{% post_url 2021-04-16-website-reorg %}">Learn more</a>.</p>
         {% endif %}
       </div>
     </div>
