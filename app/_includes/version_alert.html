@@ -1,5 +1,4 @@
-{% assign splits = page.url | split: '/' %}
-{% assign current_version = splits[2] %}
+{% assign current_version = page.url | version_from_url %}
 {% assign latest_version = site.data.latest_version.release %}
 
 {% if current_version != latest_version %}
