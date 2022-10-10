@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module Jekyll
-  module LiquifyFilter
+  module Liquify
     def liquify(input)
       Liquid::Template.parse(input).render(@context)
     end
   end
 end
 
-Liquid::Template.register_filter(Jekyll::LiquifyFilter)
+Liquid::Template.register_filter(Jekyll::Liquify)
