@@ -1,4 +1,4 @@
-{% assign current_version = page.url | version_from_url %}
+{% assign current_version = page.version %}
 
 <select name="{{ include.selector_name }}" class="version-selector" id="version-selector">
   {% for version in site.data.versions %}
