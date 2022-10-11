@@ -104,9 +104,9 @@ To learn more, read the [multi-zone installation instructions](/docs/1.1.6/docum
 :::
 ::::
 
-::: warning
+{% warning %}
 The examples described above will allow access to the `kuma-cp` to all IPs. In production we should change `--parameter-overrides AllowedCidr=0.0.0.0/0` to point to a more restricted subnet that will be used to administer the Kuma control plane.
-:::
+{% endwarning %}
 
 #### Security Note
 

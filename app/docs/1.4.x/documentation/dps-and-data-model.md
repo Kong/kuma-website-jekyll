@@ -116,9 +116,9 @@ E.g.,
 * you can narrow it down to a single port by using `--admin-port=9901`
 * you can turn `Envoy Admin API` off by using `--admin-port=`
 
-::: warning
+{% warning %}
 If you choose to turn `Envoy Admin API` off, you will not be able to leverage some of `Kuma` features, such as enabling `Prometheus` metrics on that dataplane.
-:::
+{% endwarning %}
 
 ## Tags
 
@@ -250,10 +250,10 @@ spec:
 
 On Kubernetes the [`Dataplane`](#dataplane-entity) entity is also automatically created for you, and because transparent proxying is being used to communicate between the service and the sidecar proxy, no code changes are required in your applications.
 
-::: warning
+{% warning %}
 While you can still use annotations instead of labels, we strongly recommend using labels.
 It's the only way to guarantee that applications can only be started with sidecar.
-:::
+{% endwarning %}
 
 {% tip %}
 NOTE: During the creation of the [`Dataplane`](#dataplane-entity) entity, the Kuma control plane will generate a dataplane tag `kuma.io/service: <name>_<namespace>_svc_<port>` fetching `<name>`, `<namespace>` and `<port>` from the Kubernetes service that is associated with the particular pod.
@@ -453,6 +453,6 @@ We can also use `*` to indicate direct access to every service in the Mesh:
 kuma.io/direct-access-services: *
 ```
 
-::: warning
+{% warning %}
 Using `*` to directly access every service is a resource intensive operation, so we must use it carefully.
-:::
+{% endwarning %}

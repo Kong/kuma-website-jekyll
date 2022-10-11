@@ -98,8 +98,8 @@ Get config dump for zone egress:
 kumactl inspect zoneegress ze-1 --config-dump
 ```
 
-::: warning
+{% warning %}
 In order to retrieve a config dump in a Multizone deployment, `kumactl` should be pointed to a zone CP
 Global CPs don't have access to envoy config dumps.
 This is [a limitation that will be resolved in an upcoming release](https://github.com/kumahq/kuma/issues/3789).
-:::
+{% endwarning %}

@@ -79,7 +79,7 @@ conf:
   ...
 ```
 
-::: warning
+{% warning %}
 While all policies support arbitrary tags in `sources` selectors, it's not generally the case for `destinations` selectors.
 
 For example, policies that get applied on the client side of a connection between two `Dataplane`s - such as `TrafficRoute`, `TrafficLog`, `HealthCheck` - do not support arbitrary tags in their `destinations` selector; only the `service` tag is supported.
@@ -87,4 +87,4 @@ For example, policies that get applied on the client side of a connection betwee
 In some cases there is a fundamental technical cause for that (e.g., `TrafficRoute`), in other cases it's a simplification of the initial implementation (e.g., `TrafficLog` and `HealthCheck`).
 
 Please let us know if such constraints become critical to your use case.
-:::
+{% endwarning %}

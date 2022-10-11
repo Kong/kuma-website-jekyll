@@ -173,10 +173,10 @@ We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP AP
   ```
   {% endtip %}
 
-  :::warning
+  {% warning %}
   Providing `retriable_status_codes` without also providing 
   `retriableStatusCodes` (above) will fail policy validation.
-  :::
+  {% endwarning %}
 
 - **`retriableMethods`** (optional)
 

@@ -2,9 +2,9 @@
 ---
 # DNS in the control plane
 
-::: warning
+{% warning %}
 This is deprecated way of handling Kuma DNS that will be removed in the future versions of Kuma. Consider using [DNS embedded in kuma-dp](../dns)
-:::
+{% endwarning %}
 
 In this mode, DNS traffic is not intercepted and resolved by Envoy, but the DNS resolver is explicitly configured with `kuma-cp` DNS server for defined domains (`.mesh` by default).
 

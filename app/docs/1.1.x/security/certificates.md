@@ -188,9 +188,9 @@ As we can see in the example above, we can generate a token by passing a `name`,
 ::: tab "Off"
 We can turn off the authentication by setting `KUMA_DP_SERVER_AUTH_TYPE` to `none`.
 
-::: warning
+{% warning %}
 If we disable the authentication between the control plane and the data plane proxies, any data plane proxy will be able to impersonate any service, therefore this is not recommended in production.
-:::
+{% endwarning %}
 ::::
 
 #### Multizone

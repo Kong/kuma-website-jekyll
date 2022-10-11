@@ -27,10 +27,10 @@ kumactl install observability | kubectl apply -f -
 
 This will create a namespace `mesh-observability` with prometheus, jaeger, loki and grafana installed and setup to work with Kuma.
 
-::: warning
+{% warning %}
 This setup is meant to be used for trying out Kuma. It is in no way fit for use in production.
 For production setups we recommend referring to each project's website or to use a hosted solution like Grafana cloud or Datadog.
-:::
+{% endwarning %}
 
 ## Control plane metrics
 

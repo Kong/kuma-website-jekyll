@@ -39,9 +39,9 @@ However, if your Postgres database (e.g., as a service in the cloud) only permit
 
 ## Snapshot Generation
 
-::: warning
+{% warning %}
 This is advanced topic describing Kuma implementation internals
-:::
+{% endwarning %}
 
 The main task of the control plane is to provide config for dataplanes. When a dataplane connects to the control plane, the CP starts a new goroutine.
 This goroutine runs the reconciliation process with given interval (1s by default). During this process, all dataplanes and policies are fetched for matching.
@@ -89,9 +89,9 @@ curl http://<IP of the CP>:5680/debug/pprof/profile?seconds=30 --output prof.out
 
 Then, you can analyze the retrieved profiling data using an application like [Speedscope](https://www.speedscope.app/).
 
-:::warning
+{% warning %}
 After a successful debugging session, please remember to turn off the debugging endpoints since anybody could execute heap dumps on them potentially exposing sensitive data.
-:::
+{% endwarning %}
 
 ## Envoy
 

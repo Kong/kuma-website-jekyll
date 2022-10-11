@@ -40,9 +40,9 @@ An `ingress` data plane proxy is specific to internal communication within a mes
 
 The global control plane and the remote control planes communicate with each other via xDS in order to synchronize the resources that are being created to configure Kuma, like policies.
 
-:::warning
+{% warning %}
 **For Kubernetes**: The global control plane on Kubernetes must reside on its own Kubernetes cluster, in order to keep the CRDs separate from the ones that the remote control planes will create during the synchronization process.
-:::
+{% endwarning %}
 
 ### Usage
 

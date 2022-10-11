@@ -4,9 +4,9 @@
 
 With the Traffic Log policy you can easily set up access logs on every data plane in a mesh. 
 
-::: warning
+{% warning %}
 This policy only records outbound traffic. It doesn't record inbound traffic.
-:::
+{% endwarning %}
 
 To configure access logs in Kuma you need to:
 

@@ -3839,9 +3839,9 @@ curl -XGET http://localhost:5681/status/zones
 
 Generate the data plane proxy tokens required for data plane proxy authentication.
 
-::: warning
+{% warning %}
 Requires [authentication to the control plane by the user](../security/certificates/#authentication).
-:::
+{% endwarning %}
 
 For details, see [data plane proxy authentication](../security/certificates/#data-plane-proxy-authentication).
 
@@ -3872,9 +3872,9 @@ curl -XPOST \
 
 Generate token which zone ingress can use to authenticate itself.
 
-::: warning
+{% warning %}
 Requires [authentication to the control plane by the user](../security/certificates/#authentication).
-:::
+{% endwarning %}
 
 For details, see [zone ingress authentication](../security/zone-ingress-auth/#zone-ingress-token).
 

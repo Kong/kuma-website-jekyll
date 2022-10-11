@@ -6,9 +6,9 @@ Kuma supports configuring [Built-in Gateway](gateway) using [Kubernetes Gateway 
 
 ## Installation
 
-::: warning
+{% warning %}
 Gateway API support is an experimental feature that has to be explicitly enabled.
-:::
+{% endwarning %}
 
 1. Install Gateway API CRDs
 

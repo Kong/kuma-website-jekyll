@@ -40,9 +40,9 @@ A `zone-ingress` proxy is specific to internal communication within a mesh and i
 
 The global control plane and the zone control planes communicate with each other over xDS to synchronize the resources that are created to configure Kuma, such as policies.
 
-:::warning
+{% warning %}
 **For Kubernetes**: The global control plane on Kubernetes must reside on its own Kubernetes cluster, in order to keep the CRDs separate from the ones that the zone control planes will create during the synchronization process.
-:::
+{% endwarning %}
 
 ### Usage
 

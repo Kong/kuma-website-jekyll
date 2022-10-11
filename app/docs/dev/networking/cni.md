@@ -18,10 +18,10 @@ Kuma CNI can be leveraged in the two installation methods for Kubernetes: using 
 The default settings are tuned for OpenShift with Multus,
 therefore to use it in other environments we need to set the relevant configuration parameters.
 
-:::warning
+{% warning %}
 Kuma CNI applies NetworkAttachmentDefinition(NAD) to applications in a namespace with `kuma.io/sidecar-injection` label.
 To apply NAD to the applications not in a Mesh, add the label `kuma.io/sidecar-injection` with the value `disabled` to the namespace.
-:::
+{% endwarning %}
 
 ## Installation
 

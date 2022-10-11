@@ -18,10 +18,10 @@ There exists two types of gateways:
 - Delegated: Which enables users to use any existing gateway like [Kong](https://github.com/Kong/kong).
 - Builtin: configures the data plane proxy to expose external listeners to drive traffic inside the mesh.
 
-::: warning
+{% warning %}
 Gateways exist within a mesh.
 If you have multiple meshes, each mesh will need its own gateways. You can easily connect your meshes together using [cross-mesh gateways](#cross-mesh).
-:::
+{% endwarning %}
 
 Here's a visualization that shows how delegated and builtin gateways are different:
 
@@ -199,9 +199,9 @@ When configuring your API Gateway to pass traffic to _backend_ set the url to `h
 
 ## Builtin
 
-:::warning
+{% warning %}
 The builtin gateway is currently experimental.
-:::
+{% endwarning %}
 
 The builtin gateway is integrated into the core Kuma control plane.
 You can configure gateway listeners and routes to service directly using Kuma policies.

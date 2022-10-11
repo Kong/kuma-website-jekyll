@@ -16,7 +16,7 @@ Kuma currently supports the following trace exposition formats:
 * `zipkin` traces in this format can be sent to [many different tracing backends](https://github.com/openzipkin/openzipkin.github.io/issues/65). 
 * `datadog`
 
-::: warning
+{% warning %}
 Services still need to be instrumented to preserve the trace chain across requests made across different services.
 
 You can instrument with a language library of your choice ([for zipkin](https://zipkin.io/pages/tracers_instrumentation) and [for datadog](https://docs.datadoghq.com/tracing/setup_overview/setup/java/?tab=containers)).
@@ -28,7 +28,7 @@ For HTTP you can also manually forward the following headers:
 * `x-b3-spanid`
 * `x-b3-sampled`
 * `x-b3-flags`
-:::
+{% endwarning %}
 
 ## Add a tracing backend to the mesh
 

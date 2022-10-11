@@ -26,11 +26,11 @@ Despite control-planes within a zone not connecting to each other; they share a 
 * You cannot read data written with a control-plane `1.6.x` with a control-plane version `1.3.x` or lower. It may cause undefined behavior.
 
 
-::: warning
+{% warning %}
 Some feature flags may not provide backward compatibility, when this is the case it is clearly documented in [the control-plane configuration](../generated/kuma-cp) and will be part of the `experimental` section.
 
 To guarantee our compatibility policy we will always wait at least two minor versions before making these features enabled by default.
-:::
+{% endwarning %}
 
 ## Standalone
 

@@ -70,9 +70,9 @@ When using mTLS the container ports are not available outside the pod and Kubern
 To work around this Kuma generates a special non-mTLs listener and overrides the probe definitions in the Pod to proxy them through this sidecar listener.
 These are called *Virtual probes*.
 
-::: warning
+{% warning %}
 This feature currently only supports `httpGet` probes.
-:::
+{% endwarning %}
 
 For example, if we specify the following probe:
 

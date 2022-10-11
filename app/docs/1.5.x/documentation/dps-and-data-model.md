@@ -134,11 +134,11 @@ spec:
       containers:
         ...
 ```
-::: warning
+{% warning %}
 In previous versions the recommended way was to use annotations.
 While annotations are still supported, we strongly recommend using labels.
 This is the only way to guarantee that applications can only be started with sidecar.
-:::
+{% endwarning %}
 
 Once your pod is running you can see the dataplane CRD that matches it using `kubectl`:
 
@@ -198,9 +198,9 @@ We can also use `*` to indicate direct access to every service in the Mesh:
 kuma.io/direct-access-services: *
 ```
 
-::: warning
+{% warning %}
 Using `*` to directly access every service is a resource intensive operation, so we must use it carefully.
-:::
+{% endwarning %}
 
 ## Universal
 

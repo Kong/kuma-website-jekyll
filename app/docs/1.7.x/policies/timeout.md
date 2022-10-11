@@ -2,9 +2,9 @@
 ---
 # Timeout
 
-:::tip
+{% tip %}
 Timeout is an outbound policy. Dataplanes whose configuration is modified are in the `sources` matcher.
-:::
+{% endtip %}
 
 This policy enables Kuma to set timeouts on the outbound connections depending on the protocol.
 
@@ -113,11 +113,11 @@ conf:
 :::
 ::::
 
-:::warning
+{% warning %}
 Default timeout policy works fine in most cases.
 But if your application is using [GRPC streaming](https://grpc.io/docs/what-is-grpc/core-concepts/)
 make sure to set `http.requestTimeout` to 0s.
-:::
+{% endwarning %}
 
 ## Matching
 
@@ -209,7 +209,7 @@ conf:
 :::
 ::::
 
-:::warning
+{% warning %}
 It's not recommended disabling `streamIdleTimeouts` and `idleTimeout`
 since it has a high likelihood of yielding connection leaks.
-:::
+{% endwarning %}

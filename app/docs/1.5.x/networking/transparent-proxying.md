@@ -49,9 +49,9 @@ kumactl install transparent-proxy \
   --redirect-dns
 ```
 
-:::warning
+{% warning %}
 Please note that this command **will change** the host `iptables` rules.
-:::
+{% endwarning %}
 
 The changes will persist over restarts, so this command is needed only once. Reverting to the original state of the host can be done by issuing `kumactl uninstall transparent-proxy`.
 
@@ -78,9 +78,9 @@ The ports illustrated above are the default ones that `kumactl install transpare
 
 ### Invoking the Kuma data plane
 
-::: warning
+{% warning %}
 It is important that the `kuma-dp` process runs with the same system user that was passed to `kumactl install transparent-proxy --kuma-dp-user`.
-:::
+{% endwarning %}
 
 When systemd is used, this can be done with an entry `User=kuma-dp` in the `[Service]` section of the service file.
 

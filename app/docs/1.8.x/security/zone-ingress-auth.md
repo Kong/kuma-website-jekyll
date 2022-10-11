@@ -203,7 +203,7 @@ If the signing key is compromised, we must rotate it and all the tokens that wer
 
 You can turn off authentication by setting `KUMA_DP_SERVER_AUTH_TYPE` to `none`.
 
-::: warning
+{% warning %}
 You should not disable authentication between the control plane and the data plane proxies in production.
 Disabling authentication means that any data plane proxy can impersonate any service.
-:::
+{% endwarning %}

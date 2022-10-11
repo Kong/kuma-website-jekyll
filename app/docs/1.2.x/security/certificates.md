@@ -188,9 +188,9 @@ As we can see in the example above, we can generate a token by passing a `name`,
 ::: tab "Off"
 We can turn off the authentication by setting `KUMA_DP_SERVER_AUTH_TYPE` to `none`.
 
-::: warning
+{% warning %}
 If we disable the authentication between the control plane and the data plane proxies, any data plane proxy will be able to impersonate any service, therefore this is not recommended in production.
-:::
+{% endwarning %}
 ::::
 
 ### Zone Ingress proxy authentication
@@ -239,9 +239,9 @@ You can also pass the token as a `KUMA_DATAPLANE_RUNTIME_TOKEN` environment vari
 ::: tab "Off"
 You can turn off authentication by setting `KUMA_DP_SERVER_AUTH_TYPE` to `none`.
 
-::: warning
+{% warning %}
 You should not disable authentication between the control plane and the data plane proxies in production. Disabling means that any data plane proxy can impersonate any service.
-:::
+{% endwarning %}
 
 ::::
 

@@ -70,11 +70,11 @@ conf:
 ### Sources & Destinations
 `FaultInjection` is a policy, which is applied to the connection between dataplanes. As most of the policies, `FaultInjection` supports the powerful mechanism of matching, which allows you to precisely match source and destination dataplanes.
 
-::: warning
+{% warning %}
 `FaultInjection` policy is available only for L7 HTTP traffic,
 therefore `kuma.io/protocol` is a mandatory tag for the destination selector
 and must be of value `http`, `http2` or `grpc`.
-:::
+{% endwarning %}
 
 ### HTTP Faults
 

@@ -116,9 +116,9 @@ E.g.,
 * you can narrow it down to a single port by using `--admin-port=9901`
 * you can turn `Envoy Admin API` off by using `--admin-port=`
 
-::: warning
+{% warning %}
 If you choose to turn `Envoy Admin API` off, you will not be able to leverage some of `Kuma` features, such as enabling `Prometheus` metrics on that dataplane.
-:::
+{% endwarning %}
 
 ## Tags
 
@@ -428,6 +428,6 @@ We can also use `*` to indicate direct access to every service in the Mesh:
 kuma.io/direct-access-services: *
 ```
 
-::: warning
+{% warning %}
 Using `*` to directly access every service is a resource intensive operation, so we must use it carefully.
-:::
+{% endwarning %}

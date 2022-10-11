@@ -12,10 +12,10 @@ You can distinguish two types of gateways:
 - delegated: Allows users to use any existing gateway like [Kong](https://github.com/Kong/kong).
 - builtin: Configures the data plane proxy to expose external listeners to drive traffic inside the mesh.
 
-::: warning
+{% warning %}
 Gateways exist within a mesh.
 If you have multiple meshes, each mesh requires its own gateway. You can easily connect your meshes together using [cross-mesh gateways](#cross-mesh).
-:::
+{% endwarning %}
 
 Below visualization shows the difference between delegated and builtin gateways:
 

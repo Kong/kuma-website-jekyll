@@ -18,10 +18,10 @@ There exists two types of gateways:
 - Delegated: Which enables users to use any existing gateway like [Kong](https://github.com/Kong/kong).
 - Builtin: configures the data plane proxy to expose external listeners to drive traffic inside the mesh.
 
-::: warning
+{% warning %}
 Gateways exist within a mesh.
 If you have multiple meshes, each mesh will need its own gateway.
-:::
+{% endwarning %}
 
 ## Delegated
 The `Dataplane` entity can operate in `gateway` mode. This way you can integrate Kuma with existing API Gateways like [Kong](https://github.com/Kong/kong).
@@ -183,9 +183,9 @@ For an in-depth example on deploying Kuma with [Kong for Kubernetes](https://git
 
 ## Builtin
 
-:::warning
+{% warning %}
 The builtin gateway is currently experimental and is enabled with the kuma-cp flag `--experimental-meshgateway` or the environment variable `KUMA_EXPERIMENTAL_MESHGATEWAY`
-:::
+{% endwarning %}
 
 The builtin type of gateway is integrated into the core Kuma control plane.
 You can therefore configure gateway listeners and routes to service directly using Kuma policies.

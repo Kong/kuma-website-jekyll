@@ -200,9 +200,9 @@ When using an arbitrary certificate and key for a `provided` backend, we must ma
 5. It MUST NOT have key usage extension 'keyAgreement' set (see [X509-SVID: Appendix A. X.509 Field Reference](https://github.com/spiffe/spiffe/blob/master/standards/X509-SVID.md#appendix-a-x509-field-reference))
 6. It MUST NOT have key usage extension 'keyEncipherment' set (see [X509-SVID: Appendix A. X.509 Field Reference](https://github.com/spiffe/spiffe/blob/master/standards/X509-SVID.md#appendix-a-x509-field-reference))
 
-:::warning
+{% warning %}
 Do not use the following example in production, instead generate valid and compliant certificates. This example is intended for usage in a development environment.
-:::
+{% endwarning %}
 
 Below we can find an example to generate a sample CA certificate + key:
 
@@ -234,9 +234,9 @@ The command will generate a certificate at `crt.pem` and the key at `key.pem`. W
 
 In development mode we may want to provide the `cert` and `key` properties of the `provided` backend without necessarily having to create a Secret resource, but by using either a file or an inline value.
 
-:::warning
+{% warning %}
 Using the `file` and `inline` modes in production presents a security risk since it makes the values of our CA root certificate and key more easily accessible from a malicious actor. We highly recommend using `file` and `inline` only in development mode.
-:::
+{% endwarning %}
 
 Kuma offers an alternative way to specify the CA root certificate and key:
 

@@ -111,9 +111,9 @@ Here are reasons where you'd want to use this feature:
 - Both application and sidecar metrics are scraped at the same time. This makes sure they are coherent (with 2 different scrapers they can end up scraping at different intervals and make metrics harder to correlate).
 - If you disable [passthrough](../policies/mesh.md#controlling-the-passthrough-mode) and your mesh uses mTLS but Prometheus is outside the mesh (`skipMTLS: true`) this will be the only way to retrieve these metrics as the application is completely hidden behind the sidecar. 
 
-::: warning
+{% warning %}
 Any configuration change requires redeployment of the data plane.
-:::
+{% endwarning %}
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab "Kubernetes"

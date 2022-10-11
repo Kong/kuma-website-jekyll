@@ -90,10 +90,10 @@ metadata:
 [...]
 ```
 
-:::warning
+{% warning %}
 While you can still use annotations to inject sidecar, we strongly recommend using labels.
 It's the only way to guarantee that application can only be started with sidecar.
-:::
+{% endwarning %}
 
 ### `kuma.io/gateway`
 
@@ -191,9 +191,9 @@ When you provide this annotation, Kuma generates a listener for each IP address 
 
 These listeners are needed because transparent proxy and mTLS assume a single IP per cluster (for example, the ClusterIP of a Kubernetes Service). If you pass requests to direct IP addresses, Envoy considers them unknown destinations and manages them in passthrough mode -- which means they're not encrypted with mTLS. The `direct-access` cluster enables encryption anyway.
 
-::: warning
+{% warning %}
 **WARNING**: You should specify this annotation only if you really need it. Generating listeners for every endpoint makes the xDS snapshot very large.
-:::
+{% endwarning %}
 
 ### `kuma.io/virtual-probes`
 

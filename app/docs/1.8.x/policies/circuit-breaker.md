@@ -161,9 +161,9 @@ We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP AP
 
 In this example when we get five errors in a row of any type (`5` is default Envoy value for `totalErrors.consecutive`) the data plane proxy will be ejected for `30s` the first time, `60s` for the second time, and so on.
 
-::: warning
+{% warning %}
 In the current version of Kuma `destinations` only supports the `service` tag.
-:::
+{% endwarning %}
 
 ### interval
 Time interval between ejection analysis sweeps. Defaults to 10s.

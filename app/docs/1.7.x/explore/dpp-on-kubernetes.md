@@ -39,11 +39,11 @@ spec:
       containers:
         ...
 ```
-::: warning
+{% warning %}
 In previous versions the recommended way was to use annotations.
 While annotations are still supported, we strongly recommend using labels.
 This is the only way to guarantee that applications can only be started with sidecar.
-:::
+{% endwarning %}
 
 Once your pod is running you can see the data plane CRD that matches it using `kubectl`:
 
@@ -231,11 +231,11 @@ the `ContainerPatch` Kubernetes CRD. It allows configuration of both sidecar
 and init containers. `ContainerPatch` resources are namespace scoped and can
 only be applied in a namespace where **Kuma CP** is running.
 
-::: warning
+{% warning %}
 In the vast majority of cases you shouldn't need to override the sidecar and
 init-container configurations. `ContainerPatch` is a feature which requires good
 understanding of both Kuma and Kubernetes.
-:::
+{% endwarning %}
 
 The specification of `ContainerPatch` consists of the list of [jsonpatch](https://datatracker.ietf.org/doc/html/rfc6902)
 strings which describe the modifications to be performed.
@@ -308,10 +308,10 @@ A `ContainerPatch` is matched to a `Pod` via an `kuma.io/container-patches`
 annotation on the workload. Each annotation may be an ordered list of
 `ContainerPatch` names, which will be applied in the order specified.
 
-::: warning
+{% warning %}
 If a workload refers to a `ContainerPatch` which does not exist, the injection
 will explicitly fail and log the failure.
-:::
+{% endwarning %}
 
 #### Example
 
@@ -409,6 +409,6 @@ We can also use `*` to indicate direct access to every service in the Mesh:
 kuma.io/direct-access-services: *
 ```
 
-::: warning
+{% warning %}
 Using `*` to directly access every service is a resource intensive operation, so we must use it carefully.
-:::
+{% endwarning %}

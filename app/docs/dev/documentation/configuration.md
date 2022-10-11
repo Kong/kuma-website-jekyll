@@ -125,9 +125,9 @@ Kuma stores all the state in-memory. Restarting Kuma will delete all the data, a
 Memory is the **default** memory store when running in Universal mode and is only available in Universal mode.
 
 
-::: warning
+{% warning %}
 Because the state is not persisted this store should only be used when trying things out.
-:::
+{% endwarning %}
 
 ### Postgres
 

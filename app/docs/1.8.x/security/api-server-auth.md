@@ -296,9 +296,9 @@ kumactl delete global-secret admin-user-token
 
 This section describes the alternative way of authenticating to API Server.
 
-::: warning
+{% warning %}
 Admin client certificates are deprecated. If you are using it, please migrate to the user token in preceding section.
-:::
+{% endwarning %}
 
 To use admin client certificates, set `KUMA_API_SERVER_AUTHN_TYPE` to `adminClientCerts`.
 

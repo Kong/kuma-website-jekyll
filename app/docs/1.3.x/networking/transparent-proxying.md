@@ -43,9 +43,9 @@ kumactl install transparent-proxy \
 
 Where `kuma-dp-user` is the name of the dedicated user that will be used to run the `kuma-dp` process and `<kuma-cp IP>` is the IP address of the Kuma control plane (`kuma-cp`). 
 
-:::warning
+{% warning %}
 Please note that this command **will change** both the host `iptables` rules as well as modify `/etc/resolv.conf`, while keeping a backup copy of the original file.
-:::
+{% endwarning %}
 
 The command has several other options which allow to change the default inbound and outbound redirect ports, add ports for exclusion and also disable the iptables or `resolve.conf` modification steps. The command's help has enumerated and documented the available options.
 
