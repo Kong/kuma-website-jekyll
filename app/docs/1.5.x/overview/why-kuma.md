@@ -28,9 +28,9 @@ Usually, at this point, developers take one of the following actions to remedy t
 
 - **Sidecar proxy**: The services delegate all the connectivity and observability concerns to an out-of-process runtime, that will be on the execution path of every request. It will proxy all the outgoing connections and accept all the incoming ones. And of course it will execute traffic policies at runtime, like routing or logging. By using this approach, developers don't have to worry about connectivity and focus entirely on their services and applications.
 
-::: tip
+{% tip %}
 **Sidecar Proxy**: It's called _sidecar_ proxy because the proxy it's another process running alongside our service process on the same underlying host. There is going to be one instance of a sidecar proxy for each running instance of our services, and because all the incoming and outgoing requests - and their data - always go through the sidecar proxy, it is also called a data-plane (DP) since it sits on the data path.
-:::
+{% endtip %}
 
 Since we are going to be having many instances for our services, we are also going to be having an equal number of sidecar proxies: that's a lot of proxies! Therefore the sidecar proxy model **requires** a control plane that allows a team to configure the behavior of the proxies dynamically without having to manually configure them. The proxies initiate connections with the control plane to receive new configurations, while at runtime the control provides them with the most updated configuration.
 
@@ -42,9 +42,9 @@ Unlike a data plane proxy (DP), the control plane (CP) is never on the execution
 <img src="/assets/images/docs/0.4.0/diagram-03.jpg" alt="" style="width: 550px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
-::: tip
+{% tip %}
 **Service Mesh**: An architecture made of sidecar proxies deployed next to our services (the data-planes, or DPs), and a control plane (CP) controlling those DPs, is called Service Mesh. Usually, Service Mesh appears in the context of Kubernetes, but anybody can build Service Meshes on any platform (including VMs and Bare Metal).
-:::
+{% endtip %}
 
 With Kuma, our main goal is to reduce the code that has to be written and maintained to build reliable architectures. Therefore, Kuma embraces the sidecar proxy model by leveraging Envoy as its sidecar data-plane technology.
 
@@ -70,9 +70,9 @@ Kuma (`kuma-cp`) is one single executable written in GoLang that can be installe
 
 Out of the box, Kuma ships with a bundled [Envoy](https://www.envoyproxy.io/) data plane proxy ready to use for our services, so that you don't have to worry about putting all the pieces together.
 
-::: tip
+{% tip %}
 Kuma ships with an executable `kuma-dp` that executes the bundled `envoy` executable to create the data plane proxy. For details, see the [Overview](./).
-:::
+{% endtip %}
 
 [Install Kuma](/install/) and follow the instructions to get up and running in a few steps.
 

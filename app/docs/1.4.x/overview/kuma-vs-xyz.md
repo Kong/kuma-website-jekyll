@@ -29,6 +29,6 @@ Kuma exists today to provide a pragmatic journey to implementing Service Mesh fo
 
 To learn more about the single and multi-zone deployments of Kuma you can ready the [deployments guide](/docs/latest/documentation/deployments).
 
-::: tip
+{% tip %}
 **Real-Time Support**: The Kuma community provides channels for real-time communication and support that you can explore in our [Community](/community) page. It also provides dedicated [Enterprise Support](/enterprise) delivered by [Kong](https://konghq.com).
-:::
+{% endtip %}

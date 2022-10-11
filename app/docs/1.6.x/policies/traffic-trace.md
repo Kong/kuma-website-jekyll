@@ -17,18 +17,18 @@ Kuma currently supports the following backends:
   * [Jaeger](https://www.jaegertracing.io/) as the Zipkin collector. The Zipkin examples specify Jaeger, but you can modify for a Zipkin-only deployment.
 * `datadog`
 
-::: tip
+{% tip %}
 While most commonly we want all the traces to be sent to the same tracing backend, we can optionally create multiple tracing backends in a `Mesh` resource and store traces for different paths of our service traffic in different backends by leveraging Kuma tags. This is especially useful when we want traces to never leave a world region, or a cloud, for example.
-:::
+{% endtip %}
 
 ## Add Jaeger backend
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab "Kubernetes"
 
-::: tip
+{% tip %}
 On Kubernetes you can deploy Jaeger automatically in a `kuma-tracing` namespace with `kumactl install tracing | kubectl apply -f -`.
-:::
+{% endtip %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1

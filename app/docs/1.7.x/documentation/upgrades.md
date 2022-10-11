@@ -7,9 +7,9 @@ Since Kuma 1.4.x upgrades can be performed up to two minor versions. Examples:
 * You can upgrade from `1.4.x` to `1.6.x`
 * To upgrade from `1.2.x` to `1.6.x`, first upgrade from `1.2.x` to `1.4.x`. Then from `1.4.x` to `1.6.x`.
 
-::: tip
+{% tip %}
 To avoid control plane downtime when restarting on the new version make sure you have more than one instance of the control plane in each zone.
-:::
+{% endtip %}
 
 `kuma-dp` follows the above compatibility rules with `kuma-cp`. Examples:
 * You can connect `kuma-dp` `1.4.x` to `kuma-cp` `1.6.x`

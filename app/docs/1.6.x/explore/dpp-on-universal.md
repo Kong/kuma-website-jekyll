@@ -30,9 +30,9 @@ kuma-dp run \
 
 In the example above, any external client who wants to consume Redis will have to make a request to the DP on address `192.168.0.1` and port `9000`, which internally will be redirected to the Redis service listening on address `127.0.0.1` and port `6379`.
 
-::: tip
+{% tip %}
 Note that in Universal dataplanes need to start with a token for authentication. You can learn how to generate tokens in the [security section](../security/dp-auth.md#data-plane-proxy-token).
-:::
+{% endtip %}
 
 Now let's assume that we have another service called "Backend" that internally listens on port `80`, and that makes outgoing requests to the `redis` service:
 
@@ -66,9 +66,9 @@ In order for the `backend` service to successfully consume `redis`, we specify a
 For this to work, we must update our application to consume `redis` on `127.0.0.1:10000`.
 
 
-::: tip
+{% tip %}
 You can parametrize your `Dataplane` definition, so you can reuse the same file for many `kuma-dp` instances or even services.
-:::
+{% endtip %}
 
 ## Lifecycle 
 

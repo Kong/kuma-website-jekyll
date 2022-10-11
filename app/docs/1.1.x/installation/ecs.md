@@ -11,11 +11,11 @@ To install and run Kuma on AWS ECS execute the following steps:
 
 Before continuing with the next steps, make sure to have [AWS CLI installed](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) and [configured](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 
-::: tip
+{% tip %}
 The AWS CloudFormation scripts described in this page are parametrized, and we suggest to take a deeper look at those parameters before deploying Kuma.
 
 Also, the scripts are leveraging **AWS Fargate** on top of AWS ECS.
-:::
+{% endtip %}
 
 ### 1. Setup the environment
 
@@ -139,9 +139,9 @@ aws cloudformation deploy \
 
 The `<kuma-cp-ip>` value (retrieved from the AWS ECS web console or CLI) can be either the public or the private IP of `kuma-cp`. In multi-zone deployments, we will use the remote control plane IP address.
 
-::: tip
+{% tip %}
 We strongly recommend exposing the `kuma-cp` instances behind a load balancer, and use the IP of the load balancer as the `DNSServer` parameter value. This will ensure a more robust operation during upgrades, restarts and re-configurations.
-:::
+{% endtip %}
 
 ### 3. Run Kuma DP
 
@@ -161,9 +161,9 @@ Where `<kuma-cp-ip>` is the IP address of `kuma-cp` as it shows in AWS ECS. When
 
 The generated token is valid for all data plane proxies in the `default` mesh. Kuma also allows to generate data plane proxy token in a more restrictive way and [bound to its name or tags](https://kuma.io/docs/1.1.6/documentation/security/#data-plane-proxy-authentication).
 
-:::tip
+{% tip %}
 Kuma allows much more advanced and secure ways to expose the `/tokens` endpoint. The full procedure is described in the following security documentation: [data plane proxy authentication](https://kuma.io/docs/1.1.6/documentation/security/#data-plane-proxy-to-control-plane-communication), [user to control plane communication](https://kuma.io/docs/1.1.6/documentation/security/#user-to-control-plane-communication).
-:::
+{% endtip %}
 
 ### 4. Use Kuma
 

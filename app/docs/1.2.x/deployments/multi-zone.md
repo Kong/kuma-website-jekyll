@@ -10,9 +10,9 @@ This is a more advanced deployment mode for Kuma that allow us to support servic
 * **Data plane proxies**: The data plane proxies connect to the closest `zone` control plane in the same zone. Additionally, we need to start a `zone-ingress` proxy on every zone to have cross-zone communication between data plane proxies in different zones.
 * **Service Connectivity**: Automatically resolved via the built-in DNS resolver that ships with Kuma. When a service wants to consume another service, it will resolve the DNS address of the desired service with Kuma, and Kuma will respond with a Virtual IP address, that corresponds to that service in the Kuma service domain.
 
-:::tip
+{% tip %}
 We can support multiple isolated service meshes thanks to Kuma's multi-tenancy support, and workloads from both Kubernetes or any other supported Universal environment can participate in the Service Mesh across different regions, clouds, and datacenters while not compromising the ease of use and still allowing for end-to-end service connectivity.
-:::
+{% endtip %}
 
 When running in multi-zone mode, we introduce the notion of a `global` and `zone` control planes for Kuma:
 
@@ -34,9 +34,9 @@ To implement easy service connectivity, Kuma ships with:
 * **DNS Resolver**: Kuma provides an out of the box DNS server on every `zone` control plane that will be used to resolve service addresses when estabilishing any service-to-service communication. It scales horizontally as we scale the `zone` control plane.
 * **Zone Ingress Proxy**: Kuma provides an out of the box `zone-ingress` proxy mode that will be used to enable traffic to enter a zone from another zone. It can be scaled horizontally. Each zone must have a `zone-ingress` proxy deployed. 
 
-:::tip
+{% tip %}
 A `zone-ingress` proxy is specific to internal communication within a mesh and is not to be considered an API gateway. API gateways are supported in Kuma's [gateway mode](/docs/1.2.3/documentation/dps-and-data-model/#gateway), which can be deployed in addition to `zone-ingress` proxies.
-:::
+{% endtip %}
 
 The global control plane and the zone control planes communicate with each other over xDS to synchronize the resources that are created to configure Kuma, such as policies.
 
@@ -102,9 +102,9 @@ kumactl install control-plane \
   --kds-global-address grpcs://`<global-kds-address>` | kubectl apply -f -
 ```
 
-::: tip
+{% tip %}
 Kuma DNS installation supports several flavors of CoreDNS and kube-dns. We recommend checking the configuration of the Kubernetes cluster after deploying the Kuma zone control plane to ensure everything is as expected.
-:::
+{% endtip %}
 ::: tab "Helm"
 To install the Zone Control plane we need to provide the following parameters:
  * `controlPlane.mode=zone`
@@ -116,11 +116,11 @@ To install the Zone Control plane we need to provide the following parameters:
 helm install --version 0.6.3 kuma --namespace kuma-system --set controlPlane.mode=zone,controlPlane.zone=<zone-name>,ingress.enabled=true,controlPlane.kdsGlobalAddress=grpcs://<global-kds-address> kuma/kuma
 ```
 
-::: tip
+{% tip %}
 Kuma DNS installation supports several flavors of CoreDNS and kube-dns. We recommend checking the configuration of the Kubernetes cluster after deploying Kuma zone control plane to ensure evrything is as expected.
 
 To install DNS we need to use `kumactl`. It reads the state of the control plane therefore it could not be put into HELM.  You can track the issue to put this into HELM [here](https://github.com/kumahq/kuma/issues/1124).
-:::
+{% endtip %}
 ::: tab "Universal"
 
 Run the `kuma-cp` in `zone` mode.
@@ -244,11 +244,11 @@ networking:
 :::
 ::::
 
-::: tip
+{% tip %}
 The Kuma DNS service format (e.g. `echo-server_kuma-test_svc_1010.mesh`) is a composition of Kubernetes Service Name (`echo-server`),
 Namespace (`kuma-test`), a fixed string (`svc`), the service port (`1010`). The service is resolvable in the DNS zone `.mesh` where
 the Kuma DNS service is hooked.
-:::
+{% endtip %}
 
 ### Deleting a Zone
 
@@ -273,6 +273,6 @@ spec:
 
 Changing this value to `enabled: false` will allow the user to exclude the `Zone Ingress` from all other zones - and by doing so - preventing traffic from being able to enter the `zone`. 
 
-:::tip
+{% tip %}
 A `Zone` that has been disabled will show up as "Offline" in the GUI and CLI
-:::
+{% endtip %}

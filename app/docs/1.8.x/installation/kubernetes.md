@@ -10,9 +10,9 @@ To install and run Kuma execute the following steps:
 
 Finally, you can follow the [Quickstart](#quickstart) to take it from here and continue your Kuma journey.
 
-::: tip
+{% tip %}
 Kuma also provides [Helm charts](../installation/helm) that we can use instead of this distribution.
-:::
+{% endtip %}
 
 ### Download Kumactl
 
@@ -28,13 +28,13 @@ kumactl install control-plane | kubectl apply -f -
 
 This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments) like "multi-zone".
 
-::: tip
+{% tip %}
 It may take a while for Kubernetes to start the Kuma resources, you can check the status by executing:
 
 ```sh
 kubectl get pod -n kuma-system
 ```
-:::
+{% endtip %}
 
 ### Use Kuma
 

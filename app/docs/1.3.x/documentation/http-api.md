@@ -4,9 +4,9 @@
 
 Kuma ships with a RESTful HTTP interface that you can use to retrieve the state of your configuration and policies on every environment, and when running on Universal mode it will also allow to make changes to the state. On Kubernetes, you will use native CRDs to change the state in order to be consistent with Kubernetes best practices.
 
-::: tip
+{% tip %}
 **CI/CD**: The HTTP API can be used for infrastructure automation to either retrieve data, or to make changes when running in Universal mode. The [`kumactl`](../kumactl) CLI is built on top of the HTTP API, which you can also access with any other HTTP client like `curl`.
-:::
+{% endtip %}
 
 By default the API Server is listening on port `5681` (HTTP) and on `5682` (HTTPS). The endpoints available are:
 
@@ -2096,9 +2096,9 @@ Example:
 curl -XDELETE http://localhost:5681/meshes/default/fault-injections/fi1
 ```
 
-::: tip
+{% tip %}
 The [`kumactl`](../kumactl) CLI under the hood makes HTTP requests to this API.
-:::
+{% endtip %}
 
 ## Retry
 
@@ -2310,9 +2310,9 @@ Example:
 curl -XDELETE http://localhost:5681/meshes/default/retries/r1
 ```
 
-::: tip
+{% tip %}
 The [`kumactl`](../kumactl) CLI under the hood makes HTTP requests to this API.
-:::
+{% endtip %}
 
 ## Timeout
 
@@ -2484,9 +2484,9 @@ Example:
 curl -XDELETE http://localhost:5681/meshes/default/timeouts/t1
 ```
 
-::: tip
+{% tip %}
 The [`kumactl`](../kumactl) CLI under the hood makes HTTP requests to this API.
-:::
+{% endtip %}
 
 
 ## Zones

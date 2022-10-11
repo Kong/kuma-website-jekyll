@@ -18,9 +18,9 @@ The DNS resolver is embedded in each data plane proxy and configured through XDS
 
 The global control plane and the zone control planes communicate to synchronize resources such as Kuma policy configurations over Kuma Discovery Service (KDS), which is a protocol based on xDS.
 
-:::tip
+{% tip %}
 A zone ingress is not an API gateway. Instead, it is specific to internal cross-zone communication within the mesh. API gateways are supported in Kuma [gateway mode](../documentation/dps-and-data-model) which can be deployed in addition to zone ingresses.
-:::
+{% endtip %}
 
 ### Components of a multi-zone deployment
 
@@ -260,10 +260,10 @@ networking:
 :::
 ::::
 
-:::tip
+{% tip %}
 This address doesn't need to be public to the internet.
 It only needs to be reachable from all dataplane proxies in other zones.
-:::
+{% endtip %}
 
 ### Cross-zone communication details
 
@@ -410,10 +410,10 @@ The zone will show as **Offline** in the GUI and CLI.
     * Services removed from a zone will still appear available in other zones
 * You won't be able to disable or delete a zone
 
-::: tip
+{% tip %}
 Note that both local and cross-zone application traffic is not impacted by this failure case.
 Data plane proxy changes will be propagated within their zones.
-:::
+{% endtip %}
 
 ### Zone control-plane offline
 
@@ -423,10 +423,10 @@ Data plane proxy changes will be propagated within their zones.
 * Cross zone communication will still work.
 * Other zones are unaffected.
 
-::: tip
+{% tip %}
 You can think of this failure case as *"Freezing"* the zone mesh configuration.
 Communication will still work but changes will not be reflected on existing data plane proxies.
-:::
+{% endtip %}
 
 ### Communication between Global and Zone control-plane failing
 
@@ -444,9 +444,9 @@ This can happen with mis-configuration or network connectivity issues between co
     * Local data plane proxies will not see services no longer running in other zones
     * Local data plane proxies will not see changes in number of instances of each service running in other zones.
 
-::: tip
+{% tip %}
 Note that both local and cross-zone application traffic is not impacted by this failure case.
-:::
+{% endtip %}
 
 ### Communication between 2 zones failing
 
@@ -455,6 +455,6 @@ This can happen if there are network connectivity issues between control-plane a
 * Communication and operation within each zone is unaffected
 * Communication across each zone will fail
 
-::: tip
+{% tip %}
 With the right resiliency setup ([Retries](../../policies/retry), [Probes](../../policies/health-check), [Locality Aware LoadBalancing](../../policies/locality-aware), [Circuit Breakers](../../policies/circuit-breaker)) the failing zone can be quickly severed and traffic re-routed to another zone.
-:::
+{% endtip %}

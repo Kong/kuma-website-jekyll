@@ -17,9 +17,9 @@ There are several advantages for using transparent proxying in universal mode:
 
 The Kuma control plane exposes a DNS service which handles the name resolution in the `.mesh` DNS zone. By default it listens on port `UDP/5653`. For this setup we need it to listen on port `UDP/53`, therefore make sure that this environment variable is set before running `kuma-cp`: `KUMA_DNS_SERVER_PORT=53`.
 
-:::tip
+{% tip %}
 The IP address of the host that runs Kuma Control plane will be used in the next section. Make sure to have it once, `kuma-cp` is started.
-:::
+{% endtip %}
 
 ### Setting up the service host
 
@@ -49,9 +49,9 @@ Please note that this command **will change** both the host `iptables` rules as 
 
 The command has several other options which allow to change the default inbound and outbound redirect ports, add ports for exclusion and also disable the iptables or `resolve.conf` modification steps. The command's help has enumerated and documented the available options.
 
-::: tip
+{% tip %}
 The default settings will exclude the SSH port `22` from the redirection, thus allowing the remote access to the host to be preserved. If the host is set up to use other remote management mechanisms, use `--exclude-inbound-ports` to provide a comma separated list of the TCP ports that will be excluded from the redirection.
-:::
+{% endtip %}
 
 The changes will persist over restarts, so this command is needed only once. Reverting back to the original state of the host can be done by issuing `kumactl uninstall transparent-proxy`.
 
@@ -167,7 +167,7 @@ KUMA_RUNTIME_KUBERNETES_SIDECAR_TRAFFIC_EXCLUDE_OUTBOUND_PORTS=5678,8900
 
 Global settings can be always overridden with annotations on the individual Pods. 
 
-::: tip
+{% tip %}
 When deploying Kuma with `kumactl install control-plane` you can set those settings with
 ```sh
 kumactl install control-plane \
@@ -181,6 +181,6 @@ envVar:
   KUMA_RUNTIME_KUBERNETES_SIDECAR_TRAFFIC_EXCLUDE_INBOUND_PORTS: "1234"
   KUMA_RUNTIME_KUBERNETES_SIDECAR_TRAFFIC_EXCLUDE_OUTBOUND_PORTS=5678,8900
 ```
-:::
+{% endtip %}
 ::::
 

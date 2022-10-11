@@ -168,9 +168,9 @@ EOF
 
 Once Mutual TLS has been enabled, Kuma will **not allow** traffic to flow freely across our services unless we explicitly create a [Traffic Permission](/docs/1.2.3/policies/traffic-permissions/) policy that describes what services can be consumed by other services. You can try to make requests to the demo application at [`127.0.0.1:5000/`](http://127.0.0.1:5000/) and you will notice that they will **not** work.
 
-:::tip
+{% tip %}
 In a live environment we suggest to setup the Traffic Permission policies prior to enabling Mutual TLS in order to avoid unexpected interruptions of the service-to-service traffic.
-:::
+{% endtip %}
 
 We can setup a very permissive policy that allows all traffic to flow in our application in an encrypted way with the following command:
 
@@ -190,9 +190,9 @@ EOF
 
 By doing so every request we now make on our demo application at [`127.0.0.1:5000/`](http://127.0.0.1:5000/) is not only working again, but it is automatically encrypted and secure.
 
-:::tip
+{% tip %}
 As usual, you can visualize the Mutual TLS configuration and the Traffic Permission policies we have just applied via the GUI, the HTTP API or `kumactl`.
-:::
+{% endtip %}
 
 ## Explore Traffic Metrics
 

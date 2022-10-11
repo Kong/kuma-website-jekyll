@@ -65,10 +65,10 @@ The following tags are added automatically and cannot be overridden using Pod la
 * `k8s.kuma.io/service-name`: Identifies the name of Kubernetes Service that selects the Pod. Example: `demo-app`.
 * `k8s.kuma.io/service-port`: Identifies the port of Kubernetes Service that selects the Pod. Example: `80`.
 
-:::tip
+{% tip %}
 - If a Kubernetes service exposes more than 1 port, multiple inbounds will be generated all with different `kuma.io/service`.
 - If a pod is attached to more than one Kubernetes service, multiple inbounds will also be generated. 
-:::
+{% endtip %}
 
 ### Example
 
@@ -350,11 +350,11 @@ runtime:
 [...]
 ```
 
-::: tip
+{% tip %}
 If you specify the list of default patches (i.e. `["default-patch-1", "default-patch-2]`)
 but your workload will be annotated with its own list of patches (i.e.
 `["pod-patch-1", "pod-patch-2]`) only the latter will be applied. 
-:::
+{% endtip %}
 
 #### Example
 

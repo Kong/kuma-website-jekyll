@@ -10,9 +10,9 @@ To install and run Kuma on Kubernetes with Helm charts execute the following ste
 
 Finally you can follow the [Quickstart](#_4-quickstart) to take it from here and continue your Kuma journey.
 
-::: tip
+{% tip %}
 Kuma also provides an alternative [Kubernetes distribution](/docs/1.1.6/installation/kubernetes/) that we can use instead of Helm charts.
-:::
+{% endtip %}
 
 ### 1. Add the Kuma charts repository
 

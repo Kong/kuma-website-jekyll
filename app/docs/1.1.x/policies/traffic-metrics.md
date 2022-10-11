@@ -152,9 +152,9 @@ It then transforms that information into a format that `Prometheus` can understa
 ::: tab "Kubernetes"
 Use `kumactl install metrics | kubectl apply -f -` to deploy configured Prometheus with Grafana.
 
-::: tip
+{% tip %}
 If you've got Prometheus deployment already, you can use [Prometheus federation](https://prometheus.io/docs/prometheus/latest/federation/) to bring Kuma metrics to your main Prometheus cluster.
-:::
+{% endtip %}
 ::: tab "Universal"
 First, you need to run `kuma-prometheus-sd`, e.g. by using the following command:
 

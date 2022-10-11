@@ -8,9 +8,9 @@ To install and run Kuma on Docker execute the following steps:
 * [2. Run Kuma](#_2-run-kuma)
 * [3. Use Kuma](#_3-use-kuma)
 
-::: tip
+{% tip %}
 The official Docker images are used by default in the [Kubernetes](../installation/kubernetes/) and [OpenShift](../installation/openshift/) distributions.
-:::
+{% endtip %}
 
 ### 1. Download Kuma
 
@@ -48,9 +48,9 @@ To learn more, read the [multi-zone installation instructions](../documentation/
 :::
 ::::
 
-::: tip
+{% tip %}
 **Note**: By default this will run Kuma with a `memory` [backend](../../documentation/backends), but you can use a persistent storage like PostgreSQL by updating the `conf/kuma-cp.conf` file.
-:::
+{% endtip %}
 
 ### 3. Use Kuma
 

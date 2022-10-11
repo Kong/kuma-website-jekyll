@@ -63,10 +63,10 @@ KUMA_XDS_SERVER_DATAPLANE_CONFIGURATION_REFRESH_INTERVAL=5s \
 :::
 ::::
 
-::: tip
+{% tip %}
 If you configure `kuma-cp` with a YAML file, make sure to provide only values that you want to override.
 Otherwise, upgrading Kuma might be harder, because you need to keep track of your changes when replacing this file on every upgrade.
-:::
+{% endtip %}
 
 ### Inspecting the configuration
 

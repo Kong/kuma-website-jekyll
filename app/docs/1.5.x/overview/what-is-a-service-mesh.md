@@ -6,9 +6,9 @@ title: What is Service Mesh?
 
 Service Mesh is a technology pattern that implements a better way to implement modern networking and connectivity among the different services that make up an application. While it is commonly used in the context of microservices, it can be used to improve connectivity among every architecture and on every platform like VMs and containers.
 
-::: tip
+{% tip %}
 **Reliable service connectivity** is a pre-requisite for every modern digital application. Transitioning to microservices - and to the Cloud - can be disastrous if network connectivity is not taken care of, and this is exactly why Kuma was built.
-:::
+{% endtip %}
 
 When a service wants to communicate to another service over the network - like a monolith talking to a database or a microservices talking to another microservice - by default the connectivity among them is unreliable: the network can be slow, it is unsecure by default, and by default of those network requests are not being logged anywhere in case we need to debug an error.
 

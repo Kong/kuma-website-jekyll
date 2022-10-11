@@ -29,12 +29,12 @@ There's a small script to download the latest version:
 curl https://kuma.io/preview.sh | sh -
 ```
 
-::: tip
+{% tip %}
 If you already know the version you can use the installer:
 ```shell
 curl https://kuma.io/installer.sh | VERSION=kuma-0.0.0-preview.4d3a9fd03 sh -
 ```
-:::
+{% endtip %}
 
 It outputs:
 

@@ -34,10 +34,10 @@ For HTTP you can also manually forward the following headers:
 
 ### Zipkin
 
-::: tip
+{% tip %}
 This assumes you already have a zipkin compatible collector running.
 If you haven't, read the [observability docs](../explore/observability).
-:::
+{% endtip %}
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab "Kubernetes"
@@ -80,9 +80,9 @@ Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../r
 
 ### Datadog
 
-::: tip
+{% tip %}
 This assumes a Datadog agent is configured and running. If you haven't already check the [Datadog observability page](../explore/observability.md#configuring-datadog). 
-:::
+{% endtip %}
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab "Kubernetes"
@@ -173,13 +173,13 @@ Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../r
 :::
 ::::
 
-::: tip
+{% tip %}
 When `backend ` field is omitted, the logs will be forwarded into the `defaultBackend` of that `Mesh`.
-:::
+{% endtip %}
 
 You can also add tags to apply the `TrafficTrace` resource only a subset of data plane proxies. `TrafficTrace` is a [Dataplane policy](how-kuma-chooses-the-right-policy-to-apply.md#dataplane-policy), so you can specify any of the `selectors` tags.
 
-::: tip
+{% tip %}
 While most commonly we want all the traces to be sent to the same tracing backend, we can optionally create multiple tracing backends in a `Mesh` resource and store traces for different paths of our service traffic in different backends by leveraging Kuma tags.
 This is especially useful when we want traces to never leave a world region, or a cloud, for example.
-:::
+{% endtip %}

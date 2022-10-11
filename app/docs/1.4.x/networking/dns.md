@@ -163,12 +163,12 @@ Kuma DNS is not a service discovery mechanism. Instead, it returns a single VIP 
 
 ## Usage
 
-::: tip
+{% tip %}
 The following setup will only work when `serviceVipEnabled=true` which will default to false and then fully removed in future versions of Kuma.
 
 The preferred way to define hostnames is using [virtual-outbounds](../policies/virtual-outbound).
 Virtual-outbounds also makes it possible to define dynamic hostnames using specific tags or to expose services on a different port.
-:::
+{% endtip %}
 
 Consuming a service handled by Kuma DNS from inside a Kubernetes container is based on the automatically generated `kuma.io/service` tag. The resulting domain name has the format `{service tag}.mesh`. For example:
 

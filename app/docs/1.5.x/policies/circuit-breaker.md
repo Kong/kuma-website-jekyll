@@ -6,9 +6,9 @@ This policy will look for errors in the live traffic being exchanged between our
 
 Circuit breakers - unlike active [Health Checks](../policies/health-check/) - do not send additional traffic to our data plane proxies but they rather inspect the existing service traffic. They are also commonly used to prevent cascading failures in our services.
 
-:::tip
+{% tip %}
 Like a real-world circuit breaker when the circuit is **closed** then traffic between a source and destination data plane proxy is allowed to freely flow through it, and when it is **open** then the traffic is interrupted.
-:::
+{% endtip %}
 
 The conditions that determine when a circuit breaker is closed or open are being configured in what we call "detectors". This policy provides 5 different types of detectors and they are triggered on some deviations in the upstream service behavior. All detectors could coexist on the same outbound interface.
 
@@ -174,14 +174,14 @@ The maximum percent of an upstream Envoy cluster that can be ejected due to outl
 
 Activates Split Mode.
 
-:::tip
+{% tip %}
 **Split Mode:** There are two types of errors that might occur in a circuit breaker:
 
 * Locally originated: errors triggered locally when estabilishing a connection at the TCP layer (ie: connection refused, connection reset).
 * Externally originated: errors triggered remotely like a 5xx error in the response.
 
 If Split Mode is off, Kuma won't distinguish errors by their origin and they will be counted together. If Split Mode is on, different parameters can be used to fine tune the detectors. All detectors counts errors according to the state of this parameter. 
-:::
+{% endtip %}
 
 ### Detectors
 

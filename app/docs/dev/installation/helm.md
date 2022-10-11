@@ -12,9 +12,9 @@ Finally you can follow the [Quickstart](#quickstart) to take it from here and co
 
 Please note that at least version 3.8.0 of Helm is required to use the Kuma Helm charts. If you are using an older version of Helm, please upgrade to version 3.8.0 first.
 
-::: tip
+{% tip %}
 Kuma also provides an alternative [Kubernetes distribution](../installation/kubernetes/) that we can use instead of Helm charts.
-:::
+{% endtip %}
 
 ### Add the Kuma charts repository
 

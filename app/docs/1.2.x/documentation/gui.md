@@ -4,9 +4,9 @@
 
 Kuma now ships with a basic web-based GUI that will serve as a visual overview of your dataplanes, meshes, and various traffic policies.
 
-::: tip
+{% tip %}
 The GUI pairs with the HTTP API — Read more about the HTTP API [here](../http-api)
-:::
+{% endtip %}
 
 When launching Kuma, the GUI will start by default on the API port, and defaults to `:5681/gui`. You can access it in your web browser by going to `http://localhost:5681/gui`.
 
@@ -33,9 +33,9 @@ Once you’ve completed the setup process, you’ll be sent to the Mesh Overview
 ## Mesh Details
 If you want to view information regarding a specific mesh, you can select the desired mesh from the pulldown at the top of the sidebar. You can then click on any of the overviews in the sidebar to view the entities and policies associated with that mesh.
 
-::: tip
+{% tip %}
 If you haven't yet created any meshes, this will default to the `default` mesh.
-:::
+{% endtip %}
 
 Each of these views will provide you with a table that displays helpful at-a-glance information. The Dataplanes table will display helpful information, including whether or not a dataplane is online, when it was last connected, how many connections it has, etc. This view also provides a control for refreshing your data on the fly without having to do a full page reload each time you've made changes:
 

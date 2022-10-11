@@ -6,9 +6,9 @@ Kuma provides a built-in interface to store sensitive information such as TLS ke
 
 Secrets belong to a specific [`Mesh`](/docs/1.3.1/policies/mesh) resource, and cannot be shared across different `Meshes`.
 
-:::tip
+{% tip %}
 Kuma will also leverage `Secret` resources internally for certain operations, for example when storing auto-generated certificates and keys when Mutual TLS is enabled.
-:::
+{% endtip %}
 
 :::: tabs :options="{ useUrlFragment: false }"
 
@@ -78,7 +78,7 @@ data: dGVzdAo=" | kumactl apply -f -
 :::
 ::::
 
-::: tip
+{% tip %}
 The `data` field of a Kuma `Secret` should always be a Base64 encoded value. You can use the `base64` command in Linux or macOS to encode any value in Base64:
 
 ```sh
@@ -88,7 +88,7 @@ cat cert.pem | base64
 # or Base64 encode a string
 echo "value" | base64
 ```
-:::
+{% endtip %}
 
 ### Access to the Secret HTTP API
 

@@ -407,9 +407,9 @@ conf:
 :::
 ::::
 
-::: tip
+{% tip %}
 In order to use L7 Traffic Split, we need to [mark the destination service with `kuma.io/protocol: http`](./protocol-support-in-kuma).
-:::
+{% endtip %}
 
 ### L7 Traffic Modification
 
@@ -478,9 +478,9 @@ conf:
 :::
 ::::
 
-::: tip
+{% tip %}
 In order to use L7 Traffic Modification, we need to [mark the destination service with `kuma.io/protocol: http`](./protocol-support-in-kuma).
-:::
+{% endtip %}
 
 ### L7 Traffic Rerouting
 
@@ -538,9 +538,9 @@ conf:
 :::
 ::::
 
-::: tip
+{% tip %}
 In order to use L7 Traffic Rerouting, we need to [mark the destination service with `kuma.io/protocol: http`](./protocol-support-in-kuma).
-:::
+{% endtip %}
 
 ### Load balancer types
 

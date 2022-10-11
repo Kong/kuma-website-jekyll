@@ -2,9 +2,9 @@
 ---
 # Amazon Linux
 
-:::tip
+{% tip %}
 If you wish to use Kuma on Amazon EKS please follow the [Kubernetes instructions](/docs/1.2.3/installation/kubernetes/) instead.
-:::
+{% endtip %}
 
 To install and run Kuma on Amazon Linux (**x86_64**) execute the following steps:
 
@@ -72,9 +72,9 @@ We suggest adding the `kumactl` executable to your `PATH` so that it's always av
 ln -s $PWD/kumactl /usr/local/bin/kumactl
 ```
 
-::: tip
+{% tip %}
 **Note**: By default this will run Kuma with a `memory` [backend](../../documentation/backends), but you can use a persistent storage like PostgreSQL by updating the `conf/kuma-cp.conf` file.
-:::
+{% endtip %}
 
 ### 3. Use Kuma
 

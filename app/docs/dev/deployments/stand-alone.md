@@ -59,9 +59,9 @@ kuma-cp run
 
 Once Kuma is up and running, data plane proxies can now [connect](../explore/dpp) directly to it.
 
-:::tip
+{% tip %}
 When the mode is not specified, Kuma will always start in `standalone` mode by default.
-:::
+{% endtip %}
 
 ## Failure modes
 
@@ -71,7 +71,7 @@ When the mode is not specified, Kuma will always start in `standalone` mode by d
 * Data-plane proxy configuration will not be updated.
 * Communication between data planes proxies will still work.
 
-::: tip
+{% tip %}
 You can think of this failure case as *"Freezing"* the zone mesh configuration.
 Communication will still work but changes will not be reflected on existing data plane proxies.
-:::
+{% endtip %}

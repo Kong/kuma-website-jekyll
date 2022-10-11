@@ -13,10 +13,10 @@ Kuma provides full integration with Prometheus:
 
 To collect metrics from Kuma, you need to expose metrics from proxies and applications. 
 
-::: tip
+{% tip %}
 In the rest of this page we assume you have already configured your observability tools to work with Kuma.
 If you haven't already read the [observability docs](../explore/observability).
-:::
+{% endtip %}
 
 ## Expose metrics from data plane proxies
 

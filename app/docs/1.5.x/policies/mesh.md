@@ -13,9 +13,9 @@ Typically we would want to create a `Mesh` per line of business, per team, per a
 
 In order to use Kuma at least one `Mesh` must exist, and there is no limit to the number of Meshes that can be created. When a data plane proxy connects to the control plane (`kuma-cp`) it specifies to what `Mesh` resource it belongs: a data plane proxy can only belong to one `Mesh` at a time.
 
-:::tip
+{% tip %}
 When starting a new Kuma cluster from scratch a `default` Mesh is being created automatically.
-:::
+{% endtip %}
 
 Besides the ability of being able to create virtual service mesh, a `Mesh` resource will also be used for:
 
@@ -159,6 +159,6 @@ networking:
 
 When `networking.outbound.passthrough` is `false`, no traffic to any non-mesh resource can leave the Mesh.
 
-:::tip
+{% tip %}
 Before turning this feature on, double-check Envoy stats that no traffic is flowing through `pass_through` cluster. Otherwise, you will block the traffic which may cause the instability of the system.
-:::
+{% endtip %}

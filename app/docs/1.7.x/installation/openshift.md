@@ -57,13 +57,13 @@ After updating `master-config.yaml` restart the cluster and install `control-pla
 
 This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments) like "multi-zone".
 
-::: tip
+{% tip %}
 It may take a while for OpenShift to start the Kuma resources, you can check the status by executing:
 
 ```sh
 oc get pod -n kuma-system
 ```
-:::
+{% endtip %}
 
 ### 3. Use Kuma
 
@@ -148,7 +148,7 @@ kumactl config control-planes add --name=XYZ --address=http://{address-to-kuma}:
 
 You will notice that Kuma automatically creates a [`Mesh`](../../policies/mesh) entity with name `default`.
 
-::: tip
+{% tip %}
 Kuma explicitly specifies UID for `kuma-dp` sidecar to avoid capturing traffic from `kuma-dp` itself. For that reason, `nonroot` [Security Context Constraint](https://docs.openshift.com/container-platform/latest/authentication/managing-security-context-constraints.html) has to be granted to the application namespace:
 ```sh
 oc adm policy add-scc-to-group nonroot system:serviceaccounts:<app-namespace>
@@ -159,7 +159,7 @@ If namespace is not configured properly, we will see following error on the `Dep
 'pods "kuma-demo-backend-v0-cd6b68b54-" is forbidden: unable to validate against any security context constraint: [spec.containers[1].securityContext.securityContext.runAsUser: Invalid value: 5678: must be in the ranges: [1000540000, 1000549999]]'
 ```
 
-:::
+{% endtip %}
 
 ### 4. Quickstart
 
@@ -167,10 +167,10 @@ Congratulations! You have successfully installed Kuma on OpenShift 🚀.
 
 In order to start using Kuma, it's time to check out the [quickstart guide for Kubernetes](../quickstart/kubernetes/) deployments.
 
-::: tip
+{% tip %}
 Before running Kuma Demo in the Quickstart, remember to run the following command
 ```sh
 oc adm policy add-scc-to-group anyuid system:serviceaccounts:kuma-demo
 ```
 In case of Kuma Demo, one of the component requires root access therefore we use `anyuid` instead of `nonroot` permission.
-:::
+{% endtip %}

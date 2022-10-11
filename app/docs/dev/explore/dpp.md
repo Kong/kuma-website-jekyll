@@ -10,9 +10,9 @@ A DPP is composed of the following components:
   - `Envoy` receives configuration from the control-plane to manage traffic correctly 
   - `core-dns` resolves Kuma specific DNS entries
 
-::: tip
+{% tip %}
 Data plane proxies are also called sidecars.
-:::
+{% endtip %}
 
 We have one instance of `kuma-dp` for every instance of every service.
 

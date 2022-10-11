@@ -11,15 +11,15 @@ Kuma ships with the following CA (Certificate Authority) supported backends:
 
 Once a CA backend has been specified, Kuma will then automatically generate a certificate for every data plane proxy in the [`Mesh`](mesh). The certificates that Kuma generates are SPIFFE compatible and are used for AuthN/Z use-cases in order to identify every workload in our system. 
 
-:::tip
+{% tip %}
 The certificates that Kuma generates have a SAN set to `spiffe://<mesh name>/<service name>`. When Kuma enforces policies that require an identity like [`TrafficPermission`](traffic-permissions) it will extract the SAN from the client certificate and use it to match the service identity.
-:::
+{% endtip %}
 
 Remember that by default mTLS **is not** enabled and needs to be explicitly enabled as described below. Also remember that by default when mTLS is enabled all traffic is denied **unless** a [`TrafficPermission`](traffic-permissions) policy is being configured to explicitly allow traffic across proxies.
 
-:::tip
+{% tip %}
 Always make sure that a [`TrafficPermission`](traffic-permissions) resource is present before enabling mTLS in a Mesh in order to avoid unexpected traffic interruptions caused by a lack of authorization between proxies.
-:::
+{% endtip %}
 
 To enable mTLS we need to configure the `mtls` property in a [`Mesh`](mesh) resource. We can have as many `backends` as we want, but only one at a time can be enabled via the `enabledBackend` property. 
 

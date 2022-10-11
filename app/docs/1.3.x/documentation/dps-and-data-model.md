@@ -20,9 +20,9 @@ For example, if we have 6 replicas of a "Redis" service, then we must have one i
 <img src="/assets/images/docs/0.4.0/diagram-11.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
-::: tip
+{% tip %}
 **Many DPs!** The number of data plane proxies that we have running can quickly add up, since we have one replica of `kuma-dp` for every replica of every service. That's why it's important for the `kuma-dp` process to be lightweight and consume few resources, otherwise we would quickly run out of memory, especially on platforms like Kubernetes where multiple services are running on the same underlying host machine. And that's one of the reasons Kuma leverages Envoy for this task.
-:::
+{% endtip %}
 
 When we start a new data plane proxy in Kuma, **two things** have to happen:
 
@@ -31,9 +31,9 @@ When we start a new data plane proxy in Kuma, **two things** have to happen:
 
 To do this, we have to create a file with a `Dataplane` definition and pass it to `kuma-dp run`. This way, data-plane will be registered in the Control Plane and Envoy will start accepting requests.
 
-::: tip
+{% tip %}
 **Remember**: this is all automated if you are running Kuma on Kubernetes!
-:::
+{% endtip %}
 
 The registration of the `Dataplane` includes three main sections that are described below in the [Dataplane Specification](#dataplane-specification):
 
@@ -94,13 +94,13 @@ kuma-dp run \
 
 In order for the `backend` service to successfully consume `redis`, we specify an `outbound` networking section in the `Dataplane` configuration instructing the DP to listen on a new port `10000` and to proxy any outgoing request on port `10000` to the `redis` service. For this to work, we must update our application to consume `redis` on `127.0.0.1:10000`.
 
-::: tip
+{% tip %}
 You can parametrize your `Dataplane` definition, so you can reuse the same file for many `kuma-dp` instances or even services.
-:::
+{% endtip %}
 
-::: tip
+{% tip %}
 As mentioned before, this is only required in Universal. In Kubernetes no change to our applications are required thanks to automated transparent proxying.
-:::
+{% endtip %}
 
 ## Envoy
 
@@ -130,9 +130,9 @@ A tag attributes a qualifier to the data plane proxy, and the tags that are rese
 * `kuma.io/zone`: Identifies the zone name in a [multi-zone deployment](/docs/1.3.1/documentation/deployments/). This tag is automatically created and cannot be overwritten.
 * `kuma.io/protocol`: Identifies the protocol that is being exposed by the service and its data plane proxies. Accepted values are `tcp`, `http`, `http2`, `grpc` and `kafka`.
 
-::: tip
+{% tip %}
 The `kuma.io/service` tag must always exist.
-:::
+{% endtip %}
 
 ## Dataplane Specification
 
@@ -193,9 +193,9 @@ The `Dataplane` entity includes a few sections:
     * `address`: the IP at which outbound listener is exposed. By default it is `127.0.0.1` since it should only be consumed by the app deployed next to the dataplane.
     * `tags`: traffic on `port:address` will be sent to each data-plane that matches those tags. You can put many tags here. However, it is recommended to keep the list short and then use [`TrafficRoute`](../policies/traffic-route) for dynamic management of the traffic.
 
-::: tip
+{% tip %}
 On Kubernetes this whole process is automated via transparent proxying and without changing your application's code. On Universal Kuma doesn't support transparent proxying yet, and the outbound service dependencies have to be manually specified in the [`Dataplane`](#dataplane-entity) entity. This also means that in Universal **you must update** your codebases to consume those external services on `127.0.0.1` on the port specified in the `outbound` section.
-:::
+{% endtip %}
 
 ## Kubernetes
 
@@ -237,10 +237,10 @@ spec:
 
 On Kubernetes the [`Dataplane`](#dataplane-entity) entity is also automatically created for you, and because transparent proxying is being used to communicate between the service and the sidecar proxy, no code changes are required in your applications.
 
-::: tip
+{% tip %}
 NOTE: During the creation of the [`Dataplane`](#dataplane-entity) entity, the Kuma control plane will generate a dataplane tag `kuma.io/service: <name>_<namespace>_svc_<port>` fetching `<name>`, `<namespace>` and `<port>` from the Kubernetes service that is associated with the particular pod.
 However, when a pod is spawned without exposing a particular service, it may not be associated with any Kubernetes Service resource. In that case, Kuma control plane will generate a dataplane tag `kuma.io/service: <name>_<namespace>_svc`, where `<name>` and`<namespace>` are extracted from the Pod resource itself omitting the port.   
-:::
+{% endtip %}
 
 ## Gateway
 
@@ -337,9 +337,9 @@ spec:
 
 Note that since we are addressing the service by its domain name `frontend-api.kuma-demo.svc.8080.mesh`, we should always refer to port `80` (this port is only a placeholder and will be automatically replaced with the actual port of the service).
 
-:::tip
+{% tip %}
 If we want to expose a `Service` in one zone only (as opposed to multi-zone), we can just use the service name in the `Ingress` definition without having to create an `externalName` entry.
-:::
+{% endtip %}
 
 For an in-depth example on deploying Kuma with [Kong for Kubernetes](https://github.com/Kong/kubernetes-ingress-controller), please follow this [demo application guide](https://github.com/kumahq/kuma-demo/tree/master/kubernetes).
 

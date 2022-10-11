@@ -153,9 +153,9 @@ conf:
 :::
 ::::
 
-::: tip
+{% tip %}
 When `backend ` field of a `TrafficLog` policy is omitted, the logs will be forwarded into the `defaultBackend` of that `Mesh`.
-:::
+{% endtip %}
 
 ## Log aggregation and visualisation
 
@@ -243,14 +243,14 @@ To learn more about the search syntax check the [Loki docs](https://grafana.com/
 :::
 ::::
 
-::: tip
+{% tip %}
 **Nice to have**
 
 Having your Logs and Traces in the same visualisation tool can come really handy. By adding the traceId in your app logs you can visualize your logs and the related Jaeger traces. 
 To learn more about it go read this [article](https://grafana.com/blog/2020/05/22/new-in-grafana-7.0-trace-viewer-and-integrations-with-jaeger-and-zipkin/).
 
 To set up tracing see the [traffic-trace policy](traffic-trace).
-:::
+{% endtip %}
 
 You can also forward the access logs to a collector (such as logstash) that can further transmit them into systems like Splunk, ELK and Datadog.
 
@@ -303,9 +303,9 @@ The default format string for `HTTP` traffic is:
 [%START_TIME%] %KUMA_MESH% "%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%" %RESPONSE_CODE% %RESPONSE_FLAGS% %BYTES_RECEIVED% %BYTES_SENT% %DURATION% %RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)% "%REQ(X-FORWARDED-FOR)%" "%REQ(USER-AGENT)%" "%REQ(X-REQUEST-ID)%" "%REQ(:AUTHORITY)%" "%KUMA_SOURCE_SERVICE%" "%KUMA_DESTINATION_SERVICE%" "%KUMA_SOURCE_ADDRESS_WITHOUT_PORT%" "%UPSTREAM_HOST%"
 ```
 
-::: tip
+{% tip %}
 To provide different format for TCP and HTTP logging you can define two separate logging backends with the same address and different format. Then define two TrafficLog entity, one for TCP and one for HTTP with `kuma.io/protocol: http` selector.
-:::
+{% endtip %}
 
 ### Access Logs in JSON format
 

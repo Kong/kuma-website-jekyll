@@ -41,14 +41,14 @@ Control plane metrics are exposed on port `:5680` and available under the standa
 The Kuma community has contributed a builtin service discovery to Prometheus, it is documented in the [Prometheus docs](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kuma_sd_config).
 This service discovery will connect to the control plane and retrieve all data planes with enabled metrics which Prometheus will scrape and retrieve metrics according to your [traffic metrics setup](../policies/traffic-metrics).
 
-::: tip
+{% tip %}
 There are 2 ways you can run prometheus:
 
 1. Inside the mesh (default for [`kumactl install observability`](#demo-setup)). In this case you can use mTLS to retrieve the metrics. This provides high security but will require one prometheus per mesh and might not be accessible if your mesh becomes unavailable. It will also require one Prometheus deployment per Kuma mesh.
 2. Outside the mesh. In this case you'll need to specify `skipMTLS: true` in the [traffic metrics configuration](../policies/traffic-metrics). This is less secured but will ensure Prometheus is as available as possible. It is also easier to add to an existing setup with services in and outside the mesh.
 
 In production, we recommend the second option as it provides better visibility when things go wrong, and it's usually acceptable for metrics to be less secure.
-:::
+{% endtip %}
 
 ### Using an already existing prometheus setup
 
@@ -115,9 +115,9 @@ You should see a list of data plane proxies from your mesh. For example:
 
 To visualise your **traces** you need to have Grafana up and running.
 
-:::tip
+{% tip %}
 [`kumactl install observability`](#demo-setup) sets this up out of the box.
-:::
+{% endtip %}
 
 With Grafana installed you can configure a new datasource with url:`http://jaeger-query.mesh-observability/` (or whatever url jaeger can be queried at).
 Grafana will then be able to retrieve the traces from Jaeger.
@@ -133,9 +133,9 @@ At this point you can visualize your traces in Grafana by choosing the jaeger da
 
 To visualise your **containers' logs** and your **access logs** you need to have a Grafana up and running.
 
-:::tip
+{% tip %}
 [`kumactl install observability`](#demo-setup) sets this up out of the box.
-:::
+{% endtip %}
 
 <center>
 <img src="/assets/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
@@ -181,12 +181,12 @@ At this point you can visualize your **containers' logs** and your **access logs
 For example, running: `{container="kuma-sidecar"} |= "GET"` will show all GET requests on your cluster.
 To learn more about the search syntax check the [Loki docs](https://grafana.com/docs/loki/latest/logql/).
 
-::: tip
+{% tip %}
 **Nice to have**
 
 Having your Logs and Traces in the same visualisation tool can come really handy. By adding the `traceId` in your app logs you can visualize your logs and the related Jaeger traces.
 To learn more about it go read [this article](https://grafana.com/blog/2020/05/22/new-in-grafana-7.0-trace-viewer-and-integrations-with-jaeger-and-zipkin/).
-:::
+{% endtip %}
 
 ### Grafana extensions
 

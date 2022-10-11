@@ -10,9 +10,9 @@ To install and run Kuma on AWS EKS execute the following steps:
 
 Finally you can follow the [Quickstart](#_4-quickstart) to take it from here and continue your Kuma journey.
 
-::: tip
+{% tip %}
 Kuma also provides [Helm charts](/docs/1.2.3/installation/helm/) that we can use instead of this distribution.
-:::
+{% endtip %}
 
 ### 1. Download Kuma
 
@@ -52,9 +52,9 @@ tar xvzf kuma-*.tar.gz
 
 Once downloaded, you will find the contents of Kuma in the `kuma-` folder. In this folder, you will find - among other files - the `bin` directory that stores the executables for Kuma, including the CLI client [`kumactl`](/docs/1.2.3/documentation/cli/#kumactl).
 
-::: tip
+{% tip %}
 **Note**: On Kubernetes - of all the Kuma binaries in the `bin` folder - we only need `kumactl`.
-:::
+{% endtip %}
 
 So we enter the `bin` folder by executing:
 
@@ -94,13 +94,13 @@ We suggest adding the `kumactl` executable to your `PATH` so that it's always av
 ln -s $PWD/kumactl /usr/local/bin/kumactl
 ```
 
-::: tip
+{% tip %}
 It may take a while for Kubernetes to start the Kuma resources, you can check the status by executing:
 
 ```sh
 kubectl get pod -n kuma-system
 ```
-:::
+{% endtip %}
 
 ### 3. Use Kuma
 

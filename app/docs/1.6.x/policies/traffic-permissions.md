@@ -14,9 +14,9 @@ As of version 1.2.0, traffic permissions support the `ExternalService` resource.
 
 To specify which source services can consume which destination services, provide the appropriate values for `kuma.io/service`. This value is required for sources and destinations.
 
-::: tip
+{% tip %}
 **Match all**: You can match any value of a tag by using `*` -- for example, like `version: '*'`.
-:::
+{% endtip %}
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab "Kubernetes"

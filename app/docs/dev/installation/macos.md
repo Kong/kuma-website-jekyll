@@ -5,7 +5,7 @@ arch: amd64
 
 # macOS
 
-::: tip
+{% tip %}
 If you only want the CLI, you can always use homebrew `brew install kumactl`.
-:::
+{% endtip %}
 !!!include(install_os)!!!

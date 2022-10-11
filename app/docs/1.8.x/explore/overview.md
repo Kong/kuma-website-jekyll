@@ -17,9 +17,9 @@ A Kuma mesh consists of two main components:
   Kuma users create [policies](../../policies/introduction)
   that the Kuma control plane processes to generate configuration for the data plane proxies.
 
-::: tip
+{% tip %}
 **Multi-mesh**: one Kuma control plane deployment can control multiple, isolated data planes using the [`Mesh`](../../policies/mesh) resource. As compared to one control plane per data plane, this option lowers the complexity and operational cost of supporting multiple meshes.
-:::
+{% endtip %}
 
 This is a high level visualization of a Kuma service mesh:
 
@@ -34,10 +34,10 @@ as well as between the services and their data plane proxies:
 <img src="/assets/images/docs/0.4.0/diagram-07.jpg" alt="" style="padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
-::: tip
+{% tip %}
 Kuma implements the [Envoy **xDS** APIs](https://www.envoyproxy.io/docs/envoy/latest/api-docs/xds_protocol)
 so that data plane proxies can retrieve their configuration from the control plane.
-:::
+{% endtip %}
 
 ## Components
 
@@ -71,13 +71,13 @@ The following label on any `Namespace` or `Pod` controls this injection:
 kuma.io/sidecar-injection: enabled
 ```
 
-::: tip
+{% tip %}
 **Injection**: learn more about sidecar injection in the section on [`Dataplanes`](dpp-on-kubernetes).
 
 **Annotations**: see [the complete list of the Kubernetes annotations](../reference/kubernetes-annotations/).
 
 **Policies with Kubernetes**: when using Kuma in Kubernetes mode you create [policies](../../policies/introduction) using `kubectl` and `kuma.io` CRDs.
-:::
+{% endtip %}
 
 ### `Services` and `Pods`
 

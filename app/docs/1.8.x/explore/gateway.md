@@ -218,9 +218,9 @@ To configure your gateway Kuma has these resources:
 - [MeshGateway](../policies/mesh-gateway) is used to configure listeners exposed by the gateway
 - [MeshGatewayRoute](../policies/mesh-gateway-route) is used to configure route to route traffic from listeners to other services.
 
-::: tip
+{% tip %}
 Kuma gateways are configured with the [Envoy best practices for edge proxies](https://www.envoyproxy.io/docs/envoy/latest/configuration/best_practices/edge).
-:::
+{% endtip %}
 
 ### Usage
 
@@ -359,10 +359,10 @@ conf:
 This policy creates a listener on port 8080 and will receive any traffic which has the `Host` header set to `foo.example.com`.
 Notice that listeners have tags like `Dataplanes`. This will be useful when binding routes to listeners.
 
-:::tip
+{% tip %}
 These are Kuma policies so if you are running on multi-zone they need to be created on the Global CP.
 See the [dedicated section](../deployments/multi-zone) for detailed information.
-:::
+{% endtip %}
 
 Now define your routes which take the traffic and route it either to your `api` or your `frontend` depending on the path of the http request:
 

@@ -16,9 +16,9 @@ To enable the redirection of the DNS requests for the `.mesh` DNS zone (the defa
 
 `kumactl install dns` is recognizing and supports the major flavors of CoreDNS as well as Kube DNS resources.
 
-::: tip
+{% tip %}
 In a **Kubernetes** environment, this command creates a configmap object that will update DNS to send .mesh requests to the correct DNS resolution. In **Universal** deployments, this functionality is enabled through a combination of the `kumactl install transparent-proxy` command as well as the `kuma-dp run` command this is covered more in the [section](#universal) section.
-:::
+{% endtip %}
 
 ## Configuration
 
@@ -49,9 +49,9 @@ The DNS server listens on port `5653` and responds for type `A` and `AAAA` DNS r
 
 Kuma DNS allocates the virtual IPs from the configured CIDR, by constantly scanning the services available in all Kuma meshes. When a service is removed its VIP is freed too and Kuma DNS will not respond for it with `A` DNS record.
 
-::: tip
+{% tip %}
 Kuma DNS is not a service discovery mechanism, instead it returns a single VIP, mapped to the relevant service in the mesh. This makes for a unified view of all services within the zone or cross-zones.
-:::
+{% endtip %}
 
 ## Usage
 

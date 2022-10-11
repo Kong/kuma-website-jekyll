@@ -13,10 +13,10 @@ To configure access logs in Kuma you need to:
 * [1. Add a logging backend](#add-a-logging-backend)
 * [2. Add a TrafficLog resource](#add-a-trafficlog-resource)
 
-::: tip
+{% tip %}
 In the rest of this page we assume you have already configured your observability tools to work with Kuma.
 If you haven't already read the [observability docs](../explore/observability).
-:::
+{% endtip %}
 
 ## Add a logging backend
 
@@ -157,9 +157,9 @@ conf:
 :::
 ::::
 
-::: tip
+{% tip %}
 When `backend ` field is omitted, the logs will be forwarded into the `defaultBackend` of that `Mesh`.
-:::
+{% endtip %}
 
 ### Matching
 
@@ -220,9 +220,9 @@ The default format string for `HTTP` traffic is:
 [%START_TIME%] %KUMA_MESH% "%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%" %RESPONSE_CODE% %RESPONSE_FLAGS% %BYTES_RECEIVED% %BYTES_SENT% %DURATION% %RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)% "%REQ(X-FORWARDED-FOR)%" "%REQ(USER-AGENT)%" "%REQ(X-REQUEST-ID)%" "%REQ(:AUTHORITY)%" "%KUMA_SOURCE_SERVICE%" "%KUMA_DESTINATION_SERVICE%" "%KUMA_SOURCE_ADDRESS_WITHOUT_PORT%" "%UPSTREAM_HOST%"
 ```
 
-::: tip
+{% tip %}
 To provide different format for TCP and HTTP logging you can define two separate logging backends with the same address and different format. Then define two TrafficLog entity, one for TCP and one for HTTP with matching `kuma.io/protocol` selector.
-:::
+{% endtip %}
 
 #### JSON format
 

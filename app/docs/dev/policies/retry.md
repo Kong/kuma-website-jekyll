@@ -141,9 +141,9 @@ We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP AP
   - 504
   ```
 
-  :::tip
+  {% tip %}
   If both `retriableStatusCodes` is provided in addition to `retryOn` (below), but the latter doesn't contain `retriable_status_codes` as a condition, it will be automatically added.
-  :::
+  {% endtip %}
 
 - **`retryOn`** (optional)
 
@@ -162,7 +162,7 @@ We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP AP
   - `retriable_headers`
   - `http3_post_connect_failure`
 
-  :::tip
+  {% tip %}
   Note that if `retryOn` is not defined or if it's empty, the policy will default to the equivalent of:
 
   ```yaml
@@ -171,7 +171,7 @@ We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP AP
   - connect-failure
   - refused-stream
   ```
-  :::
+  {% endtip %}
 
   :::warning
   Providing `retriable_status_codes` without also providing 
@@ -199,7 +199,7 @@ You can configure your GRPC Retry policy in similar fashion as the HTTP one with
   - `resource_exhausted`
   - `unavailable`
 
-  :::tip
+  {% tip %}
   Note that if `retryOn` is not defined or if it's empty, the policy will default to all values and is equivalent to:
 
   ```yaml
@@ -210,7 +210,7 @@ You can configure your GRPC Retry policy in similar fashion as the HTTP one with
   - resource_exhausted
   - unavailable
   ```
-  :::
+  {% endtip %}
 
 ### TCP
 
@@ -218,9 +218,9 @@ You can configure your GRPC Retry policy in similar fashion as the HTTP one with
 
   A maximal amount of TCP connection attempts which will be made before giving up
 
-  :::tip
+  {% tip %}
   This policy will make attempt to retry the TCP connection which fail to be established and will be applied in the scenario when both, the dataplane, and the TCP service matched as a destination will be down.
-  :::
+  {% endtip %}
 
 ## Matching
 

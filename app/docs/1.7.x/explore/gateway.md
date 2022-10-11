@@ -362,10 +362,10 @@ conf:
 This policy creates a listener on port 8080 and will receive any traffic which has the `Host` header set to `foo.example.com`.
 Notice that listeners have tags like `Dataplanes`. This will be useful when binding routes to listeners.
 
-:::tip
+{% tip %}
 These are Kuma policies so if you are running on multi-zone they need to be created on the Global CP.
 See the [dedicated section](../deployments/multi-zone) for detailed information.
-:::
+{% endtip %}
 
 We will now define our routes which will take traffic and route it either to our `api` or our `frontend` depending on the path of the http request:
 

@@ -164,9 +164,9 @@ Kuma DNS allocates a VIP for every service within a mesh. Then, it creates an ou
     }
 ```
 
-::: tip
+{% tip %}
 The following setup will work when `serviceVipEnabled=true` which is a default value.
 
 The preferred way to define hostnames is using [Virtual Outbounds](../policies/virtual-outbound).
 Virtual Outbounds also makes it possible to define dynamic hostnames using specific tags or to expose services on a different port.
-:::
+{% endtip %}

@@ -4,27 +4,27 @@
 
 This policy enables tracing logging to a third party tracing solution. 
 
-::: tip
+{% tip %}
 Tracing is supported on any HTTP traffic in a [`Mesh`](../mesh), and will only work with data plane proxies and services that have the Kuma `kuma.io/protocol: http` tag defined.
 Check the [protocol support](./protocol-support-in-kuma/) for more details on how to set the protocol tag in the different environments.
-:::
+{% endtip %}
 
 In order to enable tracing there are two steps that have to be taken:
 
 * [1. Add a tracing backend](#add-a-tracing-backend)
 * [2. Add a TrafficTrace resource](#add-a-traffictrace-resource)
 
-::: tip
+{% tip %}
 On Kubernetes we can run `kumactl install tracing | kubectl apply -f -` to deploy Jaeger automatically in a `kuma-tracing` namespace.
-:::
+{% endtip %}
 
 ## Add a tracing backend
 
 A tracing backend must be first specified in a [`Mesh`](../mesh) resource. Once added, the tracing backend will be available for use in the `TrafficTrace` resource.
 
-::: tip
+{% tip %}
 While most commonly we want all the traces to be sent to the same tracing backend, we can optionally create multiple tracing backends in a `Mesh` resource and store traces for different paths of our service traffic in different backends (by leveraging Kuma Tags). This is especially useful when we want traces to never leave a world region, or a cloud, among other examples.
-:::
+{% endtip %}
 
 The types supported are:
 

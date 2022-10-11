@@ -66,9 +66,9 @@ Kuma by default upgrades connection between Dataplanes to HTTP/2. If you want to
 
 Whenever a service already initiates a TLS request to another service - and [mutual TLS](../mutual-tls) is enabled - Kuma can enforce both TLS connections end-to-end as long as the service that is generating the TLS traffic is explicitly tagged with `tcp` [protocol](../protocol-support-in-kuma) (ie: `kuma.io/protocol: tcp`).
 
-:::tip
+{% tip %}
 Effectively `kuma-dp` will send the raw original TLS request as-is to the final destination, while in the meanwhile it will be enforcing its own TLS connection (if [mutual TLS](../mutual-tls) is enabled). Hence, the traffic must be marked as being `tcp`, so `kuma-dp` won't try to parse it.
-:::
+{% endtip %}
 
 Note that in this case no advanced HTTP or GRPC statistics or logging are available. As a best practice - since Kuma will already secure the traffic across services via the [mutual TLS](../mutual-tls) policy - we suggest disabling TLS in the original services in order to get L7 metrics and capabilities.
 

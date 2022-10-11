@@ -12,11 +12,11 @@ Environment variables take precedence over YAML configuration.
 
 All possible configuration and their default values are in the [`kuma-cp` reference doc](../generated/kuma-cp).
 
-:::tip
+{% tip %}
 Environment variables usually match the yaml path by replacing `.` with `_`, capitalizing names and prefixing with KUMA.
 
 For example the yaml path: `store.postgres.port` is the environment variable: `KUMA_STORE_POSTGRES_PORT`.
-:::
+{% endtip %}
 
 :::: tabs :options="{ useUrlFragment: false }"
 ::: tab "Kubernetes (kumactl)"
@@ -82,10 +82,10 @@ KUMA_XDS_SERVER_DATAPLANE_CONFIGURATION_REFRESH_INTERVAL=5s \
 :::
 ::::
 
-::: tip
+{% tip %}
 If you configure `kuma-cp` with a YAML file, make sure to provide only values that you want to override.
 Otherwise, upgrading Kuma might be harder, because you need to keep track of your changes when replacing this file on every upgrade.
-:::
+{% endtip %}
 
 ## Inspecting the configuration
 
@@ -143,9 +143,9 @@ KUMA_STORE_TYPE=postgres \
   kuma-cp run
 ```
 
-:::tip
+{% tip %}
 For great availability and low maintenance cost you can use a PostgreSQL database offered by any cloud vendor.
-:::
+{% endtip %}
 
 #### TLS
 

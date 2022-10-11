@@ -191,9 +191,9 @@ spec:
 
 By doing so every request we now make on our demo application at [`127.0.0.1:5000/`](http://127.0.0.1:5000/) is not only working again, but it is automatically encrypted and secure.
 
-:::tip
+{% tip %}
 As usual, you can visualize the Mutual TLS configuration and the Traffic Permission policies we have just applied via the GUI, the HTTP API or `kumactl`.
-:::
+{% endtip %}
 
 ## Explore Traffic Metrics
 

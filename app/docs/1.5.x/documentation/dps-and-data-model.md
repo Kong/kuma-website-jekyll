@@ -22,9 +22,9 @@ For example, if we have 6 replicas of a "Redis" service, then we must have one i
 <img src="/assets/images/docs/0.4.0/diagram-11.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
-::: tip
+{% tip %}
 **Many DPs!** The number of data plane proxies that we have running can quickly add up, since we have one replica of `kuma-dp` for every replica of every service. That's why it's important for the `kuma-dp` process to be lightweight and consume few resources, otherwise we would quickly run out of memory, especially on platforms like Kubernetes where multiple services are running on the same underlying host machine. And that's one of the reasons Kuma leverages Envoy for this task.
-:::
+{% endtip %}
 
 When we start a new data plane proxy in Kuma, it needs to communicate a few things to the control-plane: 
 
@@ -33,7 +33,7 @@ When we start a new data plane proxy in Kuma, it needs to communicate a few thin
 - What services they expose (This will be called inbounds).
 - How the application will use the sidecar to reach other services (either with transparent proxy or by explicitly listing services it will connect to).
 
-::: tip
+{% tip %}
 There exists special types of data planes proxies:
 
 - [ZoneIngress](./zone-ingress) which will enable inbound cross-zone traffic.
@@ -43,13 +43,13 @@ There exists special types of data planes proxies:
 - [Gateway](./gateway) which will traffic external to the mesh to enter it.
 
 Because these dataplane types are specific and complex we will discuss them separately to "standard" dataplane proxies.
-:::
+{% endtip %}
 
 To do this, we have to create a file with a `Dataplane` definition and pass it to `kuma-dp run`. This way, data-plane will be registered in the Control Plane and Envoy will start accepting requests.
 
-::: tip
+{% tip %}
 **Remember**: this is [all automated](#kubernetes) if you are running Kuma on Kubernetes!
-:::
+{% endtip %}
 
 The registration of the `Dataplane` includes three main sections that are described below in the [Dataplane Specification](#dataplane-specification):
 
@@ -57,10 +57,10 @@ The registration of the `Dataplane` includes three main sections that are descri
 * `inbound` networking configuration, to configure on what port the data plane proxy will listen to accept external requests, specify on what port the service is listening on the same machine (for internal DP <> Service communication), and the [Tags](#tags) that belong to the service. 
 * `outbound` networking configuration, to enable the local service to consume other services.
 
-::: tip
+{% tip %}
 In order for a data plane proxy to successfully run, there must exist at least one [`Mesh`](../../policies/mesh) in Kuma.
 By default, the system generates a `default` Mesh when the control-plane is run for the first time.
-:::
+{% endtip %}
 
 ## Envoy
 
@@ -91,9 +91,9 @@ A tag attributes a qualifier to the data plane proxy, and the tags that are rese
 * `kuma.io/zone`: Identifies the zone name in a [multi-zone deployment](../deployments/multi-zone). This tag is automatically created and cannot be overwritten.
 * `kuma.io/protocol`: Identifies [the protocol](../../policies/protocol-support-in-kuma) that is being exposed by the service and its data plane proxies. Accepted values are `tcp`, `http`, `http2`, `grpc` and `kafka`.
 
-::: tip
+{% tip %}
 The `kuma.io/service` tag must always be present.
-:::
+{% endtip %}
 
 ## Kubernetes
 
@@ -232,9 +232,9 @@ kuma-dp run \
 
 In the example above, any external client who wants to consume Redis will have to make a request to the DP on address `192.168.0.1` and port `9000`, which internally will be redirected to the Redis service listening on address `127.0.0.1` and port `6379`.
 
-::: tip
+{% tip %}
 Note that in Universal dataplanes need to start with a token for authentication. You can learn how to generate tokens in the [security section](../security/dp-auth.md#data-plane-proxy-token).
-:::
+{% endtip %}
 
 Now let's assume that we have another service called "Backend" that internally listens on port `80`, and that makes outgoing requests to the `redis` service:
 
@@ -268,9 +268,9 @@ In order for the `backend` service to successfully consume `redis`, we specify a
 For this to work, we must update our application to consume `redis` on `127.0.0.1:10000`.
 
 
-::: tip
+{% tip %}
 You can parametrize your `Dataplane` definition, so you can reuse the same file for many `kuma-dp` instances or even services.
-:::
+{% endtip %}
 
 ## Dataplane Specification
 

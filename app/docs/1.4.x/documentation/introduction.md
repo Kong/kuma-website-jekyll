@@ -4,9 +4,9 @@ title: Introduction
 
 # Documentation
 
-::: tip
+{% tip %}
 **Need help?** Installing and using Kuma should be as easy as possible. [Contact and chat](/community) with the community in real-time if you get stuck or need clarifications. We are here to help.
-:::
+{% endtip %}
 
 It's time to start using Kuma and build your Service Mesh. In this section you will find the technical material to get up and running 🚀. 
 

@@ -6,9 +6,9 @@ title: Explore Kuma on Kubernetes
 
 Congratulations! After [installing](/install) Kuma, you can get up and running with a few easy steps.
 
-:::tip
+{% tip %}
 Kuma can run in both **Kubernetes** (Containers) and **Universal** mode (for VMs and Bare Metal). You are now looking at the quickstart for Kubernetes mode, but you can also check out the [Universal one](/docs/1.1.6/quickstart/universal).
-:::
+{% endtip %}
 
 In order to simulate a real-world scenario, we have built a simple demo application that resembles a marketplace. In this tutorial we will:
 
@@ -18,9 +18,9 @@ In order to simulate a real-world scenario, we have built a simple demo applicat
 
 You can also access the Kuma marketplace demo repository [on Github](https://github.com/kumahq/kuma-demo) to try more features and policies in addition to the ones described in this quickstart.
 
-:::tip
+{% tip %}
 **Community Chat**: If you need help, you can chat with the [Community](/community) where you can ask questions, contribute back to Kuma and send feedback.
-:::
+{% endtip %}
 
 ### 1. Run the Marketplace application
 
@@ -138,9 +138,9 @@ spec:
 
 Once Mutual TLS has been enabled, Kuma will **not allow** traffic to flow freely across our services unless we explicitly create a [Traffic Permission](/docs/1.1.6/policies/traffic-permissions/) policy that describes what services can be consumed by other services. You can try to make requests to the demo application at [`127.0.0.1:8080/`](http://127.0.0.1:8080/) and you will notice that they will **not** work.
 
-:::tip
+{% tip %}
 In a live environment we suggest to setup the Traffic Permission policies prior to enabling Mutual TLS in order to avoid unexpected interruptions of the service-to-service traffic.
-:::
+{% endtip %}
 
 We can setup a very permissive policy that allows all traffic to flow in our application in an encrypted way with the following command:
 
@@ -162,9 +162,9 @@ spec:
 
 By doing so every request we now make on our demo application at [`127.0.0.1:8080/`](http://127.0.0.1:8080/) is not only working again, but it is automatically encrypted and secure.
 
-:::tip
+{% tip %}
 As usual, you can visualize the Mutual TLS configuration and the Traffic Permission policies we have just applied via the GUI, the HTTP API or `kumactl`.
-:::
+{% endtip %}
 
 ### 3. Visualize Traffic Metrics
 
@@ -204,13 +204,13 @@ This will enable the `prometheus` metrics backend on the `default` [Mesh](/docs/
 
 Now let's go ahead and generate some traffic - to populate our charts - by using the demo application!
 
-:::tip
+{% tip %}
 You can also generate some artificial traffic with the following command to save some clicks:
 
 ```sh
 while [ true ]; do curl http://127.0.0.1:8080/items?q=; curl http://127.0.0.1:8080/items/1/reviews; done
 ```
-:::
+{% endtip %}
 
 To visualize the traffic we can now expose the Grafana dashboard with:
 
@@ -230,9 +230,9 @@ You can now explore the dashboards and see the metrics being populated over time
 
 # Next steps
 
-::: tip
+{% tip %}
 **Protip**: Use `#kumamesh` on Twitter to chat about Kuma.
-:::
+{% endtip %}
 
 Congratulations! You have completed the quickstart for Kubernetes, but there is so much more that you can do with Kuma:
 
