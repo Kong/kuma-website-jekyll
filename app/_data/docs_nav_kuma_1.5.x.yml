@@ -3,6 +3,7 @@ release: 1.5.x
 generate: true
 items:
   - title: Introduction
+    group: true
     items:
       -
         text: Introduction to Kuma
@@ -27,6 +28,7 @@ items:
         text: License
         url: /other/license/
   - title: Install
+    group: true
     items:
       -
         text: Kubernetes
@@ -59,6 +61,7 @@ items:
         text: macOS
         url: /installation/macos/
   - title: Deploy
+    group: true
     items:
       -
         text: Explore Kuma with the Kubernetes demo app
@@ -143,6 +146,7 @@ items:
             text: Failure modes
             url: '/deployments/multi-zone/#failure-modes'
   - title: Explore
+    group: true
     items:
       -
         text: Overview
@@ -249,6 +253,7 @@ items:
             text: Envoy proxy configuration
             url: '/documentation/inspect-api/#envoy-proxy-configuration'
   - title: Networking
+    group: true
     items:
       -
         text: Networking
@@ -309,6 +314,7 @@ items:
         text: IPv6 support
         url: /networking/ipv6/
   - title: Security
+    group: true
     items:
       -
         text: Secure access across services
@@ -418,6 +424,7 @@ items:
             text: Example use cases
             url: '/security/dp-membership/#example-use-cases'
   - title: Monitor & manage
+    group: true
     items:
       -
         text: Dataplane Health
@@ -465,6 +472,7 @@ items:
             text: kumactl
             url: '/documentation/configuration/#kumactl'
   - title: Policies
+    group: true
     items:
       -
         text: Introduction
@@ -740,6 +748,7 @@ items:
             text: Universal probes
             url: '/policies/service-health-probes/#universal-probes'
   - title: Reference docs
+    group: true
     items:
       -
         text: HTTP API

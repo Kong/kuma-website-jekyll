@@ -3,6 +3,7 @@ release: 1.1.x
 generate: true
 items:
   - title: Introduction
+    group: true
     items:
       -
         text: Introduction to Kuma
@@ -27,6 +28,7 @@ items:
         text: License
         url: /other/license/
   - title: Install
+    group: true
     items:
       -
         text: Kubernetes
@@ -62,6 +64,7 @@ items:
         text: macOS
         url: /installation/macos/
   - title: Deploy
+    group: true
     items:
       -
         text: Kubernetes Quickstart
@@ -80,6 +83,7 @@ items:
             text: Multi-Zone Mode
             url: '/deployments/multi-zone/#multi-zone-mode'
   - title: Explore
+    group: true
     items:
       -
         text: Overview
@@ -159,6 +163,7 @@ items:
             text: What’s to come
             url: '/documentation/gui/#what-s-to-come'
   - title: Networking
+    group: true
     items:
       -
         text: Networking
@@ -206,6 +211,7 @@ items:
         text: IPv6 support
         url: /networking/ipv6/
   - title: Security
+    group: true
     items:
       -
         text: Secure access across services
@@ -237,6 +243,7 @@ items:
             text: Usage
             url: '/security/secrets/#usage'
   - title: Monitor & manage
+    group: true
     items:
       -
         text: Health checks
@@ -262,6 +269,7 @@ items:
             text: Profiling
             url: '/documentation/fine-tuning/#profiling'
   - title: Policies
+    group: true
     items:
       -
         text: Introduction
@@ -463,6 +471,7 @@ items:
             text: Matching
             url: '/policies/retry/#matching'
   - title: HTTP API Reference
+    group: true
     items:
       -
         text: HTTP API

@@ -3,6 +3,7 @@ release: 1.4.x
 generate: true
 items:
   - title: Introduction
+    group: true
     items:
       -
         text: Introduction to Kuma
@@ -27,6 +28,7 @@ items:
         text: License
         url: /other/license/
   - title: Install
+    group: true
     items:
       -
         text: Kubernetes
@@ -62,6 +64,7 @@ items:
         text: macOS
         url: /installation/macos/
   - title: Deploy
+    group: true
     items:
       -
         text: Explore Kuma with the Kubernetes demo app
@@ -149,6 +152,7 @@ items:
             text: Failure modes
             url: '/deployments/multi-zone/#failure-modes'
   - title: Explore
+    group: true
     items:
       -
         text: Overview
@@ -228,6 +232,7 @@ items:
             text: What’s to come
             url: '/documentation/gui/#what-s-to-come'
   - title: Networking
+    group: true
     items:
       -
         text: Networking
@@ -275,6 +280,7 @@ items:
         text: IPv6 support
         url: /networking/ipv6/
   - title: Security
+    group: true
     items:
       -
         text: Secure access across services
@@ -358,6 +364,7 @@ items:
             text: None
             url: '/security/zone-ingress-auth/#none'
   - title: Monitor & manage
+    group: true
     items:
       -
         text: Health checks
@@ -396,6 +403,7 @@ items:
             text: kumactl
             url: '/documentation/configuration/#kumactl'
   - title: Policies
+    group: true
     items:
       -
         text: Introduction
@@ -633,6 +641,7 @@ items:
             text: Examples
             url: '/policies/virtual-outbound/#examples'
   - title: Reference docs
+    group: true
     items:
       -
         text: HTTP API

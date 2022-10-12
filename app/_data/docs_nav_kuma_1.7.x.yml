@@ -3,6 +3,7 @@ release: 1.7.x
 generate: true
 items:
   - title: Introduction
+    group: true
     items:
       -
         text: Introduction to Kuma
@@ -30,6 +31,7 @@ items:
         text: Enterprise
         url: /introduction/enterprise/
   - title: Install
+    group: true
     items:
       -
         text: Kubernetes
@@ -66,6 +68,7 @@ items:
         text: macOS
         url: /installation/macos/
   - title: Deploy
+    group: true
     items:
       -
         text: Explore Kuma with the Kubernetes demo app
@@ -156,6 +159,7 @@ items:
             text: Disable a zone
             url: '/deployments/multi-zone/#disable-a-zone'
   - title: Explore
+    group: true
     items:
       -
         text: Overview
@@ -320,6 +324,7 @@ items:
             text: How it works
             url: '/explore/gateway-api/#how-it-works'
   - title: Networking
+    group: true
     items:
       -
         text: Networking
@@ -374,6 +379,7 @@ items:
             text: Disabling IPv6
             url: '/networking/ipv6/#disabling-ipv6'
   - title: Security
+    group: true
     items:
       -
         text: Secure access across services
@@ -480,6 +486,7 @@ items:
             text: Example use cases
             url: '/security/dp-membership/#example-use-cases'
   - title: Monitor & manage
+    group: true
     items:
       -
         text: Dataplane Health
@@ -556,6 +563,7 @@ items:
             text: Sizing your control-plane
             url: '/documentation/requirements/#sizing-your-control-plane'
   - title: Policies
+    group: true
     items:
       -
         text: Introduction
@@ -834,6 +842,7 @@ items:
             text: Universal probes
             url: '/policies/service-health-probes/#universal-probes'
   - title: Reference docs
+    group: true
     items:
       -
         text: HTTP API
@@ -957,6 +966,7 @@ items:
         url: /reference/license/
       - # Auto-generated
         title: Resources
+        group: true
         items:
           -
             text: Mesh
@@ -1017,6 +1027,7 @@ items:
             url: /generated/resources/proxy_zoneingress/
       - # Auto-generated
         title: Commands
+        group: true
         items:
           -
             text: kuma-cp
