@@ -72,6 +72,7 @@ Use `--dns-coredns-config-template-path` as an argument to `kuma-dp`.
 This file is a [CoreDNS configuration](https://coredns.io/manual/toc/) that is processed as a go-template.
 If you edit this configuration you should base yourself on the default existing configuration, which looks like the following
 
+{% raw %}
 ```
 .:{{ .CoreDNSPort }} {
     forward . 127.0.0.1:{{ .EnvoyDNSPort }}
@@ -89,6 +90,7 @@ If you edit this configuration you should base yourself on the default existing 
     }
 }
 ```
+{% endraw %}
 
 ## Configuration
 

@@ -32,9 +32,11 @@ This group is [authorized by default](./api-access-control) to execute all admin
 1. Access admin user token
 
    Use `kubectl` to extract the admin token
+   {% raw %}
    ```sh
    kubectl get secret admin-user-token -n kuma-system --template={{.data.value}} | base64 -d
    ```
+   {% endraw %}
 
 2. Expose Kuma CP to be accessible from your machine
 

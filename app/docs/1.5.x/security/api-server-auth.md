@@ -47,9 +47,11 @@ A user can be a part of many groups. On top of that, Kuma adds two groups automa
 In order to generate other user tokens, we need to authenticate as admin. When Kuma starts, it generates admin user token and stores it as a [Global Secret](secrets).
 
 Use `kubectl` to extract the admin token
+{% raw %}
 ```sh
 kubectl get secret admin-user-token -n kuma-system --template={{.data.value}} | base64 -d
 ```
+{% endraw %}
 
 2. Expose Kuma CP outside a cluster and configure `kumactl` with admin user token
 
