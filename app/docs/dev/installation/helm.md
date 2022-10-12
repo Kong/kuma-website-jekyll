@@ -38,7 +38,7 @@ This example will run Kuma in `standalone` mode for a "flat" deployment, but the
 
 ### Use Kuma
 
-!!!include(use_kuma_k8s)!!!
+{% include snippets/use_kuma_k8s.md %}
 
 ### Quickstart
 

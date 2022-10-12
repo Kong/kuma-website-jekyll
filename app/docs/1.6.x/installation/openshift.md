@@ -12,7 +12,7 @@ Finally, you can follow the [Quickstart](#_4-quickstart) to take it from here an
 
 ### 1. Download Kuma
 
-!!!include(install_kumactl)!!!
+{% include snippets/install_kumactl.md %}
 
 ### 2. Run Kuma
 

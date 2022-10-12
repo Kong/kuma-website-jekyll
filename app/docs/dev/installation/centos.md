@@ -5,4 +5,4 @@ arch: amd64
 
 # CentOS 
 
-!!!include(install_os)!!!
+{% include snippets/install_os.md %}

@@ -16,7 +16,7 @@ Kuma also provides [Helm charts](../installation/helm) that we can use instead o
 
 ### Download Kumactl
 
-!!!include(install_kumactl)!!!
+{% include snippets/install_kumactl.md %}
 
 ### Run Kuma
 
@@ -38,7 +38,7 @@ kubectl get pod -n kuma-system
 
 ### Use Kuma
 
-!!!include(use_kuma_k8s)!!!
+{% include snippets/use_kuma_k8s.md %}
 
 ### Quickstart
 

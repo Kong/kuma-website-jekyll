@@ -1,3 +1,4 @@
+{% assign latest_version = site.data.latest_version.version %}
 
 To install and run Kuma execute the following steps:
 
@@ -12,55 +13,57 @@ Finally, you can follow the [Quickstart](#quickstart) to take it from here and c
 Run the following script to automatically detect the operating system and download Kuma:
 
 <div class="language-sh">
-<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ $page.latestVersion }} sh -</code></pre>
+<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ latest_version }} sh -</code></pre>
 </div>
 
-or you can <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + $page.latestVersion + '-' + $frontmatter.os + '-' + $frontmatter.arch + '.tar.gz'">download</a> the distribution manually.
+or you can <a href="https://download.konghq.com/mesh-alpine/kuma-{{ latest_version }}-{{ page.os }}-{{ page.arch }}.tar.gz">download</a> the distribution manually.
 
-Then extract the archive with: `tar xvzf kuma-{{ $page.latestVersion }}`.
+Then extract the archive with: `tar xvzf kuma-{{ latest_version }}`.
 
-::: tip
+{% tip %}
 Make sure you have tar and gzip installed.
-:::
+{% endtip %}
 
 
 ### Run Kuma
-Once downloaded, you will find the contents of Kuma in the `kuma-{{ $page.latestVersion }}` folder. In this folder, you will find - among other files - the `bin` directory that stores all the executables for Kuma.
+Once downloaded, you will find the contents of Kuma in the `kuma-{{ latest_version }}` folder. In this folder, you will find - among other files - the `bin` directory that stores all the executables for Kuma.
 
-You can start the control-plane with: `kuma-{{ $page.latestVersion }}/bin/kuma-cp run`
+You can start the control-plane with: `kuma-{{ latest_version }}/bin/kuma-cp run`
 
 This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments.md) like "multi-zone".
 
 We suggest adding the `kumactl` executable to your `PATH` so that it's always available in every working directory. Or - alternatively - you can also create link in `/usr/local/bin/` by executing:
 
+{% raw %}
 ```sh
 ln -s kuma-{{ $page.latestVersion }}/bin/kumactl /usr/local/bin/kumactl
 ```
+{% endraw %}
 
-::: tip
+{% tip %}
 **Note**: By default this will run Kuma with a `memory` [store](../documentation/configuration.md), but for production you have to use a persistent storage like PostgreSQL by updating the `conf/kuma-cp.conf` file.
-:::
+{% endtip %}
 
 ### Use Kuma
 
 Kuma (`kuma-cp`) is now running! Now that Kuma has been installed you can access the control-plane via either the GUI, the HTTP API, or the CLI:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "GUI (Read-Only)"
+{% tabs useUrlFragment=false %}
+{%tab GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI listens on the API port and defaults to `:5681/gui`.
 
 To access Kuma you can navigate to [`127.0.0.1:5681/gui`](http://127.0.0.1:5681/gui) to see the GUI.
 
-:::
-::: tab "HTTP API (Read & Write)"
+{% endtab %}
+{% tab HTTP API (Read & Write) %}
 
 Kuma ships with a **read and write** HTTP API that you can use to perform operations on Kuma resources. By default the HTTP API listens on port `5681`.
 
 To access Kuma you can navigate to [`127.0.0.1:5681`](http://127.0.0.1:5681) to see the HTTP API.
 
-:::
-::: tab "kumactl (Read & Write)"
+{% endtab %}
+{% tab kumactl (Read & Write) %}
 
 You can use the `kumactl` CLI to perform **read and write** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API. For example:
 
@@ -87,8 +90,8 @@ You can configure `kumactl` to point to any zone `kuma-cp` instance by running:
 ```sh
 kumactl config control-planes add --name=XYZ --address=http://{address-to-kuma}:5681
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 You will notice that Kuma automatically creates a [`Mesh`](../policies/mesh.md) entity with name `default`.
 
