@@ -5,9 +5,9 @@ module Jekyll
     priority :medium
 
     def generate(site)
-      latest = site.pages.detect { |p| p.relative_path == 'install/latest.md' }
-      latest.data['version'] = site.data['latest_version']['release']
-      latest.data['has_version'] = true
+      latest_page = site.pages.detect { |p| p.relative_path == 'install/latest.md' }
+      latest_page.data['version'] = site.data['latest_version']['release']
+      latest_page.data['has_version'] = true
 
       site.data['versions'].each do |version|
         site.pages << InstallPage.new(site, version)

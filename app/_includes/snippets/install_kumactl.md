@@ -1,4 +1,4 @@
-{% assign latest_version = site.data.latest_version.version %}
+{% assign latest_version = page.latest_version.version %}
 
 To run Kuma on Kubernetes, you need to download the Kuma cli (`kumactl`) on your machine.
 

@@ -1,4 +1,4 @@
-{% assign latest_version = site.data.latest_version.version %}
+{% assign latest_version = page.latest_version.version %}
 
 To install and run Kuma execute the following steps:
 

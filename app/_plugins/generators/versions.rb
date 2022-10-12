@@ -5,9 +5,8 @@ module Jekyll
     priority :high
 
     def generate(site)
-      latest = site.data['versions'].reject { |v| v['release'] == 'dev' }.last
-
-      site.data['latest_version'] = latest
+      latest_version = site.data['versions'].reject { |v| v['release'] == 'dev' }.last
+      site.data['latest_version'] = latest_version
 
       # Add a `version` property to every versioned page
       # TODO: Also create aliases under /latest/ for all x.x.x doc pages
@@ -16,8 +15,11 @@ module Jekyll
 
         parts = Pathname(page.path).each_filename.to_a
 
+        latest = site.data['versions'].detect { |v| v['release'] == parts[1] }
+
         page.data['has_version'] = true
         page.data['version'] = parts[1]
+        page.data['latest_version'] = latest
 
         page.data['nav_items'] = site.data["docs_nav_kuma_#{parts[1].gsub(/\./, '')}"]
 
