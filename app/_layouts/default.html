@@ -1,9 +1,55 @@
+{% assign cache_buster = site.time | date: "%s" %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ page.title | default: site.title | liquify }}</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?cb={{ cache_buster }}">
+    <link rel="icon" href="/assets/images/favicon-32x32.png?cb={{ cache_buster }}">
+    <link rel="icon" href="/assets/images/favicon-16x16.png?cb={{ cache_buster }}">
+    <link rel="manifest" href="/assets/images/site.webmanifest?cb={{ cache_buster }}">
+    <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg?cb={{ cache_buster }}" color="#290b53">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico?cb={{ cache_buster }}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,500,700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <meta name="description" content="{{ site.description }}">
+
+    {% if page.doc %}
+      <meta name="docsearch:section" content="docs">
+      <meta name="docsearch:docsversion" content="{{ page.version }}">
+
+      {% if page.version != site.latest_version %}
+        <meta name="robots" content="noindex,follow">
+      {% endif %}
+    {% endif %}
+
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.links.web }}{{ page.url }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:url" content="{{ site.links.web }}{{ page.url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:image" content="{{ site.links.web }}/assets/images/social/og-image-1200-630.jpg?cb={{ cache_buster }}">
+    <meta name="twitter:image:alt" content="{{ site.description }}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:creator" content="{{ site.twitter.handle }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" content="{{ site.links.web }}/assets/images/social/og-image-1200-630.jpg?cb={{ cache_buster }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+    <meta name="application-name" content="{{ site.title }}">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/assets/images/browserconfig.xml?cb={{ cache_buster }}">
+    <meta name="theme-color" content="#290b53">
+    <meta property="fb:app_id" content="{{ site.fb.app_id }}">
+    <meta name="viewport" content="width=device-width">
+
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>

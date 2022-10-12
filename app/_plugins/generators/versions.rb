@@ -17,6 +17,7 @@ module Jekyll
 
         latest = site.data['versions'].detect { |v| v['release'] == parts[1] }
 
+        page.data['doc'] = true
         page.data['has_version'] = true
         page.data['version'] = parts[1]
         page.data['latest_version'] = latest

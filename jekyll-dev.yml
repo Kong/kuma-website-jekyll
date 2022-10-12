@@ -1,6 +1,6 @@
 source: app
 destination: dist
-permanlink: pretty
+permalink: pretty
 timezone: America/San_Francisco
 markdown: kramdown
 kramdown:
@@ -14,6 +14,13 @@ incremental: true
 logo: "/assets/images/brand/kuma-logo-new.svg"
 repo: "https://github.com/kumahq/kuma"
 title: "Kuma"
+description: "Build, Secure and Observe your modern Service Mesh"
+links:
+  web: https://kuma.io
+fb:
+  app_id: 682375632267551
+twitter:
+  handle: '@KumaMesh'
 
 defaults:
   -
