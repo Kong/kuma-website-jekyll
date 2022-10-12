@@ -20,7 +20,11 @@ module Jekyll
         page.data['doc'] = true
         page.data['has_version'] = true
         page.data['version'] = parts[1]
-        page.data['latest_version'] = latest
+
+        if latest
+          page.data['latest_version'] = latest['version']
+          page.data['latest_release'] = latest['release']
+        end
 
         page.data['nav_items'] = site.data["docs_nav_kuma_#{parts[1].gsub(/\./, '')}"]
 

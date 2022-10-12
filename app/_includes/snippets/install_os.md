@@ -1,5 +1,3 @@
-{% assign latest_version = page.latest_version.version %}
-
 To install and run Kuma execute the following steps:
 
 * [1. Download Kuma](#download-kuma)
@@ -13,12 +11,12 @@ Finally, you can follow the [Quickstart](#quickstart) to take it from here and c
 Run the following script to automatically detect the operating system and download Kuma:
 
 <div class="language-sh">
-<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ latest_version }} sh -</code></pre>
+<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latest_version }} sh -</code></pre>
 </div>
 
-or you can <a href="https://download.konghq.com/mesh-alpine/kuma-{{ latest_version }}-{{ page.os }}-{{ page.arch }}.tar.gz">download</a> the distribution manually.
+or you can <a href="https://download.konghq.com/mesh-alpine/kuma-{{ page.latest_version }}-{{ page.os }}-{{ page.arch }}.tar.gz">download</a> the distribution manually.
 
-Then extract the archive with: `tar xvzf kuma-{{ latest_version }}`.
+Then extract the archive with: `tar xvzf kuma-{{ page.latest_version }}`.
 
 {% tip %}
 Make sure you have tar and gzip installed.
@@ -26,9 +24,9 @@ Make sure you have tar and gzip installed.
 
 
 ### Run Kuma
-Once downloaded, you will find the contents of Kuma in the `kuma-{{ latest_version }}` folder. In this folder, you will find - among other files - the `bin` directory that stores all the executables for Kuma.
+Once downloaded, you will find the contents of Kuma in the `kuma-{{ page.latest_version }}` folder. In this folder, you will find - among other files - the `bin` directory that stores all the executables for Kuma.
 
-You can start the control-plane with: `kuma-{{ latest_version }}/bin/kuma-cp run`
+You can start the control-plane with: `kuma-{{ page.latest_version }}/bin/kuma-cp run`
 
 This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments.md) like "multi-zone".
 

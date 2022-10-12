@@ -16,10 +16,10 @@ The official Docker images are used by default in the [Kubernetes](../installati
 
 Kuma provides the following Docker images for all of its executables:
 
-* **kuma-cp**: at `docker.io/kumahq/kuma-cp:{{ page.latestVersion }}`
-* **kuma-dp**: at `docker.io/kumahq/kuma-dp:{{ page.latestVersion }}`
-* **kumactl**: at `docker.io/kumahq/kumactl:{{ page.latestVersion }}`
-* **kuma-prometheus-sd**: at `docker.io/kumahq/kuma-prometheus-sd:{{ page.latestVersion }}`
+* **kuma-cp**: at `docker.io/kumahq/kuma-cp:{{ page.latest_version }}`
+* **kuma-dp**: at `docker.io/kumahq/kuma-dp:{{ page.latest_version }}`
+* **kumactl**: at `docker.io/kumahq/kumactl:{{ page.latest_version }}`
+* **kuma-prometheus-sd**: at `docker.io/kumahq/kuma-prometheus-sd:{{ page.latest_version }}`
 
 You can freely `docker pull` these images to start using Kuma, as we will demonstrate in the following steps.
 
@@ -27,7 +27,7 @@ You can freely `docker pull` these images to start using Kuma, as we will demons
 
 We can run Kuma:
 
-`docker run -p 5681:5681 docker.io/kumahq/kuma-cp:{{ page.latestVersion }} run`
+`docker run -p 5681:5681 docker.io/kumahq/kuma-cp:{{ page.latest_version }} run`
 
 This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments) like "multi-zone".
 
@@ -82,16 +82,16 @@ mtls:
 You can run the following script to automatically detect the operating system and download Kuma:
 
 <div class="language-sh">
-<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latestVersion }} sh -</code></pre>
+<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latest_version }} sh -</code></pre>
 </div>
 
 or you can download the distribution manually:
 
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-centos-amd64.tar.gz'">CentOS</a>
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-rhel-amd64.tar.gz'">RedHat</a>
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-debian-amd64.tar.gz'">Debian</a>
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-ubuntu-amd64.tar.gz'">Ubuntu</a>
-* <a :href="'https://download.konghq.com/mesh-alpine/kuma-' + page.latestVersion + '-darwin-amd64.tar.gz'">macOS</a> or run `brew install kumactl`
+* <a href="https://download.konghq.com/mesh-alpine/kuma-{{ page.latest_version }}-centos-amd64.tar.gz">CentOS</a>
+* <a href="https://download.konghq.com/mesh-alpine/kuma-{{ page.latest_version }}-rhel-amd64.tar.gz">RedHat</a>
+* <a href="https://download.konghq.com/mesh-alpine/kuma-{{ page.latest_version }}-debian-amd64.tar.gz">Debian</a>
+* <a href="https://download.konghq.com/mesh-alpine/kuma-{{ page.latest_version }}-ubuntu-amd64.tar.gz">Ubuntu</a>
+* <a href="https://download.konghq.com/mesh-alpine/kuma-{{ page.latest_version }}-darwin-amd64.tar.gz">macOS</a> or run `brew install kumactl`
 
 and extract the archive with:
 
@@ -99,7 +99,7 @@ and extract the archive with:
 tar xvzf kuma-*.tar.gz
 ```
 
-You will then find the `kumactl` executable in the `kuma-{{ page.latestVersion }}/bin` folder.
+You will then find the `kumactl` executable in the `kuma-{{ page.latest_version }}/bin` folder.
 
 {% endtab %}
 {% endtabs %}

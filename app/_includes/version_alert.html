@@ -1,7 +1,7 @@
 {% assign current_version = page.version %}
 {% assign latest_version = site.data.latest_version.release %}
 
-{% if current_version != latest_version %}
+{% if current_version != site.data.latest_version.release %}
   <div>
     <div class="version-alert">
       <div class="warning custom-block">

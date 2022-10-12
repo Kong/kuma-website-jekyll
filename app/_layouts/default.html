@@ -20,7 +20,7 @@
       <meta name="docsearch:section" content="docs">
       <meta name="docsearch:docsversion" content="{{ page.version }}">
 
-      {% if page.version != site.latest_version %}
+      {% if page.version != site.data.latest_version.release %}
         <meta name="robots" content="noindex,follow">
       {% endif %}
     {% endif %}
