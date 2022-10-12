@@ -68,8 +68,8 @@ To set up a multi-zone deployment we will need to:
 
 The global control plane must run on a dedicated cluster, and cannot be assigned to a zone.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 The global control plane on Kubernetes must reside on its own Kubernetes cluster, to keep its resources separate from the resources the zone control planes create during synchronization.
 
@@ -90,8 +90,8 @@ The global control plane on Kubernetes must reside on its own Kubernetes cluster
 
     In this example the value is `35.226.196.103:5685`. You pass this as the value of `<global-kds-address>` when you set up the zone control planes.
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 1.  Set the `controlPlane.mode` value to `global` in the chart (`values.yaml`), then install. On the command line, run:
 
@@ -115,8 +115,8 @@ The global control plane on Kubernetes must reside on its own Kubernetes cluster
 
     By default, it's exposed on [port 5685](../networking/networking). In this example the value is `35.226.196.103:5685`. You pass this as the value of `<global-kds-address>` when you set up the zone control planes.
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 1.  Set up the global control plane, and add the `global` environment variable:
 
@@ -124,8 +124,8 @@ The global control plane on Kubernetes must reside on its own Kubernetes cluster
     KUMA_MODE=global kuma-cp run
     ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Set up the zone control planes
 
@@ -135,8 +135,8 @@ You need the following values to pass to each zone control plane setup:
 - `kds-global-address` -- the external IP and port of the global control plane.
 
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 **Without zone egress**:
 
@@ -168,8 +168,8 @@ You need the following values to pass to each zone control plane setup:
     where `zone` is the same value for all zone control planes in the same zone.
 
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 **Without zone egress**:
 
@@ -202,8 +202,8 @@ You need the following values to pass to each zone control plane setup:
 
     where `controlPlane.zone` is the same value for all zone control planes in the same zone.
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 1. On each zone control plane, run:
 
@@ -282,8 +282,8 @@ You need the following values to pass to each zone control plane setup:
     --dataplane-token-file=/tmp/zoneegress-token \
     --dataplane-file=zoneegress-dataplane.yaml
     ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Verify control plane connectivity
 
@@ -306,8 +306,8 @@ Kuma uses the Server Name Indication field, part of the TLS protocol, as a way t
 
 Cross-zone communication between services is available only if Zone Ingress has an external advertised address and port.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 If a service of type `NodePort` or `LoadBalancer` is attached to the data plane, Kuma will automatically retrieve the external address and port.
 
@@ -317,7 +317,8 @@ Depending on your load balancer implementation, you might need to wait a few min
 
 You can also set this address and port by using the annotations: [`kuma.io/ingress-public-address` and `kuma.io/ingress-public-port`](../reference/kubernetes-annotations/#kuma-io-ingress-public-port)
 
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 Set the advertisedAddress and advertisedPort field in the `ZoneIngress` definition
 ```yaml
 type: ZoneIngress
@@ -328,8 +329,8 @@ networking:
   advertisedAddress: 10.0.0.1 # an address which other zones can use to consume this zone-ingress
   advertisedPort: 10000 # a port which other zones can use to consume this zone-ingress
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 This address doesn't need to be public to the internet.
@@ -338,8 +339,8 @@ It only needs to be reachable from all data plane proxies in other zones.
 
 ### Cross-zone communication details
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 To view the list of service names available for cross-zone communication, run:
 
@@ -371,8 +372,8 @@ And if your HTTP clients take the standard default port 80, you can the port val
 Because Kuma on Kubernetes relies on transparent proxy, `kuma-dp` listens on port 80 for all virtual IPs that are assigned to services in the `.mesh` DNS zone. The DNS names are rendered RFC compatible by replacing underscores with dots.
 We can configure more flexible setup of hostnames and ports using [Virtual Outbound](../policies/virtual-outbound).
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 With a hybrid deployment, running in both Kubernetes and Universal mode, the service tag should be the same in both environments (e.g `echo-server_echo-example_svc_1010`):
 
@@ -412,8 +413,8 @@ networking:
 
 Alternatively, you can just call `echo-server_echo-example_svc_1010.mesh` without defining `outbound` section if you configure [transparent proxy](../networking/transparent-proxying).
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 The Kuma DNS service format (e.g. `echo-server_kuma-test_svc_1010.mesh`) is a composition of Kubernetes Service Name (`echo-server`),
 Namespace (`kuma-test`), a fixed string (`svc`), the service port (`1010`). The service is resolvable in the DNS zone `.mesh` where
@@ -429,25 +430,25 @@ zone: unable to delete Zone, Remote CP is still connected, please shut it down f
 
 When the Remote CP is fully disconnected and shut down, then the `Zone` can be deleted. All corresponding resources (like `Dataplane` and `DataplaneInsight`) will be deleted automatically as well.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```sh
 kubectl delete zone zone-1
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```sh
 kumactl delete zone zone-1
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Disable a zone
 
 Change the `enabled` property value to `false` in the global control plane:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Zone
@@ -456,16 +457,16 @@ metadata:
 spec:
   enabled: false
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: Zone
 name: zone-1
 spec:
   enabled: false
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 With this setting, the global control plane will stop exchanging configuration with this zone.
 As a result, the zone's ingress from zone-1 will be deleted from other zone and traffic won't be routed to it anymore.

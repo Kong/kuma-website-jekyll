@@ -120,8 +120,8 @@ This allows for more robust handling of name resolution.
 Set the following environment variable when starting the control plane:
 `KUMA_RUNTIME_KUBERNETES_INJECTOR_BUILTIN_DNS_ENABLED=true`.
 
-:::: tabs
-::: tab "kumactl"
+{% tabs %}
+{% tab kumactl %}
 
 Supply the following argument to `kumactl`
 
@@ -130,8 +130,8 @@ kumactl install control-plane \
   --env-var KUMA_RUNTIME_KUBERNETES_INJECTOR_BUILTIN_DNS_ENABLED=true
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 With [Helm](/docs/1.1.3/installation/helm), the command invocation looks like:
 
@@ -141,8 +141,8 @@ helm install --version 0.5.7 --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Universal
 

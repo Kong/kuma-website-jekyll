@@ -14,16 +14,16 @@ Environment variables take precedence over YAML configuration.
 
 You can find all possible configuration and the default values in the [`kuma-cp` reference doc](../generated/kuma-cp).
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes (kumactl)"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes (kumactl) %}
 When using `kumactl`, you can override the configuration with the `--env-var` flag. For example, to configure the refresh interval for configuration of the data plane proxy, specify:
 ```sh
 kumactl install control-plane \
   --env-var KUMA_XDS_SERVER_DATAPLANE_CONFIGURATION_REFRESH_INTERVAL=5s \
   --env-var KUMA_XDS_SERVER_DATAPLANE_STATUS_FLUSH_INTERVAL=5s | kubactl apply -f -
 ```
-:::
-::: tab "Kubernetes (HELM)"
+{% endtab %}
+{% tab Kubernetes (HELM) %}
 When using `helm`, you can override the configuration with the `envVars` field. For example, to configure the refresh interval for configuration with the data plane proxy, specify:
 ```sh
 helm install --version 0.7.1 \
@@ -44,8 +44,8 @@ and then specify it in the helm install command:
 ```sh
 helm install --version 0.7.1 -f values.yaml kuma kuma/kuma
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 First, specify your overrides in the appropriate config file, then run `kuma-cp`:
 
 For example create a `kuma-cp.conf.overrides.yml` file with:
@@ -67,8 +67,8 @@ KUMA_XDS_SERVER_DATAPLANE_CONFIGURATION_REFRESH_INTERVAL=5s \
   KUMA_XDS_SERVER_DATAPLANE_STATUS_FLUSH_INTERVAL=5s \
   kuma-cp run
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 If you configure `kuma-cp` with a YAML file, make sure to provide only values that you want to override.
@@ -89,15 +89,15 @@ In a multi-zone deployment, the zone control plane sends its config to the globa
 
 ## Data plane proxy
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 In Kubernetes, `kuma-dp` is automatically configured and injected by Kubernetes.
 The data plane proxy configuration is determined by the control plane. You can review the config details in the `runtime.kubernetes.injector.sidecarContainer` section of the `kuma-cp` config.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 `kuma-dp` is configured with command line arguments. Run `kuma-dp run -h` to inspect all available settings.
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Inspecting the configuration
 

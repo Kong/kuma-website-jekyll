@@ -10,8 +10,8 @@ When you enable this policy, you should also [disable passthrough mode](mesh/#co
 
 A simple HTTPS external service can be defined:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ExternalService
@@ -38,9 +38,9 @@ spec:
 
 Then apply the configuration with `kubectl apply -f [..]`.
 
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: ExternalService
 mesh: default
@@ -83,8 +83,8 @@ networking:
 
 Then `httpbin.org` is accessible at `127.0.0.1:10000`.
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Accessing the External Service
 

@@ -54,8 +54,8 @@ Kuma's control plane ships with [pprof](https://golang.org/pkg/net/http/pprof/) 
 
 To enable the debugging endpoints, you can set the `KUMA_DIAGNOSTICS_DEBUG_ENDPOINTS` environment variable to `true` before starting `kuma-cp` and use one of the following methods to retrieve the profiling information:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "pprof"
+{% tabs useUrlFragment=false %}
+{% tab pprof %}
 
 You can retrieve the profiling information with Golang's `pprof` tool, for example:
 
@@ -63,16 +63,16 @@ You can retrieve the profiling information with Golang's `pprof` tool, for examp
 go tool pprof http://<IP of the CP>:5680/debug/pprof/profile?seconds=30
 ```
 
-:::
-::: tab "curl"
+{% endtab %}
+{% tab curl %}
 
 You can retrieve the profiling information with `curl`, for example:
 
 ```sh
 curl http://<IP of the CP>:5680/debug/pprof/profile?seconds=30 --output prof.out
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Then, you can analyze the retrieved profiling data using an application like [Speedscope](https://www.speedscope.app/).
 

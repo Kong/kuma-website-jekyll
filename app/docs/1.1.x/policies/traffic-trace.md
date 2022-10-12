@@ -32,8 +32,8 @@ The types supported are:
 
 To add a new tracing backend we must create a new `tracing` property in a `Mesh` resource:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -51,9 +51,9 @@ spec:
 ```
 
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -68,8 +68,8 @@ tracing:
 ```
 
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.1.6/documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 We can also specify a `defaultBackend` property that will be used if any `TrafficTrace` resource doesn't explicitly specify a tracing backend.
 
@@ -77,8 +77,8 @@ We can also specify a `defaultBackend` property that will be used if any `Traffi
 
 Once we have added a tracing backend, we can now create `TrafficTrace` resources that will determine how we are going to collecting traces, and what backend we should be using to store them.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficTrace
@@ -94,9 +94,9 @@ spec:
 ```
 
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficTrace
 name: trace-all-traffic
@@ -109,8 +109,8 @@ conf:
 ```
 
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.1.6/documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 We can use Kuma Tags to apply the `TrafficTrace` resource in a more target way to a subset of data plane proxies as opposed to all of them (like we do in the example by using the `kuma.io/service: '*'` selector),
 

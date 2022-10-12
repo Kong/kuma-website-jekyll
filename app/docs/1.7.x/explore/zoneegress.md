@@ -36,8 +36,8 @@ The `ZoneEgress` entity includes a few sections:
       * `port`: the port that Envoy Admin API will listen to
 * `zone` **[auto-generated on Kuma CP]** : zone where Zone Egress belongs to
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 The recommended way to deploy a `ZoneEgress` proxy in Kubernetes is to use
 `kumactl`, or the Helm charts as specified in [multi-zone](../deployments/multi-zone).
 It works as a separate deployment of a single-container pod.
@@ -61,8 +61,8 @@ kumactl install control-plane \
   [...] | kubectl apply -f -
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 **Standalone**
 
@@ -96,8 +96,8 @@ kuma-dp run \
 
 Multi-zone deployment is similar and for deployment, you should follow [multi-zone deployment instruction](../deployments/multi-zone).
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 A `ZoneEgress` deployment can be scaled horizontally.
 
@@ -105,8 +105,8 @@ A `ZoneEgress` deployment can be scaled horizontally.
 
 [mTLS](../policies/mutual-tls) is required to enable `ZoneEgress`. In addition, there's a configuration in the `Mesh` policy to route traffic through the `ZoneEgress`
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 ```shell
 echo "apiVersion: kuma.io/v1alpha1
@@ -120,8 +120,8 @@ spec:
     [...]" | kubectl apply -f -
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 ```shell
 cat <<EOF | kumactl apply -f -
@@ -134,7 +134,7 @@ routing:
 EOF
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 This configuration will force cross zone communication to go through `ZoneEgress`. If enabled but no `ZoneEgress` is available the communication will fail.

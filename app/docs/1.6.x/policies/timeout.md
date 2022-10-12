@@ -12,8 +12,8 @@ The policy lets you configure timeouts for `HTTP`, `GRPC`, and `TCP` protocols.
 
 ## Example
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Timeout
@@ -45,9 +45,9 @@ spec:
       maxStreamDuration: 30m
 ```
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Timeout
 mesh: default
@@ -76,7 +76,8 @@ conf:
     maxStreamDuration: 30m
 ```
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](../../reference/http-api).
-:::
+{% endtab %}
+{% endtabs %}
 
 ## Matching
 

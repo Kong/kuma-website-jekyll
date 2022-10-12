@@ -12,8 +12,8 @@ The policy let you configure retry behaviour for `HTTP`, `GRPC` and `TCP` protoc
 
 ### Example
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Retry
@@ -53,9 +53,9 @@ spec:
       maxConnectAttempts: 3
 ```
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Retry
 name: web-to-backend-retry-policy
@@ -93,8 +93,8 @@ conf:
 ```
 
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.2.3/documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 
 ### HTTP

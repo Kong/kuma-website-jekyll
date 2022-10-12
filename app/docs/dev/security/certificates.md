@@ -56,8 +56,8 @@ cp /tmp/tls.crt /tmp/ca.crt
 
 2) Configure the control plane with generated certs:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes (kumactl)"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes (kumactl) %}
 Create a secret in the namespace where the control plane is installed:
 ```sh
 kubectl create secret generic general-tls-certs -n <namespace> \
@@ -76,8 +76,8 @@ kumactl install control-plane \
 The data plane proxy Injector in the control plane automatically provides the CA to the Kuma DP sidecar 
 so Kuma DP can confirm the control plane identity.
 
-:::
-::: tab "Kubernetes (HELM)"
+{% endtab %}
+{% tab Kubernetes (HELM) %}
 Create a secret in the namespace where the control plane is installed:
 ```sh
 kubectl create secret generic general-tls-certs -n <namespace> \
@@ -96,8 +96,8 @@ helm install --create-namespace --namespace <namespace> kuma kuma/kuma \
 The data plane proxy Injector in the control plane automatically provides the CA to the Kuma DP sidecar 
 so Kuma DP can confirm the control plane identity.
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 Configure the control plane with generated certificates:
 
 ```sh
@@ -117,8 +117,8 @@ kuma-dp run \
 ```
 
 You can also provide the CA via environment variable `KUMA_CONTROL_PLANE_CA_CERT`.
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Authentication
 
@@ -154,8 +154,8 @@ cp /tmp/tls.crt /tmp/ca.crt
 ```
 
 2) Configure the control plane with generated certificates
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes (kumactl)"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes (kumactl) %}
 Create a secret in the namespace in which the control plane is installed:
 ```sh
 kubectl create secret tls api-server-tls -n <namespace> \
@@ -168,8 +168,8 @@ Point to this secret when installing Kuma:
 kumactl install control-plane \
   --tls-api-server-secret=api-server-tls
 ```
-:::
-::: tab "Kubernetes (HELM)"
+{% endtab %}
+{% tab Kubernetes (HELM) %}
 Create a secret in the namespace in which the control plane is installed:
 ```sh
 kubectl create secret tls api-server-tls -n <namespace> \
@@ -183,8 +183,8 @@ helm install --create-namespace --namespace <namespace> kuma kuma/kuma \
   --set controlPlane.tls.apiServer.secretName=api-server-tls
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 Point to the certificate and the key:
 ```sh
 KUMA_API_SERVER_HTTPS_TLS_CERT_FILE=/tmp/tls.crt \
@@ -192,8 +192,8 @@ KUMA_API_SERVER_HTTPS_TLS_CERT_FILE=/tmp/tls.crt \
   kuma-cp run
 ```
 
-::: 
-::::
+{% endtab %}
+{% endtabs %}
 
 3) Configure secure connection using `kumactl` CLI tool:
 ```sh
@@ -242,8 +242,8 @@ cp /tmp/tls.crt /tmp/ca.crt
 ```
 
 2) Configure global control plane
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes (kumactl)"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes (kumactl) %}
 Create a secret in the namespace where the global control plane is installed:
 ```sh
 kubectl create secret tls kds-server-tls -n <namespace> \
@@ -257,8 +257,8 @@ kumactl install control-plane \
   --mode=global \
   --tls-kds-global-server-secret=general-tls-certs
 ```
-:::
-::: tab "Kubernetes (HELM)"
+{% endtab %}
+{% tab Kubernetes (HELM) %}
 Create a secret in the namespace where the global control plane is installed:
 ```sh
 kubectl create secret tls kds-server-tls -n <namespace> \
@@ -272,8 +272,8 @@ helm install --create-namespace --namespace <namespace> kuma kuma/kuma \
   --set controlPlane.tls.kdsGlobalServer.secretName=kds-server-tls
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 Point to the certificate and the key: 
 ```sh
 KUMA_MULTIZONE_GLOBAL_KDS_TLS_CERT_FILE=/tmp/tls.crt \
@@ -281,13 +281,13 @@ KUMA_MULTIZONE_GLOBAL_KDS_TLS_CERT_FILE=/tmp/tls.crt \
   KUMA_MODE=global \
   kuma-cp run
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 3) Configure the zone control plane
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes (kumactl)"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes (kumactl) %}
 Create a secret in the namespace where the zone control plane is installed:
 ```sh
 kubectl create secret generic kds-ca-certs -n <namespace> \
@@ -300,8 +300,8 @@ kumactl install control-plane \
   --mode=zone \
   --tls-kds-zone-client-secret=kds-ca-certs
 ```
-:::
-::: tab "Kubernetes (HELM)"
+{% endtab %}
+{% tab Kubernetes (HELM) %}
 Create a secret in the namespace where the zone control plane is installed:
 ```sh
 kubectl create secret generic kds-ca-certs -n <namespace> \
@@ -314,8 +314,8 @@ helm install --create-namespace --namespace <namespace> kuma kuma/kuma \
   --set controlPlane.tls.kdsZoneClient.secretName=kds-ca-certs
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 Point to the certificate and the key:
 ```sh
 KUMA_MULTIZONE_ZONE_KDS_ROOT_CA_FILE=/tmp/ca.crt \
@@ -323,8 +323,8 @@ KUMA_MULTIZONE_ZONE_KDS_ROOT_CA_FILE=/tmp/ca.crt \
   KUMA_MULTIZONE_ZONE_GLOBAL_ADDRESS=grpcs://<CROSS_ZONE_KUMA_CP_DNS_NAME>:5685 \
   kuma-cp run
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Authentication
 

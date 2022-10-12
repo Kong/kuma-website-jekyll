@@ -62,8 +62,8 @@ Envoy conf: [Cluster](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/
 
 By default, Kuma creates the following Timeout policy:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Timeout
@@ -87,9 +87,9 @@ spec:
       streamIdleTimeout: 30m
       maxStreamDuration: 0s
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Timeout
 mesh: default
@@ -110,8 +110,8 @@ conf:
     streamIdleTimeout: 30m
     maxStreamDuration: 0s
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% warning %}
 Default timeout policy works fine in most cases. 
@@ -150,8 +150,8 @@ http:
 
 If you still need to change inbound timeouts you can use a [ProxyTemplate](proxy-template):
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ProxyTemplate
@@ -179,9 +179,9 @@ spec:
               common_http_protocol_options: 
                 idle_timeout: 0s # disable http.idleTimeout
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: ProxyTemplate
 mesh: default
@@ -206,8 +206,8 @@ conf:
             common_http_protocol_options: 
               idle_timeout: 0s # disable http.idleTimeout
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% warning %}
 It's not recommended disabling `streamIdleTimeouts` and `idleTimeout`

@@ -18,8 +18,8 @@ A _logging backend_ is essentially a sink for access logs.
 
 Currently, a _logging backend_ can be either a `file` or a `TCP log collector`, such as Logstash.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -49,8 +49,8 @@ spec:
         # When `format` field is omitted, the default access log format will be used.
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -75,15 +75,15 @@ logging:
         path: /tmp/access.log
       # When `format` field is omitted, the default access log format will be used.
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ## Add a TrafficLog resource
 
 You need to create a `TrafficLog` policy to select a subset of traffic and forward its access logs into one of the _logging backends_ configured for that `Mesh`.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficLog
@@ -119,8 +119,8 @@ spec:
     # Forward the logs into the logging backend named `logstash`.
     backend: logstash
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: TrafficLog
 name: all-traffic
@@ -150,8 +150,8 @@ conf:
   # Forward the logs into the logging backend named `logstash`.
   backend: logstash
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 When `backend ` field of a `TrafficLog` policy is omitted, the logs will be forwarded into the `defaultBackend` of that `Mesh`.
@@ -161,8 +161,8 @@ When `backend ` field of a `TrafficLog` policy is omitted, the logs will be forw
 
 `Kuma` is presenting a simple solution to aggregate the **logs of your containers** and the **access logs of your data-planes**.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 **1. Install Loki**
 
@@ -203,8 +203,8 @@ At this point you can visualize your **containers' logs** and your **access logs
 
 For example, running: `{container="kuma-sidecar"} |= "GET"` will show all GET requests on your cluster.
 To learn more about the search syntax check the [Loki docs](https://grafana.com/docs/loki/latest/logql/).
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 **1. Install Loki**
 
@@ -240,8 +240,8 @@ At this point you can visualize your **containers' logs** and your **access logs
 
 For example, running: `{container="kuma-sidecar"} |= "GET"` will show all GET requests on your cluster.
 To learn more about the search syntax check the [Loki docs](https://grafana.com/docs/loki/latest/logql/).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 **Nice to have**

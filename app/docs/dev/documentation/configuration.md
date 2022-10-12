@@ -18,16 +18,16 @@ Environment variables usually match the yaml path by replacing `.` with `_`, cap
 For example the yaml path: `store.postgres.port` is the environment variable: `KUMA_STORE_POSTGRES_PORT`.
 {% endtip %}
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes (kumactl)"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes (kumactl) %}
 When using `kumactl`, override the configuration with the `--env-var` flag. For example, to configure the refresh interval for configuration of the data plane proxy, specify:
 ```sh
 kumactl install control plane \
   --env-var KUMA_XDS_SERVER_DATAPLANE_CONFIGURATION_REFRESH_INTERVAL=5s \
   --env-var KUMA_XDS_SERVER_DATAPLANE_STATUS_FLUSH_INTERVAL=5s | kubactl apply -f -
 ```
-:::
-::: tab "Kubernetes (HELM)"
+{% endtab %}
+{% tab Kubernetes (HELM) %}
 When using `helm`, you can override the configuration with the `envVars` field. For example, to configure the refresh interval for configuration with the data plane proxy, specify:
 ```sh
 helm install \
@@ -56,8 +56,8 @@ helm install kuma kuma/kuma --set-file controlPlace.config=cp-conf.yaml
 ```
 The value of the configmap `kuma-control-plane-config` is now the content of `cp-conf.yaml`.
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 First, specify your configuration in the appropriate config file, then run `kuma-cp`:
 
 For example create a `kuma-cp.conf.overrides.yml` file with:
@@ -79,8 +79,8 @@ KUMA_XDS_SERVER_DATAPLANE_CONFIGURATION_REFRESH_INTERVAL=5s \
   KUMA_XDS_SERVER_DATAPLANE_STATUS_FLUSH_INTERVAL=5s \
   kuma-cp run
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 If you configure `kuma-cp` with a YAML file, make sure to provide only values that you want to override.

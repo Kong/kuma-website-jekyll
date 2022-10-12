@@ -60,8 +60,8 @@ When you install the control plane, set the following environment variable to di
 
 `KUMA_RUNTIME_KUBERNETES_INJECTOR_BUILTIN_DNS_ENABLED=false`
 
-:::: tabs
-::: tab "kumactl"
+{% tabs %}
+{% tab kumactl %}
 
 Pass the environment variable to the `--env-var` argument when you install:
 
@@ -70,8 +70,8 @@ kumactl install control-plane \
   --env-var KUMA_RUNTIME_KUBERNETES_INJECTOR_BUILTIN_DNS_ENABLED=false
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 Set the environment variable:
 
@@ -81,8 +81,8 @@ helm install --version 0.6.3 --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Universal
 

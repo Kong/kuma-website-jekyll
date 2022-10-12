@@ -19,8 +19,8 @@ The Kuma control plane exposes a DNS service which handles the name resolution i
 
 Usually DNS configuration expects DNS server to be served on port `53` therefore we need to [configure](../documentation/configuration) the control plane with `KUMA_DNS_SERVER_PORT` set to `53`.
 
-:::: tabs
-::: tab "Kubernetes" :options="{ useUrlFragment: false }"
+{% tabs %}
+{% tab Kubernetes" :options="{ useUrlFragment: false } %}
 1. When you install the control plane, [configure](../documentation/configuration) it with the following environment variable to disable the data plane proxy DNS:
 
 `KUMA_RUNTIME_KUBERNETES_INJECTOR_BUILTIN_DNS_ENABLED=false`
@@ -28,8 +28,8 @@ Usually DNS configuration expects DNS server to be served on port `53` therefore
 2. Plug Kuma DNS resolver into Kube DNS or Core DNS
 
 `kumactl install dns`
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 Follow the instruction in [transparent proxying](../transparent-proxying), but when `install transparent-proxy` is executed. Set the following arguments
 
 ```shell
@@ -39,5 +39,5 @@ kumactl install transparent-proxy \
 ```
 
 In addition to changing `iptables`, this command will also modify `/etc/resolv.conf`.
-:::
-::::
+{% endtab %}
+{% endtabs %}

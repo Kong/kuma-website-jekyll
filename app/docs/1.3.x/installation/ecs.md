@@ -40,8 +40,8 @@ aws cloudformation deploy \
 
 We can run Kuma in either **standalone** or **multi-zone** mode:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Standalone"
+{% tabs useUrlFragment=false %}
+{% tab Standalone %}
 
 To deploy the `kuma-cp` stack in standalone mode we can execute:
 
@@ -55,8 +55,8 @@ aws cloudformation deploy \
 
 To learn more, read about the [deployment modes available](/docs/1.3.1/documentation/deployments/).
 
-:::
-::: tab "Multi-Zone"
+{% endtab %}
+{% tab Multi-Zone %}
 
 Multi-zone mode is perfect when running one deployment of Kuma that spans across multiple Kubernetes clusters, clouds and VM environments under the same Kuma deployment. This mode also supports hybrid Kubernetes + VMs deployments.
 
@@ -101,8 +101,8 @@ aws cloudformation deploy \
 
 To learn more, read the [multi-zone installation instructions](/docs/1.3.1/documentation/deployments/).
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% warning %}
 The examples described above will allow access to the `kuma-cp` to all IPs. In production we should change `--parameter-overrides AllowedCidr=0.0.0.0/0` to point to a more restricted subnet that will be used to administer the Kuma control plane.
@@ -169,8 +169,8 @@ Kuma allows much more advanced and secure ways to expose the `/tokens` endpoint.
 
 Finally, retrieve the data plane proxy token generated in the previous step and use it in the following `<token>` placeholder:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Standalone"
+{% tabs useUrlFragment=false %}
+{% tab Standalone %}
 
 ```shell
 aws cloudformation deploy \
@@ -182,8 +182,8 @@ aws cloudformation deploy \
       DPToken="<token>"
 ```
 
-:::
-::: tab "Multi-zone"
+{% endtab %}
+{% tab Multi-zone %}
 
 ```shell
 aws cloudformation deploy \
@@ -198,8 +198,8 @@ aws cloudformation deploy \
 
 The `CPAddress` value is the default value provided in the examples, however this should be changed to whatever matches your deployment.
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 By doing so, we are deploying two instances of the `httpbin` container with a `kuma-dp` sidecar running alongside each one of them.
 

@@ -16,8 +16,8 @@ To collect metrics from Kuma, you need to first expose metrics from Dataplanes a
 
 To expose `Prometheus` metrics from every dataplane in the mesh, configure a `Mesh` resource as follows:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -51,8 +51,8 @@ spec:
         tags: # tags that can be referred in Traffic Permission when metrics are secured by mTLS  
           kuma.io/service: dataplane-metrics
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -82,15 +82,15 @@ metrics:
       tags: # tags that can be referred in Traffic Permission when metrics are secured by mTLS  
         kuma.io/service: dataplane-metrics
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Both snippets from above instruct `Kuma` to configure every dataplane in the mesh `default` to expose an HTTP endpoint with `Prometheus` metrics on port `5670` and URI path `/metrics`.
 
 #### Override Prometheus settings per Dataplane
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 To override `Mesh`-wide defaults for a particular `Pod`, use `Kuma`-specific annotations:
 * `prometheus.metrics.kuma.io/port` - to override `Mesh`-wide default port
 * `prometheus.metrics.kuma.io/path` - to override `Mesh`-wide default path
@@ -117,8 +117,8 @@ spec:
 ```
 
 As a result, dataplane for this particular `Pod` will expose an HTTP endpoint with `Prometheus` metrics on port `1234` and URI path `/non-standard-path`.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 To override `Mesh`-wide defaults on a particular machine, configure `Dataplane` resource as follows:
 
@@ -135,8 +135,8 @@ metrics:
 ```
 
 As a result, this particular dataplane will expose an HTTP endpoint with `Prometheus` metrics on port `1234` and URI path `/non-standard-path`.
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Configure Prometheus
 
@@ -148,14 +148,15 @@ It knows location of `Kuma` Control Plane is and can fetch an up-to-date list of
 It then transforms that information into a format that `Prometheus` can understand, and saves it into a file on disk.
 `Prometheus` watches for changes to that file and updates its scraping configuration accordingly.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 Use `kumactl install metrics | kubectl apply -f -` to deploy configured Prometheus with Grafana.
 
 {% tip %}
 If you've got Prometheus deployment already, you can use [Prometheus federation](https://prometheus.io/docs/prometheus/latest/federation/) to bring Kuma metrics to your main Prometheus cluster.
 {% endtip %}
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 First, you need to run `kuma-prometheus-sd`, e.g. by using the following command:
 
 ```shell
@@ -182,8 +183,8 @@ and running
 ```shell
 prometheus --config.file=prometheus.yml
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 
 Now, if you check `Targets` page on `Prometheus` UI, you should see a list of dataplanes from your mesh, e.g.
@@ -196,8 +197,8 @@ Now, if you check `Targets` page on `Prometheus` UI, you should see a list of da
 
 Kuma lets you expose Dataplane metrics in a secure way by leveraging mTLS. Prometheus needs to be a part of the Mesh for this feature to work, which is the default deployment model when `kumactl install metrics` is used on Kubernetes.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 Make sure that mTLS is enabled in the Mesh.
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -261,18 +262,18 @@ spec:
       kuma.io/service: "prometheus-server_kuma-metrics_svc_80"
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 This feature requires transparent proxy, therefore for now it's not available in Universal for now.
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ## Expose metrics from applications
 
 In addition to exposing metrics from Dataplane, you may want to expose metrics from application next to Kuma DP.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 Use standard `prometheus.io` annotations either on `Pod` or `Service`
 ```yaml
 apiVersion: apps/v1
@@ -293,12 +294,12 @@ spec:
       containers:
       ...
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 Use Discovery Service of [your choice](https://prometheus.io/docs/prometheus/latest/configuration/configuration/).
 In the future Kuma will help to expose metrics in more native way.
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Remember that in order to consume paths protected by mTLS, you need Traffic Permission that lets Prometheus consume applications.
 

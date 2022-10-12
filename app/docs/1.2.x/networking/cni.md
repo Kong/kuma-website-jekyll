@@ -13,8 +13,8 @@ Kuma CNI can be leveraged in the two installation methods for Kubernetes: using 
 
 Below are the details of how to set-up each of the options, considering and example where a plain Kubernetes cluster deployed with `kubeadm` and the default Calico CNI is used.
 
-:::: tabs
-::: tab "kumactl"
+{% tabs %}
+{% tab kumactl %}
 
 Supply the following arguments to `kumactl`, to enable the CNI setup and configure it for chaining with the CNI plugin.
 
@@ -27,8 +27,8 @@ kumactl install control-plane \
   --cni-conf-name 10-calico.conflist
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 When using [Helm](/docs/1.2.3/installation/helm), we should use the values in the `cni` section to set the relevant parameters.
 
@@ -38,5 +38,5 @@ helm install --version 0.6.3 --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}

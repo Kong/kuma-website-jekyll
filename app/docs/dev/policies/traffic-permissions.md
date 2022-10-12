@@ -22,8 +22,8 @@ To specify which source services can consume which destination services, provide
 **Match all**: You can match any value of a tag by using `*` -- for example, like `version: '*'`.
 {% endtip %}
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficPermission
@@ -39,8 +39,8 @@ spec:
         kuma.io/service: '*'
 ```
 Apply the configuration with `kubectl apply -f [..]`.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: TrafficPermission
 name: allow-all-traffic
@@ -53,8 +53,8 @@ destinations:
       kuma.io/service: '*'
 ```
 Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../../reference/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 You can use any [Tag](../explore/dpp/#tags) with the `sources` and `destinations` selectors. This approach supports fine-grained access control that lets you define the right levels of security for your services.
 
@@ -73,8 +73,8 @@ These settings lock down traffic to and from the mesh, which means that requests
 
 First, define the `ExternalService` for a service that is not in the mesh.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ExternalService
@@ -90,8 +90,8 @@ spec:
     tls:
       enabled: true
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: ExternalService
 mesh: default
@@ -104,15 +104,15 @@ networking:
   tls:
     enabled: true
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Then apply the `TrafficPermission` policy. In the destination section, specify all the tags defined in `ExternalService`.
 
 For example, to enable the traffic from the data plane proxies of service `web` or `backend` to the new `ExternalService`, apply:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficPermission
@@ -129,8 +129,8 @@ spec:
     - match:
         kuma.io/service: httpbin
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: TrafficPermission
 name: backend-to-httpbin
@@ -144,7 +144,7 @@ destinations:
   - match:
       kuma.io/service: httpbin
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Remember, the `ExternalService` follows [the same rules](how-kuma-chooses-the-right-policy-to-apply) for matching policies as any other service in the mesh -- Kuma selects the most specific `TrafficPermission` for every `ExternalService`.

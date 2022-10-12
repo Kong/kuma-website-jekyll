@@ -29,8 +29,8 @@ When [Mutual TLS](/docs/1.2.3/policies/mutual-tls/) is enabled in `builtin` mode
 
 The easiest way to create a `Mesh` is to specify its `name`. The name of a Mesh must be unique.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -38,15 +38,15 @@ metadata:
   name: default
 ```
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
 ```
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.2.3/documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Creating resources in a Mesh
 
@@ -56,8 +56,8 @@ It is possible to determine to what `Mesh` other resources belong to in the foll
 
 Every time we start a data plane proxy, we need to specify to what `Mesh` it belongs, this can be done in the following way:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 By using the `kuma.io/mesh` annotation in a `Deployment`, like:
 
 ```yaml
@@ -78,8 +78,8 @@ spec:
       containers:
         ...
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 By using the `-m` or `--mesh` argument when running `kuma-dp`, for example:
 
@@ -90,15 +90,15 @@ kuma-dp run \
   --cp-address=https://127.0.0.1:5678 \
   --dataplane-token-file=/tmp/kuma-dp-backend-1-token
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 #### Policies
 
 When creating new [Policies](/policies) we also must specify to what `Mesh` they belong, this can be done in the following way:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 By using the `mesh` property, like:
 
 ```yaml
@@ -110,8 +110,8 @@ metadata:
 spec:
   ...
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 By using the `mesh` property, like:
 ```yaml
 type: TrafficRoute
@@ -119,16 +119,16 @@ name: route-1
 mesh: default # indicate to Kuma what is the Mesh that the resource belongs to
 ...
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Controlling the passthrough mode
 
 In its default setup, Kuma allows any non-mesh traffic to pass Envoy without applying any policy. For instance if a service needs to send a request to `http://example.com`, all requests won't be logged even if a traffic logging is enabled in the mesh where the service is deployed.
 The passthrough mode is enabled by default on all the dataplane proxies in transparent mode in a Mesh. This behavior can be changed by setting the `networking.outbound.passthrough` in the Mesh resource. Example:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -139,8 +139,8 @@ spec:
     outbound:
       passthrough: false
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -148,8 +148,8 @@ networking:
   outbound:
     passthrough: false
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 When `networking.outbound.passthrough` is `false`, no traffic to any non-mesh resource can leave the Mesh.
 

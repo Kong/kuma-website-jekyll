@@ -17,8 +17,8 @@ A `MeshGateway` can have any number of listeners, where each listener represents
 To configure a listener, you need to specify the port number, the network protocol, and (optionally) the hostname to accept.
 Each listener has its own set of Kuma tags so that Kuma policy configuration can be targeted to specific listeners.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Universal"
+{% tabs useUrlFragment=false %}
+{% tab Universal %}
 ```yaml
 type: MeshGateway
 mesh: default
@@ -34,8 +34,8 @@ conf:
     tags:
       port: http/8080 
 ```
-:::
-::: tab "Kubernetes"
+{% endtab %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshGateway
@@ -54,8 +54,8 @@ spec:
       tags:
         port: http/8080 
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 The selectors field matches Dataplane tags to determine which Dataplanes will be configured with this `MeshGateway`.
 The listeners field is an array of listeners for the Gateway.
@@ -68,8 +68,8 @@ The Gateway resource supports this by merging listeners that have a common port.
 Whether merging listeners is allowed depends on the semantics of the protocol field.
 It is allowed for the most common protocols, HTTP and HTTPS.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Universal"
+{% tabs useUrlFragment=false %}
+{% tab Universal %}
 ```yaml
 type: MeshGateway
 mesh: default
@@ -90,8 +90,8 @@ conf:
     tags:
       vhost: bar.example.com
 ```
-:::
-::: tab "Kubernetes"
+{% endtab %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshGateway
@@ -115,8 +115,8 @@ spec:
       tags:
         vhost: bar.example.com
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Above shows a `MeshGateway` resource with two HTTP listeners on the same port.
 In this example, the gateway proxy will be configured to listen on port 8080, and accept HTTP requests both for hostnames.
@@ -139,8 +139,8 @@ The reference doc contains all options on [`MeshGateway`](../generated/resources
 TLS sessions are terminated on a Gateway by specifying the "HTTPS" protocol, and providing a server certificate configuration.
 Below, the gateway listens on port 8443 and terminates TLS sessions.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Universal"
+{% tabs useUrlFragment=false %}
+{% tab Universal %}
 ```yaml
 type: MeshGateway
 mesh: default
@@ -160,8 +160,8 @@ conf:
     tags:
       name: foo.example.com
 ```
-:::
-::: tab "Kubernetes"
+{% endtab %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshGateway
@@ -184,8 +184,8 @@ spec:
       tags:
         name: foo.example.com
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 The server certificate is provided through a Kuma datasource reference, in this case naming a secret that must contain both the server certificate and the corresponding private key.
 

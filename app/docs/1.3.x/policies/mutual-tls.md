@@ -35,8 +35,8 @@ We can specify more than one `builtin` backend with different names, and each on
 
 To enable a `builtin` mTLS for the entire Mesh we can apply the following configuration:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -58,9 +58,9 @@ spec:
 ```
 
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -79,8 +79,8 @@ mtls:
 ```
 
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.3.1/documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 A few considerations:
 
@@ -98,8 +98,8 @@ On Kubernetes, Kuma secrets are being stored in the `kuma-system` namespace, whi
 
 We can retrieve the secrets via `kumactl` on both Universal and Kubernetes, or via `kubectl` on Kubernetes only:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 The following command can be executed on any Kuma backend:
 
@@ -109,8 +109,8 @@ kumactl get secrets [-m MESH]
 # default   default.ca-builtin-cert-ca-1   1m
 # default   default.ca-builtin-key-ca-1    1m
 ```
-:::
-::: tab "kubectl"
+{% endtab %}
+{% tab kubectl %}
 
 The following command can be executed only on Kubernetes:
 
@@ -122,8 +122,8 @@ kubectl get secrets \
 # default.ca-builtin-cert-ca-1     system.kuma.io/secret                 1      1m
 # default.ca-builtin-key-ca-1      system.kuma.io/secret                 1      1m
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ## Usage of "provided" CA
 
@@ -135,8 +135,8 @@ Kuma then provisions data plane proxy certificates for every replica of every se
 
 Sample configuration:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -159,9 +159,9 @@ spec:
 ```
 
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -181,8 +181,8 @@ mtls:
 ```
 
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.3.1/documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 A few considerations:
 
@@ -257,8 +257,8 @@ Do not use the following example in production, instead generate valid and compl
 
 Below we can find an example to generate a sample CA certificate + key:
 
-::::tabs :options="{ useUrlFragment: false }"
-::: tab "openssl"
+{% tabs useUrlFragment=false %}
+{% tab openssl %}
 
 The following command will generate a CA root certificate and key that can be uploaded to Kuma as a Secret and then used in a `provided` mTLS backend:
 
@@ -278,8 +278,8 @@ openssl req -config <(echo "$SAMPLE_CA_CONFIG") -new -newkey rsa:2048 -nodes \
 
 The command will generate a certificate at `crt.pem` and the key at `key.pem`. We can generate the Kuma Secret resources by following the [Secret reference](/docs/1.3.1/documentation/secrets).
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Development Mode
 
@@ -291,8 +291,8 @@ Using the `file` and `inline` modes in production presents a security risk since
 
 Kuma offers an alternative way to specify the CA root certificate and key:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 Please note the `file` and `inline` properties that are being used instead of `secret`:
 
@@ -314,9 +314,9 @@ spec:
           file: /opt/cert.key
 ```
 
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 
 Please note the `file` and `inline` properties that are being used instead of `secret`:
 
@@ -334,8 +334,8 @@ mtls:
       key:
         file: /opt/cert.key
 ```
-:::
-:::: 
+{% endtab %}
+{% endtabs %} 
 
 ## Permissive mTLS
 
@@ -349,9 +349,9 @@ where the client and server already implement TLS.
 PERMISSIVE mode is not secure. It's intended as a temporary utility. Make sure to set to `STRICT` mode after migration is complete.
 {% endwarning %}
 
-:::: tabs :options="{ useUrlFragment: false }"
+{% tabs useUrlFragment=false %}
 
-::: tab "Kubernetes"
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -365,9 +365,9 @@ spec:
         type: builtin
         mode: PERMISSIVE # supported values: STRICT, PERMISSIVE
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -378,9 +378,9 @@ mtls:
       type: builtin
       mode: PERMISSIVE # supported values: STRICT, PERMISSIVE
 ```
-:::
+{% endtab %}
 
-::::
+{% endtabs %}
 
 ## Certificate Rotation
 
@@ -394,8 +394,8 @@ You can update the duration of the data plane proxy certificates by updating the
 
 You can inspect the certificate rotation statistics by executing the following command (supported on both Kubernetes and Universal):
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 We can use the Kuma CLI:
 
@@ -407,8 +407,8 @@ kumactl inspect dataplanes
 
 Please note the `CERT REGENERATED AGO`, `CERT EXPIRATION`, `CERT REGENERATIONS` columns.
 
-:::
-::: tab "HTTP API"
+{% endtab %}
+{% tab HTTP API %}
 
 We can use the Kuma HTTP API by retrieving the [Dataplane Insight](/docs/1.3.1/documentation/http-api/#dataplane-overviews) resource and inspecting the `dataplaneInsight` object.
 
@@ -425,8 +425,8 @@ dataplaneInsight": {
 ...
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 A new data plane proxy certificate is automatically generated when:
 

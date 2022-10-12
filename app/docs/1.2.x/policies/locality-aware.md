@@ -12,8 +12,8 @@ A [multi-zone deployment](/docs/1.2.3/documentation/deployments/) can enable loc
 
 A particular `Mesh` that spans several regions, zones or subzones, may choose to enable locality aware load balancing as follows:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -25,9 +25,9 @@ spec:
 ```
 
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -36,5 +36,5 @@ routing:
 ```
 
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.2.3/documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}

@@ -14,8 +14,8 @@ Finally you can follow the [Quickstart](#_4-quickstart) to take it from here and
 
 To run Kuma on OpenShift, you need to download a compatible version of Kuma for the machine from which you will be executing the commands.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Script"
+{% tabs useUrlFragment=false %}
+{% tab Script %}
 
 You can run the following script to automatically detect the operating system and download Kuma:
 
@@ -23,8 +23,8 @@ You can run the following script to automatically detect the operating system an
 <pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latestVersion }} sh -</code></pre>
 </div>
 
-:::
-::: tab "Direct Link"
+{% endtab %}
+{% tab Direct Link %}
 
 You can also download the distribution manually. Download a distribution for the **client host** from where you will be executing the commands to access OpenShift:
 
@@ -40,8 +40,8 @@ and extract the archive with:
 tar xvzf kuma-*.tar.gz
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### 2. Run Kuma
 
@@ -65,8 +65,8 @@ ln -s $PWD/kumactl /usr/local/bin/kumactl
 
 Finally we can install and run Kuma in either **standalone** or **multi-zone** mode:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "OpenShift 4.x (Standalone)"
+{% tabs useUrlFragment=false %}
+{% tab OpenShift 4.x (Standalone) %}
 
 Standalone mode is perfect when running Kuma in a single cluster across one environment:
 
@@ -75,9 +75,9 @@ Standalone mode is perfect when running Kuma in a single cluster across one envi
 ```
 
 Starting from version 4.1 OpenShift utilizes `nftables` instead of `iptables`. So using init container for redirecting traffic to the proxy is no longer works. Instead, we use `kuma-cni` which could be installed with `--cni-enabled` flag.
-:::
+{% endtab %}
 
-::: tab "OpenShift 3.11 (Standalone)"
+{% tab OpenShift 3.11 (Standalone) %}
 
 Standalone mode is perfect when running Kuma in a single cluster across one environment.
 
@@ -103,9 +103,9 @@ After updating `master-config.yaml` restart the cluster and install `control-pla
 ./kumactl install control-plane | oc apply -f -
 ```
 
-:::
+{% endtab %}
 
-::: tab "Multi-Zone"
+{% tab Multi-Zone %}
 
 Multi-zone mode is perfect when running one deployment of Kuma that spans across multiple Kubernetes clusters, clouds and VM environments under the same Kuma deployment. 
 
@@ -113,8 +113,8 @@ This mode also supports hybrid Kubernetes + VMs deployments.
 
 To learn more, read the [multi-zone installation instructions](/docs/1.2.3/documentation/deployments/).
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 It may take a while for OpenShift to start the Kuma resources, you can check the status by executing:
@@ -128,8 +128,8 @@ oc get pod -n kuma-system
 
 Kuma (`kuma-cp`) will be installed in the newly created `kuma-system` namespace! Now that Kuma has been installed, you can access the control-plane via either the GUI, `oc`, the HTTP API, or the CLI:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "GUI (Read-Only)"
+{% tabs useUrlFragment=false %}
+{% tab GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI listens on the API port and defaults to `:5681/gui`. 
 
@@ -141,8 +141,8 @@ kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 
 And then navigate to [`127.0.0.1:5681/gui`](http://127.0.0.1:5681/gui) to see the GUI.
 
-:::
-::: tab "oc (Read & Write)"
+{% endtab %}
+{% tab oc (Read & Write) %}
 
 You can use Kuma with `oc` to perform **read and write** operations on Kuma resources. For example:
 
@@ -167,8 +167,8 @@ spec:
       type: builtin" | oc apply -f -
 ```
 
-:::
-::: tab "HTTP API (Read-Only)"
+{% endtab %}
+{% tab HTTP API (Read-Only) %}
 
 Kuma ships with a **read-only** HTTP API that you can use to retrieve Kuma resources. 
 
@@ -180,8 +180,8 @@ oc port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 
 And then you can navigate to [`127.0.0.1:5681`](http://127.0.0.1:5681) to see the HTTP API.
 
-:::
-::: tab "kumactl (Read-Only)"
+{% endtab %}
+{% tab kumactl (Read-Only) %}
 
 You can use the `kumactl` CLI to perform **read-only** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API, you will need to first port-forward the API service with:
 
@@ -202,8 +202,8 @@ You can configure `kumactl` to point to any zone `kuma-cp` instance by running:
 ```sh
 kumactl config control-planes add --name=XYZ --address=http://{address-to-kuma}:5681
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 You will notice that Kuma automatically creates a [`Mesh`](../../policies/mesh) entity with name `default`.
 

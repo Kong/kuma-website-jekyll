@@ -18,17 +18,17 @@ Finally, you can follow the [Quickstart](#_4-quickstart) to take it from here an
 
 We can install and run Kuma:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "OpenShift 4.x"
+{% tabs useUrlFragment=false %}
+{% tab OpenShift 4.x %}
 
 ```sh
 ./kumactl install control-plane --cni-enabled | oc apply -f -
 ```
 
 Starting from version 4.1 OpenShift utilizes `nftables` instead of `iptables`. So using init container for redirecting traffic to the proxy no longer works. Instead, we use the `--cni-enabled` flag to install the [`kuma-cni`](../networking/cni).
-:::
+{% endtab %}
 
-::: tab "OpenShift 3.11"
+{% tab OpenShift 3.11 %}
 
 By default `MutatingAdmissionWebhook` and `ValidatingAdmissionWebhook` are disabled on OpenShift 3.11.
 In order to make it work add the following `pluginConfig` into `/etc/origin/master/master-config.yaml` on the master node:
@@ -52,8 +52,8 @@ After updating `master-config.yaml` restart the cluster and install `control-pla
 ./kumactl install control-plane | oc apply -f -
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments) like "multi-zone".
 
@@ -69,8 +69,8 @@ oc get pod -n kuma-system
 
 Kuma (`kuma-cp`) will be installed in the newly created `kuma-system` namespace! Now that Kuma has been installed, you can access the control-plane via either the GUI, `oc`, the HTTP API, or the CLI:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "GUI (Read-Only)"
+{% tabs useUrlFragment=false %}
+{% tab GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI listens on the API port and defaults to `:5681/gui`. 
 
@@ -82,8 +82,8 @@ oc port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 
 And then navigate to [`127.0.0.1:5681/gui`](http://127.0.0.1:5681/gui) to see the GUI.
 
-:::
-::: tab "oc (Read & Write)"
+{% endtab %}
+{% tab oc (Read & Write) %}
 
 You can use Kuma with `oc` to perform **read and write** operations on Kuma resources. For example:
 
@@ -108,8 +108,8 @@ spec:
       type: builtin" | oc apply -f -
 ```
 
-:::
-::: tab "HTTP API (Read-Only)"
+{% endtab %}
+{% tab HTTP API (Read-Only) %}
 
 Kuma ships with a **read-only** HTTP API that you can use to retrieve Kuma resources. 
 
@@ -121,8 +121,8 @@ oc port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 
 And then you can navigate to [`127.0.0.1:5681`](http://127.0.0.1:5681) to see the HTTP API.
 
-:::
-::: tab "kumactl (Read-Only)"
+{% endtab %}
+{% tab kumactl (Read-Only) %}
 
 You can use the `kumactl` CLI to perform **read-only** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API, you will need to first port-forward the API service with:
 
@@ -143,8 +143,8 @@ You can configure `kumactl` to point to any zone `kuma-cp` instance by running:
 ```sh
 kumactl config control-planes add --name=XYZ --address=http://{address-to-kuma}:5681
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 You will notice that Kuma automatically creates a [`Mesh`](../../policies/mesh) entity with name `default`.
 

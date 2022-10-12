@@ -95,8 +95,8 @@ Here is an example of a `jti`:
 
 Specify the list of revoked IDs separated by `,` and store it as `GlobalSecret` named `zone-ingress-token-revocations`:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 ```sh
 REVOCATIONS=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) && echo "apiVersion: v1
@@ -109,8 +109,8 @@ data:
 type: system.kuma.io/global-secret" | kubectl apply -f -
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 ```sh
 echo "
@@ -119,8 +119,8 @@ name: zone-ingress-token-revocations
 data: {{ revocations }}" | kumactl apply --var revocations=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) -f -
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Signing key rotation
 
@@ -131,7 +131,7 @@ If the signing key is compromised, we must rotate it and all the tokens that wer
 
    Make sure to generate the new signing key with a serial number greater than the serial number of the current signing key.
 
-   :::: tabs :options="{ useUrlFragment: false }"
+   {% tabs useUrlFragment=false %}
    ::: tab "Kubernetes"
    Check what the current highest serial number is:
 
@@ -176,7 +176,7 @@ If the signing key is compromised, we must rotate it and all the tokens that wer
    ```
 
    :::
-   ::::
+   {% endtabs %}
 
 2. Create new zone ingress tokens.
    These tokens are automatically created
@@ -185,7 +185,7 @@ If the signing key is compromised, we must rotate it and all the tokens that wer
    At this point, tokens signed by either the new or old signing key are valid.
 
 3. Remove the old signing key:
-   :::: tabs :options="{ useUrlFragment: false }"
+   {% tabs useUrlFragment=false %}
    ::: tab "Kubernetes"
    ```sh
    kubectl delete secret zone-ingress-token-signing-key-1 -n kuma-system
@@ -196,7 +196,7 @@ If the signing key is compromised, we must rotate it and all the tokens that wer
    kumactl delete global-secret zone-ingress-token-signing-key-1
    ```
    :::
-   ::::
+   {% endtabs %}
    All new connections to the control plane now require tokens signed with the new signing key.
 
 ## None

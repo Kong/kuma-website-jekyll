@@ -24,8 +24,8 @@ You can determine what source services are allowed to consume specific destinati
 **Match-All**: You can match any value of a tag by using `*`, like `version: '*'`.
 {% endtip %}
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficPermission
@@ -41,8 +41,8 @@ spec:
         kuma.io/service: '*'
 ```
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: TrafficPermission
 name: allow-all-traffic
@@ -55,8 +55,8 @@ destinations:
       kuma.io/service: '*'
 ```
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.1.6/documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 You can use any [Tag](/docs/1.1.6/documentation/dps-and-data-model/#tags) in both `sources` and `destinations` selector, which makes `TrafficPermissions` quite powerful when it comes to creating a secure environment for our services.
 

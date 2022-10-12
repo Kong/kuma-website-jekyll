@@ -30,20 +30,20 @@ If these limitations are problematic you should look at [Multi-zone deployments]
 
 In order to deploy Kuma in a standalone deployment, the `kuma-cp` control plane must be started in `standalone` mode:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 This is the standard installation method as described in the [installation page](/install).
 ```sh
 kumactl install control-plane | kubectl apply -f -
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 This is the standard installation method as described in the [installation page](/install).
 ```sh
 kuma-cp run
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Once Kuma is up and running, data plane proxies can now [connect](../../documentation/dps-and-data-model) directly to it.
 

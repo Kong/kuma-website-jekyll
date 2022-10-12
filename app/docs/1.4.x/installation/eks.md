@@ -19,8 +19,8 @@ Kuma also provides [Helm charts](../installation/helm/) that we can use instead 
 To run Kuma on AWS EKS, you need to download a compatible version of Kuma for the machine from which you will be executing the commands.
 
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Script"
+{% tabs useUrlFragment=false %}
+{% tab Script %}
 
 You can run the following script to automatically detect the operating system and download Kuma:
 
@@ -28,8 +28,8 @@ You can run the following script to automatically detect the operating system an
 <pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latestVersion }} sh -</code></pre>
 </div>
 
-:::
-::: tab "Direct Link"
+{% endtab %}
+{% tab Direct Link %}
 
 You can also download the distribution manually. Download a distribution for the **client host** from where you will be executing the commands to access Kubernetes:
 
@@ -45,8 +45,8 @@ and extract the archive with:
 tar xvzf kuma-*.tar.gz
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### 2. Run Kuma
 
@@ -64,8 +64,8 @@ cd kuma-1.4.1/bin
 
 Finally we can install and run Kuma in either **standalone** or **multi-zone** mode:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Standalone"
+{% tabs useUrlFragment=false %}
+{% tab Standalone %}
 
 Standalone mode is perfect when running Kuma in a single cluster across one environment:
 
@@ -75,8 +75,8 @@ Standalone mode is perfect when running Kuma in a single cluster across one envi
 
 To learn more, read about the [deployment modes available](../documentation/deployments/).
 
-:::
-::: tab "Multi-Zone"
+{% endtab %}
+{% tab Multi-Zone %}
 
 Multi-zone mode is perfect when running one deployment of Kuma that spans across multiple Kubernetes clusters, clouds and VM environments under the same Kuma deployment. This mode also supports multiple EKS-D clusters.
 
@@ -84,8 +84,8 @@ This mode also supports hybrid Kubernetes + VMs deployments.
 
 To learn more, read the [multi-zone installation instructions](../documentation/deployments/).
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 
 We suggest adding the `kumactl` executable to your `PATH` so that it's always available in every working directory. Or - alternatively - you can also create link in `/usr/local/bin/` by executing:
@@ -106,8 +106,8 @@ kubectl get pod -n kuma-system
 
 Kuma (`kuma-cp`) will be installed in the newly created `kuma-system` namespace! Now that Kuma has been installed, you can access the control-plane via either the GUI, `kubectl`, the HTTP API, or the CLI:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "GUI (Read-Only)"
+{% tabs useUrlFragment=false %}
+{% tab GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI listens on the API port and defaults to `:5681/gui`. 
 
@@ -119,8 +119,8 @@ kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 
 And then navigate to [`127.0.0.1:5681/gui`](http://127.0.0.1:5681/gui) to see the GUI.
 
-:::
-::: tab "kubectl (Read & Write)"
+{% endtab %}
+{% tab kubectl (Read & Write) %}
 
 You can use Kuma with `kubectl` to perform **read and write** operations on Kuma resources. For example:
 
@@ -145,8 +145,8 @@ spec:
       type: builtin" | kubectl apply -f -
 ```
 
-:::
-::: tab "HTTP API (Read-Only)"
+{% endtab %}
+{% tab HTTP API (Read-Only) %}
 
 Kuma ships with a **read-only** HTTP API that you can use to retrieve Kuma resources.
 
@@ -158,8 +158,8 @@ kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 
 And then you can navigate to [`127.0.0.1:5681`](http://127.0.0.1:5681) to see the HTTP API.
 
-:::
-::: tab "kumactl (Read-Only)"
+{% endtab %}
+{% tab kumactl (Read-Only) %}
 
 You can use the `kumactl` CLI to perform **read-only** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API, you will need to first port-forward the API service with:
 
@@ -180,8 +180,8 @@ You can configure `kumactl` to point to any zone `kuma-cp` instance by running:
 ```sh
 kumactl config control-planes add --name=XYZ --address=http://{address-to-kuma}:5681
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 You will notice that Kuma automatically creates a [`Mesh`](../../policies/mesh) entity with name `default`.
 

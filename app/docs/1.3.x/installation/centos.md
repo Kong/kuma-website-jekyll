@@ -38,8 +38,8 @@ cd kuma-1.3.1/bin
 
 Finally we can run Kuma in either **standalone** or **multi-zone** mode:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Standalone"
+{% tabs useUrlFragment=false %}
+{% tab Standalone %}
 
 Standalone mode is perfect when running Kuma in a single cluster across one environment:
 
@@ -49,8 +49,8 @@ Standalone mode is perfect when running Kuma in a single cluster across one envi
 
 To learn more, read about the [deployment modes available](/docs/1.3.1/documentation/deployments/).
 
-:::
-::: tab "Multi-Zone"
+{% endtab %}
+{% tab Multi-Zone %}
 
 Multi-zone mode is perfect when running one deployment of Kuma that spans across multiple Kubernetes clusters, clouds and VM environments under the same Kuma deployment. 
 
@@ -58,8 +58,8 @@ This mode also supports hybrid Kubernetes + VMs deployments.
 
 To learn more, read the [multi-zone installation instructions](/docs/1.3.1/documentation/deployments/).
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 We suggest adding the `kumactl` executable to your `PATH` so that it's always available in every working directory. Or - alternatively - you can also create link in `/usr/local/bin/` by executing:
 
@@ -75,22 +75,22 @@ ln -s $PWD/kumactl /usr/local/bin/kumactl
 
 Kuma (`kuma-cp`) is now running! Now that Kuma has been installed you can access the control-plane via either the GUI, the HTTP API, or the CLI:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "GUI (Read-Only)"
+{% tabs useUrlFragment=false %}
+{% tab GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI is available on the API port, and defaults to `:5681/gui`. 
 
 To access Kuma you can navigate to [`127.0.0.1:5681/gui`](http://127.0.0.1:5681/gui) to see the GUI.
 
-:::
-::: tab "HTTP API (Read & Write)"
+{% endtab %}
+{% tab HTTP API (Read & Write) %}
 
 Kuma ships with a **read and write** HTTP API that you can use to perform operations on Kuma resources. By default the HTTP API listens on port `5681`.
 
 To access Kuma you can navigate to [`127.0.0.1:5681`](http://127.0.0.1:5681) to see the HTTP API.
 
-:::
-::: tab "kumactl (Read & Write)"
+{% endtab %}
+{% tab kumactl (Read & Write) %}
 
 You can use the `kumactl` CLI to perform **read and write** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API. For example:
 
@@ -117,8 +117,8 @@ You can configure `kumactl` to point to any zone `kuma-cp` instance by running:
 ```sh
 kumactl config control-planes add --name=XYZ --address=http://{address-to-kuma}:5681
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 You will notice that Kuma automatically creates a [`Mesh`](../../policies/mesh) entity with name `default`.
 

@@ -35,14 +35,14 @@ Gateway API is not supported in multi-zone. To use the builtin Gateway, you need
 
    Every `Gateway` refers to a `GatewayClass` by name.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Standard install"
+{% tabs useUrlFragment=false %}
+{% tab Standard install %}
 
    For Helm and `kumactl` installations, a `GatewayClass` named `kuma` is automatically installed
    if the Gateway API CRDs are present.
 
-:::
-::: tab "Custom install"
+{% endtab %}
+{% tab Custom install %}
 
    If you've installed Kuma some other way, you can create your own `GatewayClass`
    using the `controllerName: gateways.kuma.io/controller`:
@@ -57,8 +57,8 @@ Gateway API is not supported in multi-zone. To use the builtin Gateway, you need
    " | kubectl apply -f -
    ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
    ```sh
    echo "apiVersion: gateway.networking.k8s.io/v1alpha2

@@ -17,8 +17,8 @@ To collect metrics from Kuma, you first expose metrics from proxies and then con
 
 To expose metrics from every proxy in the mesh, configure the `Mesh` resource:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -53,8 +53,8 @@ spec:
         tags: # tags that can be referred in Traffic Permission when metrics are secured by mTLS  
           kuma.io/service: dataplane-metrics
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 ```yaml
 type: Mesh
@@ -85,8 +85,8 @@ metrics:
       tags: # tags that can be referred in Traffic Permission when metrics are secured by mTLS  
         kuma.io/service: dataplane-metrics
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 This tells Kuma to configure every proxy in the `default` mesh to expose an HTTP endpoint with Prometheus metrics on port `5670` and URI path `/metrics`.
 
@@ -96,8 +96,8 @@ By default all available metrics are returned.
 
 #### Override Prometheus settings per data plane proxy
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 To override `Mesh`-wide defaults for a particular `Pod`, use `Kuma`-specific annotations:
 * `prometheus.metrics.kuma.io/port` - to override `Mesh`-wide default port
 * `prometheus.metrics.kuma.io/path` - to override `Mesh`-wide default path
@@ -124,8 +124,8 @@ spec:
 ```
 
 Proxies for this Pod expose an HTTP endpoint with Prometheus metrics on port `1234` and URI path `/non-standard-path`.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 To override `Mesh`-wide defaults on a particular machine, configure the `Dataplane` resource:
 
@@ -142,8 +142,8 @@ metrics:
 ```
 
 This proxy exposes an HTTP endpoint with Prometheus metrics on port `1234` and URI path `/non-standard-path`.
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Configure Prometheus
 
@@ -180,14 +180,14 @@ For earlier versions of Prometheus, Kuma provides the `kuma-prometheus-sd` tool,
 This tool fetches a list of current data plane proxies from the Kuma control plane and saves the list in Prometheus-compatible format 
 to a file on disk. Prometheus watches for changes to the file and updates its scraping configuration accordingly.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 You can run `kumactl install metrics | kubectl apply -f -` to deploy configured Prometheus with Grafana.
 
 If you've already deployed Prometheus, you can use [Prometheus federation](https://prometheus.io/docs/prometheus/latest/federation/) to bring Kuma metrics to your main Prometheus cluster.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 1.  Run `kuma-prometheus-sd`, for example:
 
     ```shell
@@ -213,8 +213,8 @@ If you've already deployed Prometheus, you can use [Prometheus federation](https
     prometheus --config.file=prometheus.yml
     ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 
 Check the Targets page in the Prometheus dashboard. You should see a list of data plane proxies from your mesh. For example:
@@ -227,8 +227,8 @@ Check the Targets page in the Prometheus dashboard. You should see a list of dat
 
 Kuma lets you expose proxy metrics in a secure way by leveraging mTLS. Prometheus needs to be a part of the mesh for this feature to work, which is the default deployment model when `kumactl install metrics` is used on Kubernetes.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 Make sure that mTLS is enabled in the mesh.
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -292,18 +292,18 @@ spec:
       kuma.io/service: "prometheus-server_kuma-metrics_svc_80"
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 This feature requires transparent proxy, so it's currently not available for Universal deployments.
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ## Expose metrics from applications
 
 In addition to exposing metrics from the data plane proxies, you might want to expose metrics from applications running next to the proxies.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 Use standard `prometheus.io` annotations on `Pod` or `Service`:
 ```yaml
 apiVersion: apps/v1
@@ -324,13 +324,13 @@ spec:
       containers:
       ...
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 Use the Discovery Service of [your choice](https://prometheus.io/docs/prometheus/latest/configuration/configuration/).
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 To consume paths protected by mTLS, you need Traffic Permission that lets Prometheus consume applications.
 

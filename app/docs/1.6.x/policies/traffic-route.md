@@ -17,8 +17,8 @@ Kuma also supports [locality aware load balancing](../locality-aware).
 
 The control plane creates a default `TrafficRoute` every time a new `Mesh` is created. The default `TrafficRoute` enables the traffic between all the services in the mesh. 
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -38,9 +38,9 @@ spec:
     destination:
       kuma.io/service: '*'
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficRoute
 name: route-all-default
@@ -57,15 +57,15 @@ conf:
   destination:
     kuma.io/service: '*'
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ## Usage
 
 Here is a full example of `TrafficRoute` policy
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -142,9 +142,9 @@ spec:
       random: {}
       maglev: {}
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficRoute
 name: full-example
@@ -218,8 +218,8 @@ conf:
     random: {}
     maglev: {}
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Kuma utilizes positive weights in the `TrafficRoute` policy and not percentages, therefore Kuma does not check if the total adds up to 100. If we want to stop sending traffic to a destination service we change the `weight` for that service to 0.
 
@@ -231,8 +231,8 @@ Here is an example of a `TrafficRoute` that splits the traffic over the two diff
 90% of the connections from `backend_default_svc_80` service will be initiated to `redis_default_svc_6379` with tag `version: 1.0`
 and 10% of the connections will be initiated to `version: 2.0`  
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -257,9 +257,9 @@ spec:
           kuma.io/service: redis_default_svc_6379
           version: '2.0'
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficRoute
 name: split-traffic
@@ -281,8 +281,8 @@ conf:
         kuma.io/service: redis
         version: '2.0'
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### L4 Traffic Rerouting
 
@@ -290,8 +290,8 @@ We can use `TrafficRoute` to fully reroute a TCP traffic to different version of
 
 Here is an example of a `TrafficRoute` that redirects the traffic to `another-redis_default_svc_6379` when `backend_default_svc_80` is trying to consume `redis_default_svc_6379`.  
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -309,9 +309,9 @@ spec:
     destination:
       kuma.io/service: another-redis_default_svc_6379
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficRoute
 name: reroute-traffic
@@ -326,8 +326,8 @@ conf:
   destination:
     kuma.io/service: another-redis_default_svc_6379
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### L7 Traffic Split
 
@@ -336,8 +336,8 @@ We can use `TrafficRoute` to split an HTTP traffic between services with differe
 Here is an example of a `TrafficRoute` that splits the traffic from `frontend_default_svc_80` to `backend_default_svc_80` between versions,
 but only on endpoints starting with `/api`. All other endpoints will go to `version: 1.0` 
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -369,9 +369,9 @@ spec:
       kuma.io/service: backend_default_svc_80
       version: '1.0'
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficRoute
 name: api-split
@@ -400,8 +400,8 @@ conf:
     kuma.io/service: backend_default_svc_80
     version: '1.0'
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 In order to use L7 Traffic Split, we need to [mark the destination service with `kuma.io/protocol: http`](./protocol-support-in-kuma).
@@ -413,8 +413,8 @@ We can use `TrafficRoute` to modify outgoing requests, by setting new path or ch
 
 Here is an example of a `TrafficRoute` that adds `x-custom-header` with value `xyz` when `frontend_default_svc_80` tries to consume `backend_default_svc_80`.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -443,9 +443,9 @@ spec:
     destination:
       kuma.io/service: backend_default_svc_80
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficRoute
 name: add-header
@@ -471,8 +471,8 @@ conf:
   destination:
     kuma.io/service: backend_default_svc_80
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 In order to use L7 Traffic Modification, we need to [mark the destination service with `kuma.io/protocol: http`](./protocol-support-in-kuma).
@@ -483,8 +483,8 @@ In order to use L7 Traffic Modification, we need to [mark the destination servic
 We can use `TrafficRoute` to modify outgoing requests, by setting new path or changing request and response headers.
 
 Here is an example of a `TrafficRoute` that redirect traffic to `offers_default_svc_80` when `frontend_default_svc_80` is trying to consume `backend_default_svc_80` on `/offers` endpoint.
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -508,9 +508,9 @@ spec:
     destination:
       kuma.io/service: backend_default_svc_80
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficRoute
 name: http-reroute
@@ -531,8 +531,8 @@ conf:
   destination:
     kuma.io/service: backend_default_svc_80
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 In order to use L7 Traffic Rerouting, we need to [mark the destination service with `kuma.io/protocol: http`](./protocol-support-in-kuma).

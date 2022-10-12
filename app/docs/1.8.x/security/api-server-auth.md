@@ -27,8 +27,8 @@ Kuma creates an admin user token on the first start of the control plane.
 The admin user token is a user token issued for user `mesh-system:admin` that belongs to `mesh-system:admin` group.
 This group is [authorized by default](./api-access-control) to execute all administrative operations.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 1. Access admin user token
 
    Use `kubectl` to extract the admin token
@@ -56,8 +56,8 @@ This group is [authorized by default](./api-access-control) to execute all admin
 
    If you want to skip CP verification, use `--skip-verify` instead of `--ca-cert-file`.
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 1. Access admin user token
 
    Execute the following command on the machine where you deployed the control plane.
@@ -82,8 +82,8 @@ This group is [authorized by default](./api-access-control) to execute all admin
 
    By default, all requests originated from localhost are authenticated as an `mesh-system:admin` user.
    After you retrieve and store the admin token, [configure a control plane](../documentation/configuration) with `KUMA_API_SERVER_AUTHN_LOCALHOST_IS_ADMIN` set to `false`.
-   :::
-   ::::
+   {% endtab %}
+   {% endtabs %}
 
 ### Generate user tokens
 
@@ -165,8 +165,8 @@ Kuma doesn't keep the list of issued tokens. To invalidate the token, you can ad
 Every user token has its own ID. As you saw in the previous section, it's available in payload under `jti` key.
 To revoke tokens, specify list of revoked IDs separated by `,` and store it as `GlobalSecret` named `user-token-revocations`
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```sh
 REVOCATIONS=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) && echo "apiVersion: v1
 kind: Secret
@@ -177,16 +177,16 @@ data:
   value: $REVOCATIONS
 type: system.kuma.io/global-secret" | kubectl apply -f -
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```sh
 echo "
 type: GlobalSecret
 name: user-token-revocations
 data: {{ revocations }}" | kumactl apply --var revocations=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) -f -
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Signing key
 
@@ -201,8 +201,8 @@ If the signing key is compromised, you must rotate it including all the tokens t
 
    Make sure to generate the new signing key with a serial number greater than the serial number of the current signing key.
 
-   :::: tabs :options="{ useUrlFragment: false }"
-   ::: tab "Kubernetes"
+   {% tabs useUrlFragment=false %}
+   {% tab Kubernetes %}
    Check what's the current highest serial number.
 
    ```sh
@@ -225,8 +225,8 @@ If the signing key is compromised, you must rotate it including all the tokens t
    " | kubectl apply -f - 
    ```
 
-   :::
-   ::: tab "Universal"
+   {% endtab %}
+   {% tab Universal %}
    Check what's the current highest serial number.
    ```sh
    kumactl get global-secrets
@@ -241,8 +241,8 @@ If the signing key is compromised, you must rotate it including all the tokens t
    name: user-token-signing-key-2
    data: {{ key }}" | kumactl apply --var key=$(kumactl generate signing-key) -f -
    ```
-   :::
-   ::::
+   {% endtab %}
+   {% endtabs %}
 
 2. Regenerate user tokens
 
@@ -250,18 +250,18 @@ If the signing key is compromised, you must rotate it including all the tokens t
    Starting from now, tokens signed by either new or old signing key are valid.
 
 3. Remove the old signing key
-   :::: tabs :options="{ useUrlFragment: false }"
-   ::: tab "Kubernetes"
+   {% tabs useUrlFragment=false %}
+   {% tab Kubernetes %}
    ```sh
    kubectl delete secret user-token-signing-key-1 -n kuma-system
    ```
-   :::
-   ::: tab "Universal"
+   {% endtab %}
+   {% tab Universal %}
    ```sh
    kumactl delete global-secret user-token-signing-key-1
    ```
-   :::
-   ::::
+   {% endtab %}
+   {% endtabs %}
 
    All new requests to the control plane now require tokens signed with the new signing key.
 
@@ -271,8 +271,8 @@ You can remove the default admin user token from the storage and prevent it from
 Keep in mind that even if you remove the admin user token, the signing key is still present.
 A malicious actor that acquires the signing key, can generate an admin token.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 1. Delete `admin-user-token` Secret
 ```sh
 kubectl delete secret admin-user-token -n kuma-namespace
@@ -289,8 +289,8 @@ kumactl delete global-secret admin-user-token
 
 2. Disable bootstrap of the token
    [Configure a control plane](../documentation/configuration) with `KUMA_API_SERVER_AUTHN_TOKENS_BOOTSTRAP_ADMIN_TOKEN` set to `false`.
-   :::
-   ::::
+   {% endtab %}
+   {% endtabs %}
 
 ## Admin client certificates
 
@@ -314,8 +314,8 @@ All users that provide client certificate are authenticated as a user with the n
    ```
 
 2. Configure the control plane with client certificates
-   :::: tabs :options="{ useUrlFragment: false }"
-   ::: tab "Kubernetes (kumactl)"
+   {% tabs useUrlFragment=false %}
+   {% tab Kubernetes (kumactl) %}
    Create a secret in the namespace in which control plane is installed
    ```sh
    kubectl create secret generic api-server-client-certs -n kuma-system \
@@ -328,8 +328,8 @@ All users that provide client certificate are authenticated as a user with the n
    kumactl install control-plane \
      --tls-api-server-client-certs-secret=api-server-client-certs
    ```
-   :::
-   ::: tab "Kubernetes (HELM)"
+   {% endtab %}
+   {% tab Kubernetes (HELM) %}
    Create a secret in the namespace in which control plane is installed
    ```sh
    kubectl create secret generic api-server-client-certs -n kuma-system \
@@ -338,8 +338,8 @@ All users that provide client certificate are authenticated as a user with the n
    You can provide as many client certificates as you want. Remember to only provide certificates without keys.
 
    Set `controlPlane.tls.apiServer.clientCertsSecretName` to `api-server-client-certs` via HELM
-   :::
-   ::: tab "Universal"
+   {% endtab %}
+   {% tab Universal %}
    Put all the certificates in one directory
    ```sh
    mkdir /opt/client-certs
@@ -352,8 +352,8 @@ All users that provide client certificate are authenticated as a user with the n
    KUMA_API_SERVER_AUTH_CLIENT_CERTS_DIR=/opt/client-certs \
      kuma-cp run
    ```
-   :::
-   ::::
+   {% endtab %}
+   {% endtabs %}
 
 3. Configure `kumactl` with valid client certificate
    ```sh

@@ -120,8 +120,8 @@ To visualise your **containers' logs** and your **access logs** you need to have
 
 You can then add a [TrafficLog policy](../policies/traffic-log) to your mesh to start emitting access logs. Loki will pick up logs that are sent to `stdout`. To send logs to `stdout` you can configure the logging backend as shown below:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -137,8 +137,8 @@ spec:
           path: /dev/stdout
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -150,8 +150,8 @@ logging:
       conf:
         path: /dev/stdout
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 At this point you can visualize your **containers' logs** and your **access logs** in Grafana by choosing the loki datasource in the [explore section](https://grafana.com/docs/grafana/latest/explore/).
 
@@ -250,14 +250,14 @@ This dashboard lets you investigate aggregated statistics for each builtin gatew
 The recommended way to use Datadog is with its [agent](https://docs.datadoghq.com/agent).
 
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 The [Datadog agent docs](https://docs.datadoghq.com/agent/kubernetes/installation) have in-depth installation methods.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 Checkout the [Datadog agent docs](https://docs.datadoghq.com/agent/basic_agent_usage).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 
 ### Metrics
@@ -266,14 +266,14 @@ Kuma exposes metrics with [traffic metrics](../policies/traffic-metrics) in Prom
 
 You can add annotations to your pods to enable the Datadog agent to scrape metrics.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 Please refer to the dedicated [documentation](https://docs.datadoghq.com/containers/kubernetes/prometheus/?tabs=helm#metric-collection-with-prometheus-annotations).
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 You need to setup your agent with an [openmetrics.d/conf.yaml](https://docs.datadoghq.com/integrations/guide/prometheus-host-collection/#pagetitle).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Tracing
 
@@ -281,8 +281,8 @@ Checkout the
 1. Set up the [Datadog](https://docs.datadoghq.com/tracing/) agent.
 2. Set up [APM](https://docs.datadoghq.com/tracing/).
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 Configure the [Datadog agent for APM](https://docs.datadoghq.com/agent/kubernetes/apm/).
 
 If Datadog is not running on each node you can expose the APM agent port to Kuma via Kubernetes service.
@@ -300,16 +300,17 @@ spec:
       targetPort: 8126
 ```
 
+
 Apply the configuration with `kubectl apply -f [..]`.
 
 Check if the label of the datadog pod installed has not changed (`app.kubernetes.io/name: datadog-agent-deployment`),
 if it did adjust accordingly.
+{% endtab %}
 
-:::
-::: tab "Universal"
+{% tab Universal %}
 Checkout the [Datadog agent docs](https://docs.datadoghq.com/agent/basic_agent_usage)
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Once the agent is configured to ingest traces you'll need to configure a [TrafficTrace](../policies/traffic-trace).
 

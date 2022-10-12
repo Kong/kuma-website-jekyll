@@ -354,8 +354,8 @@ Ingress has a regular address and one inbound just like a regular data plane pro
 
 Ingress that don't have this information is not taken into account when generating Envoy configuration, because they cannot be accessed by data plane proxies from other zones.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 The recommended way to deploy an `Ingress` dataplane in Kubernetes is to use `kumactl`, or the Helm charts as specified in [multi-zone](/docs/1.1.6/documentation/deployments/#remote-control-plane). It works as a separate deployment of a single-container pod.
 
 Kuma will try to resolve `networking.ingress.publicAddress` and `networking.ingress.publicPort` automatically by checking the Service associated with this Ingress.
@@ -367,8 +367,8 @@ If the Service type is Node Port, Kuma will take an External IP of the first Nod
 You can provide your own public address and port using the following annotations on the Ingress deployment
 * `kuma.io/ingress-public-address`
 * `kuma.io/ingress-public-port`
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 In Universal mode the dataplane resource should be deployed as follows:
 
@@ -386,7 +386,8 @@ networking:
     tags:
       kuma.io/service: ingress
 ```
-::::
+{% endtab %}
+{% endtabs %}
 
 Ingress deployment can be scaled horizontally. Many instances can have the same public address and port because they can be put behind one load balancer.
 

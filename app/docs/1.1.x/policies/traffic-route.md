@@ -12,8 +12,8 @@ Kuma also supports [locality aware load balancing](../locality-aware).
 
 The control plane creates a default `TrafficRoute` every time the new `Mesh` is created. The default `TrafficRoute` enables the traffic between all the services in the mesh. 
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -35,9 +35,9 @@ spec:
         destination:
           kuma.io/service: '*'
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficRoute
 name: route-all-default
@@ -56,15 +56,15 @@ conf:
       destination:
         kuma.io/service: '*'
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ## Usage
 
 By default when a service makes a request to another service, Kuma will round robin the request across every data plane proxy belogning to the destination service. It is possible to change this behavior by using this policy, for example:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -91,9 +91,9 @@ spec:
 ```
 
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficRoute
 name: route-example
@@ -117,8 +117,8 @@ conf:
 ```
 
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.1.6/documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 In this example the `TrafficRoute` policy assigns a positive weight of `90` to the version `1.0` of the `redis` service and a positive weight of `10` to the version `2.0` of the `redis` service. 
 

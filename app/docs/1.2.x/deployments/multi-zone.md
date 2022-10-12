@@ -52,8 +52,8 @@ In order to deploy Kuma in a multi-zone deployment, we must start a `global` and
 
 First we start the `global` control plane and configure the `zone` control planes connectivity.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 Install the `global` control plane using:
 ```bash
@@ -70,30 +70,30 @@ kubectl get services -n kuma-system
 ```
 
 In this example it is `35.226.196.103:5685`. This will be used as `<global-kds-address>` further.
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 Install the `global` control plane by setting the `controlPlane.mode` value to `global` when installing the chart. This can be done on the command line, or in a provided file:
 
 ```sh
 helm install --version 0.6.3 kuma --namespace kuma-system --set controlPlane.mode=global kuma/kuma
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 Running the Global Control Plane setting up the relevant environment variable
 ```sh
 KUMA_MODE=global kuma-cp run
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Zone control plane
 
 Start the `zone` control planes in each zone that will be part of the multi-zone Kuma deployment.
 To install `zone` control plane, you need to assign the zone name for each of them and point it to the Global CP.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```sh
 kumactl install control-plane \
   --mode=zone \
@@ -105,7 +105,8 @@ kumactl install control-plane \
 {% tip %}
 Kuma DNS installation supports several flavors of CoreDNS and kube-dns. We recommend checking the configuration of the Kubernetes cluster after deploying the Kuma zone control plane to ensure everything is as expected.
 {% endtip %}
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 To install the Zone Control plane we need to provide the following parameters:
  * `controlPlane.mode=zone`
  * `controlPlane.zone=<zone-name>`
@@ -121,7 +122,8 @@ Kuma DNS installation supports several flavors of CoreDNS and kube-dns. We recom
 
 To install DNS we need to use `kumactl`. It reads the state of the control plane therefore it could not be put into HELM.  You can track the issue to put this into HELM [here](https://github.com/kumahq/kuma/issues/1124).
 {% endtip %}
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 Run the `kuma-cp` in `zone` mode.
 
@@ -155,8 +157,8 @@ kuma-dp run \
 ```
 
 Adding more data plane proxies can be done locally by following the Use Kuma section on the [installation page](/install).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Verify control plane connectivity
 
@@ -175,8 +177,8 @@ Make sure you [enable mTLS](../policies/mutual-tls) and apply [Traffic Permissio
 ### Using the multi-zone deployment
 
 To utilize the multi-zone Kuma deployment follow the steps below
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 To figure out the service names that we can use in the applications for cross-zone communication, we can look at the 
 service tag in the deployed data plane proxies: 
@@ -202,8 +204,8 @@ The second and third options allow to consume a service that is distributed acro
 example there can be an endpoint running in another Kuma zone in a different data-center.
 
 Since most HTTP clients (such as `curl`) will default to port 80, the port can be omitted, like in the fourth and fifth options above.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 In hybrid (Kubernetes and Universal) deployments, the service tag should be the same in both environments (e.g `echo-server_echo-example_svc_1010`)
 
@@ -241,8 +243,8 @@ networking:
       kuma.io/service: echo-server_echo-example_svc_1010
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 The Kuma DNS service format (e.g. `echo-server_kuma-test_svc_1010.mesh`) is a composition of Kubernetes Service Name (`echo-server`),

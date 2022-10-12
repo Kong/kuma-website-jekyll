@@ -8,8 +8,8 @@ A [multi-zone deployment](../documentation/deployments/) can enable locality awa
 
 A particular `Mesh` that spans several regions, zones or subzones, may choose to enable locality aware load balancing as follows:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -21,9 +21,9 @@ spec:
 ```
 
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -32,5 +32,5 @@ routing:
 ```
 
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](../../documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}

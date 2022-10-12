@@ -45,8 +45,8 @@ Gateway mode lets you skip exposing inbound listeners so it won't be interceptin
 
 ### Usage
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 While most ingress controllers are supported in Kuma, the recommended gateway in Kubernetes is [Kong](https://docs.konghq.com/gateway).
 You can use [Kong ingress controller for Kubernetes](https://docs.konghq.com/kubernetes-ingress-controller/) to implement authentication, transformations, and other functionalities across Kubernetes clusters with zero downtime.
@@ -171,8 +171,8 @@ If we want to expose a `Service` in one zone only (as opposed to multi-zone), we
 
 For an in-depth example on deploying Kuma with [Kong for Kubernetes](https://github.com/Kong/kubernetes-ingress-controller), please follow this [demo application guide](https://github.com/kumahq/kuma-demo/tree/master/kubernetes).
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 On Universal, you can define the `Dataplane` entity like this:
 
@@ -194,8 +194,8 @@ networking:
 
 When configuring your API Gateway to pass traffic to _backend_ set the url to `http://localhost:33033`
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ## Builtin
 
@@ -231,8 +231,8 @@ To configure your gateway Kuma has these resources:
 
 We will set up a simple gateway that exposes a http listener and 2 routes to imaginary services: "frontend" and "api".
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 To ease starting gateways on Kubernetes, Kuma comes with a builtin type `MeshGatewayInstance`.
 This type requests that the control plane create and manage a Kubernetes `Deployment` and `Service`
 suitable for providing service capacity for the `MeshGateway` with the matching `kuma.io/service` tag.
@@ -279,8 +279,8 @@ spec:
 " | kubectl apply -f -
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 The first thing you'll need is to create a `Dataplane` object for your gateway:
 
@@ -308,13 +308,13 @@ kuma-dp run \
   --dataplane-file=my-gateway.yaml # the Dataplane resource described above
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Now that the `Dataplane` is running we can describe the gateway listener:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 ```shell
 echo "
@@ -337,8 +337,8 @@ spec:
 " | kubectl apply -f -
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 ```yaml
 type: MeshGateway
@@ -356,8 +356,8 @@ conf:
         port: http/8080
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 This policy creates a listener on port 8080 and will receive any traffic which has the `Host` header set to `foo.example.com`.
 Notice that listeners have tags like `Dataplanes`. This will be useful when binding routes to listeners.
@@ -369,8 +369,8 @@ See the [dedicated section](../deployments/multi-zone) for detailed information.
 
 We will now define our routes which will take traffic and route it either to our `api` or our `frontend` depending on the path of the http request:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 ```shell
 echo "
@@ -397,8 +397,8 @@ spec:
 " | kubectl apply -f -
 ```
 
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 
 ```yaml
 type: MeshGatewayRoute
@@ -420,8 +420,8 @@ conf:
               kuma.io/service: demo-app_kuma-demo_svc_5000
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Because routes are applied in order of specificity the first route will take precedence over the second one.
 So `/api/foo` will go to the `api` service whereas `/asset` will go to the `frontend` service.

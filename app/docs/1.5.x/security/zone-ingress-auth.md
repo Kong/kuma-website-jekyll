@@ -69,8 +69,8 @@ Every token has its own ID which is available in payload under `jti` key. You ca
 
 Specify list of revoked IDs separated by `,` and store it as `GlobalSecret` named `zone-ingress-token-revocations`
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```sh
 REVOCATIONS=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) && echo "apiVersion: v1
 kind: Secret
@@ -81,16 +81,16 @@ data:
   value: $REVOCATIONS
 type: system.kuma.io/global-secret" | kubectl apply -f -
 ```
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```sh
 echo "
 type: GlobalSecret
 name: zone-ingress-token-revocations
 data: {{ revocations }}" | kumactl apply --var revocations=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) -f -
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Signing key rotation
 
@@ -101,7 +101,7 @@ If the signing key is compromised, we must rotate it and all the tokens that was
 
    Make sure to generate the new signing key with a serial number greater than the serial number of the current signing key.
 
-   :::: tabs :options="{ useUrlFragment: false }"
+   {% tabs useUrlFragment=false %}
    ::: tab "Kubernetes"
    Check what is the current highest serial number.
 
@@ -142,14 +142,14 @@ If the signing key is compromised, we must rotate it and all the tokens that was
    data: {{ key }}" | kumactl apply --var key=$(kumactl generate signing-key) -f -
    ```
    :::
-   ::::
+   {% endtabs %}
 
 2. Regenerate tokens
    Create new Zone Ingress tokens. These tokens are automatically created with the signing key that’s assigned the highest serial number, so they’re created with the new signing key.
    At this point, tokens signed by either new or old signing key are valid.
 
 3. Remove the old signing key
-   :::: tabs :options="{ useUrlFragment: false }"
+   {% tabs useUrlFragment=false %}
    ::: tab "Kubernetes"
    ```sh
    kubectl delete secret zone-ingress-token-signing-key-1 -n kuma-system
@@ -160,7 +160,7 @@ If the signing key is compromised, we must rotate it and all the tokens that was
    kumactl delete global-secret zone-ingress-token-signing-key-1
    ```
    :::
-   ::::
+   {% endtabs %}
    All new connections to the control plane now require tokens signed with the new signing key.
 
 ### Multizone

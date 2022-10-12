@@ -67,8 +67,8 @@ Kuma's control plane ships with [pprof](https://golang.org/pkg/net/http/pprof/) 
 
 To enable the debugging endpoints, you can set the `KUMA_DIAGNOSTICS_DEBUG_ENDPOINTS` environment variable to `true` before starting `kuma-cp` and use one of the following methods to retrieve the profiling information:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "pprof"
+{% tabs useUrlFragment=false %}
+{% tab pprof %}
 
 You can retrieve the profiling information with Golang's `pprof` tool, for example:
 
@@ -76,16 +76,16 @@ You can retrieve the profiling information with Golang's `pprof` tool, for examp
 go tool pprof http://<IP of the CP>:5680/debug/pprof/profile?seconds=30
 ```
 
-:::
-::: tab "curl"
+{% endtab %}
+{% tab curl %}
 
 You can retrieve the profiling information with `curl`, for example:
 
 ```sh
 curl http://<IP of the CP>:5680/debug/pprof/profile?seconds=30 --output prof.out
 ```
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 Then, you can analyze the retrieved profiling data using an application like [Speedscope](https://www.speedscope.app/).
 
@@ -99,8 +99,8 @@ After a successful debugging session, please remember to turn off the debugging 
 
 Envoy allows configuring the number of [worker threads ](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/intro/threading_model)used for processing requests. Sometimes it might be useful to change the default number of worker threads e.g.: high CPU machine with low traffic. Depending on the type of deployment, there are different mechanisms in `kuma-dp` to change Envoy’s concurrency level.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 By default, Envoy runs with a concurrency level based on resource limit. For example, if you’ve started the `kuma-dp` container with CPU resource limit `7000m` then concurrency is going to be set to 7. It's also worth mentioning that concurrency for K8s is set from at least 2 to a maximum of 10 worker threads. In case when higher concurrency level is required it's possible to change the setting by using annotation `kuma.io/sidecar-proxy-concurrency` which allows to change the concurrency level without limits.
 
@@ -121,9 +121,9 @@ spec:
         kuma.io/sidecar-proxy-concurrency: 55
 [...]
 ```
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 
 Envoy on Linux, by default, starts with the flag `--cpuset-threads`. In this case, cpuset size is used to determine the number of worker threads on systems. When the value is not present then the number of worker threads is based on the number of hardware threads on the machine. `Kuma-dp` allows tuning that value by providing a `--concurrency` flag with the number of worker threads to create.
 
@@ -133,5 +133,5 @@ kuma-dp run \
   --concurrency=5
 ```
 
-:::
-::::
+{% endtab %}
+{% endtabs %}

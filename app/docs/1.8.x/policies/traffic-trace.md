@@ -39,8 +39,8 @@ This assumes you already have a zipkin compatible collector running.
 If you haven't, read the [observability docs](../explore/observability).
 {% endtip %}
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -59,8 +59,8 @@ spec:
 ```
 
 Apply the configuration with `kubectl apply -f [..]`.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -75,8 +75,8 @@ tracing:
 ```
 
 Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Datadog
 
@@ -84,8 +84,8 @@ Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../r
 This assumes a Datadog agent is configured and running. If you haven't already check the [Datadog observability page](../explore/observability.md#configuring-datadog). 
 {% endtip %}
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -107,9 +107,9 @@ spec:
 where `trace-svc` is the name of the Kubernetes Service you specified when you configured the Datadog APM agent.
 
 Apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -125,8 +125,8 @@ tracing:
 ```
 
 Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 The `defaultBackend` property specifies the tracing backend to use if it's not explicitly specified in the `TrafficTrace` resource.
 
@@ -134,8 +134,8 @@ The `defaultBackend` property specifies the tracing backend to use if it's not e
 
 Next, create `TrafficTrace` resources that specify how to collect traces, and which backend to send them to.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficTrace
@@ -151,9 +151,9 @@ spec:
 ```
 
 Apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficTrace
 name: trace-all-traffic
@@ -166,8 +166,8 @@ conf:
 ```
 
 Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../reference/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 {% tip %}
 When `backend ` field is omitted, the logs will be forwarded into the `defaultBackend` of that `Mesh`.

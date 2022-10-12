@@ -27,11 +27,11 @@ To apply NAD to the applications not in a Mesh, add the label `kuma.io/sidecar-i
 
 Below are the details of how to set up Kuma CNI in different environments using both `kumactl` and `helm`.
 
-:::::: tabs :options="{ useUrlFragment: false }"
-::::: tab "Calico"
+{% tabs useUrlFragment=false %}
+{% tab Calico %}
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -42,8 +42,8 @@ kumactl install control-plane \
   --set "cni.confName=10-calico.conflist"
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -55,13 +55,13 @@ helm install --create-namespace --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
-:::::
+{% endtab %}
+{% endtabs %}
+{% endtab %}
 
-::::: tab "K3D with Flannel"
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tab K3D with Flannel %}
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -72,8 +72,8 @@ kumactl install control-plane \
   --set "cni.confName=10-flannel.conflist"
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -85,13 +85,13 @@ helm install --create-namespace --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
-:::::
+{% endtab %}
+{% endtabs %}
+{% endtab %}
 
-::::: tab "Kind"
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tab Kind %}
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -102,8 +102,8 @@ kumactl install control-plane \
   --set "cni.confName=10-kindnet.conflist"
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -115,13 +115,13 @@ helm install --create-namespace --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
-:::::
+{% endtab %}
+{% endtabs %}
+{% endtab %}
 
-::::: tab "Azure"
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tab Azure %}
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -132,8 +132,8 @@ kumactl install control-plane \
   --set "cni.confName=10-azure.conflist"
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -145,13 +145,13 @@ helm install --create-namespace --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
-:::::
+{% endtab %}
+{% endtabs %}
+{% endtab %}
 
-::::: tab "AWS - EKS"
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tab AWS - EKS %}
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -162,8 +162,8 @@ kumactl install control-plane \
   --set "cni.confName=10-aws.conflist"
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -175,16 +175,16 @@ helm install --create-namespace --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
-:::::
+{% endtab %}
+{% endtabs %}
+{% endtab %}
 
-::::: tab "Google - GKE"
+{% tab Google - GKE %}
 
 You need to [enable network-policy](https://cloud.google.com/kubernetes-engine/docs/how-to/network-policy) in your cluster (for existing clusters this redeploys the nodes).
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -195,8 +195,8 @@ kumactl install control-plane \
   --set "cni.confName=10-calico.conflist"
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -208,11 +208,11 @@ helm install --create-namespace --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
-:::::
+{% endtab %}
+{% endtabs %}
+{% endtab %}
 
-::::: tab "OpenShift 3.11"
+{% tab OpenShift 3.11 %}
 
 1. Follow the instructions in [OpenShift 3.11 installation](../installation/openshift/#_2-run-kuma)
 to get the `MutatingAdmissionWebhook` and `ValidatingAdmissionWebhook` enabled (this is required for regular kuma installation).
@@ -223,8 +223,8 @@ to get the `MutatingAdmissionWebhook` and `ValidatingAdmissionWebhook` enabled (
 oc adm policy add-scc-to-user privileged -z kuma-cni -n kube-system
 ```
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -232,8 +232,8 @@ kumactl install control-plane \
   --set "cni.containerSecurityContext.privileged=true"
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -242,22 +242,22 @@ helm install --create-namespace --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
-:::::
+{% endtab %}
+{% endtabs %}
+{% endtab %}
 
-::::: tab "OpenShift 4"
+{% tab OpenShift 4 %}
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "kumactl"
+{% tabs useUrlFragment=false %}
+{% tab kumactl %}
 
 ```shell
 kumactl install control-plane \
   --set "cni.enabled=true"
 ```
 
-:::
-::: tab "Helm"
+{% endtab %}
+{% tab Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -265,11 +265,11 @@ helm install --create-namespace --namespace kuma-system \
    kuma kuma/kuma
 ```
 
-:::
-::::
-:::::
+{% endtab %}
+{% endtabs %}
+{% endtab %}
 
-::::::
+{% endtabs %}
 
 ### Kuma CNI Logs
 

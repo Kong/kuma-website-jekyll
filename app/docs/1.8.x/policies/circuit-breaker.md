@@ -31,8 +31,8 @@ As usual, we can apply `sources` and `destinations` selectors to determine how c
 
 For example:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: CircuitBreaker
@@ -73,8 +73,8 @@ spec:
         threshold: 85
 ```
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: CircuitBreaker
 mesh: default
@@ -112,13 +112,13 @@ conf:
       threshold: 85
 ```
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](../../reference/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 The example demonstrates a complete configuration. A `CircuitBreaker` can also be configured in a simpler way by leveraging the default values of Envoy for any property that is not explicitly defined, for instance:
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: CircuitBreaker
@@ -138,8 +138,8 @@ spec:
       standardDeviation: {}
 ```
 We will apply the configuration with `kubectl apply -f [..]`.
-:::
-::: tab "Universal"
+{% endtab %}
+{% tab Universal %}
 ```yaml
 type: CircuitBreaker
 mesh: default
@@ -156,8 +156,8 @@ conf:
     standardDeviation: {}
 ```
 We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](../../reference/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 In this example when we get five errors in a row of any type (`5` is default Envoy value for `totalErrors.consecutive`) the data plane proxy will be ejected for `30s` the first time, `60s` for the second time, and so on.
 

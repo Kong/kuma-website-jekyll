@@ -23,8 +23,8 @@ While most commonly we want all the traces to be sent to the same tracing backen
 
 ## Add Jaeger backend
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 {% tip %}
 On Kubernetes you can deploy Jaeger automatically in a `kuma-tracing` namespace with `kumactl install tracing | kubectl apply -f -`.
@@ -47,9 +47,9 @@ spec:
 ```
 
 Apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -64,8 +64,8 @@ tracing:
 ```
 
 Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../../documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ## Add Datadog backend
 
@@ -77,8 +77,8 @@ Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../.
 
 If Datadog is running within Kubernetes, you can expose the APM agent port to Kuma via Kubernetes service.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: v1
 kind: Service
@@ -96,13 +96,13 @@ Apply the configuration with `kubectl apply -f [..]`.
 
 Check if the label of the datadog pod installed has not changed (`app.kubernetes.io/name: datadog-agent-deployment`),
 if it did adjust accordingly.
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 ### Set up in Kuma
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -124,9 +124,9 @@ spec:
 where `trace-svc` is the name of the Kubernetes Service you specified when you configured the Datadog APM agent.
 
 Apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -142,8 +142,8 @@ tracing:
 ```
 
 Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../../documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 The `defaultBackend` property specifies the tracing backend to use if it's not explicitly specified in the `TrafficTrace` resource.
 
@@ -151,8 +151,8 @@ The `defaultBackend` property specifies the tracing backend to use if it's not e
 
 Next, create `TrafficTrace` resources that specify how to collect traces, and which backend to store them in.
 
-:::: tabs :options="{ useUrlFragment: false }"
-::: tab "Kubernetes"
+{% tabs useUrlFragment=false %}
+{% tab Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficTrace
@@ -168,9 +168,9 @@ spec:
 ```
 
 Apply the configuration with `kubectl apply -f [..]`.
-:::
+{% endtab %}
 
-::: tab "Universal"
+{% tab Universal %}
 ```yaml
 type: TrafficTrace
 name: trace-all-traffic
@@ -183,8 +183,8 @@ conf:
 ```
 
 Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](../../documentation/http-api).
-:::
-::::
+{% endtab %}
+{% endtabs %}
 
 You can also add tags to apply the `TrafficTrace` resource only a subset of data plane proxies. `TrafficTrace` is a [Dataplane policy](how-kuma-chooses-the-right-policy-to-apply.md#dataplane-policy), so you can specify any of the `selectors` tags.
 
