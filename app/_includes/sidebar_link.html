@@ -1,5 +1,5 @@
 {% assign item = include.item %}
-{% assign current_page =  page.url | remove: '.html' | append: '/' %}
+{% assign current_page =  page.url | remove: '.html' %}
 
 <!-- "#TODO: handle external links" -->
 {% assign url = '/docs/' | append: include.version | append: item.url %}

@@ -1,13 +1,14 @@
 {% assign item = include.item %}
 {% assign depth = include.depth %}
 
-{% assign active_url =  page.url | remove: '.html' | append: '/' | remove: '/docs/' | remove: include.version | strip %}
+{% assign active_url =  page.url | remove: '.html' | remove: '/docs/' | remove: include.version | strip %}
 {% assign urls = item.items | flatten | map: 'url' | compact %}
 {% assign nested_urls = item.items | flatten | map: 'items' | map: 'url' | flatten | compact %}
 
 {% assign urls = urls | concat: nested_urls %}
 
 {% assign cssClasses = 'sidebar-group-items' %}
+
 {% unless urls contains active_url %}
   {% assign cssClasses = cssClasses | append: ' hidden' %}
 {% endunless %}
