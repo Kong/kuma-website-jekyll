@@ -29,7 +29,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      permalink: "/blog/:year/:slug"
+      permalink: "/blog/:year/:slug/"
   -
     scope:
       path: "docs"
