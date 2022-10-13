@@ -1,7 +1,7 @@
 ---
 layout: page
 sidebar: false
-title: Cookie Policy | {{ site.title }}
+title: Cookie Policy
 themeContainerClasses: 'no-sidebar'
 ---
 

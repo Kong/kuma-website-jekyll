@@ -1,4 +1,5 @@
 ---
+title: kuma-cp migrate up
 ---
 ## kuma-cp migrate up
 

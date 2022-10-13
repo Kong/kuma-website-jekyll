@@ -1,5 +1,5 @@
 ---
 layout: install
-title: Install Kuma | {{ site.title }}
+title: Install Kuma
 themeContainerClasses: 'no-sidebar'
 ---

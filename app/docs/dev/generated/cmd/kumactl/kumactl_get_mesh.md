@@ -1,4 +1,5 @@
 ---
+title: kumactl get mesh
 ---
 ## kumactl get mesh
 

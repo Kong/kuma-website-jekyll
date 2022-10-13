@@ -1,4 +1,5 @@
 ---
+title: kumactl get rate-limits
 ---
 ## kumactl get rate-limits
 

@@ -1,4 +1,5 @@
 ---
+title: kumactl inspect circuit-breaker
 ---
 ## kumactl inspect circuit-breaker
 

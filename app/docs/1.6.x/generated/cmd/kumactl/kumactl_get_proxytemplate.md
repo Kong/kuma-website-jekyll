@@ -1,4 +1,5 @@
 ---
+title: kumactl get proxytemplate
 ---
 ## kumactl get proxytemplate
 

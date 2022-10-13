@@ -1,4 +1,5 @@
 ---
+title: kumactl get secrets
 ---
 ## kumactl get secrets
 

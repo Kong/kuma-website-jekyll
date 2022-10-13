@@ -1,4 +1,5 @@
 ---
+title: Rate Limit
 ---
 # Rate Limit
 

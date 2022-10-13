@@ -1,4 +1,5 @@
 ---
+title: kumactl get fault-injection
 ---
 ## kumactl get fault-injection
 

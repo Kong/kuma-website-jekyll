@@ -1,4 +1,5 @@
 ---
+title: kumactl get timeout
 ---
 ## kumactl get timeout
 

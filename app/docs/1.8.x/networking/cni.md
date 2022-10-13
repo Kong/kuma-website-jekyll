@@ -1,4 +1,5 @@
 ---
+title: Kuma CNI
 ---
 # Kuma CNI
 

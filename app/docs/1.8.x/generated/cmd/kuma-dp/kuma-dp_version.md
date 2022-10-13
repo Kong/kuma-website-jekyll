@@ -1,4 +1,5 @@
 ---
+title: kuma-dp version
 ---
 ## kuma-dp version
 

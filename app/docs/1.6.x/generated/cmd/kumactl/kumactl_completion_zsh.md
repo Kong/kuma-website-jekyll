@@ -1,4 +1,5 @@
 ---
+title: kumactl completion zsh
 ---
 ## kumactl completion zsh
 

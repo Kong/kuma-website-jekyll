@@ -1,4 +1,5 @@
 ---
+title: How Kuma chooses the right policy to apply
 ---
 # How Kuma chooses the right policy to apply
 

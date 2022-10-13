@@ -1,8 +1,7 @@
 ---
 layout: use_cases
-title: Use Cases | {{ site.title }}
+title: Use Cases
 themeContainerClasses: 'no-sidebar'
 
-pageTitle: Use Cases
 subTitle: A sub-title goes here.
 ---

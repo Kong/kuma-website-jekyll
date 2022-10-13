@@ -1,4 +1,5 @@
 ---
+title: Protocol support in Kuma
 ---
 # Protocol support in Kuma
 

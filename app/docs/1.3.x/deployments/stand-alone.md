@@ -1,4 +1,5 @@
 ---
+title: Set up a standalone deployment
 ---
 # Set up a standalone deployment
 

@@ -1,4 +1,5 @@
 ---
+title: kumactl uninstall transparent-proxy
 ---
 ## kumactl uninstall transparent-proxy
 

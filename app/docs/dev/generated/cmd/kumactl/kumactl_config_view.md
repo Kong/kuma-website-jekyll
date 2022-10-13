@@ -1,4 +1,5 @@
 ---
+title: kumactl config view
 ---
 ## kumactl config view
 

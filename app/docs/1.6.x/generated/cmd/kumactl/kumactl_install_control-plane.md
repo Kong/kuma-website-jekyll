@@ -1,4 +1,5 @@
 ---
+title: kumactl install control-plane
 ---
 ## kumactl install control-plane
 

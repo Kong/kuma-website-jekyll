@@ -1,4 +1,5 @@
 ---
+title: Data plane proxy
 ---
 # Data plane proxy
 

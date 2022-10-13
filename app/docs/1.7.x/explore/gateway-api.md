@@ -1,4 +1,5 @@
 ---
+title: Kubernetes Gateway API
 ---
 # Kubernetes Gateway API
 

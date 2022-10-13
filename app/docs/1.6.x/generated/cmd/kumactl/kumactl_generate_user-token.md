@@ -1,4 +1,5 @@
 ---
+title: kumactl generate user-token
 ---
 ## kumactl generate user-token
 

@@ -1,4 +1,5 @@
 ---
+title: General notes about Kuma policies
 ---
 # General notes about Kuma policies
 

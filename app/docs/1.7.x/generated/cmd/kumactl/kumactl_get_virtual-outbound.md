@@ -1,4 +1,5 @@
 ---
+title: kumactl get virtual-outbound
 ---
 ## kumactl get virtual-outbound
 

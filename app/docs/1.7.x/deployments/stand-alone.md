@@ -1,4 +1,5 @@
 ---
+title: Standalone deployment
 ---
 # Standalone deployment
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Resources | {{ site.title }}
+title: Resources
 themeContainerClasses: 'no-sidebar'
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: community
-title: Community | {{ site.title }}
-pageTitle: Community
+title: Community
 
 themeContainerClasses: 'no-sidebar'
 

@@ -1,4 +1,5 @@
 ---
+title: DNS in the control plane
 ---
 # DNS in the control plane
 

@@ -1,4 +1,5 @@
 ---
+title: kumactl delete
 ---
 ## kumactl delete
 

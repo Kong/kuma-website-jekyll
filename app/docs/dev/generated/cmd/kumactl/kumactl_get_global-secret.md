@@ -1,4 +1,5 @@
 ---
+title: kumactl get global-secret
 ---
 ## kumactl get global-secret
 

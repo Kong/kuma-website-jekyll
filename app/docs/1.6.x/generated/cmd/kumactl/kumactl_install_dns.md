@@ -1,4 +1,5 @@
 ---
+title: kumactl install dns
 ---
 ## kumactl install dns
 

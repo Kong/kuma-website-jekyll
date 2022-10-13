@@ -1,4 +1,5 @@
 ---
+title: kumactl inspect retry
 ---
 ## kumactl inspect retry
 

@@ -1,4 +1,5 @@
 ---
+title: Traffic Log
 ---
 # Traffic Log
 

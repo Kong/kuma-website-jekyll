@@ -1,4 +1,5 @@
 ---
+title: Data plane proxy membership
 ---
 # Data plane proxy membership
 

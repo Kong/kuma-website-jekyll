@@ -1,4 +1,5 @@
 ---
+title: kumactl config control-planes
 ---
 ## kumactl config control-planes
 

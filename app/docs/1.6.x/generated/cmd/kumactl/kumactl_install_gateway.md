@@ -1,4 +1,5 @@
 ---
+title: kumactl install gateway
 ---
 ## kumactl install gateway
 

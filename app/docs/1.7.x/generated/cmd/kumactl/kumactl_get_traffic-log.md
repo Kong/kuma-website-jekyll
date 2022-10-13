@@ -1,4 +1,5 @@
 ---
+title: kumactl get traffic-log
 ---
 ## kumactl get traffic-log
 

@@ -1,4 +1,5 @@
 ---
+title: kumactl install metrics
 ---
 ## kumactl install metrics
 

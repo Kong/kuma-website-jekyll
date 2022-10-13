@@ -1,4 +1,5 @@
 ---
+title: Amazon Linux
 ---
 # Amazon Linux
 

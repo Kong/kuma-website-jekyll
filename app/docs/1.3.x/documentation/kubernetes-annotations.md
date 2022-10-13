@@ -1,4 +1,5 @@
 ---
+title: Annotations in Kubernetes mode
 ---
 # Annotations in Kubernetes mode
 

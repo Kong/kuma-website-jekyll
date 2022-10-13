@@ -1,4 +1,5 @@
 ---
+title: kumactl get dataplanes
 ---
 ## kumactl get dataplanes
 

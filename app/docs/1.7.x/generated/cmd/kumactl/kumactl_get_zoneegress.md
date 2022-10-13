@@ -1,4 +1,5 @@
 ---
+title: kumactl get zoneegress
 ---
 ## kumactl get zoneegress
 

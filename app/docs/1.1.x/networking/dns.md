@@ -1,4 +1,5 @@
 ---
+title: Kuma DNS
 ---
 # Kuma DNS
 

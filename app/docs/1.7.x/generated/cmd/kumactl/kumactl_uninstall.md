@@ -1,4 +1,5 @@
 ---
+title: kumactl uninstall
 ---
 ## kumactl uninstall
 

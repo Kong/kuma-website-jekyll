@@ -1,4 +1,5 @@
 ---
+title: kumactl install gateway kong
 ---
 ## kumactl install gateway kong
 

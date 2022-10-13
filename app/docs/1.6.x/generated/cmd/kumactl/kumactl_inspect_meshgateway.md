@@ -1,4 +1,5 @@
 ---
+title: kumactl inspect meshgateway
 ---
 ## kumactl inspect meshgateway
 

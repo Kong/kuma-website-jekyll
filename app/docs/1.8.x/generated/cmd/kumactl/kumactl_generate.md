@@ -1,4 +1,5 @@
 ---
+title: kumactl generate
 ---
 ## kumactl generate
 

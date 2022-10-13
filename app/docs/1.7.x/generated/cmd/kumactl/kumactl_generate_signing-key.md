@@ -1,4 +1,5 @@
 ---
+title: kumactl generate signing-key
 ---
 ## kumactl generate signing-key
 

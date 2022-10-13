@@ -1,4 +1,5 @@
 ---
+title: GUI
 ---
 # GUI
 

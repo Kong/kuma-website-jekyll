@@ -1,4 +1,5 @@
 ---
+title: Annotations and labels in Kubernetes mode
 ---
 # Annotations and labels in Kubernetes mode
 

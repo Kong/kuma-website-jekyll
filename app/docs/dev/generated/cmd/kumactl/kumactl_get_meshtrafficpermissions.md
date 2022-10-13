@@ -1,4 +1,5 @@
 ---
+title: kumactl get meshtrafficpermissions
 ---
 ## kumactl get meshtrafficpermissions
 

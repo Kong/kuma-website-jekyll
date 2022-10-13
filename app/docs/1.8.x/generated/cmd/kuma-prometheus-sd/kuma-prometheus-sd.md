@@ -1,4 +1,5 @@
 ---
+title: kuma-prometheus-sd
 ---
 ## kuma-prometheus-sd
 

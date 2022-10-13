@@ -1,4 +1,5 @@
 ---
+title: kuma-cp
 ---
 ## kuma-cp
 

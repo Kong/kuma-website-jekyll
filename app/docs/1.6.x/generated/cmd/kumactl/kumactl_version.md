@@ -1,4 +1,5 @@
 ---
+title: kumactl version
 ---
 ## kumactl version
 

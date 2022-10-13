@@ -1,4 +1,5 @@
 ---
+title: kumactl get traffic-routes
 ---
 ## kumactl get traffic-routes
 

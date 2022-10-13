@@ -1,4 +1,5 @@
 ---
+title: kumactl completion fish
 ---
 ## kumactl completion fish
 

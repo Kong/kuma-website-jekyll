@@ -1,7 +1,6 @@
 ---
 layout: policies
-title: Policies | {{ site.title }}
-pageTitle: Policies
+title: Policies
 subTitle: Bundled policies for your service traffic and network configuration.
 themeContainerClasses: 'no-sidebar'
 

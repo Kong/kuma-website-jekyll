@@ -1,4 +1,5 @@
 ---
+title: kumactl install observability
 ---
 ## kumactl install observability
 

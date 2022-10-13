@@ -1,4 +1,5 @@
 ---
+title: kumactl get healthcheck
 ---
 ## kumactl get healthcheck
 

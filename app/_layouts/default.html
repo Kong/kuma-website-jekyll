@@ -1,9 +1,17 @@
 {% assign cache_buster = site.time | date: "%s" %}
 
+{% capture page_title %}
+  {% if page.title %}
+    {{ page.title | append: ' | ' | append: site.title }}
+  {% else %}
+    {{ site.title }}
+  {% endif%}
+{% endcapture %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{ page.title | default: site.title | liquify }}</title>
+    <title>{{ page_title }}</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?cb={{ cache_buster }}">
     <link rel="icon" href="/assets/images/favicon-32x32.png?cb={{ cache_buster }}">

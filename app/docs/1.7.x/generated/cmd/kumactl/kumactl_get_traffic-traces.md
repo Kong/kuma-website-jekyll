@@ -1,4 +1,5 @@
 ---
+title: kumactl get traffic-traces
 ---
 ## kumactl get traffic-traces
 

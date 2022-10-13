@@ -1,4 +1,5 @@
 ---
+title: kumactl get zone-ingresses
 ---
 ## kumactl get zone-ingresses
 

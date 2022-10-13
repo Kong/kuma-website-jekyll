@@ -1,5 +1,6 @@
 
 ---
+title: Transparent Proxying
 ---
 # Transparent Proxying
 

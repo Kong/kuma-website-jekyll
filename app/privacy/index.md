@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Privacy | {{ site.title }}
+title: Privacy
 themeContainerClasses: 'no-sidebar'
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: kumactl install logging
 ---
 ## kumactl install logging
 

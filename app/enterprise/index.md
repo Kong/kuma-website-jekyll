@@ -1,11 +1,10 @@
 ---
 sidebar: false
-title: Enterprise | {{ site.title }}
+title: Enterprise
 layout: enterprise
 themeContainerClasses: no-sidebar
 
 # page content
-pageTitle: Kuma Enterprise
 subTitle: Companies providing enterprise packages for Kuma
 pullRequestUrl: https://github.com/kumahq/kuma-website/pulls
 

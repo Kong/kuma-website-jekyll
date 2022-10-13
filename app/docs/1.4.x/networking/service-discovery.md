@@ -1,4 +1,5 @@
 ---
+title: Service Discovery
 ---
 # Service Discovery
 

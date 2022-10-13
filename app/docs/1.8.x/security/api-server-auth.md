@@ -1,4 +1,5 @@
 ---
+title: API server authentication
 ---
 # API server authentication
 

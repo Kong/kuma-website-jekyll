@@ -1,4 +1,5 @@
 ---
+title: kumactl install tracing
 ---
 ## kumactl install tracing
 

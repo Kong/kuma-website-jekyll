@@ -1,4 +1,5 @@
 ---
+title: kumactl inspect traffic-route
 ---
 ## kumactl inspect traffic-route
 

@@ -1,6 +1,6 @@
 ---
 layout: service_mesh_con
-title: Welcome ServiceMeshCon North America Attendees! | {{ site.title }}
+title: Welcome ServiceMeshCon North America Attendees!
 
 themeContainerClasses: 'no-sidebar servicemeshcon'
 eventLogo: /assets/images/servicemeshcon_logo.svg

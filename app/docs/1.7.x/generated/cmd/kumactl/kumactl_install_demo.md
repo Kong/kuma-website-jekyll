@@ -1,4 +1,5 @@
 ---
+title: kumactl install demo
 ---
 ## kumactl install demo
 

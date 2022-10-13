@@ -1,4 +1,5 @@
 ---
+title: kumactl get zones
 ---
 ## kumactl get zones
 

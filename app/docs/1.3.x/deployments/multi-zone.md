@@ -1,4 +1,5 @@
 ---
+title: Set up a multi-zone deployment
 ---
 # Set up a multi-zone deployment
 

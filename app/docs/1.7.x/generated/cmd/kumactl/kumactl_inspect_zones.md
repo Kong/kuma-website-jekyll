@@ -1,4 +1,5 @@
 ---
+title: kumactl inspect zones
 ---
 ## kumactl inspect zones
 

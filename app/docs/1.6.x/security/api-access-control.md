@@ -1,4 +1,5 @@
 ---
+title: Kuma API Access Control
 ---
 # Kuma API Access Control
 

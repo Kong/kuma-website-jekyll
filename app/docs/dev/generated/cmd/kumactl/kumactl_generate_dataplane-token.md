@@ -1,4 +1,5 @@
 ---
+title: kumactl generate dataplane-token
 ---
 ## kumactl generate dataplane-token
 

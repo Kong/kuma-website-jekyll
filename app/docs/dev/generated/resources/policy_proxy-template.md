@@ -1,4 +1,5 @@
 ---
+title: ProxyTemplate
 ---
 ## ProxyTemplate
 

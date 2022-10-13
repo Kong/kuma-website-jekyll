@@ -1,4 +1,5 @@
 ---
+title: Secure access across Kuma components
 ---
 # Secure access across Kuma components 
 

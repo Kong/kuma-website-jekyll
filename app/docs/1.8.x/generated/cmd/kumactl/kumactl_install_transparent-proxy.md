@@ -1,4 +1,5 @@
 ---
+title: kumactl install transparent-proxy
 ---
 ## kumactl install transparent-proxy
 

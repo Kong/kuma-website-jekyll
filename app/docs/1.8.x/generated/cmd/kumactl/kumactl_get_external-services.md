@@ -1,4 +1,5 @@
 ---
+title: kumactl get external-services
 ---
 ## kumactl get external-services
 

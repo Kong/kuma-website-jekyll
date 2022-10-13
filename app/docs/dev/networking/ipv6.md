@@ -1,4 +1,5 @@
 ---
+title: IPv6 support
 ---
 # IPv6 support
 

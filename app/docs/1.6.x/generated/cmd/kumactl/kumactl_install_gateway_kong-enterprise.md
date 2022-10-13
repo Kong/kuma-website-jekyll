@@ -1,4 +1,5 @@
 ---
+title: kumactl install gateway kong-enterprise
 ---
 ## kumactl install gateway kong-enterprise
 

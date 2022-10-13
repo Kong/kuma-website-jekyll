@@ -1,4 +1,5 @@
 ---
+title: kumactl install crds
 ---
 ## kumactl install crds
 

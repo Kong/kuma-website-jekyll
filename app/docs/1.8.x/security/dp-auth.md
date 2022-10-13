@@ -1,4 +1,5 @@
 ---
+title: Data plane proxy authentication
 ---
 # Data plane proxy authentication
 

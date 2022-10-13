@@ -1,4 +1,5 @@
 ---
+title: kumactl get meshgatewayroute
 ---
 ## kumactl get meshgatewayroute
 

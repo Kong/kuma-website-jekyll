@@ -1,4 +1,5 @@
 ---
+title: kumactl apply
 ---
 ## kumactl apply
 

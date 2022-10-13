@@ -1,4 +1,5 @@
 ---
+title: Inspect API
 ---
 # Inspect API
 

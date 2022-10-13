@@ -1,4 +1,5 @@
 ---
+title: Kuma data collection
 ---
 # Kuma data collection
 

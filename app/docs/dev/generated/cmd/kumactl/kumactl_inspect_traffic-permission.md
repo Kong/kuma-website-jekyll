@@ -1,4 +1,5 @@
 ---
+title: kumactl inspect traffic-permission
 ---
 ## kumactl inspect traffic-permission
 

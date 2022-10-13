@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Terms of Service | {{ site.title }}
+title: Terms of Service
 themeContainerClasses: 'no-sidebar'
 ---
 
