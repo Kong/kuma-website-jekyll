@@ -8,4 +8,6 @@ import '@/styles/core.scss'
 
 import 'virtual:windi-utilities.css'
 
+import 'vuepress-plugin-tabs/dist/themes/default.styl'
+
 import '@/styles/custom.scss'
