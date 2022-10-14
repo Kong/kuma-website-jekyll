@@ -18,4 +18,9 @@ export default defineConfig({
       },
     }),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: { additionalData: ["@import '@/styles/custom/config/variables', '@/styles/vuepress-core/config';"] },
+    },
+  },
 })
