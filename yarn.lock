@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@antfu/utils@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@antfu/utils/-/utils-0.5.2.tgz#8c2d931ff927be0ebe740169874a3d4004ab414b"
+  integrity sha512-CQkeV+oJxUazwjlHD0/3ZD08QWKuGQkhnrKo3e6ly5pd48VUpXbb77q0xMU4+vc2CkJnDS02Eq/M9ugyX20XZA==
+
 "@esbuild/android-arm@0.15.10":
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.15.10.tgz#a5f9432eb221afc243c321058ef25fe899886892"
@@ -11,6 +16,16 @@
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.10.tgz#78a42897c2cf8db9fd5f1811f7590393b77774c7"
   integrity sha512-w0Ou3Z83LOYEkwaui2M8VwIp+nLi/NA60lBLMvaJ+vXVMcsARYdEzLNE7RSm4+lSg4zq4d7fAVuzk7PNQ5JFgg==
+
+"@kongponents/ktabs@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@kongponents/ktabs/-/ktabs-0.1.2.tgz#9d4a0b58b5964c9d8057336354619b38ab8eb230"
+  integrity sha512-q7A43cz64CmV8ladty82ZP+HrkeTb5tB0TwcX1/qLDueaH/vicFvH07OVIvo8+1R1yX8TRf1ks/f2Slw7DKo0w==
+
+"@kongponents/styles@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@kongponents/styles/-/styles-0.2.0.tgz#a3a1108e8551a05eb53a2b790395aa373fe149d6"
+  integrity sha512-IVMp0Vljzrd5nxpS5p0oeeRSobZNQaOYTTtCckbx1H4ds/jP9FTtauc4zGRbYOxGtT4uhcJjR8VbKJ9c4/IJrw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -32,6 +47,28 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@windicss/config@1.8.8":
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.8.8.tgz#296ede5ac54179c6e86c5b2746fa50de78e8eb65"
+  integrity sha512-kNas/zMkwsDFMcJPmHoPDJlQi1MHvYwx8BSxo9JKcbCW7Gaj8Rg2CnEImX5YdT+ZcFQqQ+kUn0Vi/ScsAxhGEw==
+  dependencies:
+    debug "^4.3.4"
+    jiti "^1.14.0"
+    windicss "^3.5.6"
+
+"@windicss/plugin-utils@1.8.8":
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.8.8.tgz#4764e68a39a09189f1b46047ab0057eac7c91c0d"
+  integrity sha512-a+npbTKmdrAvnMqzVJvyPa29xyNcPaSkt6qQpgWY9m0WyVlYd9BM8V0+cbqt279fTlvlaZpUs9dqmilB1PUH6g==
+  dependencies:
+    "@antfu/utils" "^0.5.2"
+    "@windicss/config" "1.8.8"
+    debug "^4.3.4"
+    fast-glob "^3.2.11"
+    magic-string "^0.26.2"
+    micromatch "^4.0.5"
+    windicss "^3.5.6"
 
 anymatch@~3.1.2:
   version "3.1.2"
@@ -288,12 +325,29 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
+jiti@^1.14.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.16.0.tgz#f72065954446ad1866fa8d6bcc3bed3cc1cebdaa"
+  integrity sha512-L3BJStEf5NAqNuzrpfbN71dp43mYIcBUlCRea/vdyv5dW/AYa1d4bpelko4SHdY3I6eN9Wzyasxirj1/vv5kmg==
+
+kolorist@^1.5.1:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/kolorist/-/kolorist-1.6.0.tgz#f43ac794305b30032a5bedcae7799d0f91d2ff36"
+  integrity sha512-dLkz37Ab97HWMx9KTes3Tbi3D1ln9fCAy2zr2YVExJasDRPGRaKcoE4fycWNtnCAJfjFqe0cnY+f8KT2JePEXQ==
+
+magic-string@^0.26.2:
+  version "0.26.7"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.26.7.tgz#caf7daf61b34e9982f8228c4527474dac8981d6f"
+  integrity sha512-hX9XH3ziStPoPhJxLq1syWuZMxbDvGNbVchfrdCtanC7D13888bMFow61x8axrx+GfHLtVeAx2kxL7tTGRl+Ow==
+  dependencies:
+    sourcemap-codec "^1.4.8"
+
 merge2@^1.3.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-micromatch@^4.0.4:
+micromatch@^4.0.4, micromatch@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.5.tgz#bc8999a7cbbf77cdc89f132f6e467051b49090c6"
   integrity sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==
@@ -394,6 +448,11 @@ sass@^1.55.0:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
+sourcemap-codec@^1.4.8:
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz#ea804bd94857402e6992d05a38ef1ae35a9ab4c4"
+  integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
+
 supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
@@ -414,6 +473,16 @@ vite-plugin-ruby@^3.1.0:
     debug "^4.3.4"
     fast-glob "^3.2.11"
 
+vite-plugin-windicss@^1.8.8:
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-1.8.8.tgz#ff1adf7d1a1c38634c77a4c0125fa730d16138e7"
+  integrity sha512-iyu+ZX0NmhNEUaLPv7xtC+EFRBpWMmw0nhd9a9upayfuNG/thwslKiQKmRB7U/dG0k/2oWLvPDvN/B9i7oRgSA==
+  dependencies:
+    "@windicss/plugin-utils" "1.8.8"
+    debug "^4.3.4"
+    kolorist "^1.5.1"
+    windicss "^3.5.6"
+
 vite@^3.0.0:
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/vite/-/vite-3.1.8.tgz#fa29144167d19b773baffd65b3972ea4c12359c9"
@@ -425,3 +494,13 @@ vite@^3.0.0:
     rollup "~2.78.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+vuepress-plugin-tabs@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-tabs/-/vuepress-plugin-tabs-0.3.0.tgz#e95fb98d3736af450a9baaf1a09b8677983ca8d8"
+  integrity sha512-jooDlcMdBqhXgIaF1awFSaOTM56mleP6bbCiGxyQxTZexfvCfDvZhNLGpyXqMQA50ZmNGmvLrK82YYb63k1jfA==
+
+windicss@^3.5.6:
+  version "3.5.6"
+  resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.5.6.tgz#30a34da76894d952a96c9a1921f2e91e13932183"
+  integrity sha512-P1mzPEjgFMZLX0ZqfFht4fhV/FX8DTG7ERG1fBLiWvd34pTLVReS5CVsewKn9PApSgXnVfPWwvq+qUsRwpnwFA==
