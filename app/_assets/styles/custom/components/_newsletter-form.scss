@@ -102,33 +102,32 @@
       }
     }
   }
+}
 
-  .form-wrapper--stacked {
+.form-wrapper--stacked {
+  .form-horizontal {
+    position: relative;
+    display: block !important;
 
-    .form-horizontal {
-      position: relative;
-      display: block !important;
+    > span {
 
-      > span {
-
-      }
-
-      input[type='email'] {
-        border: 1px solid $gray-2;
-      }
     }
 
-    .form-note-wrapper {
-      position: static !important;
-
-      .note {
-        top: auto !important;
-      }
+    input[type='email'] {
+      border: 1px solid $gray-2;
     }
+  }
 
-    .btn {
-      margin-top: 0.8rem;
+  .form-note-wrapper {
+    position: static !important;
+
+    .note {
+      top: auto !important;
     }
+  }
+
+  .btn {
+    margin-top: 0.8rem !important;
   }
 }
 
