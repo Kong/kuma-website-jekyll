@@ -83,7 +83,7 @@
   padding: 6px 12px;
   margin-left: -1px;
   line-height: 1.42857143;
-  color: $accentColor;
+  color: #3eaf7c;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -104,7 +104,7 @@
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   z-index: 3;
-  color: $accentColor;
+  color: #3eaf7c;
   background-color: #eee;
   border-color: #ddd;
 }
@@ -117,8 +117,8 @@
   z-index: 2;
   color: #fff;
   cursor: default;
-  background-color: $accentColor;
-  border-color: $accentColor;
+  background-color: #3eaf7c;
+  border-color: #3eaf7c;
 }
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
@@ -174,12 +174,6 @@
 }
 
 .company-list__link {
-  $hover-color: #3fa66a;
-  $cubic-bezier: cubic-bezier(0.47, 0.37, 0.36, 0.92);
-
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   overflow: hidden;
   min-height: 8rem;
   background-color: #fff;
@@ -187,22 +181,20 @@
   border-radius: 5px;
   padding: 1.4375rem 0.5rem;
   transition:
-    color 200ms $cubic-bezier,
-    border 200ms $cubic-bezier;
+    color 200ms cubic-bezier(0.47, 0.37, 0.36, 0.92),
+    border 200ms cubic-bezier(0.47, 0.37, 0.36, 0.92);
 
   &:hover, &:active {
-    // no more scale on hover because Chrome on Retina does not play nice with it
-    // transform: scale(1.05);
-    border: 1px solid $hover-color;
-    color: $hover-color;
+    border: 1px solid #3fa66a;
+    color: #3fa66a;
 
     h3, p {
-      color: $hover-color;
+      color: #3fa66a;
     }
   }
 
   h3, p {
-    transition: color 200ms $cubic-bezier;
+    transition: color 200ms cubic-bezier(0.47, 0.37, 0.36, 0.92);
   }
 
   h3 {
