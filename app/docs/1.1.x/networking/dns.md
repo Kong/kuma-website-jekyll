@@ -134,7 +134,7 @@ kumactl install control-plane \
 {% endtab %}
 {% tab Helm %}
 
-With [Helm](/docs/1.1.3/installation/helm), the command invocation looks like:
+With [Helm](/docs/{{ page.version }}/installation/helm), the command invocation looks like:
 
 ```shell
 helm install --version 0.5.7 --namespace kuma-system \
@@ -153,7 +153,7 @@ Prerequisite: All three binaries -- `kuma-dp`, `envoy` and `coredns` -- must run
 `core-dns` must also be in the PATH so that `kuma-dp` can access it. Or you can specify the location
 with the `--dns-coredns-path` flag. You should also create a user to run the `kuma-dp` process. On Ubuntu for example this can be done with the following command: `useradd -U kuma-dp`. You will need to run the `kuma-dp` process from a DIFFERENT user than the user you wish to test with in order for resolution to work correctly.
 
-1.  Specify the two additional flags `--skip-resolv-conf` and `--redirect-dns` to the [transparent proxy](transparent-proxying/) iptables rules:
+1.  Specify the two additional flags `--skip-resolv-conf` and `--redirect-dns` to the [transparent proxy](/docs/{{ page.version }}/networking/transparent-proxying/) iptables rules:
 
     ```shell
     kumactl install transparent-proxy \
@@ -163,7 +163,7 @@ with the `--dns-coredns-path` flag. You should also create a user to run the `ku
               --redirect-dns
     ```
 
-2.  Specify `--dns-enabled` when you start [the kuma-dp](dps-and-data-model/#dataplane-entity)
+2.  Specify `--dns-enabled` when you start [the kuma-dp](/docs/{{ page.version }}/networking/dps-and-data-model/#dataplane-entity)
 
     ```shell
     kuma-dp run \
@@ -179,5 +179,5 @@ When this command is run with `--dns-enabled`, the `kuma-dp` process will also s
 
 This mode implements advanced networking techniques, so take special care for the following cases:
 
- * The mode can safely be used with the [Kuma CNI plugin](cni/).
- * In mixed IPv4 and IPv6 environments, it's recommended that you specify an [IPv6 virtual IP CIDR](ipv6/).
+ * The mode can safely be used with the [Kuma CNI plugin](/docs/{{ page.version }}/networking/cni/).
+ * In mixed IPv4 and IPv6 environments, it's recommended that you specify an [IPv6 virtual IP CIDR](/docs/{{ page.version }}/networking/ipv6/).

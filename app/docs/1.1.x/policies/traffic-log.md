@@ -3,7 +3,7 @@ title: Traffic Log
 ---
 # Traffic Log
 
-With `TrafficLog` policy you can easily set up access logs on every data-plane in a [`Mesh`](../mesh).
+With `TrafficLog` policy you can easily set up access logs on every data-plane in a [`Mesh`](/docs/{{ page.version }}/policies/mesh).
 
 [//]: # (The logs can be then forwarded to a collector that can further transmit them into systems like Splunk, ELK and Datadog.)
 
@@ -189,7 +189,7 @@ spec:
     
 **3. Configure Grafana to visualize the logs**
 
-If the [Traffic Metrics](traffic-metrics) policy is installed on your `kubernetes` node, you can configure a new 
+If the [Traffic Metrics](/docs/{{ page.version }}/policies/traffic-metrics) policy is installed on your `kubernetes` node, you can configure a new 
 datasource in Grafana to visualise your **containers' logs** and your **access logs**.
 
 Use the `kubectl port-forward` command to access Grafana.
@@ -244,7 +244,7 @@ datasource in the explore section.
 {% tip %}
 **Nice to have**
 
-If you are also using the [Traffic Trace](traffic-trace) policy you can configure a new datasource for Jaeger to visualise your traces directly into Grafana.
+If you are also using the [Traffic Trace](/docs/{{ page.version }}/policies/traffic-trace) policy you can configure a new datasource for Jaeger to visualise your traces directly into Grafana.
 
 <center>
 <img src="/assets/images/docs/jaeger_grafana_config.png" alt="Jaeger Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
@@ -292,7 +292,7 @@ All access log _command operators_ are valid to use with both `TCP` and `HTTP` t
 
 If a _command operator_ is specific to `HTTP` traffic, such as `%REQ(X?Y):Z%` or `%RESP(X?Y):Z%`, it will be replaced by a symbol "`-`" in case of `TCP` traffic.
 
-Internally, `Kuma` [determines traffic protocol](../protocol-support-in-kuma) based on the value of `kuma.io/protocol` tag on the `inbound` interface of a `destination` `Dataplane`.
+Internally, `Kuma` [determines traffic protocol](/docs/{{ page.version }}/policies/protocol-support-in-kuma) based on the value of `kuma.io/protocol` tag on the `inbound` interface of a `destination` `Dataplane`.
 
 The default format string for `TCP` traffic is:
 
@@ -336,5 +336,5 @@ In such case `%KUMA_DESTINATION_SERVICE%` will have value `external` and `%UPSTR
 
 ## Matching
 
-`TrafficLog` is an [Outbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#outbound-connection-policy).
+`TrafficLog` is an [Outbound Connection Policy](/docs/{{ page.version }}/policies/how-kuma-chooses-the-right-policy-to-apply#outbound-connection-policy).
 The only supported value for `destinations.match` is `kuma.io/service`.

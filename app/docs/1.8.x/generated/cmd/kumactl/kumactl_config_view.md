@@ -30,5 +30,5 @@ kumactl config view [flags]
 
 ### SEE ALSO
 
-* [kumactl config](kumactl_config)	 - Manage kumactl config
+* [kumactl config](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_config)	 - Manage kumactl config
 

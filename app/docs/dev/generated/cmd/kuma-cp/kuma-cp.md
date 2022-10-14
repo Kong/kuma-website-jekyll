@@ -22,7 +22,7 @@ Universal Control Plane for Envoy-based Service Mesh.
 
 ### SEE ALSO
 
-* [kuma-cp migrate](kuma-cp_migrate)	 - Migrate database to which Control Plane is connected
-* [kuma-cp run](kuma-cp_run)	 - Launch Control Plane
-* [kuma-cp version](kuma-cp_version)	 - Print version
+* [kuma-cp migrate](/docs/{{ page.version }}/generated/cmd/kuma-cp/kuma-cp_migrate)	 - Migrate database to which Control Plane is connected
+* [kuma-cp run](/docs/{{ page.version }}/generated/cmd/kuma-cp/kuma-cp_run)	 - Launch Control Plane
+* [kuma-cp version](/docs/{{ page.version }}/generated/cmd/kuma-cp/kuma-cp_version)	 - Print version
 

@@ -6,8 +6,8 @@ title: Traffic Trace
 This policy enables tracing logging to a third party tracing solution. 
 
 {% tip %}
-Tracing is supported on any HTTP traffic in a [`Mesh`](../mesh), and will only work with data plane proxies and services that have the Kuma `kuma.io/protocol: http` tag defined.
-Check the [protocol support](./protocol-support-in-kuma/) for more details on how to set the protocol tag in the different environments.
+Tracing is supported on any HTTP traffic in a [`Mesh`](/docs/{{ page.version }}/policies/mesh), and will only work with data plane proxies and services that have the Kuma `kuma.io/protocol: http` tag defined.
+Check the [protocol support](/docs/{{ page.version }}/policies/protocol-support-in-kuma/) for more details on how to set the protocol tag in the different environments.
 {% endtip %}
 
 In order to enable tracing there are two steps that have to be taken:
@@ -21,7 +21,7 @@ On Kubernetes we can run `kumactl install tracing | kubectl apply -f -` to deplo
 
 ## Add a tracing backend
 
-A tracing backend must be first specified in a [`Mesh`](../mesh) resource. Once added, the tracing backend will be available for use in the `TrafficTrace` resource.
+A tracing backend must be first specified in a [`Mesh`](/docs/{{ page.version }}/policies/mesh) resource. Once added, the tracing backend will be available for use in the `TrafficTrace` resource.
 
 {% tip %}
 While most commonly we want all the traces to be sent to the same tracing backend, we can optionally create multiple tracing backends in a `Mesh` resource and store traces for different paths of our service traffic in different backends (by leveraging Kuma Tags). This is especially useful when we want traces to never leave a world region, or a cloud, among other examples.
@@ -68,7 +68,7 @@ tracing:
       url: http://jaeger-collector.kuma-tracing:9411/api/v2/spans
 ```
 
-We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.1.6/documentation/http-api).
+We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/{{ page.version }}/documentation/http-api).
 {% endtab %}
 {% endtabs %}
 
@@ -109,7 +109,7 @@ conf:
   backend: jager-collector
 ```
 
-We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.1.6/documentation/http-api).
+We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/{{ page.version }}/documentation/http-api).
 {% endtab %}
 {% endtabs %}
 
@@ -128,4 +128,4 @@ As noted before, Envoy's Zipkin tracer is also [compatible with Jaeger through Z
 
 ## Matching
 
-`TrafficTrace` is a [Dataplane policy](how-kuma-chooses-the-right-policy-to-apply.md#dataplane-policy). You can use all the tags in the `selectors` section.
+`TrafficTrace` is a [Dataplane policy](/docs/{{ page.version }}/policies/how-kuma-chooses-the-right-policy-to-apply#dataplane-policy). You can use all the tags in the `selectors` section.

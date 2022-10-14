@@ -3,7 +3,7 @@ title: Overview
 ---
 # Overview
 
-As we have [already learned](../introduction), Kuma is a universal control plane that can run across both modern environments like Kubernetes and more traditional VM-based ones.
+As we have [already learned](/docs/{{ page.version }}/documentation/introduction), Kuma is a universal control plane that can run across both modern environments like Kubernetes and more traditional VM-based ones.
 
 The first step is obviously to [download and install Kuma](/install/) on the platform of your choice. Different distributions will present different installation instructions that follow the best practices for the platform you have selected.
 
@@ -15,7 +15,7 @@ Installing Kuma on Kubernetes is fully automated, while installing Kuma on Linux
 
 There are two main components of Kuma that are very important to understand:
 
-* **Control Plane**: Kuma is first and foremost a control-plane that will accept user input (you are the user) in order to create and configure [Policies](../../policies/introduction) like [Service Meshes](../../policies/mesh), and in order to add services and configure their behavior within the Meshes you have created.
+* **Control Plane**: Kuma is first and foremost a control-plane that will accept user input (you are the user) in order to create and configure [Policies](/docs/{{ page.version }}/policies/introduction) like [Service Meshes](/docs/{{ page.version }}/policies/mesh), and in order to add services and configure their behavior within the Meshes you have created.
 * **Data Plane Proxy**: Kuma also bundles a data plane proxy implementation based on top of [Envoy](https://www.envoyproxy.io/). An instance of the data plane proxy runs alongside every instance of our services (or on every Kubernetes Pod as a sidecar container). This instance processes both incoming and outgoing requests for the service.
 
 {% tip %}
@@ -52,7 +52,7 @@ When running on **Kubernetes**, Kuma will store all of its state and configurati
 kuma.io/sidecar-injection: enabled
 ```
 
-You can learn more about sidecar injection in the section on [Dataplanes](./dps-and-data-model/#kubernetes).
+You can learn more about sidecar injection in the section on [Dataplanes](/docs/{{ page.version }}/documentation/dps-and-data-model/#kubernetes).
 
 <center>
 <img src="/assets/images/docs/0.5.0/diagram-08.jpg" alt="" style="width: 500px; padding-top: 20px; padding-bottom: 10px;"/>
@@ -112,7 +112,7 @@ metadata:
 ```
 
 {% tip %}
-**Full CRD support**: When using Kuma in Kubernetes mode you can create [Policies](../../policies/introduction) with Kuma's CRDs applied via `kubectl`.
+**Full CRD support**: When using Kuma in Kubernetes mode you can create [Policies](/docs/{{ page.version }}/policies/introduction) with Kuma's CRDs applied via `kubectl`.
 {% endtip %}
 
 ### Service pods and service-less pods
@@ -199,7 +199,7 @@ In both cases these tags will be see in the CLI and GUI tools when inspecting th
 
 ## Last but not least
 
-Once the `kuma-cp` process is started, it waits for [data-planes](../dps-and-data-model) to connect, while at the same time accepting user-defined configuration to start creating Service Meshes and configuring the behavior of those meshes via Kuma [Policies](../../policies/introduction).
+Once the `kuma-cp` process is started, it waits for [data-planes](/docs/{{ page.version }}/documentation/dps-and-data-model) to connect, while at the same time accepting user-defined configuration to start creating Service Meshes and configuring the behavior of those meshes via Kuma [Policies](/docs/{{ page.version }}/policies/introduction).
 
 When we look at a typical Kuma installation, at a higher level it works like this:
 

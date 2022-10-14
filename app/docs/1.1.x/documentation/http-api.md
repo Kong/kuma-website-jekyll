@@ -6,7 +6,7 @@ title: HTTP API
 Kuma ships with a RESTful HTTP interface that you can use to retrieve the state of your configuration and policies on every environment, and when running on Universal mode it will also allow to make changes to the state. On Kubernetes, you will use native CRDs to change the state in order to be consistent with Kubernetes best practices.
 
 {% tip %}
-**CI/CD**: The HTTP API can be used for infrastructure automation to either retrieve data, or to make changes when running in Universal mode. The [`kumactl`](../kumactl) CLI is built on top of the HTTP API, which you can also access with any other HTTP client like `curl`.
+**CI/CD**: The HTTP API can be used for infrastructure automation to either retrieve data, or to make changes when running in Universal mode. The [`kumactl`](/docs/{{ page.version }}/kumactl) CLI is built on top of the HTTP API, which you can also access with any other HTTP client like `curl`.
 {% endtip %}
 
 By default the API Server is listening on port `5681` (HTTP) and on `5682` (HTTPS). The endpoints available are:
@@ -2035,7 +2035,7 @@ curl -XDELETE http://localhost:5681/meshes/default/fault-injections/fi1
 ```
 
 {% tip %}
-The [`kumactl`](../kumactl) CLI under the hood makes HTTP requests to this API.
+The [`kumactl`](/docs/{{ page.version }}/kumactl) CLI under the hood makes HTTP requests to this API.
 {% endtip %}
 
 ## Retry
@@ -2249,7 +2249,7 @@ curl -XDELETE http://localhost:5681/meshes/default/retries/r1
 ```
 
 {% tip %}
-The [`kumactl`](../kumactl) CLI under the hood makes HTTP requests to this API.
+The [`kumactl`](/docs/{{ page.version }}/kumactl) CLI under the hood makes HTTP requests to this API.
 {% endtip %}
 
 ## Timeout
@@ -2423,7 +2423,7 @@ curl -XDELETE http://localhost:5681/meshes/default/timeouts/t1
 ```
 
 {% tip %}
-The [`kumactl`](../kumactl) CLI under the hood makes HTTP requests to this API.
+The [`kumactl`](/docs/{{ page.version }}/kumactl) CLI under the hood makes HTTP requests to this API.
 {% endtip %}
 
 
@@ -3064,7 +3064,7 @@ curl -XDELETE http://localhost:5681/global-secrets/sample-global-secret
 
 ## Multi-zone
 
-These APIs are available on the `Global` control plane, when running in a distributed [multi-zone mode](/docs/1.0.8/documentation/deployments/).
+These APIs are available on the `Global` control plane, when running in a distributed [multi-zone mode](/docs/{{ page.version }}/documentation/deployments).
 
 ### Zones status
 Request: `GET /status/zones`
@@ -3096,10 +3096,10 @@ curl -XGET http://localhost:5681/status/zones
 Generate the data plane proxy tokens required for data plane proxy authentication.
 
 {% warning %}
-Requires [authentication to the control plane by the user](/docs/1.0.8/security/certificates/#authentication).
+Requires [authentication to the control plane by the user](/docs/{{ page.version }}/security/certificates/#authentication).
 {% endwarning %}
 
-For details, see [data plane proxy authentication](/docs/1.0.8/security/certificates/#data-plane-proxy-authentication).
+For details, see [data plane proxy authentication](/docs/{{ page.version }}/security/certificates/#data-plane-proxy-authentication).
 
 ### Generate dataplane proxy token
 

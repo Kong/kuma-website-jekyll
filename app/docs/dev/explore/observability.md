@@ -16,9 +16,9 @@ This page will describe how to configure different observability tools to work w
 
 First, remember to configure Kuma appropriately for the tools in the observability stack:
 
-- [Traffic metrics](../policies/traffic-metrics) for telemetry
-- [`TrafficTrace`](../policies/traffic-trace) for tracing
-- [`TrafficLog`](../policies/traffic-log) for logging
+- [Traffic metrics](/docs/{{ page.version }}/policies/traffic-metrics) for telemetry
+- [`TrafficTrace`](/docs/{{ page.version }}/policies/traffic-trace) for tracing
+- [`TrafficLog`](/docs/{{ page.version }}/policies/traffic-log) for logging
 
 On Kubernetes, the stack can be installed with:
 
@@ -40,13 +40,13 @@ Control plane metrics are exposed on port `:5680` and available under the standa
 ## Configuring Prometheus
 
 The Kuma community has contributed a builtin service discovery to Prometheus, it is documented in the [Prometheus docs](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kuma_sd_config).
-This service discovery will connect to the control plane and retrieve all data planes with enabled metrics which Prometheus will scrape and retrieve metrics according to your [traffic metrics setup](../policies/traffic-metrics).
+This service discovery will connect to the control plane and retrieve all data planes with enabled metrics which Prometheus will scrape and retrieve metrics according to your [traffic metrics setup](/docs/{{ page.version }}/policies/traffic-metrics).
 
 {% tip %}
 There are 2 ways you can run prometheus:
 
 1. Inside the mesh (default for [`kumactl install observability`](#demo-setup)). In this case you can use mTLS to retrieve the metrics. This provides high security but will require one prometheus per mesh and might not be accessible if your mesh becomes unavailable. It will also require one Prometheus deployment per Kuma mesh.
-2. Outside the mesh. In this case you'll need to specify `skipMTLS: true` in the [traffic metrics configuration](../policies/traffic-metrics). This is less secured but will ensure Prometheus is as available as possible. It is also easier to add to an existing setup with services in and outside the mesh.
+2. Outside the mesh. In this case you'll need to specify `skipMTLS: true` in the [traffic metrics configuration](/docs/{{ page.version }}/policies/traffic-metrics). This is less secured but will ensure Prometheus is as available as possible. It is also easier to add to an existing setup with services in and outside the mesh.
 
 In production, we recommend the second option as it provides better visibility when things go wrong, and it's usually acceptable for metrics to be less secure.
 {% endtip %}
@@ -80,7 +80,7 @@ scrape_configs:
 
 For more information, see [the Prometheus documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kuma_sd_config).
 
-If you have [traffic metrics](../policies/traffic-metrics) enabled for your mesh, check the Targets page in the Prometheus dashboard.
+If you have [traffic metrics](/docs/{{ page.version }}/policies/traffic-metrics) enabled for your mesh, check the Targets page in the Prometheus dashboard.
 You should see a list of data plane proxies from your mesh. For example:
 
 <center>
@@ -104,7 +104,7 @@ Grafana will then be able to retrieve the traces from Jaeger.
 <img src="/assets/images/docs/jaeger_grafana_config.png" alt="Jaeger Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
-You can then add a [TrafficTrace policy](../policies/traffic-trace) to your mesh to start emitting traces.
+You can then add a [TrafficTrace policy](/docs/{{ page.version }}/policies/traffic-trace) to your mesh to start emitting traces.
 At this point you can visualize your traces in Grafana by choosing the jaeger datasource in the [explore section](https://grafana.com/docs/grafana/latest/explore/).
 
 #### Visualizing logs
@@ -119,7 +119,7 @@ To visualise your **containers' logs** and your **access logs** you need to have
 <img src="/assets/images/docs/loki_grafana_config.png" alt="Loki Grafana configuration" style="width: 600px; padding-top: 20px; padding-bottom: 10px;"/>
 </center>
 
-You can then add a [TrafficLog policy](../policies/traffic-log) to your mesh to start emitting access logs. Loki will pick up logs that are sent to `stdout`. To send logs to `stdout` you can configure the logging backend as shown below:
+You can then add a [TrafficLog policy](/docs/{{ page.version }}/policies/traffic-log) to your mesh to start emitting access logs. Loki will pick up logs that are sent to `stdout`. To send logs to `stdout` you can configure the logging backend as shown below:
 
 {% tabs useUrlFragment=false %}
 {% tab Kubernetes %}
@@ -263,7 +263,7 @@ Checkout the [Datadog agent docs](https://docs.datadoghq.com/agent/basic_agent_u
 
 ### Metrics
 
-Kuma exposes metrics with [traffic metrics](../policies/traffic-metrics) in Prometheus format.
+Kuma exposes metrics with [traffic metrics](/docs/{{ page.version }}/policies/traffic-metrics) in Prometheus format.
 
 You can add annotations to your pods to enable the Datadog agent to scrape metrics.
 
@@ -313,13 +313,13 @@ Checkout the [Datadog agent docs](https://docs.datadoghq.com/agent/basic_agent_u
 {% endtab %}
 {% endtabs %}
 
-Once the agent is configured to ingest traces you'll need to configure a [TrafficTrace](../policies/traffic-trace).
+Once the agent is configured to ingest traces you'll need to configure a [TrafficTrace](/docs/{{ page.version }}/policies/traffic-trace).
 
 ### Logs
 
 The best way to have Kuma and Datadog work together is with [TCP ingest](https://docs.datadoghq.com/agent/logs/?tab=tcpudp#custom-log-collection).
 
-Once your agent is configured with TCP ingest you can configure a [TrafficLog](../policies/traffic-log) for data plane proxies to send logs.
+Once your agent is configured with TCP ingest you can configure a [TrafficLog](/docs/{{ page.version }}/policies/traffic-log) for data plane proxies to send logs.
 
 ## Observability in multi-zone
 

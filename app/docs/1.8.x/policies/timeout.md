@@ -14,7 +14,7 @@ This policy enables Kuma to set timeouts on the outbound connections depending o
 Specify the proxy to configure with the `sources` selector, and the outbound connections from the proxy with the `destinations` selector.
 
 The policy lets you configure timeouts for `HTTP`, `GRPC`, and `TCP` protocols.
-More about [Protocol support in Kuma](protocol-support-in-kuma). 
+More about [Protocol support in Kuma](/docs/{{ page.version }}/policies/protocol-support-in-kuma). 
 
 ## Configuration
 
@@ -122,7 +122,7 @@ make sure to set `http.requestTimeout` to 0s.
 
 ## Matching
 
-`Timeout` is an [Outbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#outbound-connection-policy).
+`Timeout` is an [Outbound Connection Policy](/docs/{{ page.version }}/policies/how-kuma-chooses-the-right-policy-to-apply/#outbound-connection-policy).
 The only supported value for `destinations.match` is `kuma.io/service`.
 
 ## Builtin Gateway support
@@ -149,7 +149,7 @@ http:
   maxStreamDuration: 0s
 ```
 
-If you still need to change inbound timeouts you can use a [ProxyTemplate](proxy-template):
+If you still need to change inbound timeouts you can use a [ProxyTemplate](/docs/{{ page.version }}/policies/proxy-template):
 
 {% tabs useUrlFragment=false %}
 {% tab Kubernetes %}

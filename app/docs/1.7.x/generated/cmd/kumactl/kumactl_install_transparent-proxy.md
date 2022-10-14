@@ -100,5 +100,5 @@ kumactl install transparent-proxy [flags]
 
 ### SEE ALSO
 
-* [kumactl install](kumactl_install)	 - Install various Kuma components.
+* [kumactl install](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install)	 - Install various Kuma components.
 

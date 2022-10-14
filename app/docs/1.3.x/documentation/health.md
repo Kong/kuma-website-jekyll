@@ -10,7 +10,7 @@ lifecycle of the containers.
 
 Kuma supports several aspects of the health checking. There are two policies which allows configuring active and passive
 health checks:
-[Health Check](../policies/health-check) and [Circuit Breaker](../policies/circuit-breaker).
+[Health Check](/docs/{{ page.version }}/policies/health-check) and [Circuit Breaker](/docs/{{ page.version }}/policies/circuit-breaker).
 
 Kuma is able to track the status of the Envoy proxy. If grpc stream with Envoy is disconnected then Kuma considers this 
 proxy as offline, but we still send the traffic regardless of that, because this status is designed to track the connection

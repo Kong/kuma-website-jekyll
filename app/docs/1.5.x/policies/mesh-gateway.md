@@ -3,8 +3,8 @@ title: MeshGateway
 ---
 # MeshGateway
 
-`MeshGateway` is a policy used to configure [Kuma's builtin gateway](../documentation/gateway.md#builtin).
-It is used in combination with [`MeshGatewayRoute`](./mesh-gateway-route).
+`MeshGateway` is a policy used to configure [Kuma's builtin gateway](/docs/{{ page.version }}/documentation/gateway#builtin).
+It is used in combination with [`MeshGatewayRoute`](/docs/{{ page.version }}/policies/mesh-gateway-route).
 
 A builtin gateway `Dataplane` with no additional configuration does nothing.
 It is simply an unconfigured unit of proxying capacity.
@@ -133,7 +133,7 @@ This set of listener tags is what Kuma will match policies against.
 | kuma.io/service=edge-gateway              | kuma.io/service=example,domain=example.com         | kuma.io/service=example,domain=example.com          |
 | kuma.io/service=edge,location=us          | version=2                                          | kuma.io/service=edit,location=us,version=2          |
 
-The reference doc contains all options on [`MeshGateway`](../generated/policies/mesh-gateway).
+The reference doc contains all options on [`MeshGateway`](/docs/{{ page.version }}/generated/policies/mesh-gateway).
 
 ## TLS Termination
 

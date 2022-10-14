@@ -32,5 +32,5 @@ kuma-cp migrate up [flags]
 
 ### SEE ALSO
 
-* [kuma-cp migrate](kuma-cp_migrate)	 - Migrate database to which Control Plane is connected
+* [kuma-cp migrate](/docs/{{ page.version }}/generated/cmd/kuma-cp/kuma-cp_migrate)	 - Migrate database to which Control Plane is connected
 

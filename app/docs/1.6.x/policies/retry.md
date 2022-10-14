@@ -98,7 +98,7 @@ conf:
     maxConnectAttempts: 3
 ```
 
-We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](../../reference/http-api).
+We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/{{ page.version }}/reference/http-api).
 {% endtab %}
 {% endtabs %}
 
@@ -190,7 +190,7 @@ You can configure your GRPC Retry policy in similar fashion as the HTTP one with
 
 ## Matching
 
-`Retry` is an [Outbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#outbound-connection-policy).
+`Retry` is an [Outbound Connection Policy](/docs/{{ page.version }}/policies/how-kuma-chooses-the-right-policy-to-apply/#outbound-connection-policy).
 The only supported value for `destinations.match` is `kuma.io/service`.
 
 ## Builtin Gateway support

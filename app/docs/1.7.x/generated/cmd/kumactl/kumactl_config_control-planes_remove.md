@@ -31,5 +31,5 @@ kumactl config control-planes remove [flags]
 
 ### SEE ALSO
 
-* [kumactl config control-planes](kumactl_config_control-planes)	 - Manage known Control Planes
+* [kumactl config control-planes](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_config_control-planes)	 - Manage known Control Planes
 

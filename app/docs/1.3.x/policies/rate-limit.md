@@ -11,7 +11,7 @@ You can configure how many requests are allowed in a specified time period, and 
 
 The policy is applied per service instance. This means that if a service `backend` has 3 instances rate limited to 100 requests per second, the overall service is rate limited to 300 requests per second.
 
-When rate limiting to an [ExternalService](policies/external-services), the policy is applied per sending service instance.`
+When rate limiting to an [ExternalService](/docs/{{ page.version }}/policies/external-services), the policy is applied per sending service instance.`
 ## Usage
 
 {% tabs useUrlFragment=false %}
@@ -69,7 +69,7 @@ conf:
           append: true
 ```
 
-Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](/docs/1.3.1/documentation/http-api).
+Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](/docs/{{ page.version }}/documentation/http-api).
 {% endtab %}
 {% endtabs %}
 
@@ -156,6 +156,6 @@ The service `backend` is configured with the following rate limiting hierarchy:
 
 ## Matching destinations
 
-`RateLimit`, when applied to a dataplane proxy bound Kuma service, is an [Inbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#inbound-connection-policy).
+`RateLimit`, when applied to a dataplane proxy bound Kuma service, is an [Inbound Connection Policy](/docs/{{ page.version }}/policies/how-kuma-chooses-the-right-policy-to-apply#outbound-connection-policy).
 
-When applied to an [ExternalService](policies/external-services), `RateLimit` is an [Outbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#outbound-connection-policy). In this case, the only supported value for `destinations.match` is `kuma.io/service`.
+When applied to an [ExternalService](/docs/{{ page.version }}/policies/external-services), `RateLimit` is an [Outbound Connection Policy](/docs/{{ page.version }}/policies/how-kuma-chooses-the-right-policy-to-apply/#outbound-connection-policy). In this case, the only supported value for `destinations.match` is `kuma.io/service`.

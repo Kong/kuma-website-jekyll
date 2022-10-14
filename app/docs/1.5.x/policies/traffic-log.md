@@ -3,7 +3,7 @@ title: Traffic Log
 ---
 # Traffic Log
 
-With `TrafficLog` policy you can easily set up access logs on every data-plane in a [`Mesh`](../mesh).
+With `TrafficLog` policy you can easily set up access logs on every data-plane in a [`Mesh`](/docs/{{ page.version }}/policies/mesh).
 
 [//]: # (The logs can be then forwarded to a collector that can further transmit them into systems like Splunk, ELK and Datadog.)
 
@@ -191,7 +191,7 @@ spec:
 **3. Configure Grafana to visualize the logs**
 
 To visualise your **containers' logs** and your **access logs** you need to have a Grafana up and running.
-You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](traffic-metrics).
+You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](/docs/{{ page.version }}/policies/traffic-metrics).
 
 With Grafana installed you can configure a new datasource with url:`http://loki.kuma-logging:3100` so Grafana will be able to retrieve the logs from Loki.
 
@@ -227,7 +227,7 @@ logging:
 **3. Configure Grafana to visualize the logs**
 
 To visualise your **containers' logs** and your **access logs** you need to have a Grafana up and running. 
-You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](traffic-metrics).
+You can install Grafana by following the information of the [official page](https://grafana.com/docs/grafana/latest/installation/) or use the one installed with [Traffic metrics](/docs/{{ page.version }}/policies/traffic-metrics).
 
 With Grafana installed you can configure a new datasource with url:`http://loki.kuma-logging:3100` so Grafana will be able to retrieve the logs from Loki.
 
@@ -245,7 +245,7 @@ At this point you can visualize your **containers' logs** and your **access logs
 Having your Logs and Traces in the same visualisation tool can come really handy. By adding the traceId in your app logs you can visualize your logs and the related Jaeger traces. 
 To learn more about it go read this [article](https://grafana.com/blog/2020/05/22/new-in-grafana-7.0-trace-viewer-and-integrations-with-jaeger-and-zipkin/).
 
-To set up tracing see the [traffic-trace policy](traffic-trace).
+To set up tracing see the [traffic-trace policy](/docs/{{ page.version }}/policies/traffic-trace).
 {% endtip %}
 
 You can also forward the access logs to a collector (such as logstash) that can further transmit them into systems like Splunk, ELK and Datadog.
@@ -285,7 +285,7 @@ All access log _command operators_ are valid to use with both `TCP` and `HTTP` t
 
 If a _command operator_ is specific to `HTTP` traffic, such as `%REQ(X?Y):Z%` or `%RESP(X?Y):Z%`, it will be replaced by a symbol "`-`" in case of `TCP` traffic.
 
-Internally, `Kuma` [determines traffic protocol](../protocol-support-in-kuma) based on the value of `kuma.io/protocol` tag on the `inbound` interface of a `destination` `Dataplane`.
+Internally, `Kuma` [determines traffic protocol](/docs/{{ page.version }}/policies/protocol-support-in-kuma) based on the value of `kuma.io/protocol` tag on the `inbound` interface of a `destination` `Dataplane`.
 
 The default format string for `TCP` traffic is:
 
@@ -329,7 +329,7 @@ In such case `%KUMA_DESTINATION_SERVICE%` will have value `external` and `%UPSTR
 
 ## Matching
 
-`TrafficLog` is an [Outbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#outbound-connection-policy).
+`TrafficLog` is an [Outbound Connection Policy](/docs/{{ page.version }}/policies/how-kuma-chooses-the-right-policy-to-apply/#outbound-connection-policy).
 The only supported value for `destinations.match` is `kuma.io/service`.
 
 ## Builtin Gateway support

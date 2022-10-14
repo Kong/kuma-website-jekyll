@@ -14,16 +14,16 @@ The word "Kuma" means "bear" in Japanese (クマ).
 
 The core maintainer of Kuma is **Kong**, the maker of the popular open-source Kong Gateway 🦍.
 
-There's a new docs page that explains how your Kuma deployment collects data: what data is collected, and how to turn off data collection. See [data collection](/docs/1.3.1/community/data-collection).
+There's a new docs page that explains how your Kuma deployment collects data: what data is collected, and how to turn off data collection. See [data collection](/docs/{{ page.version }}/community/data-collection).
 
 ## Get started
 
-[Read about service mesh](/docs/1.3.1/overview/what-is-a-service-mesh/)
+[Read about service mesh](/docs/{{ page.version }}/overview/what-is-a-service-mesh/)
 
-[Read about Kuma](/docs/1.3.1/overview/what-is-kuma/)
+[Read about Kuma](/docs/{{ page.version }}/overview/what-is-kuma/)
 
 [Install Kuma](/install/latest/)
 
-[Follow the quickstart](/docs/1.3.1/quickstart/kubernetes/)
+[Follow the quickstart](/docs/{{ page.version }}/quickstart/kubernetes/)
 
-[Explore the API](/docs/1.3.1/documentation/http-api/)
+[Explore the API](/docs/{{ page.version }}/documentation/http-api/)

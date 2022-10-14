@@ -3,14 +3,14 @@ title: Traffic Permissions
 ---
 # Traffic Permissions
 
-This policy provides access control rules that can be applied on our service traffic to determine what traffic is allowed across the [Mesh](../mesh) via configurable sources and destinations.
+This policy provides access control rules that can be applied on our service traffic to determine what traffic is allowed across the [Mesh](/docs/{{ page.version }}/policies/mesh) via configurable sources and destinations.
 
-The `TrafficPermission` policy **only works** when [Mutual TLS](../mutual-tls) is enabled on the [`Mesh`](../mesh). 
+The `TrafficPermission` policy **only works** when [Mutual TLS](/docs/{{ page.version }}/policies/mutual-tls) is enabled on the [`Mesh`](/docs/{{ page.version }}/policies/mesh). 
 
-When Mutual TLS is disabled, Kuma **will not** enforce any `TrafficPermission` and by default it will allow all service traffic to work. Even if [Mutual TLS](../mutual-tls) is disabled, we can still create and edit `TrafficPermission` resources that will go into effect once Mutual TLS is enabled on the Mesh.
+When Mutual TLS is disabled, Kuma **will not** enforce any `TrafficPermission` and by default it will allow all service traffic to work. Even if [Mutual TLS](/docs/{{ page.version }}/policies/mutual-tls) is disabled, we can still create and edit `TrafficPermission` resources that will go into effect once Mutual TLS is enabled on the Mesh.
 
 {% tip %}
-The reason why this policy only works when [Mutual TLS](../mutual-tls) is enabled in the Mesh is because only in this scenario Kuma can validate the identity of the service traffic via the usage of data plane proxy certificates. 
+The reason why this policy only works when [Mutual TLS](/docs/{{ page.version }}/policies/mutual-tls) is enabled in the Mesh is because only in this scenario Kuma can validate the identity of the service traffic via the usage of data plane proxy certificates. 
 
 On the other end when Mutual TLS is disabled, Kuma cannot extract the service identity from the request and therefore cannot perform any validation.
 {% endtip %}
@@ -55,13 +55,13 @@ destinations:
   - match:
       kuma.io/service: '*'
 ```
-We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.1.6/documentation/http-api).
+We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/{{ page.version }}/documentation/http-api).
 {% endtab %}
 {% endtabs %}
 
-You can use any [Tag](/docs/1.1.6/documentation/dps-and-data-model/#tags) in both `sources` and `destinations` selector, which makes `TrafficPermissions` quite powerful when it comes to creating a secure environment for our services.
+You can use any [Tag](/docs/{{ page.version }}/documentation/dps-and-data-model/#tags) in both `sources` and `destinations` selector, which makes `TrafficPermissions` quite powerful when it comes to creating a secure environment for our services.
 
 ## Matching
 
-`TrafficPermission` is an [Inbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#inbound-connection-policy).
+`TrafficPermission` is an [Inbound Connection Policy](/docs/{{ page.version }}/policies/how-kuma-chooses-the-right-policy-to-apply#outbound-connection-policy).
 You can use all the tags in both `sources` and `destinations` sections.

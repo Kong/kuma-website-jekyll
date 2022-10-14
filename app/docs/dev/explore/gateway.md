@@ -5,7 +5,7 @@ title: Gateway
 
 When services need to receive traffic from the outside, commonly called North/South, the Kuma Gateway enables routing network traffic from outside a Kuma mesh to services inside the mesh. The gateway is also responsible for security at the entrance of the Mesh.
 
-Kuma Gateway deploys as a Kuma [`Dataplane`](../explore/dpp), that's an instance of the `kuma-dp` process.
+Kuma Gateway deploys as a Kuma [`Dataplane`](/docs/{{ page.version }}/explore/dpp), that's an instance of the `kuma-dp` process.
 Like all Kuma `Dataplanes`, the Kuma Gateway `Dataplane` manages an Envoy proxy process that does the actual network traffic proxying.
 
 You can distinguish two types of gateways:
@@ -67,14 +67,14 @@ API Gateway receives Services from:
 * one specific zone
 * multi-zone
 
-Multi-zone requires exposing a dedicated Kubernetes `Service` object with type `ExternalName`. Control plane creates a DNS entry `externalName` with suffix `.mesh`, which Kuma resolves in internal [service discovery](../../networking/dns).
+Multi-zone requires exposing a dedicated Kubernetes `Service` object with type `ExternalName`. Control plane creates a DNS entry `externalName` with suffix `.mesh`, which Kuma resolves in internal [service discovery](/docs/{{ page.version }}/networking/dns).
 
 #### Example setting up Kong Ingress Controller
 
 Follow instructions to setup an echo service reachable through Kong.
 These instructions are mostly taken from the [Kong docs](https://docs.konghq.com/kubernetes-ingress-controller/2.1.x/guides/getting-started/).
 
-1. [Install Kuma](../installation/kubernetes) on your cluster and have the `default` [namespace labelled with sidecar-injection](dpp-on-kubernetes).
+1. [Install Kuma](/docs/{{ page.version }}/installation/kubernetes) on your cluster and have the `default` [namespace labelled with sidecar-injection](/docs/{{ page.version }}/explore/dpp-on-kubernetes).
 
 2. Install [Kong using helm](https://docs.konghq.com/kubernetes-ingress-controller/2.1.x/deployment/k4k8s/#helm).
 
@@ -216,8 +216,8 @@ A builtin gateway `Dataplane` does not have either inbound or outbound configura
 
 To configure your gateway Kuma has these resources:
 
-- [MeshGateway](../policies/mesh-gateway) is used to configure listeners exposed by the gateway
-- [MeshGatewayRoute](../policies/mesh-gateway-route) is used to configure route to route traffic from listeners to other services.
+- [MeshGateway](/docs/{{ page.version }}/policies/mesh-gateway) is used to configure listeners exposed by the gateway
+- [MeshGatewayRoute](/docs/{{ page.version }}/policies/mesh-gateway-route) is used to configure route to route traffic from listeners to other services.
 
 {% tip %}
 Kuma gateways are configured with the [Envoy best practices for edge proxies](https://www.envoyproxy.io/docs/envoy/latest/configuration/best_practices/edge).
@@ -362,7 +362,7 @@ Notice that listeners have tags like `Dataplanes`. This will be useful when bind
 
 {% tip %}
 These are Kuma policies so if you are running on multi-zone they need to be created on the Global CP.
-See the [dedicated section](../deployments/multi-zone) for detailed information.
+See the [dedicated section](/docs/{{ page.version }}/deployments/multi-zone) for detailed information.
 {% endtip %}
 
 Now define your routes which take the traffic and route it either to your `api` or your `frontend` depending on the path of the http request:
@@ -551,17 +551,17 @@ This can result in situations where different policies (of the same type) are us
 
 | Policy                                                    | GatewaySupport |
 | --------------------------------------------------------- | -------------- |
-| [Circuit Breaker](../policies/circuit-breaker)         | Full           |
-| [External Services](../policies/external-services)     | Full           |
-| [Fault Injection](../policies/fault-injection)         | Full           |
-| [Health Check](../policies/health-check)               | Full           |
-| [Proxy Template](../policies/proxy-template)           | Full           |
-| [Rate Limits](../policies/rate-limit)                  | Full           |
-| [Retries](../policies/retry)                           | Full           |
-| [Traffic Permissions](../policies/traffic-permissions) | Full           |
-| [Traffic Routes](../policies/traffic-route)            | None           |
-| [Traffic Log](../policies/traffic-log)                 | Partial        |
-| [Timeouts](../policies/timeout)                        | Full           |
-| [VirtualOutbounds](../policies/virtual-outbound)       | None           |
+| [Circuit Breaker](/docs/{{ page.version }}/policies/circuit-breaker)         | Full           |
+| [External Services](/docs/{{ page.version }}/policies/external-services)     | Full           |
+| [Fault Injection](/docs/{{ page.version }}/policies/fault-injection)         | Full           |
+| [Health Check](/docs/{{ page.version }}/policies/health-check)               | Full           |
+| [Proxy Template](/docs/{{ page.version }}/policies/proxy-template)           | Full           |
+| [Rate Limits](/docs/{{ page.version }}/policies/rate-limit)                  | Full           |
+| [Retries](/docs/{{ page.version }}/policies/retry)                           | Full           |
+| [Traffic Permissions](/docs/{{ page.version }}/policies/traffic-permissions) | Full           |
+| [Traffic Routes](/docs/{{ page.version }}/policies/traffic-route)            | None           |
+| [Traffic Log](/docs/{{ page.version }}/policies/traffic-log)                 | Partial        |
+| [Timeouts](/docs/{{ page.version }}/policies/timeout)                        | Full           |
+| [VirtualOutbounds](/docs/{{ page.version }}/policies/virtual-outbound)       | None           |
 
 You can find in each policy's dedicated information with regard to builtin gateway support.

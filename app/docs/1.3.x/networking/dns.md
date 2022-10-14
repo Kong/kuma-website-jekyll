@@ -23,7 +23,7 @@ Prerequisites:
 - User created to run the `kuma-dp` process. You must run the `kuma-dp` process with a different user than the user you test with. Otherwise, name resolution might not work.
   - On Ubuntu, for example, you can run: `useradd -U kuma-dp`.
 
-1.  Specify the flags `--skip-resolv-conf` and `--redirect-dns` in the [transparent proxy](transparent-proxying/) iptables rules:
+1.  Specify the flags `--skip-resolv-conf` and `--redirect-dns` in the [transparent proxy](/docs/{{ page.version }}/networking/transparent-proxying/) iptables rules:
 
     ```shell
     kumactl install transparent-proxy \
@@ -33,7 +33,7 @@ Prerequisites:
               --redirect-dns
     ```
 
-1.  Start [the kuma-dp](dps-and-data-model/#dataplane-entity)
+1.  Start [the kuma-dp](/docs/{{ page.version }}/networking/dps-and-data-model/#dataplane-entity)
 
     ```shell
     kuma-dp run \
@@ -48,8 +48,8 @@ Prerequisites:
 
 This mode implements advanced networking techniques, so take special care for the following cases:
 
- * The mode can safely be used with the [Kuma CNI plugin](cni/).
- * In mixed IPv4 and IPv6 environments, it's recommended that you specify an [IPv6 virtual IP CIDR](ipv6/).
+ * The mode can safely be used with the [Kuma CNI plugin](/docs/{{ page.version }}/networking/cni/).
+ * In mixed IPv4 and IPv6 environments, it's recommended that you specify an [IPv6 virtual IP CIDR](/docs/{{ page.version }}/networking/ipv6/).
 
 ### How it works
 
@@ -105,7 +105,7 @@ helm install --version 0.7.1 --namespace kuma-system \
 
 ### Universal
 
-1.  Configure [the transparent proxy](transparent-proxying/) iptables rules:
+1.  Configure [the transparent proxy](/docs/{{ page.version }}/networking/transparent-proxying/) iptables rules:
 
     ```shell
     kumactl install transparent-proxy \
@@ -113,7 +113,7 @@ helm install --version 0.7.1 --namespace kuma-system \
               --kuma-cp-ip <KUMA_CP_IP_ADDRESS>
     ```
 
-1.  Start [the kuma-dp](dps-and-data-model/#dataplane-entity) with flag `--dns-enabled` set to `false`:
+1.  Start [the kuma-dp](/docs/{{ page.version }}/networking/dps-and-data-model/#dataplane-entity) with flag `--dns-enabled` set to `false`:
 
     ```shell
     kuma-dp run \
@@ -216,4 +216,4 @@ Kuma DNS allocates a VIP for every service within a mesh. Then, it creates an ou
     },
 ```
 
-To define dynamic hostnames using specific tags or expose on a different port you should use [virtual-outbounds](../policies/virtual-outbound).
+To define dynamic hostnames using specific tags or expose on a different port you should use [virtual-outbounds](/docs/{{ page.version }}/policies/virtual-outbound).

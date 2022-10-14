@@ -35,5 +35,5 @@ kuma-prometheus-sd run [flags]
 
 ### SEE ALSO
 
-* [kuma-prometheus-sd](kuma-prometheus-sd)	 - [DEPRECATED] Prometheus service discovery adapter for native integration with Kuma
+* [kuma-prometheus-sd](/docs/{{ page.version }}/generated/cmd/kuma-prometheus-sd/kuma-prometheus-sd/)	 - [DEPRECATED] Prometheus service discovery adapter for native integration with Kuma
 

@@ -26,5 +26,5 @@ kumactl completion bash [flags]
 
 ### SEE ALSO
 
-* [kumactl completion](kumactl_completion)	 - Output shell completion code for bash, fish or zsh
+* [kumactl completion](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_completion)	 - Output shell completion code for bash, fish or zsh
 

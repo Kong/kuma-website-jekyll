@@ -16,12 +16,12 @@ The core maintainer of Kuma is **Kong**, the maker of the popular open-source Ko
 
 ## Get started
 
-[Read about service mesh](introduction/what-is-a-service-mesh)
+[Read about service mesh](/docs/{{ page.version }}/introduction/what-is-a-service-mesh)
 
-[Read about Kuma](introduction/what-is-kuma)
+[Read about Kuma](/docs/{{ page.version }}/introduction/what-is-kuma)
 
 [Install Kuma](/install/latest/)
 
-[Jump to the quickstart](quickstart/kubernetes)
+[Jump to the quickstart](/docs/{{ page.version }}/quickstart/kubernetes)
 
-[Explore the API](reference/http-api)
+[Explore the API](/docs/{{ page.version }}/reference/http-api)

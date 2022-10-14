@@ -53,5 +53,5 @@ $ kumactl generate dataplane-token --mesh demo --tag kuma.io/service=web,web-api
 
 ### SEE ALSO
 
-* [kumactl generate](kumactl_generate)	 - Generate resources, tokens, etc
+* [kumactl generate](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_generate)	 - Generate resources, tokens, etc
 

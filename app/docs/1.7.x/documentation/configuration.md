@@ -13,7 +13,7 @@ You can configure the control plane:
 
 Environment variables take precedence over YAML configuration.
 
-You can find all possible configuration and the default values in the [`kuma-cp` reference doc](../generated/kuma-cp).
+You can find all possible configuration and the default values in the [`kuma-cp` reference doc](/docs/{{ page.version }}/generated/kuma-cp).
 
 {% tabs useUrlFragment=false %}
 {% tab Kubernetes (kumactl) %}

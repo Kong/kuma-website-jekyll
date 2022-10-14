@@ -3,14 +3,14 @@ title: Kubernetes Gateway API
 ---
 # Kubernetes Gateway API
 
-Kuma supports configuring [built-in gateway](gateway) using [Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/).
+Kuma supports configuring [built-in gateway](/docs/{{ page.version }}/explore/gateway) using [Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/).
 
 ## Installation
 
 {% warning %}
 [Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/) is still beta, therefore Kuma's integration provides the same level of stability.
 
-Gateway API is not supported in multi-zone. To use the builtin Gateway, you need to use the [`MeshGateway`  resources](gateway.md).
+Gateway API is not supported in multi-zone. To use the builtin Gateway, you need to use the [`MeshGateway`  resources](/docs/{{ page.version }}/explore/gateway).
 {% endwarning %}
 
 1. Install the Gateway API CRDs.
@@ -167,7 +167,7 @@ spec:
       - name: secret-tls
 ```
 
-Under the hood, Kuma CP copies the `Secret` to `kuma-system` namespace and converts it to [Kuma secret](../security/secrets).
+Under the hood, Kuma CP copies the `Secret` to `kuma-system` namespace and converts it to [Kuma secret](/docs/{{ page.version }}/security/secrets).
 It tracks all the changes to the secret and deletes it upon deletion of the original secret.
 
 ## Customization
@@ -189,7 +189,7 @@ spec:
     name: kuma
 ```
 
-This resource has the same [structure as the `MeshGatewayInstance` resource](../gateway#usage-2)
+This resource has the same [structure as the `MeshGatewayInstance` resource](/docs/{{ page.version }}/gateway#usage-2)
 except that the `tags` field is optional.
 With a `MeshGatewayConfig` you can then customize
 the generated `Service` and `Deployment` resources.

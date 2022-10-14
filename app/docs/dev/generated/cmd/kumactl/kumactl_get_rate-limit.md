@@ -32,5 +32,5 @@ kumactl get rate-limit NAME [flags]
 
 ### SEE ALSO
 
-* [kumactl get](kumactl_get)	 - Show Kuma resources
+* [kumactl get](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_get)	 - Show Kuma resources
 

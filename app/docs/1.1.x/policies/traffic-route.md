@@ -3,11 +3,11 @@ title: Traffic Route
 ---
 # Traffic Route
 
-This policy allows us to configure routing rules for L4 traffic running in our [Mesh](../mesh). This policy provides support for weighted routing and can be used to implement versioning across our services as well as deployment strategies like blue/green and canary.
+This policy allows us to configure routing rules for L4 traffic running in our [Mesh](/docs/{{ page.version }}/policies/mesh). This policy provides support for weighted routing and can be used to implement versioning across our services as well as deployment strategies like blue/green and canary.
 
 `TrafficRoute` must select the data plane proxies to route the connection between them.
 
-Kuma also supports [locality aware load balancing](../locality-aware).
+Kuma also supports [locality aware load balancing](/docs/{{ page.version }}/policies/locality-aware).
 
 ### Default TrafficRoute
 
@@ -117,7 +117,7 @@ conf:
         version: '2.0'
 ```
 
-We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/1.1.6/documentation/http-api).
+We will apply the configuration with `kumactl apply -f [..]` or via the [HTTP API](/docs/{{ page.version }}/documentation/http-api).
 {% endtab %}
 {% endtabs %}
 
@@ -187,5 +187,5 @@ There are different load balancing algorithms that can be used to determine how 
 
 ## Matching
 
-`TrafficRoute` is an [Outbound Connection Policy](how-kuma-chooses-the-right-policy-to-apply.md#outbound-connection-policy).
+`TrafficRoute` is an [Outbound Connection Policy](/docs/{{ page.version }}/policies/how-kuma-chooses-the-right-policy-to-apply/#outbound-connection-policy).
 You can only use `kuma.io/service` in the `destinations` section. However, you can use all the tags in `conf.split.destination`.

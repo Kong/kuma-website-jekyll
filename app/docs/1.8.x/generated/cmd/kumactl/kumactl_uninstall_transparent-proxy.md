@@ -32,5 +32,5 @@ kumactl uninstall transparent-proxy [flags]
 
 ### SEE ALSO
 
-* [kumactl uninstall](kumactl_uninstall)	 - Uninstall various Kuma components.
+* [kumactl uninstall](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_uninstall)	 - Uninstall various Kuma components.
 

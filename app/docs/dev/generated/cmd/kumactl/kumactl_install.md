@@ -26,14 +26,14 @@ Install various Kuma components.
 
 ### SEE ALSO
 
-* [kumactl](kumactl)	 - Management tool for Kuma
-* [kumactl install control-plane](kumactl_install_control-plane)	 - Install Kuma Control Plane on Kubernetes
-* [kumactl install crds](kumactl_install_crds)	 - Install Kuma Custom Resource Definitions on Kubernetes
-* [kumactl install demo](kumactl_install_demo)	 - Install Kuma demo on Kubernetes
-* [kumactl install gateway](kumactl_install_gateway)	 - Install ingress gateway on Kubernetes
-* [kumactl install logging](kumactl_install_logging)	 - Install Logging backend in Kubernetes cluster (Loki)
-* [kumactl install metrics](kumactl_install_metrics)	 - Install Metrics backend in Kubernetes cluster (Prometheus + Grafana)
-* [kumactl install observability](kumactl_install_observability)	 - Install Observability (Metrics, Logging, Tracing) backend in Kubernetes cluster (Prometheus + Grafana + Loki + Jaeger + Zipkin)
-* [kumactl install tracing](kumactl_install_tracing)	 - Install Tracing backend in Kubernetes cluster (Jaeger)
-* [kumactl install transparent-proxy](kumactl_install_transparent-proxy)	 - Install Transparent Proxy pre-requisites on the host
+* [kumactl](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl)	 - Management tool for Kuma
+* [kumactl install control-plane](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install_control-plane)	 - Install Kuma Control Plane on Kubernetes
+* [kumactl install crds](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install_crds)	 - Install Kuma Custom Resource Definitions on Kubernetes
+* [kumactl install demo](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install_demo)	 - Install Kuma demo on Kubernetes
+* [kumactl install gateway](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install_gateway)	 - Install ingress gateway on Kubernetes
+* [kumactl install logging](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install_logging)	 - Install Logging backend in Kubernetes cluster (Loki)
+* [kumactl install metrics](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install_metrics)	 - Install Metrics backend in Kubernetes cluster (Prometheus + Grafana)
+* [kumactl install observability](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install_observability)	 - Install Observability (Metrics, Logging, Tracing) backend in Kubernetes cluster (Prometheus + Grafana + Loki + Jaeger + Zipkin)
+* [kumactl install tracing](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install_tracing)	 - Install Tracing backend in Kubernetes cluster (Jaeger)
+* [kumactl install transparent-proxy](/docs/{{ page.version }}/generated/cmd/kumactl/kumactl_install_transparent-proxy)	 - Install Transparent Proxy pre-requisites on the host
 

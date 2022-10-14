@@ -28,7 +28,7 @@ Once downloaded, you will find the contents of Kuma in the `kuma-{{ page.latest_
 
 You can start the control-plane with: `kuma-{{ page.latest_version }}/bin/kuma-cp run`
 
-This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](../introduction/deployments.md) like "multi-zone".
+This example will run Kuma in `standalone` mode for a "flat" deployment, but there are more advanced [deployment modes](/docs/{{ page.version }}/introduction/deployments) like "multi-zone".
 
 We suggest adding the `kumactl` executable to your `PATH` so that it's always available in every working directory. Or - alternatively - you can also create link in `/usr/local/bin/` by executing:
 
@@ -39,7 +39,7 @@ ln -s kuma-{{ $page.latestVersion }}/bin/kumactl /usr/local/bin/kumactl
 {% endraw %}
 
 {% tip %}
-**Note**: By default this will run Kuma with a `memory` [store](../documentation/configuration.md), but for production you have to use a persistent storage like PostgreSQL by updating the `conf/kuma-cp.conf` file.
+**Note**: By default this will run Kuma with a `memory` [store](/docs/{{ page.version }}/documentation/configuration), but for production you have to use a persistent storage like PostgreSQL by updating the `conf/kuma-cp.conf` file.
 {% endtip %}
 
 ### Use Kuma
@@ -91,10 +91,10 @@ kumactl config control-planes add --name=XYZ --address=http://{address-to-kuma}:
 {% endtab %}
 {% endtabs %}
 
-You will notice that Kuma automatically creates a [`Mesh`](../policies/mesh.md) entity with name `default`.
+You will notice that Kuma automatically creates a [`Mesh`](/docs/{{ page.version }}/policies/mesh) entity with name `default`.
 
 ### Quickstart
 
 Congratulations! You have successfully installed Kuma 🚀.
 
-In order to start using Kuma, it's time to check out the [quickstart guide for Universal](../quickstart/universal.md) deployments.
+In order to start using Kuma, it's time to check out the [quickstart guide for Universal](/docs/{{ page.version }}/quickstart/universal) deployments.
