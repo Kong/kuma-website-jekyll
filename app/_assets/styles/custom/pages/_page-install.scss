@@ -1,6 +1,6 @@
-// 
+//
 // Installation page
-// 
+//
 
 $install-masthead-bg-image: url('#{$image-path}bg-lines.svg');
 $install-masthead-bg-position: 50% 0, 0 0;
@@ -21,10 +21,9 @@ $install-page-header-shadow: $base-border-shadow;
 .page-container--install {
   background-image: $install-masthead-bg-image;
   background-position: $install-masthead-bg-position;
-  // background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   .version-alert {
     margin: 1rem auto 0 auto;
     padding: 0;
@@ -46,6 +45,18 @@ $install-page-header-shadow: $base-border-shadow;
       padding: $install-page-header-padding;
     }
   }
+
+  .content__newsletter-title h2 {
+    border: 0;
+  }
+
+  .theme-container.no-sidebar:not(.is-home):not(.home) .page-footer {
+    margin-top: 0;
+  }
+
+  .newsletter-form-wrap {
+    margin-top: 3rem;
+  }
 }
 
 .install-methods {
@@ -55,7 +66,7 @@ $install-page-header-shadow: $base-border-shadow;
 }
 
 .install-methods__item {
-  
+
 }
 
 .install-methods__item-link {
@@ -69,7 +80,7 @@ $install-page-header-shadow: $base-border-shadow;
   will-change: transform;
   transform-origin: center;
   transform: translateZ(0); // prep
-  transition: 
+  transition:
     color 200ms $cb-1,
     border 200ms $cb-1,
     transform 200ms $cb-1;
@@ -91,7 +102,7 @@ $install-page-header-shadow: $base-border-shadow;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   img {
     max-width: 100%;
     height: auto;
@@ -127,7 +138,7 @@ $install-page-header-shadow: $base-border-shadow;
     border-bottom: $install-tile-border;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-  
+
     img {
       max-width: 70%;
       max-height: 4rem;
@@ -135,6 +146,6 @@ $install-page-header-shadow: $base-border-shadow;
   }
 
   .install-methods__item-link {
-    
+
   }
 }
