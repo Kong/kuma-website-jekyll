@@ -12,6 +12,7 @@ group :jekyll_plugins do
   gem 'jekyll-paginate-v2'
   gem 'jekyll-last-modified-at'
   gem 'jekyll-contentblocks'
+  gem 'jekyll-vite'
 end
 
 gem 'byebug'
