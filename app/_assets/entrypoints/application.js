@@ -11,3 +11,11 @@ import 'virtual:windi-utilities.css'
 import 'vuepress-plugin-tabs/dist/themes/default.styl'
 
 import '@/styles/custom.scss'
+
+
+//
+// Javascript
+//
+import Sidebar from '@/javascripts/sidebar'
+
+new Sidebar();
