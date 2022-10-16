@@ -17,5 +17,7 @@ import '@/styles/custom.scss'
 // Javascript
 //
 import Sidebar from '@/javascripts/sidebar'
+import '@/javascripts/page_masthead_waves'
+import '@/javascripts/newsletter_waves'
 
 new Sidebar();
