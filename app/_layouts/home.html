@@ -27,20 +27,13 @@ layout: default
 
         <div class="page-masthead__diagram max-w-2xl mx-auto mt-4 w-full lg:w-1/2 block lg:hidden px-6 pb-6">
           {% if page.carousel %}
-            <VueSlickCarousel
-              :arrow="true"
-              :dots="true"
-              :autoplay="true"
-              :pause-on-dots-hover="true"
-              :pause-on-focus="true"
-              :autoplay-speed="2500"
-            >
+            <div data-slick='{ "arrows": true, "dots": true, "autoplay": true, "pauseOnDotsHover": true, "pauseOnFocus": true, "autoplaySpeed": 2500 }'>
               {% for item in page.carousel %}
                 <div class="item-wrapper">
                   <img src="{{ item.src }}" alt="{{ item.alt }}" />
                 </div>
               {% endfor %}
-            </VueSlickCarousel>
+            </div>
           {% endif %}
         </div>
 
@@ -61,20 +54,13 @@ layout: default
 
       <div class="page-masthead__diagram w-full lg:w-1/2 hidden lg:block px-6 pb-6">
         {% if page.carousel %}
-          <VueSlickCarousel
-            :arrow="true"
-            :dots="true"
-            :autoplay="true"
-            :pause-on-dots-hover="true"
-            :pause-on-focus="true"
-            :autoplay-speed="2500"
-          >
+          <div data-slick='{ "arrows": true, "dots": true, "autoplay": true, "pauseOnDotsHover": true, "pauseOnFocus": true, "autoplaySpeed": 2500 }'>
             {% for item in page.carousel %}
               <div class="item-wrapper">
                 <img src="{{ item.src }}" alt="{{ item.alt }}" />
               </div>
             {% endfor %}
-          </VueSlickCarousel>
+          </div>
         {% endif %}
       </div>
     </div><!-- .inner -->
@@ -82,7 +68,7 @@ layout: default
     {% if page.showTestimonial and page.testimonials %}
       <div class="testimonials-carousel-wrap">
         <div class="inner">
-          <VueSlickCarousel :arrow="true" :dots="true">
+          <div data-slick='{ "arrows": true, "dots": true }'>
             {% for item in page.testimonials %}
               <div class="testimonial">
                 <blockquote class="lg:grid lg:grid-flow-col lg:gap-4 lg:col-gap-4 lg:row-gap-2 px-8 lg:px-0">
@@ -100,7 +86,7 @@ layout: default
                 </blockquote>
               </div>
             {% endfor %}
-          </VueSlickCarousel>
+          </div>
         </div>
       </div>
     {% endif %}<!-- /.testimonials-carousel-wrap -->
