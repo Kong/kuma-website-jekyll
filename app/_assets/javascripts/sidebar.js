@@ -28,7 +28,10 @@ export default class Sidebar {
           this.toggleGroup(group.parentNode.closest('.sidebar-group'), false);
         }
       } else {
-        this.elem.querySelector('.sidebar-sub-header .sidebar-link.active').classList.remove('active');
+        const activeLink = this.elem.querySelector('.sidebar-sub-header .sidebar-link.active');
+        if (activeLink !== null) {
+          activeLink.classList.remove('active');
+        }
         event.target.classList.add('active');
       }
     });
@@ -47,17 +50,21 @@ export default class Sidebar {
   }
 
   expandActiveGroup() {
-    let currentPath = window.location.pathname;
-    let activeGroups = this.groups.filter((group) => {
-      return group.querySelector(`a[href^='${currentPath}']`) !== null
-    });
+    const currentPath = window.location.pathname;
+    const activeLink = this.elem.querySelector(`a[href^='${currentPath}']`);
+    const topLevelGroup = activeLink.closest(`.sidebar-group.depth-0`);
 
-    if (activeGroups.length !== 0 ) {
-      Array.from(activeGroups).forEach((group) => {
-        this.toggleGroup(group);
-      });
+    if (topLevelGroup !== null) {
+      this.toggleGroup(topLevelGroup);
+
+      const nestedGroup = activeLink.closest(`.sidebar-group.depth-1`);
+      if (nestedGroup !== null) {
+        this.toggleGroup(nestedGroup);
+        nestedGroup.scrollIntoView({ behavior: "smooth" });
+      } else {
+        topLevelGroup.scrollIntoView({ behavior: "smooth" });
+      }
     }
-    activeGroups.at(-1).scrollIntoView({ behavior: "smooth" });
   }
 
   setActiveLink() {
@@ -65,9 +72,13 @@ export default class Sidebar {
     if (window.location.hash) {
       currentPath += window.location.hash;
     }
-    this.elem
-      .querySelector(`a[href^='${currentPath}']`)
-      .classList
+
+    let activeElement = this.elem
+      .querySelector(`a[href^='${currentPath}']`);
+
+    if (activeElement !== null) {
+      activeElement.classList
       .add('active');
+    }
   }
 }
