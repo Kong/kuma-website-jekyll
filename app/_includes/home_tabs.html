@@ -8,9 +8,7 @@
         tabindex="0"
         role="tab"
       >
-        <a class="tab-link">
-          <slot name="kubernetes-anchor">Kubernetes</slot>
-        </a>
+        <a class="tab-link">Kubernetes</a>
       </li>
 
       <li
@@ -21,9 +19,7 @@
         tabindex="0"
         role="tab"
       >
-        <a class="tab-link">
-          <slot name="openshift-anchor">OpenShift</slot>
-        </a>
+        <a class="tab-link">OpenShift</a>
       </li>
 
       <li
@@ -34,9 +30,7 @@
         tabindex="0"
         role="tab"
       >
-        <a class="tab-link">
-          <slot name="universal-anchor">Universal (VMs)</slot>
-        </a>
+        <a class="tab-link">Universal (VMs)</a>
       </li>
   </ul>
 
@@ -50,23 +44,23 @@
     {% contentblock tab-kubernetes %}
   </div>
 
-  <!-- <div -->
-  <!--   id="panel-1" -->
-  <!--   aria-labelledby="openshift-tab" -->
-  <!--   role="tabpanel" -->
-  <!--   tabindex="0" -->
-  <!--   class="tab-container" -->
-  <!-- > -->
-  <!--   {% contentblock tab-openshift %} -->
-  <!-- </div> -->
+  <div
+    id="panel-1"
+    aria-labelledby="openshift-tab"
+    role="tabpanel"
+    tabindex="0"
+    class="tab-container hidden"
+  >
+    {% contentblock tab-openshift %}
+  </div>
 
-  <!-- <div -->
-  <!--   id="panel-2" -->
-  <!--   aria-labelledby="universal-tab" -->
-  <!--   role="tabpanel" -->
-  <!--   tabindex="0" -->
-  <!--   class="tab-container" -->
-  <!-- > -->
-  <!--   {% contentblock tab-universal %} -->
-  <!-- </div> -->
+  <div
+    id="panel-2"
+    aria-labelledby="universal-tab"
+    role="tabpanel"
+    tabindex="0"
+    class="tab-container hidden"
+  >
+    {% contentblock tab-universal %}
+  </div>
 </div>
