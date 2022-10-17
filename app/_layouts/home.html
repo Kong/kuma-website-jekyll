@@ -14,8 +14,7 @@ layout: default
           </header>
 
           <div class="page-masthead__actions">
-            <!-- TODO: add this -->
-            <!-- <DistibutionDropdown /> -->
+            {% include distribution_dropdown.html text=page.startText %}
 
             {% if page.whyUrl %}
               <a href="{{ page.whyUrl }}" class="btn btn--hollow btn--large">
