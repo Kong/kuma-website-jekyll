@@ -60,9 +60,9 @@ export default class Sidebar {
       const nestedGroup = activeLink.closest(`.sidebar-group.depth-1`);
       if (nestedGroup !== null) {
         this.toggleGroup(nestedGroup);
-        nestedGroup.scrollIntoView({ behavior: "smooth" });
+        nestedGroup.scrollIntoView({ behavior: "smooth", block: "center" });
       } else {
-        topLevelGroup.scrollIntoView({ behavior: "smooth" });
+        topLevelGroup.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
   }
