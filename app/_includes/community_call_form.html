@@ -16,28 +16,31 @@
       </span>
 
       <button type="submit" name="submit" class="btn" >
-        <span>Register Now</span>
+        <span class="spinner hidden">
+          {% include spinner.html %}
+        </span>
+        <span class="submit_text">Register Now</span>
       </button>
     </form>
+
+    <div class="form-success tip custom-block hidden">
+      <p class="custom-block-title">Thank you!</p>
+      <p>
+      We've received your request to register for the upcoming Community Call.
+      Thank you for your interest in {{ site.title }}!
+      </p>
+      <ul class="inline-list">
+        <li>
+          <a href="{{ site.pardot.communityCallInvite }}" target="_blank">
+            <span class="icon">📅</span> Add to Your Calendar
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-error danger custom-block hidden">
+      <p class="custom-block-title">Whoops!</p>
+      <p>Something went wrong! Please try again later.</p>
+    </div>
   </span>
-
-  <!-- <div class="tip custom-block"> -->
-  <!--   <p class="custom-block-title">Thank you!</p> -->
-  <!--   <p> -->
-  <!--     We've received your request to register for the upcoming Community Call. -->
-  <!--     Thank you for your interest in {{ site.title }}! -->
-  <!--   </p> -->
-  <!--   <ul class="inline-list"> -->
-  <!--     <li> -->
-  <!--       <a href="{{ site.pardot.communityCallInvite }}" target="_blank"> -->
-  <!--         <span class="icon">📅</span> Add to Your Calendar -->
-  <!--       </a> -->
-  <!--     </li> -->
-  <!--   </ul> -->
-  <!-- </div> -->
-
-  <!-- <div class="danger custom-block"> -->
-  <!--   <p class="custom-block-title">Whoops!</p> -->
-  <!--   <p>Something went wrong! Please try again later.</p> -->
-  <!-- </div> -->
 </div>
