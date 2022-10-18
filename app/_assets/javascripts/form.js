@@ -32,21 +32,18 @@ export default class Form {
           this.elem.querySelector('.spinner').classList.remove('hidden');
         },
         success: (data, textStatus) => {
-          debugger
           this.elem
             .parentNode
             .querySelector('.form-success')
             .classList.remove('hidden')
         },
         error: (data, textStatus) => {
-          debugger
           this.elem
             .parentNode
             .querySelector('.form-error')
             .classList.remove('hidden');
         },
         complete: (data, textStatus) => {
-          debugger
           this.elem.remove();
         }
       })
