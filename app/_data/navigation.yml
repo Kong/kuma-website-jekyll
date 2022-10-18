@@ -2,7 +2,7 @@
   url: "/policies/"
   key: "policies"
 - text: "Docs"
-  url: "/docs/1.8.x" # TODO: fixme
+  url: "/docs/"
   key: "docs"
 - text: "Community"
   url: "/community/"
@@ -14,5 +14,5 @@
   url: "/enterprise/"
   key: "enterprise"
 - text: "Install"
-  url: "/install/latest/" # TODO: fixme
+  url: "/install/"
   key: "install"
