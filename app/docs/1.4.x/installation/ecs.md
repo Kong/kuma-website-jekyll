@@ -41,8 +41,8 @@ aws cloudformation deploy \
 
 We can run Kuma in either **standalone** or **multi-zone** mode:
 
-{% tabs useUrlFragment=false %}
-{% tab Standalone %}
+{% tabs ecs-run useUrlFragment=false %}
+{% tab ecs-run Standalone %}
 
 To deploy the `kuma-cp` stack in standalone mode we can execute:
 
@@ -57,7 +57,7 @@ aws cloudformation deploy \
 To learn more, read about the [deployment modes available](/docs/{{ page.version }}/documentation/deployments/).
 
 {% endtab %}
-{% tab Multi-Zone %}
+{% tab ecs-run Multi-Zone %}
 
 Multi-zone mode is perfect when running one deployment of Kuma that spans across multiple Kubernetes clusters, clouds and VM environments under the same Kuma deployment. This mode also supports hybrid Kubernetes + VMs deployments.
 
@@ -170,8 +170,8 @@ Kuma allows much more advanced and secure ways to expose the `/tokens` endpoint.
 
 Finally, retrieve the data plane proxy token generated in the previous step and use it in the following `<token>` placeholder:
 
-{% tabs useUrlFragment=false %}
-{% tab Standalone %}
+{% tabs ecs-use useUrlFragment=false %}
+{% tab ecs-use Standalone %}
 
 ```shell
 aws cloudformation deploy \
@@ -184,7 +184,7 @@ aws cloudformation deploy \
 ```
 
 {% endtab %}
-{% tab Multi-zone %}
+{% tab ecs-use Multi-zone %}
 
 ```shell
 aws cloudformation deploy \

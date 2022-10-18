@@ -69,8 +69,8 @@ To set up a multi-zone deployment we will need to:
 
 The global control plane must run on a dedicated cluster, and cannot be assigned to a zone.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs global-control-plane useUrlFragment=false %}
+{% tab global-control-plane Kubernetes %}
 
 The global control plane on Kubernetes must reside on its own Kubernetes cluster, to keep its resources separate from the resources the zone control planes create during synchronization.
 
@@ -92,7 +92,7 @@ The global control plane on Kubernetes must reside on its own Kubernetes cluster
     In this example the value is `35.226.196.103:5685`. You pass this as the value of `<global-kds-address>` when you set up the zone control planes.
 
 {% endtab %}
-{% tab Helm %}
+{% tab global-control-plane Helm %}
 
 1.  Set the `controlPlane.mode` value to `global` in the chart (`values.yaml`), then install. On the command line, run:
 
@@ -117,7 +117,7 @@ The global control plane on Kubernetes must reside on its own Kubernetes cluster
     By default, it's exposed on [port 5685](/docs/{{ page.version }}/networking/networking). In this example the value is `35.226.196.103:5685`. You pass this as the value of `<global-kds-address>` when you set up the zone control planes.
 
 {% endtab %}
-{% tab Universal %}
+{% tab global-control-plane Universal %}
 
 1.  Set up the global control plane, and add the `global` environment variable:
 
@@ -136,8 +136,8 @@ You need the following values to pass to each zone control plane setup:
 - `kds-global-address` -- the external IP and port of the global control plane.
 
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs zone-control-planes useUrlFragment=false %}
+{% tab zone-control-planes Kubernetes %}
 
 **Without zone egress**:
 
@@ -170,7 +170,7 @@ You need the following values to pass to each zone control plane setup:
 
 
 {% endtab %}
-{% tab Helm %}
+{% tab zone-control-planes Helm %}
 
 **Without zone egress**:
 
@@ -204,7 +204,7 @@ You need the following values to pass to each zone control plane setup:
     where `controlPlane.zone` is the same value for all zone control planes in the same zone.
 
 {% endtab %}
-{% tab Universal %}
+{% tab zone-control-planes Universal %}
 
 1. On each zone control plane, run:
 
@@ -307,8 +307,8 @@ Kuma uses the Server Name Indication field, part of the TLS protocol, as a way t
 
 Cross-zone communication between services is available only if Zone Ingress has an external advertised address and port.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs cross-zone-communication useUrlFragment=false %}
+{% tab cross-zone-communication Kubernetes %}
 
 If a service of type `NodePort` or `LoadBalancer` is attached to the data plane, Kuma will automatically retrieve the external address and port.
 
@@ -318,7 +318,7 @@ Depending on your load balancer implementation, you might need to wait a few min
 
 You can also set this address and port by using the annotations: [`kuma.io/ingress-public-address` and `kuma.io/ingress-public-port`](/docs/{{ page.version }}/documentation/kubernetes-annotations/#kuma-io-ingress-public-port)
 {% endtab %}
-{% tab Universal %}
+{% tab cross-zone-communication Universal %}
 Set the advertisedAddress and advertisedPort field in the `ZoneIngress` definition
 ```yaml
 type: ZoneIngress
@@ -339,8 +339,8 @@ It only needs to be reachable from all data plane proxies in other zones.
 
 ### Cross-zone communication details
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs cross-zone-communication-details useUrlFragment=false %}
+{% tab cross-zone-communication-details Kubernetes %}
 
 To view the list of service names available for cross-zone communication, run:
 
@@ -373,7 +373,7 @@ Because Kuma on Kubernetes relies on transparent proxy, `kuma-dp` listens on por
 We can configure more flexible setup of hostnames and ports using [Virtual Outbound](/docs/{{ page.version }}/policies/virtual-outbound).
 
 {% endtab %}
-{% tab Universal %}
+{% tab cross-zone-communication-details Universal %}
 
 With a hybrid deployment, running in both Kubernetes and Universal mode, the service tag should be the same in both environments (e.g `echo-server_echo-example_svc_1010`):
 
@@ -430,13 +430,13 @@ zone: unable to delete Zone, Remote CP is still connected, please shut it down f
 
 When the Remote CP is fully disconnected and shut down, then the `Zone` can be deleted. All corresponding resources (like `Dataplane` and `DataplaneInsight`) will be deleted automatically as well.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs delete-a-zone useUrlFragment=false %}
+{% tab delete-a-zone Kubernetes %}
 ```sh
 kubectl delete zone zone-1
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab delete-a-zone Universal %}
 ```sh
 kumactl delete zone zone-1
 ```
@@ -447,8 +447,8 @@ kumactl delete zone zone-1
 
 Change the `enabled` property value to `false` in the global control plane:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs disable-a-zone useUrlFragment=false %}
+{% tab disable-a-zone Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Zone
@@ -458,7 +458,7 @@ spec:
   enabled: false
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab disable-a-zone Universal %}
 ```yaml
 type: Zone
 name: zone-1

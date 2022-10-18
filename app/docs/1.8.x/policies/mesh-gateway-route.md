@@ -13,8 +13,8 @@ At the moment, it targets HTTP routing use cases.
 
 To define `MeshGatewayRoute` that attaches a route to a listener with a tag: `vhost=foo.example.com` and routes traffic to the backend service do:
 
-{% tabs useUrlFragment=false %}
-{% tab Universal %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Universal %}
 ```yaml
 type: MeshGatewayRoute
 mesh: default
@@ -35,7 +35,7 @@ conf:
               kuma.io/service: backend
 ```
 {% endtab %}
-{% tab Kubernetes %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshGatewayRoute

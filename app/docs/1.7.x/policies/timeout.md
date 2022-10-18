@@ -63,8 +63,8 @@ Envoy conf: [Cluster](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/
 
 By default, Kuma creates the following Timeout policy:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs general-purpose useUrlFragment=false %}
+{% tab general-purpose Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Timeout
@@ -90,7 +90,7 @@ spec:
 ```
 {% endtab %}
 
-{% tab Universal %}
+{% tab general-purpose Universal %}
 ```yaml
 type: Timeout
 mesh: default
@@ -151,8 +151,8 @@ http:
 
 If you still need to change inbound timeouts you can use a [ProxyTemplate](/docs/{{ page.version }}/policies/proxy-template):
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs inbound-timeouts useUrlFragment=false %}
+{% tab inbound-timeouts Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ProxyTemplate
@@ -182,7 +182,7 @@ spec:
 ```
 {% endtab %}
 
-{% tab Universal %}
+{% tab inbound-timeouts Universal %}
 ```yaml
 type: ProxyTemplate
 mesh: default

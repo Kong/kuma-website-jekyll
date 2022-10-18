@@ -238,11 +238,12 @@ This dashboard provides a topology view of your service traffic dependencies. It
 The recommended way to use Datadog is with its [agent](https://docs.datadoghq.com/agent).
 
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs configuring-datadog useUrlFragment=false %}
+{% tab configuring-datadog Kubernetes %}
 The [Datadog agent docs](https://docs.datadoghq.com/agent/kubernetes/installation) have in-depth installation methods.
 {% endtab %}
-{% tab Universal %}
+
+{% tab configuring-datadog Universal %}
 Checkout the [Datadog agent docs](https://docs.datadoghq.com/agent/basic_agent_usage).
 {% endtab %}
 {% endtabs %}
@@ -254,11 +255,12 @@ Kuma exposes metrics with [traffic metrics](/docs/{{ page.version }}/policies/tr
 
 You can add annotations to your pods to enable the Datadog agent to scrape metrics.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs metrics useUrlFragment=false %}
+{% tab metrics Kubernetes %}
 Please refer to the dedicated [documentation](https://docs.datadoghq.com/containers/kubernetes/prometheus/?tabs=helm#metric-collection-with-prometheus-annotations).
 {% endtab %}
-{% tab Universal %}
+
+{% tab metrics Universal %}
 You need to setup your agent with an [openmetrics.d/conf.yaml](https://docs.datadoghq.com/integrations/guide/prometheus-host-collection/#pagetitle).
 {% endtab %}
 {% endtabs %}
@@ -269,8 +271,8 @@ Checkout the
 1. Set up the [Datadog](https://docs.datadoghq.com/tracing/) agent.
 2. Set up [APM](https://docs.datadoghq.com/tracing/).
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs tracing useUrlFragment=false %}
+{% tab tracing Kubernetes %}
 Configure the [Datadog agent for APM](https://docs.datadoghq.com/agent/kubernetes/apm/).
 
 If Datadog is not running on each node you can expose the APM agent port to Kuma via Kubernetes service.
@@ -292,7 +294,8 @@ Apply the configuration with `kubectl apply -f [..]`.
 Check if the label of the datadog pod installed has not changed (`app.kubernetes.io/name: datadog-agent-deployment`),
 if it did adjust accordingly.
 {% endtab %}
-{% tab Universal %}
+
+{% tab tracing Universal %}
 Checkout the [Datadog agent docs](https://docs.datadoghq.com/agent/basic_agent_usage)
 {% endtab %}
 {% endtabs %}

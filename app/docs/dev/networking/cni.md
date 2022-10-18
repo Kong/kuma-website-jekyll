@@ -28,11 +28,11 @@ To apply NAD to the applications not in a Mesh, add the label `kuma.io/sidecar-i
 
 Below are the details of how to set up Kuma CNI in different environments using both `kumactl` and `helm`.
 
-{% tabs useUrlFragment=false %}
-{% tab Calico %}
+{% tabs installation useUrlFragment=false %}
+{% tab installation Calico %}
 
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tabs calico useUrlFragment=false %}
+{% tab calico kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -44,7 +44,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab calico Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -60,9 +60,9 @@ helm install --create-namespace --namespace kuma-system \
 {% endtabs %}
 {% endtab %}
 
-{% tab K3D with Flannel %}
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tab installation K3D with Flannel %}
+{% tabs k3d useUrlFragment=false %}
+{% tab k3d kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -74,7 +74,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab k3d Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -90,9 +90,9 @@ helm install --create-namespace --namespace kuma-system \
 {% endtabs %}
 {% endtab %}
 
-{% tab Kind %}
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tab installation Kind %}
+{% tabs kind useUrlFragment=false %}
+{% tab kind kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -104,7 +104,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab kind Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -120,9 +120,9 @@ helm install --create-namespace --namespace kuma-system \
 {% endtabs %}
 {% endtab %}
 
-{% tab Azure %}
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tab installation Azure %}
+{% tabs azure useUrlFragment=false %}
+{% tab azure kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -134,7 +134,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab azure Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -150,9 +150,9 @@ helm install --create-namespace --namespace kuma-system \
 {% endtabs %}
 {% endtab %}
 
-{% tab AWS - EKS %}
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tab installation AWS - EKS %}
+{% tabs aws-eks useUrlFragment=false %}
+{% tab aws-eks kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -164,7 +164,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab aws-eks Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -180,12 +180,12 @@ helm install --create-namespace --namespace kuma-system \
 {% endtabs %}
 {% endtab %}
 
-{% tab Google - GKE %}
+{% tab installation Google - GKE %}
 
 You need to [enable network-policy](https://cloud.google.com/kubernetes-engine/docs/how-to/network-policy) in your cluster (for existing clusters this redeploys the nodes).
 
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tabs google-gke useUrlFragment=false %}
+{% tab google-gke kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -197,7 +197,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab google-gke Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -213,7 +213,7 @@ helm install --create-namespace --namespace kuma-system \
 {% endtabs %}
 {% endtab %}
 
-{% tab OpenShift 3.11 %}
+{% tab insallation OpenShift 3.11 %}
 
 1. Follow the instructions in [OpenShift 3.11 installation](/docs/{{ page.version }}/installation/openshift/#_2-run-kuma)
 to get the `MutatingAdmissionWebhook` and `ValidatingAdmissionWebhook` enabled (this is required for regular kuma installation).
@@ -224,8 +224,8 @@ to get the `MutatingAdmissionWebhook` and `ValidatingAdmissionWebhook` enabled (
 oc adm policy add-scc-to-user privileged -z kuma-cni -n kube-system
 ```
 
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tabs openshift-3 useUrlFragment=false %}
+{% tab openshift-3 kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -234,7 +234,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab openshift-3 Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \
@@ -247,10 +247,10 @@ helm install --create-namespace --namespace kuma-system \
 {% endtabs %}
 {% endtab %}
 
-{% tab OpenShift 4 %}
+{% tab installation OpenShift 4 %}
 
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tabs openshift-4 useUrlFragment=false %}
+{% tab openshift-4 kumactl %}
 
 ```shell
 kumactl install control-plane \
@@ -258,7 +258,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab openshift-4 Helm %}
 
 ```shell
 helm install --create-namespace --namespace kuma-system \

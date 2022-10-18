@@ -12,8 +12,8 @@ You can configure how many requests are allowed in a specified time period, and 
 The policy is applied per service instance. This means that if a service `backend` has 3 instances rate limited to 100 requests per second, the overall service is rate limited to 300 requests per second.
 ## Usage
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -43,7 +43,7 @@ spec:
 Apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab usage Universal %}
 
 ```yaml
 type: RateLimit

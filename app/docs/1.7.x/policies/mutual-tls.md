@@ -36,8 +36,8 @@ We can specify more than one `builtin` backend with different names, and each on
 
 To enable a `builtin` mTLS for the entire Mesh we can apply the following configuration:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs builtin-ca useUrlFragment=false %}
+{% tab builtin-ca Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -61,7 +61,7 @@ spec:
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab builtin-ca Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -99,8 +99,8 @@ On Kubernetes, Kuma secrets are being stored in the `kuma-system` namespace, whi
 
 We can retrieve the secrets via `kumactl` on both Universal and Kubernetes, or via `kubectl` on Kubernetes only:
 
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tabs secrets-storage useUrlFragment=false %}
+{% tab secrets-storage kumactl %}
 
 The following command can be executed on any Kuma backend:
 
@@ -111,7 +111,7 @@ kumactl get secrets [-m MESH]
 # default   default.ca-builtin-key-ca-1    1m
 ```
 {% endtab %}
-{% tab kubectl %}
+{% tab secrets-storage kubectl %}
 
 The following command can be executed only on Kubernetes:
 
@@ -136,8 +136,8 @@ Kuma then provisions data plane proxy certificates for every replica of every se
 
 Sample configuration:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs provided-ca useUrlFragment=false %}
+{% tab provided-ca Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -162,7 +162,7 @@ spec:
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab provided-ca Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -258,8 +258,8 @@ Do not use the following example in production, instead generate valid and compl
 
 Below we can find an example to generate a sample CA certificate + key:
 
-{% tabs useUrlFragment=false %}
-{% tab openssl %}
+{% tabs requirements useUrlFragment=false %}
+{% tab requirements openssl %}
 
 The following command will generate a CA root certificate and key that can be uploaded to Kuma as a Secret and then used in a `provided` mTLS backend:
 
@@ -292,8 +292,8 @@ Using the `inline` modes in production presents a security risk since it makes t
 
 Kuma offers an alternative way to specify the CA root certificate and key:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs dev-mode useUrlFragment=false %}
+{% tab dev-mode Kubernetes %}
 
 Please note the `inline` properties that are being used instead of `secret`:
 
@@ -317,7 +317,7 @@ spec:
 
 {% endtab %}
 
-{% tab Universal %}
+{% tab dev-mode Universal %}
 
 Please note the `inline` properties that are being used instead of `secret`:
 
@@ -350,9 +350,9 @@ where the client and server already implement TLS.
 PERMISSIVE mode is not secure. It's intended as a temporary utility. Make sure to set to `STRICT` mode after migration is complete.
 {% endwarning %}
 
-{% tabs useUrlFragment=false %}
+{% tabs permissible-mtls useUrlFragment=false %}
 
-{% tab Kubernetes %}
+{% tab permissible-mtls Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -368,7 +368,7 @@ spec:
 ```
 {% endtab %}
 
-{% tab Universal %}
+{% tab permissible-mtls Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -395,8 +395,8 @@ You can update the duration of the data plane proxy certificates by updating the
 
 You can inspect the certificate rotation statistics by executing the following command (supported on both Kubernetes and Universal):
 
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tabs certificate-rotation useUrlFragment=false %}
+{% tab certificate-rotation kumactl %}
 
 We can use the Kuma CLI:
 
@@ -409,7 +409,7 @@ kumactl inspect dataplanes
 Please note the `CERT REGENERATED AGO`, `CERT EXPIRATION`, `CERT REGENERATIONS` columns.
 
 {% endtab %}
-{% tab HTTP API %}
+{% tab certificate-rotation HTTP API %}
 
 We can use the Kuma HTTP API by retrieving the [Dataplane Insight](/docs/{{ page.version }}/reference/http-api#dataplane-overviews) resource and inspecting the `dataplaneInsight` object.
 

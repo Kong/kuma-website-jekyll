@@ -385,8 +385,8 @@ The `ZoneIngress` entity includes a few sections:
 
 Zone Ingress without `advertisedAddress` and `advertisedPort` is not taken into account when generating Envoy configuration, because they cannot be accessed by data plane proxies from other zones.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs zone-ingress useUrlFragment=false %}
+{% tab zone-ingress Kubernetes %}
 The recommended way to deploy a `ZoneIngress` proxy in Kubernetes is to use `kumactl`, or the Helm charts as specified in [multi-zone](/docs/{{ page.version }}/deployments/multi-zone). It works as a separate deployment of a single-container pod.
 
 Kuma will try to resolve `advertisedAddress` and `advertisedPort` automatically by checking the Service associated with this Zone Ingress.
@@ -399,7 +399,7 @@ You can provide your own public address and port using the following annotations
 * `kuma.io/ingress-public-address`
 * `kuma.io/ingress-public-port`
 {% endtab %}
-{% tab Universal %}
+{% tab zone-ingress Universal %}
 
 In Universal mode the dataplane resource should be deployed as follows:
 

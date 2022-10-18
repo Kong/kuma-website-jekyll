@@ -92,8 +92,8 @@ Every token has its own ID which is available in payload under `jti` key. You ca
 
 Specify list of revoked IDs separated by `,` and store it as `Secret` named `dataplane-token-revocations-{mesh}`
 
-{% tabs useUrlFragment=false %}
-{% tab Universal %}
+{% tabs token-revocation useUrlFragment=false %}
+{% tab token-revocation Universal %}
 ```sh
 echo "
 type: Secret
@@ -102,7 +102,7 @@ name: dataplane-token-revocations-default
 data: {{ revocations }}" | kumactl apply --var revocations=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) -f -
 ```
 {% endtab %}
-{% tab Kubernetes %}
+{% tab token-revocation Kubernetes %}
 ```sh
 REVOCATIONS=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) && echo "apiVersion: v1
 kind: Secret
@@ -125,8 +125,8 @@ If the signing key is compromised, we must rotate it and all the tokens that was
 
    Make sure to generate the new signing key with a serial number greater than the serial number of the current signing key.
 
-   {% tabs useUrlFragment=false %}
-   ::: tab "Universal"
+   {% tabs key-rotation useUrlFragment=false %}
+   {% tab key-rotation Universal %}
    Check what is the current highest serial number.
    ```sh
    kumactl get secrets
@@ -142,8 +142,8 @@ If the signing key is compromised, we must rotate it and all the tokens that was
    name: dataplane-token-signing-key-default-2
    data: {{ key }}" | kumactl apply --var key=$(kumactl generate signing-key) -f -
    ```
-   :::
-   ::: tab "Kubernetes"
+   {% endtab %}
+   {% tab key-rotation Kubernetes %}
    Check what is the current highest serial number.
 
    ```sh
@@ -166,7 +166,7 @@ If the signing key is compromised, we must rotate it and all the tokens that was
    " | kubectl apply -f - 
    ```
 
-   :::
+   {% endtab %}
    {% endtabs %}
 
 2. Regenerate tokens
@@ -174,17 +174,17 @@ If the signing key is compromised, we must rotate it and all the tokens that was
    At this point, tokens signed by either new or old signing key are valid.
 
 3. Remove the old signing key
-   {% tabs useUrlFragment=false %}
-   ::: tab "Universal"
+   {% tabs signing-key useUrlFragment=false %}
+   {% tab signing-key Universal %}
    ```sh
    kumactl delete secret dataplane-token-signing-key-default-1 --mesh=default
    ```
-   :::
-   ::: tab "Kubernetes"
+   {% endtab %}
+   {% tab signing-key Kubernetes %}
    ```sh
    kubectl delete secret dataplane-token-signing-key-default-1 -n kuma-system
    ```
-   :::
+   {% endtab %}
    {% endtabs %}
    All new connections to the control plane now require tokens signed with the new signing key.
 

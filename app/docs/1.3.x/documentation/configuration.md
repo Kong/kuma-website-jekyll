@@ -15,8 +15,8 @@ Environment variables take precedence over a YAML configuration file.
 
 The Kuma package includes a reference configuration, at `conf/kuma-cp.conf.yml`.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes (kumactl) %}
+{% tabs control-plane useUrlFragment=false %}
+{% tab control-plane Kubernetes (kumactl) %}
 If you install the control plane with `kumactl`, you can override the configuration with the `--env-var` flag. For example, to configure the refresh interval for configuration of the data plane proxy, specify:
 ```sh
 kumactl install control-plane \
@@ -24,7 +24,7 @@ kumactl install control-plane \
   --env-var KUMA_XDS_SERVER_DATAPLANE_STATUS_FLUSH_INTERVAL=5s | kubactl apply -f -
 ```
 {% endtab %}
-{% tab Kubernetes (HELM) %}
+{% tab control-plane Kubernetes (HELM) %}
 If you install the control plane with HELM, you can override the configuration with the `envVars` field. For example, to configure the refresh interval for configuration with the data plane proxy, specify:
 ```sh
 helm install --version 0.7.1 \
@@ -43,7 +43,7 @@ controlPlane:
 helm install --version 0.7.1 -f Values.yaml kuma kuma/kuma
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab control-plane Universal %}
 First, specify your overrides in the appropriate config file, then run `kuma-cp`:
 
 ```sh
@@ -83,12 +83,12 @@ In a multizone deployment, the zone control plane sends its config to the global
 
 ## Data plane proxy
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs data-plane-proxy useUrlFragment=false %}
+{% tab data-plane-proxy Kubernetes %}
 In Kubernetes, `kuma-dp` is automatically configured and injected by Kubernetes.
 The data plane proxy configuration is determined by the control plane. You can review the config details in the `runtime.kubernetes.injector.sidecarContainer` section of the `kuma-cp` config.
 {% endtab %}
-{% tab Universal %}
+{% tab data-plane-proxy Universal %}
 `kuma-dp` is configured with command line arguments. Run `kuma-dp run -h` to inspect all available settings.
 {% endtab %}
 {% endtabs %}

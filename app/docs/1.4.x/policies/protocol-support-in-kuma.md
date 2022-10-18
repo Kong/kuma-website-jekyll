@@ -15,8 +15,8 @@ By doing this,
 * you will get richer logs with [`Traffic Log`](/docs/{{ page.version }}/policies/traffic-log) policy
 * you will be able to use [`Traffic Trace`](/docs/{{ page.version }}/policies/traffic-trace) policy
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs protocol-support useUrlFragment=false %}
+{% tab protocol-support Kubernetes %}
 On `Kubernetes`, to give Kuma a hint that your service supports `HTTP` protocol, you need to add a `<port>.service.kuma.io/protocol` annotation to the `k8s` `Service` object.
 
 E.g.,
@@ -37,7 +37,7 @@ spec:
 ```
 
 {% endtab %}
-{% tab Universal %}
+{% tab protocol-support Universal %}
 On `Universal`, to give Kuma a hint that your service supports the `http` protocol, you need to add a `kuma.io/protocol` tag to the `inbound` interface of your `Dataplane`.
 
 E.g.,
@@ -79,8 +79,8 @@ Kuma out of the box support's `Websocket` protocol. The service exposing `Websoc
 
 As `Websockets` use pure `TCP` connections under the hood, your service have to be recognised by `Kuma` as the `TCP` one. It's also the default behavior for Kuma to assume the service's `inbound` interfaces are the TCP ones, so you don't have to do anything, but if you want to be explicit, you can annotate your services exposing `Websocket` endpoints with `kuma.io/protocol: tcp` annotation. I.e.:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs websocket-support useUrlFragment=false %}
+{% tab websocket-support Kubernetes %}
 ```yaml
 apiVersion: v1
 kind: Service
@@ -97,7 +97,7 @@ spec:
 ```
 
 {% endtab %}
-{% tab Universal %}
+{% tab websocket-support Universal %}
 ```yaml
 type: Dataplane
 mesh: default

@@ -30,8 +30,8 @@ When [Mutual TLS](/docs/{{ page.version }}/policies/mutual-tls/) is enabled in `
 
 The easiest way to create a `Mesh` is to specify its `name`. The name of a Mesh must be unique.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -40,7 +40,7 @@ metadata:
 ```
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
-{% tab Universal %}
+{% tab usage Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -57,8 +57,8 @@ It is possible to determine to what `Mesh` other resources belong to in the foll
 
 Every time we start a data plane proxy, we need to specify to what `Mesh` it belongs, this can be done in the following way:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs data-plane-proxies useUrlFragment=false %}
+{% tab data-plane-proxies Kubernetes %}
 By using the `kuma.io/mesh` annotation in a `Deployment`, like:
 
 ```yaml
@@ -80,7 +80,7 @@ spec:
         ...
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab data-plane-proxies Universal %}
 
 By using the `-m` or `--mesh` argument when running `kuma-dp`, for example:
 
@@ -98,8 +98,8 @@ kuma-dp run \
 
 When creating new [Policies](/policies) we also must specify to what `Mesh` they belong, this can be done in the following way:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs policies useUrlFragment=false %}
+{% tab policies Kubernetes %}
 By using the `mesh` property, like:
 
 ```yaml
@@ -112,7 +112,7 @@ spec:
   ...
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab policies Universal %}
 By using the `mesh` property, like:
 ```yaml
 type: TrafficRoute
@@ -128,8 +128,8 @@ mesh: default # indicate to Kuma what is the Mesh that the resource belongs to
 In its default setup, Kuma allows any non-mesh traffic to pass Envoy without applying any policy. For instance if a service needs to send a request to `http://example.com`, all requests won't be logged even if a traffic logging is enabled in the mesh where the service is deployed.
 The passthrough mode is enabled by default on all the dataplane proxies in transparent mode in a Mesh. This behavior can be changed by setting the `networking.outbound.passthrough` in the Mesh resource. Example:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs passthrough-mode useUrlFragment=false %}
+{% tab passthrough-mode Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -141,7 +141,7 @@ spec:
       passthrough: false
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab passthrough-mode Universal %}
 ```yaml
 type: Mesh
 name: default

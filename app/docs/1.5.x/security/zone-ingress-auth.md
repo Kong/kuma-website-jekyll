@@ -70,8 +70,8 @@ Every token has its own ID which is available in payload under `jti` key. You ca
 
 Specify list of revoked IDs separated by `,` and store it as `GlobalSecret` named `zone-ingress-token-revocations`
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs token-revocation useUrlFragment=false %}
+{% tab token-revocation Kubernetes %}
 ```sh
 REVOCATIONS=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) && echo "apiVersion: v1
 kind: Secret
@@ -83,7 +83,7 @@ data:
 type: system.kuma.io/global-secret" | kubectl apply -f -
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab token-revocation Universal %}
 ```sh
 echo "
 type: GlobalSecret
@@ -102,8 +102,8 @@ If the signing key is compromised, we must rotate it and all the tokens that was
 
    Make sure to generate the new signing key with a serial number greater than the serial number of the current signing key.
 
-   {% tabs useUrlFragment=false %}
-   ::: tab "Kubernetes"
+   {% tabs key-rotation useUrlFragment=false %}
+   {% tab key-rotation Kubernetes %}
    Check what is the current highest serial number.
 
    ```sh
@@ -126,8 +126,8 @@ If the signing key is compromised, we must rotate it and all the tokens that was
    " | kubectl apply -f - 
    ```
 
-   :::
-   ::: tab "Universal"
+   {% endtab %}
+   {% tab key-rotation Universal %} 
    Check what is the current highest serial number.
    ```sh
    kumactl get global-secrets
@@ -142,7 +142,7 @@ If the signing key is compromised, we must rotate it and all the tokens that was
    name: zone-ingress-token-signing-key-2
    data: {{ key }}" | kumactl apply --var key=$(kumactl generate signing-key) -f -
    ```
-   :::
+   {% endtab %}
    {% endtabs %}
 
 2. Regenerate tokens
@@ -150,17 +150,17 @@ If the signing key is compromised, we must rotate it and all the tokens that was
    At this point, tokens signed by either new or old signing key are valid.
 
 3. Remove the old signing key
-   {% tabs useUrlFragment=false %}
-   ::: tab "Kubernetes"
+   {% tabs remove-key useUrlFragment=false %}
+   {% tab remove-key Kubernetes %}
    ```sh
    kubectl delete secret zone-ingress-token-signing-key-1 -n kuma-system
    ```
-   :::
-   ::: tab "Universal"
+   {% endtab %}
+   {% tab remove-key Universal %}
    ```sh
    kumactl delete global-secret zone-ingress-token-signing-key-1
    ```
-   :::
+   {% endtab %}
    {% endtabs %}
    All new connections to the control plane now require tokens signed with the new signing key.
 

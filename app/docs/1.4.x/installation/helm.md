@@ -39,8 +39,8 @@ This example will run Kuma in `standalone` mode for a "flat" deployment, but the
 
 Kuma (`kuma-cp`) will be installed in the newly created `kuma-system` namespace! Now that Kuma has been installed, you can access the control-plane via either the GUI, `kubectl`, the HTTP API, or the CLI:
 
-{% tabs useUrlFragment=false %}
-{% tab GUI (Read-Only) %}
+{% tabs helm-use useUrlFragment=false %}
+{% tab helm-use GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI listens on the API port and defaults to `:5681/gui`. 
 
@@ -53,7 +53,7 @@ kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 And then navigate to [`127.0.0.1:5681/gui`](http://127.0.0.1:5681/gui) to see the GUI.
 
 {% endtab %}
-{% tab kubectl (Read & Write) %}
+{% tab helm-use kubectl (Read & Write) %}
 
 You can use Kuma with `kubectl` to perform **read and write** operations on Kuma resources. For example:
 
@@ -79,7 +79,7 @@ spec:
 ```
 
 {% endtab %}
-{% tab HTTP API (Read-Only) %}
+{% tab helm-use HTTP API (Read-Only) %}
 
 Kuma ships with a **read-only** HTTP API that you can use to retrieve Kuma resources.
 
@@ -92,7 +92,7 @@ kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 And then you can navigate to [`127.0.0.1:5681`](http://127.0.0.1:5681) to see the HTTP API.
 
 {% endtab %}
-{% tab kumactl (Read-Only) %}
+{% tab helm-use kumactl (Read-Only) %}
 
 You can use the `kumactl` CLI to perform **read-only** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API, you will need to first port-forward the API service with:
 

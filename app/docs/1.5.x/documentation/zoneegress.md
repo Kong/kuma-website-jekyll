@@ -37,8 +37,8 @@ The `ZoneEgress` entity includes a few sections:
       * `port`: the port that Envoy Admin API will listen to
 * `zone` **[auto-generated on Kuma CP]** : zone where Zone Egress belongs to
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs zone-egress useUrlFragment=false %}
+{% tab zone-egress Kubernetes %}
 The recommended way to deploy a `ZoneEgress` proxy in Kubernetes is to use
 `kumactl`, or the Helm charts as specified in [multi-zone](/docs/{{ page.version }}/deployments/multi-zone).
 It works as a separate deployment of a single-container pod.
@@ -63,7 +63,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Universal %}
+{% tab zone-egress Universal %}
 
 **Standalone**
 

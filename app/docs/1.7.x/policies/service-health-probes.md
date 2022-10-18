@@ -99,8 +99,8 @@ livenessProbe:
 
 Where `9000` is a default virtual probe port, this is configurable:
 
-{% tabs useUrlFragment=false %}
-{% tab control plane config %}
+{% tabs virtual-probes useUrlFragment=false %}
+{% tab virtual-probes control plane config %}
 With the config yaml:
 ```yaml
 runtime:
@@ -111,7 +111,7 @@ runtime:
 
 or environment variable: `KUMA_RUNTIME_KUBERNETES_VIRTUAL_PROBES_PORT=19001`
 {% endtab %}
-{% tab Pod annotation %}
+{% tab virtual-probes Pod annotation %}
 With the Pod annotation:
 ```yaml
 annotations:
@@ -122,8 +122,8 @@ annotations:
 
 You can also disable Kuma's probe virtualization:
 
-{% tabs useUrlFragment=false %}
-{% tab control plane config %}
+{% tabs probe-virtualization useUrlFragment=false %}
+{% tab probe-virtualization control plane config %}
 
 With the config yaml:
 ```yaml
@@ -134,7 +134,7 @@ runtime:
 ```
 or environment variable: `KUMA_RUNTIME_KUBERNETES_VIRTUAL_PROBES_ENABLED=false`
 {% endtab %}
-{% tab Pod annotation %}
+{% tab probe-virtualization  Pod annotation %}
 With the Pod annotation:
 ```yaml
 annotations:

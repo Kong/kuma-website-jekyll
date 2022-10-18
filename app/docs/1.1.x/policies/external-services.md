@@ -11,8 +11,8 @@ When you enable this policy, you should also [disable passthrough mode](/docs/{{
 
 A simple HTTPS external service can be defined:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ExternalService
@@ -34,7 +34,7 @@ Then apply the configuration with `kubectl apply -f [..]`.
 
 {% endtab %}
 
-{% tab Universal %}
+{% tab usage Universal %}
 ```yaml
 type: ExternalService
 mesh: default

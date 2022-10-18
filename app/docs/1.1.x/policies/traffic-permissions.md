@@ -25,8 +25,8 @@ You can determine what source services are allowed to consume specific destinati
 **Match-All**: You can match any value of a tag by using `*`, like `version: '*'`.
 {% endtip %}
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficPermission
@@ -43,7 +43,7 @@ spec:
 ```
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
-{% tab Universal %}
+{% tab usage Universal %}
 ```yaml
 type: TrafficPermission
 name: allow-all-traffic

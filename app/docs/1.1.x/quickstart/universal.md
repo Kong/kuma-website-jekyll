@@ -55,15 +55,15 @@ You can then access the application by navigating to [192.168.33.70:8000](http:/
 
 You can visualize the sidecars proxies that have connected to Kuma by running:
 
-{% tabs useUrlFragment=false %}
-{% tab GUI (Read-Only) %}
+{% tabs sidecars useUrlFragment=false %}
+{% tab sidecars GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI listens on the API port and defaults to `:5681/gui`. 
 
 You can navigate to [`192.168.33.10:5681/gui#/default/dataplanes`](http://192.168.33.10:5681/gui#/default/dataplanes) to see the connected dataplanes.
 
 {% endtab %}
-{% tab HTTP API (Read/Write) %}
+{% tab sidecars HTTP API (Read/Write) %}
 
 Kuma ships with a **read-only** HTTP API that you can use to retrieve Kuma resources. 
 
@@ -72,7 +72,7 @@ By default the HTTP API listens on port `5681`.
 Navigate to [`192.168.33.10:5681/meshes/default/dataplanes`](http://192.168.33.10:5681/meshes/default/dataplanes) to see the connected dataplanes.
 
 {% endtab %}
-{% tab kumactl (Read/Write) %}
+{% tab sidecars kumactl (Read/Write) %}
 
 You can use the `kumactl` CLI to perform **read-only** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API, you will need to first port-forward the API service with:
 

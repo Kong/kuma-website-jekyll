@@ -13,8 +13,8 @@ Kuma also supports [locality aware load balancing](/docs/{{ page.version }}/poli
 
 The control plane creates a default `TrafficRoute` every time the new `Mesh` is created. The default `TrafficRoute` enables the traffic between all the services in the mesh. 
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs default useUrlFragment=false %}
+{% tab default Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -38,7 +38,7 @@ spec:
 ```
 {% endtab %}
 
-{% tab Universal %}
+{% tab default Universal %}
 ```yaml
 type: TrafficRoute
 name: route-all-default
@@ -64,8 +64,8 @@ conf:
 
 By default when a service makes a request to another service, Kuma will round robin the request across every data plane proxy belogning to the destination service. It is possible to change this behavior by using this policy, for example:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficRoute
@@ -94,7 +94,7 @@ spec:
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab usage Universal %}
 ```yaml
 type: TrafficRoute
 name: route-example

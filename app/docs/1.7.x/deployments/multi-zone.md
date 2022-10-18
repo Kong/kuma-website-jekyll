@@ -87,8 +87,8 @@ To set up a multi-zone deployment we will need to:
 
 The global control plane must run on a dedicated cluster, and cannot be assigned to a zone.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs global-control-plane useUrlFragment=false %}
+{% tab global-control-plane Kubernetes %}
 
 The global control plane on Kubernetes must reside on its own Kubernetes cluster, to keep its resources separate from the resources the zone control planes create during synchronization.
 
@@ -110,7 +110,7 @@ The global control plane on Kubernetes must reside on its own Kubernetes cluster
     In this example the value is `35.226.196.103:5685`. You pass this as the value of `<global-kds-address>` when you set up the zone control planes.
 
 {% endtab %}
-{% tab Helm %}
+{% tab global-control-plane Helm %}
 
 1.  Set the `controlPlane.mode` value to `global` in the chart (`values.yaml`), then install. On the command line, run:
 
@@ -135,7 +135,7 @@ The global control plane on Kubernetes must reside on its own Kubernetes cluster
     By default, it's exposed on [port 5685](/docs/{{ page.version }}/networking/networking). In this example the value is `35.226.196.103:5685`. You pass this as the value of `<global-kds-address>` when you set up the zone control planes.
 
 {% endtab %}
-{% tab Universal %}
+{% tab global-control-plane Universal %}
 
 1.  Set up the global control plane, and add the `global` environment variable:
 
@@ -154,8 +154,8 @@ You need the following values to pass to each zone control plane setup:
 - `kds-global-address` -- the external IP and port of the global control plane.
 
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs setup-zone-control-planes useUrlFragment=false %}
+{% tab setup-zone-control-planes Kubernetes %}
 
 **Without zone egress**:
 
@@ -188,7 +188,7 @@ You need the following values to pass to each zone control plane setup:
 
 
 {% endtab %}
-{% tab Helm %}
+{% tab setup-zone-control-planes Helm %}
 
 **Without zone egress**:
 
@@ -222,7 +222,7 @@ You need the following values to pass to each zone control plane setup:
     where `controlPlane.zone` is the same value for all zone control planes in the same zone.
 
 {% endtab %}
-{% tab Universal %}
+{% tab setup-zone-control-planes Universal %}
 
 1. On each zone control plane, run:
 
@@ -324,8 +324,8 @@ This is required because Kuma uses the [Server Name Indication](https://en.wikip
 For this example we will assume we have a service running in a Kubernetes zone exposing a `kuma.io/service` with value `echo-server_echo-example_svc_1010`.
 The following examples are running in the remote zone trying to access the previously mentioned service.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs cross-zone-communication-details useUrlFragment=false %}
+{% tab cross-zone-communication-details Kubernetes %}
 
 To view the list of service names available, run:
 
@@ -365,7 +365,7 @@ We also render DNS names as [RFC 1123](https://datatracker.ietf.org/doc/html/rfc
 ```
 
 {% endtab %}
-{% tab Universal %}
+{% tab cross-zone-communication-details Universal %}
 ```sh
 kumactl inspect services
 SERVICE                                  STATUS               DATAPLANES
@@ -471,13 +471,13 @@ zone: unable to delete Zone, Zone CP is still connected, please shut it down fir
 
 When the Zone CP is fully disconnected and shut down, then the `Zone` can be deleted. All corresponding resources (like `Dataplane` and `DataplaneInsight`) will be deleted automatically as well.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs delete-zone useUrlFragment=false %}
+{% tab delete-zone Kubernetes %}
 ```sh
 kubectl delete zone zone-1
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab delete-zone Universal %}
 ```sh
 kumactl delete zone zone-1
 ```
@@ -488,8 +488,8 @@ kumactl delete zone zone-1
 
 Change the `enabled` property value to `false` in the global control plane:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs disable-zone useUrlFragment=false %}
+{% tab disable-zone Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Zone
@@ -499,7 +499,7 @@ spec:
   enabled: false
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab disable-zone Universal %}
 ```yaml
 type: Zone
 name: zone-1

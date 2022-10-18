@@ -21,8 +21,8 @@ The `HealthCheck` policy supports both L4/TCP (default) and L7/HTTP checks.
 
 ### Examples
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -71,7 +71,7 @@ spec:
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab usage Universal %}
 
 ```yaml
 type: HealthCheck

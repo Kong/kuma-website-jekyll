@@ -24,8 +24,8 @@ While most commonly we want all the traces to be sent to the same tracing backen
 
 ## Add Jaeger backend
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs jaeger-backend useUrlFragment=false %}
+{% tab jaeger-backend Kubernetes %}
 
 {% tip %}
 On Kubernetes you can deploy Jaeger automatically in a `kuma-tracing` namespace with `kumactl install tracing | kubectl apply -f -`.
@@ -50,7 +50,7 @@ spec:
 Apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab jaeger-backend Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -78,8 +78,8 @@ Apply the configuration with `kumactl apply -f [..]` or with the [HTTP API](/doc
 
 If Datadog is running within Kubernetes, you can expose the APM agent port to Kuma via Kubernetes service.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs prerequisites useUrlFragment=false %}
+{% tab prerequisites Kubernetes %}
 ```yaml
 apiVersion: v1
 kind: Service
@@ -104,8 +104,8 @@ if it did adjust accordingly.
 
 ### Set up in Kuma
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs setup useUrlFragment=false %}
+{% tab setup Kubernetes %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -129,7 +129,7 @@ where `trace-svc` is the name of the Kubernetes Service you specified when you c
 Apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab setup Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -154,8 +154,8 @@ The `defaultBackend` property specifies the tracing backend to use if it's not e
 
 Next, create `TrafficTrace` resources that specify how to collect traces, and which backend to store them in.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs traffic-trace useUrlFragment=false %}
+{% tab traffic-trace Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficTrace
@@ -173,7 +173,7 @@ spec:
 Apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab traffic-trace Universal %}
 ```yaml
 type: TrafficTrace
 name: trace-all-traffic

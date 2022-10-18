@@ -11,9 +11,9 @@ Secrets belong to a specific [`Mesh`](/docs/{{ page.version }}/policies/mesh) re
 Kuma will also leverage `Secret` resources internally for certain operations, for example when storing auto-generated certificates and keys when Mutual TLS is enabled.
 {% endtip %}
 
-{% tabs useUrlFragment=false %}
+{% tabs secrets useUrlFragment=false %}
 
-{% tab Kubernetes %}
+{% tab secrets Kubernetes %}
 
 On Kubernetes, Kuma under the hood leverages the native [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) resource to store sensitive information.
 
@@ -57,7 +57,7 @@ In order to reassign a `Secret` to another `Mesh` you need to delete the `Secret
 
 {% endtab %}
 
-{% tab Universal %}
+{% tab secrets Universal %}
 
 A `Secret` is a simple resource that stores specific `data`:
 
@@ -103,8 +103,8 @@ Kuma provides two types of Secrets.
 
 Mesh-scoped Secrets are bound to a given Mesh. Only this kind of Secrets can be used in Mesh Policies like Provided CA or TLS setting in External Service.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs mesh-scoped useUrlFragment=false %}
+{% tab mesh-scoped Kubernetes %}
 ```yaml
 apiVersion: v1
 kind: Secret
@@ -118,7 +118,7 @@ data:
 type: system.kuma.io/secret
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab mesh-scoped Universal %}
 ```yaml
 type: Secret
 name: sample-secret
@@ -133,8 +133,8 @@ data: dGVzdAo=
 Global-scoped Secrets are not bound to a given Mesh and cannot be used in Mesh Policies. They are used for internal purposes.
 You can manage them just like the regular secrets using `kumactl` or `kubectl`.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs global-scoped useUrlFragment=false %}
+{% tab global-scoped Kubernetes %}
 Notice that the `type` is different and `kuma.io/mesh` label is not present.
 ```yaml
 apiVersion: v1
@@ -147,7 +147,7 @@ data:
 type: system.kuma.io/global-secret
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab global-scoped Universal %}
 Notice that the `type` is different and `mesh` field is not present.
 ```yaml
 type: GlobalSecret
@@ -164,8 +164,8 @@ Here is example of how you can use a Kuma `Secret` with a `provided` [Mutual TLS
 
 The examples below assume that the `Secret` object has already been created before-hand.
 
-{% tabs useUrlFragment=false %}
-{% tab Universal %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Universal %}
 
 ```yaml
 type: Mesh
@@ -181,7 +181,7 @@ mtls:
         secret: my-key # name of the Kuma Secret
 ```
 {% endtab %}
-{% tab Kubernetes %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh

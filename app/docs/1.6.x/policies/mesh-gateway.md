@@ -18,8 +18,8 @@ A `MeshGateway` can have any number of listeners, where each listener represents
 To configure a listener, you need to specify the port number, the network protocol, and (optionally) the hostname to accept.
 Each listener has its own set of Kuma tags so that Kuma policy configuration can be targeted to specific listeners.
 
-{% tabs useUrlFragment=false %}
-{% tab Universal %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Universal %}
 ```yaml
 type: MeshGateway
 mesh: default
@@ -36,7 +36,7 @@ conf:
       port: http/8080 
 ```
 {% endtab %}
-{% tab Kubernetes %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshGateway
@@ -69,8 +69,8 @@ The Gateway resource supports this by merging listeners that have a common port.
 Whether merging listeners is allowed depends on the semantics of the protocol field.
 It is allowed for the most common protocols, HTTP and HTTPS.
 
-{% tabs useUrlFragment=false %}
-{% tab Universal %}
+{% tabs selectors useUrlFragment=false %}
+{% tab selectors Universal %}
 ```yaml
 type: MeshGateway
 mesh: default
@@ -92,7 +92,7 @@ conf:
       vhost: bar.example.com
 ```
 {% endtab %}
-{% tab Kubernetes %}
+{% tab selectors Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshGateway
@@ -138,8 +138,8 @@ This set of listener tags is what Kuma will match policies against.
 TLS sessions are terminated on a Gateway by specifying the "HTTPS" protocol, and providing a server certificate configuration.
 Below, the gateway listens on port 8443 and terminates TLS sessions.
 
-{% tabs useUrlFragment=false %}
-{% tab Universal %}
+{% tabs termination useUrlFragment=false %}
+{% tab termination Universal %}
 ```yaml
 type: MeshGateway
 mesh: default
@@ -160,7 +160,7 @@ conf:
       name: foo.example.com
 ```
 {% endtab %}
-{% tab Kubernetes %}
+{% tab termination Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshGateway

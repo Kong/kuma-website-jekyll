@@ -23,8 +23,8 @@ To specify which source services can consume which destination services, provide
 **Match all**: You can match any value of a tag by using `*` -- for example, like `version: '*'`.
 {% endtip %}
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficPermission
@@ -41,7 +41,7 @@ spec:
 ```
 Apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
-{% tab Universal %}
+{% tab usage Universal %}
 ```yaml
 type: TrafficPermission
 name: allow-all-traffic
@@ -74,8 +74,8 @@ These settings lock down traffic to and from the mesh, which means that requests
 
 First, define the `ExternalService` for a service that is not in the mesh.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs external-service useUrlFragment=false %}
+{% tab external-service Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ExternalService
@@ -92,7 +92,7 @@ spec:
       enabled: true
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab external-service Universal %}
 ```yaml
 type: ExternalService
 mesh: default
@@ -112,8 +112,8 @@ Then apply the `TrafficPermission` policy. In the destination section, specify a
 
 For example, to enable the traffic from the data plane proxies of service `web` or `backend` to the new `ExternalService`, apply:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs enable-traffic useUrlFragment=false %}
+{% tab enable-traffic Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficPermission
@@ -131,7 +131,7 @@ spec:
         kuma.io/service: httpbin
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab enable-traffic Universal %}
 ```yaml
 type: TrafficPermission
 name: backend-to-httpbin

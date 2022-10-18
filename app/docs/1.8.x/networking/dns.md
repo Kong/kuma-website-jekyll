@@ -37,13 +37,13 @@ The default TTL is 60 seconds, to ensure the client synchronizes with Kuma DNS a
 
 ## Installation
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs installation useUrlFragment=false %}
+{% tab installation Kubernetes %}
 
 Kuma DNS is enabled by default whenever kuma-dp sidecar proxy is injected. 
 
 {% endtab %}
-{% tab Universal %}
+{% tab installation Universal %}
 
 Follow the instruction in [transparent proxying](/docs/{{ page.version }}/networking/transparent-proxying).
 
@@ -61,11 +61,12 @@ This mode implements advanced networking techniques, so take special care for th
 
 In some cases it might be useful for you to configure the default CoreDNS.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs override useUrlFragment=false %}
+{% tab override Kubernetes %}
 At this moment, there is no builtin option to override CoreDNS configuration. 
 {% endtab %}
-{% tab Universal %}
+
+{% tab override Universal %}
 Use `--dns-coredns-config-template-path` as an argument to `kuma-dp`.
 {% endtab %}
 {% endtabs %}

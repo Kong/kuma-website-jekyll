@@ -19,8 +19,8 @@ If you want to add two health checks - one `TCP` and other `HTTP` you can specif
 
 ### Examples
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs examples useUrlFragment=false %}
+{% tab examples Kubernetes %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -69,7 +69,7 @@ spec:
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab examples Universal %}
 
 ```yaml
 type: HealthCheck

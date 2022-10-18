@@ -19,8 +19,8 @@ Environment variables usually match the yaml path by replacing `.` with `_`, cap
 For example the yaml path: `store.postgres.port` is the environment variable: `KUMA_STORE_POSTGRES_PORT`.
 {% endtip %}
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes (kumactl) %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes (kumactl) %}
 When using `kumactl`, override the configuration with the `--env-var` flag. For example, to configure the refresh interval for configuration of the data plane proxy, specify:
 ```sh
 kumactl install control plane \
@@ -28,7 +28,7 @@ kumactl install control plane \
   --env-var KUMA_XDS_SERVER_DATAPLANE_STATUS_FLUSH_INTERVAL=5s | kubactl apply -f -
 ```
 {% endtab %}
-{% tab Kubernetes (HELM) %}
+{% tab usage Kubernetes (HELM) %}
 When using `helm`, you can override the configuration with the `envVars` field. For example, to configure the refresh interval for configuration with the data plane proxy, specify:
 ```sh
 helm install \
@@ -58,7 +58,7 @@ helm install kuma kuma/kuma --set-file controlPlace.config=cp-conf.yaml
 The value of the configmap `kuma-control-plane-config` is now the content of `cp-conf.yaml`.
 
 {% endtab %}
-{% tab Universal %}
+{% tab usage Universal %}
 First, specify your configuration in the appropriate config file, then run `kuma-cp`:
 
 For example create a `kuma-cp.conf.overrides.yml` file with:

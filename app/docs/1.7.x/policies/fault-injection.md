@@ -12,9 +12,9 @@ These faults are [Delay](#delay), [Abort](#abort) and [ResponseBandwidth](#respo
 
 ## Usage
 
-{% tabs useUrlFragment=false %}
+{% tabs usage useUrlFragment=false %}
 
-{% tab Kubernetes %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: FaultInjection
@@ -44,7 +44,7 @@ spec:
 ```
 {% endtab %}
 
-{% tab Universal %}
+{% tab usage Universal %}
 ```yaml
 type: FaultInjection
 mesh: default

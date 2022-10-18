@@ -61,8 +61,8 @@ When you install the control plane, set the following environment variable to di
 
 `KUMA_RUNTIME_KUBERNETES_INJECTOR_BUILTIN_DNS_ENABLED=false`
 
-{% tabs %}
-{% tab kumactl %}
+{% tabs dns-install %}
+{% tab dns-install kumactl %}
 
 Pass the environment variable to the `--env-var` argument when you install:
 
@@ -72,7 +72,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab dns-install Helm %}
 
 Set the environment variable:
 

@@ -40,22 +40,22 @@ This example will run Kuma in `standalone` mode for a "flat" deployment, but the
 
 Kuma (`kuma-cp`) is now running! Now that Kuma has been installed you can access the control-plane via either the GUI, the HTTP API, or the CLI:
 
-{% tabs useUrlFragment=false %}
-{% tab GUI (Read-Only) %}
+{% tabs docker-use useUrlFragment=false %}
+{% tab docker-use GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI listens on the API port and defaults to `:5681/gui`. 
 
 To access Kuma you can navigate to [`127.0.0.1:5681/gui`](http://127.0.0.1:5681/gui) to see the GUI.
 
 {% endtab %}
-{% tab HTTP API (Read & Write) %}
+{% tab docker-use HTTP API (Read & Write) %}
 
 Kuma ships with a **read and write** HTTP API that you can use to perform operations on Kuma resources. By default the HTTP API listens on port `5681`.
 
 To access Kuma you can navigate to [`127.0.0.1:5681`](http://127.0.0.1:5681) to see the HTTP API.
 
 {% endtab %}
-{% tab kumactl (Read & Write) %}
+{% tab docker-use kumactl (Read & Write) %}
 
 You can use the `kumactl` CLI to perform **read and write** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API. For example:
 

@@ -57,8 +57,8 @@ cp /tmp/tls.crt /tmp/ca.crt
 
 2) Configure the control plane with generated certs:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes (kumactl) %}
+{% tabs control-plane useUrlFragment=false %}
+{% tab control-plane Kubernetes (kumactl) %}
 Create a secret in the namespace where the control plane is installed:
 ```sh
 kubectl create secret generic general-tls-certs -n <namespace> \
@@ -78,7 +78,7 @@ The data plane proxy Injector in the control plane automatically provides the CA
 so Kuma DP can confirm the control plane identity.
 
 {% endtab %}
-{% tab Kubernetes (HELM) %}
+{% tab control-plane Kubernetes (HELM) %}
 Create a secret in the namespace where the control plane is installed:
 ```sh
 kubectl create secret generic general-tls-certs -n <namespace> \
@@ -98,7 +98,7 @@ The data plane proxy Injector in the control plane automatically provides the CA
 so Kuma DP can confirm the control plane identity.
 
 {% endtab %}
-{% tab Universal %}
+{% tab control-plane Universal %}
 Configure the control plane with generated certificates:
 
 ```sh
@@ -155,8 +155,8 @@ cp /tmp/tls.crt /tmp/ca.crt
 ```
 
 2) Configure the control plane with generated certificates
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes (kumactl) %}
+{% tabs configure-control-plane useUrlFragment=false %}
+{% tab configure-control-plane Kubernetes (kumactl) %}
 Create a secret in the namespace in which the control plane is installed:
 ```sh
 kubectl create secret tls api-server-tls -n <namespace> \
@@ -170,7 +170,7 @@ kumactl install control-plane \
   --tls-api-server-secret=api-server-tls
 ```
 {% endtab %}
-{% tab Kubernetes (HELM) %}
+{% tab configure-control-plane Kubernetes (HELM) %}
 Create a secret in the namespace in which the control plane is installed:
 ```sh
 kubectl create secret tls api-server-tls -n <namespace> \
@@ -185,7 +185,7 @@ helm install --create-namespace --namespace <namespace> kuma kuma/kuma \
 ```
 
 {% endtab %}
-{% tab Universal %}
+{% tab configure-control-plane Universal %}
 Point to the certificate and the key:
 ```sh
 KUMA_API_SERVER_HTTPS_TLS_CERT_FILE=/tmp/tls.crt \
@@ -243,8 +243,8 @@ cp /tmp/tls.crt /tmp/ca.crt
 ```
 
 2) Configure global control plane
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes (kumactl) %}
+{% tabs global-control-plane useUrlFragment=false %}
+{% tab global-control-plane Kubernetes (kumactl) %}
 Create a secret in the namespace where the global control plane is installed:
 ```sh
 kubectl create secret tls kds-server-tls -n <namespace> \
@@ -259,7 +259,7 @@ kumactl install control-plane \
   --tls-kds-global-server-secret=general-tls-certs
 ```
 {% endtab %}
-{% tab Kubernetes (HELM) %}
+{% tab global-control-plane Kubernetes (HELM) %}
 Create a secret in the namespace where the global control plane is installed:
 ```sh
 kubectl create secret tls kds-server-tls -n <namespace> \
@@ -274,7 +274,7 @@ helm install --create-namespace --namespace <namespace> kuma kuma/kuma \
 ```
 
 {% endtab %}
-{% tab Universal %}
+{% tab global-control-plane Universal %}
 Point to the certificate and the key: 
 ```sh
 KUMA_MULTIZONE_GLOBAL_KDS_TLS_CERT_FILE=/tmp/tls.crt \
@@ -287,8 +287,8 @@ KUMA_MULTIZONE_GLOBAL_KDS_TLS_CERT_FILE=/tmp/tls.crt \
 
 3) Configure the zone control plane
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes (kumactl) %}
+{% tabs zone-control-plane useUrlFragment=false %}
+{% tab zone-control-plane Kubernetes (kumactl) %}
 Create a secret in the namespace where the zone control plane is installed:
 ```sh
 kubectl create secret generic kds-ca-certs -n <namespace> \
@@ -302,7 +302,7 @@ kumactl install control-plane \
   --tls-kds-zone-client-secret=kds-ca-certs
 ```
 {% endtab %}
-{% tab Kubernetes (HELM) %}
+{% tab zone-control-plane Kubernetes (HELM) %}
 Create a secret in the namespace where the zone control plane is installed:
 ```sh
 kubectl create secret generic kds-ca-certs -n <namespace> \
@@ -316,7 +316,7 @@ helm install --create-namespace --namespace <namespace> kuma kuma/kuma \
 ```
 
 {% endtab %}
-{% tab Universal %}
+{% tab zone-control-plane Universal %}
 Point to the certificate and the key:
 ```sh
 KUMA_MULTIZONE_ZONE_KDS_ROOT_CA_FILE=/tmp/ca.crt \

@@ -133,8 +133,8 @@ Kuma provides support for transparent proxying on both Universal and Kubernetes.
 
 ### Configure intercepted traffic
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs configure-intercepted-traffic useUrlFragment=false %}
+{% tab configure-intercepted-traffic Kubernetes %}
 Kuma deploys `iptables` rules either with `kuma-init` Init Container or with `cni` when deployed with CNI mode.
 
 By default, all the traffic is intercepted by Envoy. You can exclude which ports are intercepted by Envoy with the following annotations placed on the Pod
@@ -158,7 +158,6 @@ spec:
       containers:
         ...
 ```  
-{% endtab %}
 
 You can also control this value on whole Kuma deployment with the following Kuma CP configuration
 ```sh
@@ -183,5 +182,6 @@ envVar:
   KUMA_RUNTIME_KUBERNETES_SIDECAR_TRAFFIC_EXCLUDE_OUTBOUND_PORTS=5678,8900
 ```
 {% endtip %}
+{% endtab %}
 {% endtabs %}
 

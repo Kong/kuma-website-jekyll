@@ -20,8 +20,8 @@ Kuma also provides [Helm charts](/docs/{{ page.version }}/installation/helm/) th
 To run Kuma on Kubernetes, you need to download a compatible version of Kuma for the machine from which you will be executing the commands.
 
 
-{% tabs useUrlFragment=false %}
-{% tab Script %}
+{% tabs kubernetes-download useUrlFragment=false %}
+{% tab kubernetes-download Script %}
 
 You can run the following script to automatically detect the operating system and download Kuma:
 
@@ -30,7 +30,7 @@ You can run the following script to automatically detect the operating system an
 </div>
 
 {% endtab %}
-{% tab Direct Link %}
+{% tab kubernetes-download Direct Link %}
 
 You can also download the distribution manually. Download a distribution for the **client host** from where you will be executing the commands to access Kubernetes:
 
@@ -65,8 +65,8 @@ cd kuma-1.3.1/bin
 
 Finally we can install and run Kuma in either **standalone** or **multi-zone** mode:
 
-{% tabs useUrlFragment=false %}
-{% tab Standalone %}
+{% tabs kubernetes-run useUrlFragment=false %}
+{% tab kubernetes-run Standalone %}
 
 Standalone mode is perfect when running Kuma in a single cluster across one environment:
 
@@ -77,7 +77,7 @@ Standalone mode is perfect when running Kuma in a single cluster across one envi
 To learn more, read about the [deployment modes available](/docs/{{ page.version }}/documentation/deployments).
 
 {% endtab %}
-{% tab Multi-Zone %}
+{% tab kubernetes-run Multi-Zone %}
 
 Multi-zone mode is perfect when running one deployment of Kuma that spans across multiple Kubernetes clusters, clouds and VM environments under the same Kuma deployment. 
 
@@ -107,8 +107,8 @@ kubectl get pod -n kuma-system
 
 Kuma (`kuma-cp`) will be installed in the newly created `kuma-system` namespace! Now that Kuma has been installed, you can access the control-plane via either the GUI, `kubectl`, the HTTP API, or the CLI:
 
-{% tabs useUrlFragment=false %}
-{% tab GUI (Read-Only) %}
+{% tabs kubernetes-use useUrlFragment=false %}
+{% tab kubernetes-use GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI listens on the API port and defaults to `:5681/gui`. 
 
@@ -121,7 +121,7 @@ kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 And then navigate to [`127.0.0.1:5681/gui`](http://127.0.0.1:5681/gui) to see the GUI.
 
 {% endtab %}
-{% tab kubectl (Read & Write) %}
+{% tab kubernetes-use kubectl (Read & Write) %}
 
 You can use Kuma with `kubectl` to perform **read and write** operations on Kuma resources. For example:
 
@@ -147,7 +147,7 @@ spec:
 ```
 
 {% endtab %}
-{% tab HTTP API (Read-Only) %}
+{% tab kubernetes-use HTTP API (Read-Only) %}
 
 Kuma ships with a **read-only** HTTP API that you can use to retrieve Kuma resources.
 
@@ -160,7 +160,7 @@ kubectl port-forward svc/kuma-control-plane -n kuma-system 5681:5681
 And then you can navigate to [`127.0.0.1:5681`](http://127.0.0.1:5681) to see the HTTP API.
 
 {% endtab %}
-{% tab kumactl (Read-Only) %}
+{% tab kubernetes-use kumactl (Read-Only) %}
 
 You can use the `kumactl` CLI to perform **read-only** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API, you will need to first port-forward the API service with:
 

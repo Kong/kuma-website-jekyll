@@ -44,8 +44,8 @@ cd kuma-1.4.1/bin
 
 Finally we can run Kuma in either **standalone** or **multi-zone** mode:
 
-{% tabs useUrlFragment=false %}
-{% tab Standalone %}
+{% tabs amazonlinux-run useUrlFragment=false %}
+{% tab amazonlinux-run Standalone %}
 
 Standalone mode is perfect when running Kuma in a single cluster across one environment:
 
@@ -56,7 +56,7 @@ Standalone mode is perfect when running Kuma in a single cluster across one envi
 To learn more, read about the [deployment modes available](/docs/{{ page.version }}/documentation/deployments/).
 
 {% endtab %}
-{% tab Multi-Zone %}
+{% tab amazonlinux-run Multi-Zone %}
 
 Multi-zone mode is perfect when running one deployment of Kuma that spans across multiple Kubernetes clusters, clouds and VM environments under the same Kuma deployment. 
 
@@ -81,22 +81,22 @@ ln -s $PWD/kumactl /usr/local/bin/kumactl
 
 Kuma (`kuma-cp`) is now running! Now that Kuma has been installed you can access the control-plane via either the GUI, the HTTP API, or the CLI:
 
-{% tabs useUrlFragment=false %}
-{% tab GUI (Read-Only) %}
+{% tabs amazonlinux-use useUrlFragment=false %}
+{% tab amazonlinux-use GUI (Read-Only) %}
 
 Kuma ships with a **read-only** GUI that you can use to retrieve Kuma resources. By default the GUI listens on the API port and defaults to `:5681/gui`. 
 
 To access Kuma you can navigate to [`127.0.0.1:5681/gui`](http://127.0.0.1:5681/gui) to see the GUI.
 
 {% endtab %}
-{% tab HTTP API (Read & Write) %}
+{% tab amazonlinux-use HTTP API (Read & Write) %}
 
 Kuma ships with a **read and write** HTTP API that you can use to perform operations on Kuma resources. By default the HTTP API listens on port `5681`.
 
 To access Kuma you can navigate to [`127.0.0.1:5681`](http://127.0.0.1:5681) to see the HTTP API.
 
 {% endtab %}
-{% tab kumactl (Read & Write) %}
+{% tab amazonlinux-use kumactl (Read & Write) %}
 
 You can use the `kumactl` CLI to perform **read and write** operations on Kuma resources. The `kumactl` binary is a client to the Kuma HTTP API. For example:
 

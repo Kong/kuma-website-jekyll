@@ -9,8 +9,8 @@ A [multi-zone deployment](/docs/{{ page.version }}/documentation/deployments/) c
 
 A particular `Mesh` that spans several regions, zones or subzones, may choose to enable locality aware load balancing as follows:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs load-balancing useUrlFragment=false %}
+{% tab load-balancing Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -24,7 +24,7 @@ spec:
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab load-balancing Universal %}
 ```yaml
 type: Mesh
 name: default

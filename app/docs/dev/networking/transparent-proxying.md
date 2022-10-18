@@ -115,8 +115,8 @@ This will ensure smooth upgrade and no leftovers from the previous installations
 
 ### Intercepted traffic
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs intercepted-traffic useUrlFragment=false %}
+{% tab intercepted-traffic Kubernetes %}
 
 By default, all the traffic is intercepted by Envoy. You can exclude which ports are intercepted by Envoy with the following annotations placed on the Pod
 ```yaml
@@ -147,7 +147,8 @@ KUMA_RUNTIME_KUBERNETES_SIDECAR_TRAFFIC_EXCLUDE_OUTBOUND_PORTS=5678,8900
 ```
 
 {% endtab %}
-{% tab Universal %}
+
+{% tab intercepted-traffic Universal %}
 The default settings will exclude the SSH port `22` from the redirection, thus allowing the remote access to the host to be preserved.
 If the host is set up to use other remote management mechanisms, use `--exclude-inbound-ports` to provide a comma separated list of the TCP ports that will be excluded from the redirection.
 
@@ -161,8 +162,8 @@ By default, every data plane proxy in the mesh follows every other data plane pr
 This may lead to performance problems in larger deployments of the mesh.
 It is highly recommended to define a list of services that your service connects to.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs reachable-services useUrlFragment=false %}
+{% tab reachable-services Kubernetes %}
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -182,7 +183,7 @@ spec:
         ...
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab reachable-services Universal %}
 ```yaml
 type: Dataplane
 mesh: default

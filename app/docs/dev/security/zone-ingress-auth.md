@@ -96,8 +96,8 @@ Here is an example of a `jti`:
 
 Specify the list of revoked IDs separated by `,` and store it as `GlobalSecret` named `zone-ingress-token-revocations`:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs token-revocation useUrlFragment=false %}
+{% tab token-revocation Kubernetes %}
 
 ```sh
 REVOCATIONS=$(echo '0e120ec9-6b42-495d-9758-07b59fe86fb9' | base64) && echo "apiVersion: v1
@@ -111,7 +111,7 @@ type: system.kuma.io/global-secret" | kubectl apply -f -
 ```
 
 {% endtab %}
-{% tab Universal %}
+{% tab token-revocation Universal %}
 
 ```sh
 echo "
@@ -132,8 +132,8 @@ If the signing key is compromised, we must rotate it and all the tokens that wer
 
    Make sure to generate the new signing key with a serial number greater than the serial number of the current signing key.
 
-   {% tabs useUrlFragment=false %}
-   {% tab Kubernetes %}
+   {% tabs key-rotation useUrlFragment=false %}
+   {% tab key-rotation Kubernetes %}
    Check what the current highest serial number is:
 
    ```sh
@@ -158,7 +158,7 @@ If the signing key is compromised, we must rotate it and all the tokens that wer
    ```
 
    {% endtab %}
-   {% tab Universal %}
+   {% tab key-rotation Universal %}
    Check what the current highest serial number is:
 
    ```sh
@@ -186,13 +186,13 @@ If the signing key is compromised, we must rotate it and all the tokens that wer
    At this point, tokens signed by either the new or old signing key are valid.
 
 3. Remove the old signing key:
-   {% tabs useUrlFragment=false %}
-   {% tab Kubernetes %}
+   {% tabs remove-key useUrlFragment=false %}
+   {% tab remove-key Kubernetes %}
    ```sh
    kubectl delete secret zone-ingress-token-signing-key-1 -n kuma-system
    ```
    {% endtab %}
-   {% tab Universal %}
+   {% tab remove-key Universal %}
    ```sh
    kumactl delete global-secret zone-ingress-token-signing-key-1
    ```

@@ -53,8 +53,8 @@ In order to deploy Kuma in a multi-zone deployment, we must start a `global` and
 
 First we start the `global` control plane and configure the `remote` control planes connectivity.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs global-control-plane useUrlFragment=false %}
+{% tab control-plane Kubernetes %}
 Install the `global` control plane using:
 ```bash
 kumactl install control-plane --mode=global | kubectl apply -f -
@@ -71,14 +71,14 @@ kubectl get services -n kuma-system
 
 In this example it is `35.226.196.103:5685`. This will be used as `<global-kds-address>` further.
 {% endtab %}
-{% tab Helm %}
+{% tab global-control-plane Helm %}
 Install the `global` control plane by setting the `controlPlane.mode` value to `global` when installing the chart. This can be done on the command line, or in a provided file:
 
 ```sh
 helm install --version 0.5.7 kuma --namespace kuma-system --set controlPlane.mode=global kuma/kuma
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab global-control-plane Universal %}
 
 Running the Global Control Plane setting up the relevant environment variable
 ```sh
@@ -92,8 +92,8 @@ KUMA_MODE=global kuma-cp run
 Start the `remote` control planes in each zone that will be part of the multi-zone Kuma deployment.
 To install `remote` control plane, you need to assign the zone name for each of them and point it to the Global CP.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs remote-control-plane useUrlFragment=false %}
+{% tab remote-control-plane Kubernetes %}
 ```sh
 kumactl install control-plane \
   --mode=remote \
@@ -108,7 +108,7 @@ Kuma DNS installation supports several flavors of Core DNS and Kube DNS. We reco
 {% endtip %}
 {% endtab %}
 
-{% tab Helm %}
+{% tab remote-control-plane Helm %}
 To install the Remote Control plane we need to provide the following parameters:
  * `controlPlane.mode=remote`
  * `controlPlane.zone=<zone-name>`
@@ -126,7 +126,7 @@ Kuma DNS installation supports several flavors of Core DNS and Kube DNS. We reco
 To install DNS we need to use `kumactl`. It reads the state of the control plane therefore it could not be put into HELM.  You can track the issue to put this into HELM [here](https://github.com/kumahq/kuma/issues/1124).
 {% endtip %}
 {% endtab %}
-{% tab Universal %}
+{% tab remote-control-plane Universal %}
 
 Run the `kuma-cp` in `remote` mode.
 
@@ -182,8 +182,8 @@ Make sure you [enable mTLS](/docs/{{ page.version }}/policies/mutual-tls) and ap
 ### Using the multi-zone deployment
 
 To utilize the multi-zone Kuma deployment follow the steps below
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs multi-zone useUrlFragment=false %}
+{% tab multi-zone Kubernetes %}
 
 To figure out the service names that we can use in the applications for cross-zone communication, we can look at the 
 service tag in the deployed data plane proxies: 
@@ -210,7 +210,7 @@ example there can be an endpoint running in another Kuma zone in a different dat
 
 Since most HTTP clients (such as `curl`) will default to port 80, the port can be omitted, like in the fourth and fifth options above.
 {% endtab %}
-{% tab Universal %}
+{% tab multi-zone Universal %}
 
 In hybrid (Kubernetes and Universal) deployments, the service tag should be the same in both environments (e.g `echo-server_echo-example_svc_1010`)
 

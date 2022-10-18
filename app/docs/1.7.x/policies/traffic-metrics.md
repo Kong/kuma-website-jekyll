@@ -23,8 +23,8 @@ If you haven't already read the [observability docs](/docs/{{ page.version }}/ex
 
 To expose metrics from every proxy in the mesh, configure the `Mesh` resource:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs expose-metrics-data-plane-proxies useUrlFragment=false %}
+{% tab expose-metrics-data-plane-proxies Kubernetes %}
 
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -60,7 +60,7 @@ spec:
           kuma.io/service: dataplane-metrics
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab expose-metrics-data-plane-proxies  Universal %}
 
 ```yaml
 type: Mesh
@@ -116,8 +116,8 @@ Here are reasons where you'd want to use this feature:
 Any configuration change requires redeployment of the data plane.
 {% endwarning %}
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs explore-metrics-apps useUrlFragment=false %}
+{% tab explore-metrics-apps Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -144,7 +144,7 @@ spec:
             port: 8000
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab explore-metrics-apps Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -170,8 +170,8 @@ metrics:
 
 This configuration will cause every application in the mesh to be scrapped for metrics by the data plane proxy. If you need to expose metrics only for the specific application it is possible through `annotation` for Kubernetes or `Dataplane` resource for Universal deployment.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs config useUrlFragment=false %}
+{% tab config Kubernetes %}
 Kubernetes allows to configure it through annotations. In case to configure you can use `prometheus.metrics.kuma.io/aggregate-<name>-(path/port/enabled)`, where name is used to match the `Mesh` configuration and override or disable it.
 ```yaml
 apiVersion: apps/v1
@@ -194,7 +194,7 @@ spec:
      ...
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab config Universal %}
 ```yaml
 type: Dataplane
 mesh: default
@@ -217,8 +217,8 @@ metrics:
 
 ## Override Prometheus settings per data plane proxy
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs override-prometheus useUrlFragment=false %}
+{% tab override-prometheus Kubernetes %}
 To override mesh-wide defaults for a particular `Pod`, use the following annotations:
 * `prometheus.metrics.kuma.io/port` - to override mesh-wide default port
 * `prometheus.metrics.kuma.io/path` - to override mesh-wide default path
@@ -246,7 +246,7 @@ spec:
 
 Proxies for this Pod expose an HTTP endpoint with Prometheus metrics on port `1234` and URI path `/non-standard-path`.
 {% endtab %}
-{% tab Universal %}
+{% tab override-prometheus Universal %}
 
 To override mesh-wide defaults on a particular machine, configure the `Dataplane` resource:
 
@@ -270,8 +270,8 @@ This proxy exposes an HTTP endpoint with Prometheus metrics on port `1234` and U
 
 Kuma lets you expose proxy metrics in a secure way by leveraging mTLS. Prometheus needs to be a part of the mesh for this feature to work, which is the default deployment mode on Kubernetes when using [`kumactl install observability`](/docs/{{ page.version }}/explore/observability#demo-setup).
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs secure-data-plane-proxy-metrics useUrlFragment=false %}
+{% tab secure-data-plane-proxy-metrics Kubernetes %}
 Make sure that mTLS is enabled in the mesh.
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -327,7 +327,7 @@ spec:
       kuma.io/service: "prometheus-server_mesh-observability_svc_80"
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab secure-data-plane-proxy-metrics Universal %}
 Make sure that mTLS is enabled in the mesh.
 ```yaml
 type: Mesh

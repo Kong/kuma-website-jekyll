@@ -82,8 +82,8 @@ The following examples show how to use virtual outbounds for different use cases
 
 ### Same as the default DNS
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs default-dns useUrlFragment=false %}
+{% tab default-dns Kubernetes %}
 {% raw %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -104,7 +104,7 @@ spec:
 ```
 {% endraw %}
 {% endtab %}
-{% tab Universal %}
+{% tab default-dns Universal %}
 {% raw %}
 ```yaml
 type: VirtualOutbound
@@ -126,8 +126,8 @@ conf:
 
 ### One hostname per version
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs one-hostanme-per-version useUrlFragment=false %}
+{% tab one-hostanme-per-version Kubernetes %}
 {% raw %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -150,7 +150,7 @@ spec:
 ```
 {% endraw %}
 {% endtab %}
-{% tab Universal %}
+{% tab one-hostanme-per-version Universal %}
 {% raw %}
 ```yaml
 type: VirtualOutbound
@@ -175,8 +175,8 @@ spec:
 
 ### Custom tag to define the hostname and port
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs custom-tag useUrlFragment=false %}
+{% tab custom-tag Kubernetes %}
 {% raw %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -199,7 +199,7 @@ spec:
 ```
 {% endraw %}
 {% endtab %}
-{% tab Universal %}
+{% tab custom-tag Universal %}
 {% raw %}
 ```yaml
 type: VirtualOutbound
@@ -227,8 +227,8 @@ conf:
 Enables reaching specific data plane proxies for a service.
 Useful for running distributed databases such as Kafka or Zookeeper.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs one-hostname-per-instance useUrlFragment=false %}
+{% tab one-hostname-per-instance Kubernetes %}
 {% raw %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
@@ -252,7 +252,7 @@ spec:
 ```
 {% endraw %}
 {% endtab %}
-{% tab Universal %}
+{% tab one-hostname-per-instance Universal %}
 {% raw %}
 ```yaml
 type: VirtualOutbound

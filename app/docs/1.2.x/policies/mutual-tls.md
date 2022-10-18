@@ -36,8 +36,8 @@ We can specify more than one `builtin` backend with different names, and each on
 
 To enable a `builtin` mTLS for the entire Mesh we can apply the following configuration:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -61,7 +61,7 @@ spec:
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab usage Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -99,8 +99,8 @@ On Kubernetes, Kuma secrets are being stored in the `kuma-system` namespace, whi
 
 We can retrieve the secrets via `kumactl` on both Universal and Kubernetes, or via `kubectl` on Kubernetes only:
 
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tabs secrets-storage useUrlFragment=false %}
+{% tab secrets-storage kumactl %}
 
 The following command can be executed on any Kuma backend:
 
@@ -111,7 +111,7 @@ kumactl get secrets [-m MESH]
 # default   default.ca-builtin-key-ca-1    1m
 ```
 {% endtab %}
-{% tab kubectl %}
+{% tab secrets-storage kubectl %}
 
 The following command can be executed only on Kubernetes:
 
@@ -136,8 +136,8 @@ Kuma then provisions data plane proxy certificates for every replica of every se
 
 Sample configuration:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs sample-configuration useUrlFragment=false %}
+{% tab sample-configuration Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -162,7 +162,7 @@ spec:
 We will apply the configuration with `kubectl apply -f [..]`.
 {% endtab %}
 
-{% tab Universal %}
+{% tab sample-configuration Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -207,8 +207,8 @@ Do not use the following example in production, instead generate valid and compl
 
 Below we can find an example to generate a sample CA certificate + key:
 
-{% tabs useUrlFragment=false %}
-{% tab openssl %}
+{% tabs sample-certificate useUrlFragment=false %}
+{% tab sample-certificate openssl %}
 
 The following command will generate a CA root certificate and key that can be uploaded to Kuma as a Secret and then used in a `provided` mTLS backend:
 
@@ -241,8 +241,8 @@ Using the `file` and `inline` modes in production presents a security risk since
 
 Kuma offers an alternative way to specify the CA root certificate and key:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs root-certificate useUrlFragment=false %}
+{% tab root-certificate Kubernetes %}
 
 Please note the `file` and `inline` properties that are being used instead of `secret`:
 
@@ -266,7 +266,7 @@ spec:
 
 {% endtab %}
 
-{% tab Universal %}
+{% tab root-certificate Universal %}
 
 Please note the `file` and `inline` properties that are being used instead of `secret`:
 
@@ -299,8 +299,8 @@ You can update the duration of the data plane proxy certificates by updating the
 
 You can inspect the certificate rotation statistics by executing the following command (supported on both Kubernetes and Universal):
 
-{% tabs useUrlFragment=false %}
-{% tab kumactl %}
+{% tabs certificate-rotation useUrlFragment=false %}
+{% tab certificate-rotation kumactl %}
 
 We can use the Kuma CLI:
 
@@ -313,7 +313,7 @@ kumactl inspect dataplanes
 Please note the `CERT REGENERATED AGO`, `CERT EXPIRATION`, `CERT REGENERATIONS` columns.
 
 {% endtab %}
-{% tab HTTP API %}
+{% tab certificate-rotation HTTP API %}
 
 We can use the Kuma HTTP API by retrieving the [Dataplane Insight](/docs/{{ page.version }}/documentation/http-api/#dataplane-overviews) resource and inspecting the `dataplaneInsight` object.
 

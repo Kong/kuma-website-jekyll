@@ -21,14 +21,14 @@ Although standalone mode can support complex multi-zone or hybrid deployments (K
 
 In order to deploy Kuma in a standalone deployment, the `kuma-cp` control plane must be started in `standalone` mode:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 This is the standard installation method as described in the [installation page](/install).
 ```sh
 kumactl install control-plane | kubectl apply -f -
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab usage Universal %}
 This is the standard installation method as described in the [installation page](/install).
 ```sh
 kuma-cp run

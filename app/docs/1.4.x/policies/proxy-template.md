@@ -21,8 +21,8 @@ The custom definitions either complement or replace the resources that Kuma gene
 
 Kuma uses the following default `ProxyTemplate` resource for every data plane proxy (`kuma-dp`) that is added to a [`Mesh`](/docs/{{ page.version }}/policies/mesh). This resource looks like:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ProxyTemplate
@@ -42,7 +42,7 @@ spec:
       - default-proxy
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab usage Universal %}
 
 ```yaml
 type: ProxyTemplate
@@ -102,8 +102,8 @@ Available matchers:
 * `name` - name of the cluster.
 * `origin` - origin of the cluster.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs ucluster seUrlFragment=false %}
+{% tab ucluster Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ProxyTemplate
@@ -138,7 +138,7 @@ spec:
             origin: inbound # optional: if absent, all clusters regardless of its origin will be removed
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab ucluster Universal %}
 
 ```yaml
 type: ProxyTemplate
@@ -186,8 +186,8 @@ Available matchers:
 * `name` - name of the listener.
 * `origin` - origin of the listener.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs listener useUrlFragment=false %}
+{% tab listener Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ProxyTemplate
@@ -224,7 +224,7 @@ spec:
             origin: inbound # optional: if absent, all listeners regardless of its origin will be removed
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab listener Universal %}
 
 ```yaml
 type: ProxyTemplate
@@ -279,8 +279,8 @@ Available matchers:
 * `listenerName` - name of the listener.
 * `origin` - origin of the listener.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs network-filter useUrlFragment=false %}
+{% tab network-filter Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ProxyTemplate
@@ -364,7 +364,7 @@ spec:
             origin: inbound # optional: if absent, all filters regardless of its origin will be removed
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab network-filter Universal %}
 
 ```yaml
 type: ProxyTemplate
@@ -466,8 +466,8 @@ Available matchers:
 * `listenerName` - name of the listener
 * `origin` - origin of the listener
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs http-filter useUrlFragment=false %}
+{% tab http-filter Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ProxyTemplate
@@ -543,7 +543,7 @@ spec:
             origin: inbound # optional: if absent, all filters regardless of its origin will be removed
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab http-filter Universal %}
 
 ```yaml
 type: ProxyTemplate
@@ -633,8 +633,8 @@ Available matchers:
 * `origin` - origin of the VirtualHost.
 * `routeConfigurationName` - name of the [RouteConfiguration](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/route/v3/route.proto.html#http-route-configuration-proto).
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs virtual-host useUrlFragment=false %}
+{% tab virtual-host Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ProxyTemplate
@@ -677,7 +677,7 @@ spec:
             origin: inbound # optional: if absent, all virtual hosts regardless of its origin will be removed
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab virtual-host Universal %}
 
 ```yaml
 type: ProxyTemplate
@@ -734,8 +734,8 @@ At runtime, whenever `kuma-cp` generates the configuration for a given [data pla
 
 For a more complete example, explore this Lua filter that adds the new `x-header: test` header to all outgoing HTTP requests. 
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs lua-filter useUrlFragment=false %}
+{% tab lua-filter Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: ProxyTemplate
@@ -765,7 +765,7 @@ spec:
                 end
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab lua-filter Universal %}
 ```yaml
 type: ProxyTemplate
 mesh: default

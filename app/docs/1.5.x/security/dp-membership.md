@@ -15,8 +15,8 @@ If we put rules that existing data plane proxies violate, we need to remove them
 
 ## Usage
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -33,7 +33,7 @@ spec:
           kuma.io/service: backend
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab usage Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -53,8 +53,8 @@ constraints:
 
 ### Restrict which Pods in Kubernetes namespaces can join a Mesh
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs restrict useUrlFragment=false %}
+{% tab restrict Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -70,7 +70,7 @@ spec:
           kuma.io/namespace: ns-2
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab restrict Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -92,8 +92,8 @@ If there is another mesh without any requirements, Pods from `ns-1` and `ns-2` n
 
 ### Enforce consistency of tags
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs enforce useUrlFragment=false %}
+{% tab enforce Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -111,7 +111,7 @@ spec:
           legacy: '*'
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab enforce Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -133,8 +133,8 @@ With the example above, every data plane proxy must have non-empty `team` and `c
 
 ### Multizone mesh segmentation
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs segmentation useUrlFragment=false %}
+{% tab segmentation Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -159,7 +159,7 @@ spec:
             kuma.io/zone: west
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab segmentation Universal %}
 ```yaml
 type: Mesh
 name: default

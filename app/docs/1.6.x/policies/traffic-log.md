@@ -19,8 +19,8 @@ A _logging backend_ is essentially a sink for access logs.
 
 Currently, a _logging backend_ can be either a `file` or a `TCP log collector`, such as Logstash.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs logging-backend useUrlFragment=false %}
+{% tab logging-backend Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: Mesh
@@ -51,7 +51,7 @@ spec:
 ```
 
 {% endtab %}
-{% tab Universal %}
+{% tab logging-backend Universal %}
 ```yaml
 type: Mesh
 name: default
@@ -83,8 +83,8 @@ logging:
 
 You need to create a `TrafficLog` policy to select a subset of traffic and forward its access logs into one of the _logging backends_ configured for that `Mesh`.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs traffic-log useUrlFragment=false %}
+{% tab traffic-log Kubernetes %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: TrafficLog
@@ -121,7 +121,7 @@ spec:
     backend: logstash
 ```
 {% endtab %}
-{% tab Universal %}
+{% tab traffic-log Universal %}
 ```yaml
 type: TrafficLog
 name: all-traffic
@@ -162,8 +162,8 @@ When `backend ` field of a `TrafficLog` policy is omitted, the logs will be forw
 
 `Kuma` is presenting a simple solution to aggregate the **logs of your containers** and the **access logs of your data-planes**.
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs log-aggregation useUrlFragment=false %}
+{% tab log-aggregation Kubernetes %}
 
 **1. Install Loki**
 
@@ -205,7 +205,7 @@ At this point you can visualize your **containers' logs** and your **access logs
 For example, running: `{container="kuma-sidecar"} |= "GET"` will show all GET requests on your cluster.
 To learn more about the search syntax check the [Loki docs](https://grafana.com/docs/loki/latest/logql/).
 {% endtab %}
-{% tab Universal %}
+{% tab log-aggregation Universal %}
 
 **1. Install Loki**
 

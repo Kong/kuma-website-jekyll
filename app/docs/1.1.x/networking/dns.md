@@ -121,8 +121,8 @@ This allows for more robust handling of name resolution.
 Set the following environment variable when starting the control plane:
 `KUMA_RUNTIME_KUBERNETES_INJECTOR_BUILTIN_DNS_ENABLED=true`.
 
-{% tabs %}
-{% tab kumactl %}
+{% tabs kubernetes %}
+{% tab kubernetes kumactl %}
 
 Supply the following argument to `kumactl`
 
@@ -132,7 +132,7 @@ kumactl install control-plane \
 ```
 
 {% endtab %}
-{% tab Helm %}
+{% tab kubernetes Helm %}
 
 With [Helm](/docs/{{ page.version }}/installation/helm), the command invocation looks like:
 

@@ -31,8 +31,8 @@ If these limitations are problematic you should look at [Multi-zone deployments]
 
 In order to deploy Kuma in a standalone deployment, the `kuma-cp` control plane must be started in `standalone` mode:
 
-{% tabs useUrlFragment=false %}
-{% tab Kubernetes %}
+{% tabs usage useUrlFragment=false %}
+{% tab usage Kubernetes %}
 This is the standard installation method as described in the [installation page](/install).
 ```sh
 kumactl install control-plane | kubectl apply -f -
@@ -45,7 +45,8 @@ It's possible to run [`ZoneEgress`](/docs/{{ page.version }}/explore/zoneegress)
 kumactl install control-plane --egress-enabled | kubectl apply -f -
 ```
 {% endtab %}
-{% tab Universal %}
+
+{% tab usage Universal %}
 This is the standard installation method as described in the [installation page](/install).
 ```sh
 kuma-cp run
