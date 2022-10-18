@@ -18,6 +18,7 @@ import Tabs from '@/javascripts/tabs'
 import '@/javascripts/page_masthead_waves'
 import '@/javascripts/newsletter_waves'
 import '@/javascripts/carousels'
+import '@/javascripts/version_selector'
 
 document.addEventListener('DOMContentLoaded', (event) => {
   new Sidebar();
