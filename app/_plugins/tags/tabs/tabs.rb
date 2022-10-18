@@ -4,9 +4,10 @@ require 'securerandom'
 module Jekyll
   module Tabs
     class TabsBlock < Liquid::Block
-      def initialize(tag_name, options, tokens)
+      def initialize(tag_name, config, tokens)
         super
 
+        @name, options = config.split(' ', 2)
         @options = options.split(' ').each_with_object({}) do |o, h|
           key, value = o.split('=')
           h[key] = value
@@ -15,7 +16,15 @@ module Jekyll
 
       def render(context)
         environment = context.environments.first
-        environment['tabs'] = {} # reset each time
+        environment['tabs'] ||= {}
+        file_path = context.registers[:page]['path']
+        environment['tabs'][file_path] ||= {}
+
+        if environment['tabs'][file_path].key? @name
+          raise SyntaxError.new("There's already a {% tabs %} block with the name '#{@name}'.")
+        end
+
+        environment['tabs'][file_path][@name] ||= {}
 
         super
 
@@ -29,19 +38,21 @@ module Jekyll
     class TabBlock < Liquid::Block
       alias_method :render_block, :render
 
-      def initialize(tag_name, tab_name, tokens)
+      def initialize(tag_name, markup, tokens)
         super
 
-        @tab = tab_name
+        @name, @tab = markup.split(' ', 2)
       end
 
       def render(context)
         site = context.registers[:site]
         converter = site.find_converter_instance(::Jekyll::Converters::Markdown)
+        file_path = context.registers[:page]['path']
 
         environment = context.environments.first
-        environment['tabs'] ||= {}
-        environment['tabs'][@tab] = converter.convert(render_block(context))
+
+        environment['tabs'][file_path][@name] ||= {}
+        environment['tabs'][file_path][@name][@tab] = converter.convert(render_block(context))
       end
     end
   end

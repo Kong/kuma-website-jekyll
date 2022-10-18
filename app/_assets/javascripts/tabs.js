@@ -7,18 +7,19 @@ class TabsComponent {
   }
 
   addEventListeners() {
-    Array.from(this.elem.querySelectorAll('li.tabs-component-tab')).forEach((item) => {
+    this.elem.querySelectorAll('li.tabs-component-tab').forEach((item) => {
       item.addEventListener('click', this.selectTab.bind(this));
     });
   }
 
   selectTab(event) {
+    event.stopPropagation();
     if (!this.options['useUrlFragment']) {
       event.preventDefault();
     }
     const selectedTab = event.currentTarget;
 
-    this.hideTabs();
+    this.hideTabs(selectedTab);
 
     selectedTab.classList.add('is-active');
     selectedTab.querySelector('.tabs-component-tab-a').setAttribute('aria-selected', true);
@@ -30,16 +31,22 @@ class TabsComponent {
     selectedPanel.setAttribute('aria-hidden', false);
   }
 
-  hideTabs() {
-    this.elem.querySelectorAll('.tabs-component-tab').forEach((item) => {
-      item.classList.remove('is-active');
-      item.querySelector('.tabs-component-tab-a').setAttribute('aria-selected', false);
-    });
+  hideTabs(selectedTab) {
+    selectedTab
+      .closest('.tabs-component')
+      .querySelectorAll(':scope > .tabs-component-tabs > .tabs-component-tab')
+      .forEach((item) => {
+        item.classList.remove('is-active');
+        item.querySelector('.tabs-component-tab-a').setAttribute('aria-selected', false);
+      });
 
-    this.elem.querySelectorAll('.tabs-component-panel').forEach((item) => {
-      item.classList.add('hidden');
-      item.setAttribute('aria-hidden', true);
-    });
+    selectedTab
+      .closest('.tabs-component')
+      .querySelectorAll(':scope > .tabs-component-panels > .tabs-component-panel')
+      .forEach((item) => {
+        item.classList.add('hidden');
+        item.setAttribute('aria-hidden', true);
+      });
   }
 }
 
