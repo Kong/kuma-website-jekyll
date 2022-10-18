@@ -16,7 +16,9 @@ export default class Sidebar {
 
   addEventListener() {
     this.elem.addEventListener('click', (event) => {
-      if (!event.target.classList.contains('sidebar-link')) {
+      if (event.target.classList.contains('sidebar-heading') ||
+        event.target.parentNode.classList.contains('sidebar-heading')
+      ) {
         let group = event.target.closest('.sidebar-group');
         let hidden = group.querySelector('.sidebar-group-items')
           .classList.contains('hidden');
@@ -27,7 +29,7 @@ export default class Sidebar {
         if (group.parentNode.closest('.sidebar-group') !== null){
           this.toggleGroup(group.parentNode.closest('.sidebar-group'), false);
         }
-      } else {
+      } else if (event.target.classList.contains('sidebar-link')) {
         const activeLink = this.elem.querySelector('.sidebar-sub-header .sidebar-link.active');
         if (activeLink !== null) {
           activeLink.classList.remove('active');
