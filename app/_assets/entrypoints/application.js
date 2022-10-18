@@ -15,6 +15,7 @@ import Sidebar from '@/javascripts/sidebar'
 import DistributionDropdown from '@/javascripts/distribution_dropdown'
 import HomeTabs from '@/javascripts/home_tabs'
 import Tabs from '@/javascripts/tabs'
+import Form  from '@/javascripts/form'
 import '@/javascripts/page_masthead_waves'
 import '@/javascripts/newsletter_waves'
 import '@/javascripts/carousels'
@@ -25,4 +26,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
   new DistributionDropdown();
   new HomeTabs();
   new Tabs();
+  new Form();
 });
