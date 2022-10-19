@@ -3,7 +3,7 @@ import { ajax } from 'jquery'
 
 export default class Form {
   constructor() {
-    this.elem = document.querySelector('form');
+    this.elem = document.querySelector('.form-wrapper form');
 
     if (this.elem !== null) {
       this.setupInputs();
