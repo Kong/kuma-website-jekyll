@@ -20,7 +20,7 @@ export default defineConfig({
   ],
   css: {
     preprocessorOptions: {
-      scss: { additionalData: ["@import '@/styles/custom/config/variables', '@/styles/vuepress-core/config';"] },
+      scss: { additionalData: ["@import '@/styles/custom/config/variables', '@/styles/vuepress-core/config', '@/styles/custom/config/fonts', '@/styles/custom/config/mixins', '@/styles/custom/base/forms';"] },
     },
   },
 })
