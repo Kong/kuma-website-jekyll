@@ -40,6 +40,7 @@ inbound:
 
 and a virtual outbound with this definition:
 
+{% raw %}
 ```yaml
 type: VirtualOutbound
 mesh: default
@@ -58,6 +59,7 @@ conf:
     - name: v
       tagKey: version
 ```
+{% endraw %}
 
 produce the hostname: `v1.backend.mesh` with port: `1800`.
 
@@ -82,6 +84,7 @@ The following examples show how to use virtual outbounds for different use cases
 
 {% tabs default-dns useUrlFragment=false %}
 {% tab default-dns Kubernetes %}
+{% raw %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: VirtualOutbound
@@ -99,8 +102,10 @@ spec:
         - name: service
           tagKey: "kuma.io/service"
 ```
+{% endraw %}
 {% endtab %}
 {% tab default-dns Universal %}
+{% raw %}
 ```yaml
 type: VirtualOutbound
 mesh: default
@@ -115,6 +120,7 @@ conf:
     - name: service
       tagKey: "kuma.io/service"
 ```
+{% endraw %}
 {% endtab %}
 {% endtabs %}
 
@@ -122,6 +128,7 @@ conf:
 
 {% tabs one-hostname-per-version useUrlFragment=false %}
 {% tab one-hostname-per-version Kubernetes %}
+{% raw %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: VirtualOutbound
@@ -141,8 +148,10 @@ spec:
         - name: version
           tagKey: "kuma.io/version"
 ```
+{% endraw %}
 {% endtab %}
 {% tab one-hostname-per-version Universal %}
+{% raw %}
 ```yaml
 type: VirtualOutbound
 mesh: default
@@ -160,6 +169,7 @@ spec:
         - name: version
           tagKey: "kuma.io/version"
 ```
+{% endraw %}
 {% endtab %}
 {% endtabs%}
 
@@ -167,6 +177,7 @@ spec:
 
 {% tabs custom-tag useUrlFragment=false %}
 {% tab custom-tag Kubernetes %}
+{% raw %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: VirtualOutbound
@@ -186,8 +197,10 @@ spec:
         - name: port
           tagKey: "my.mesh/port"
 ```
+{% endraw %}
 {% endtab %}
 {% tab custom-tag Universal %}
+{% raw %}
 ```yaml
 type: VirtualOutbound
 mesh: default
@@ -205,6 +218,7 @@ conf:
       tagKey: "my.mesh/port"
     - name: service
 ```
+{% endraw %}
 {% endtab %}
 {% endtabs %}
 
@@ -215,6 +229,7 @@ Useful for running distributed databases such as Kafka or Zookeeper.
 
 {% tabs one-hostname-per-instance useUrlFragment=false %}
 {% tab one-hostname-per-instance Kubernetes %}
+{% raw %}
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: VirtualOutbound
@@ -235,8 +250,10 @@ spec:
       - name: "inst"
         tagKey: "statefulset.kubernetes.io/pod-name"
 ```
+{% endraw %}
 {% endtab %}
 {% tab one-hostname-per-instance Universal %}
+{% raw %}
 ```yaml
 type: VirtualOutbound
 mesh: default
@@ -254,5 +271,6 @@ conf:
     - name: instance
       tagKey: "kuma.io/instance"
 ```
+{% endraw %}
 {% endtab %}
 {% endtabs %}
