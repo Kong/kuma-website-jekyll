@@ -57,3 +57,7 @@ pardot:
 # Analytics
 gtag:
   tracking_id: 'UA-8499472-30'
+
+jekyll-generator-single-source:
+  versions_file: '_data/versions.yml'
+  docs_nav_folder: '_data'
