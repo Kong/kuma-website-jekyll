@@ -9,7 +9,7 @@ group :jekyll_plugins do
   gem 'jekyll-last-modified-at'
   gem 'jekyll-contentblocks'
   gem 'jekyll-vite'
-  gem 'jekyll-generator-single-source', git: 'git@github.com:Kong/jekyll-generator-single-source.git', branch: 'support-single-and-multiple-products'
+  gem 'jekyll-generator-single-source'
 end
 
 group :development do
