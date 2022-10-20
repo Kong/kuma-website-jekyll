@@ -11,9 +11,9 @@ module Jekyll
       # Add a `version` property to every versioned page
       # TODO: Also create aliases under /latest/ for all x.x.x doc pages
       site.pages.each do |page|
-        next unless page.path.start_with? 'docs'
+        next unless page.relative_path.start_with? 'docs'
 
-        parts = Pathname(page.path).each_filename.to_a
+        parts = Pathname(page.relative_path).each_filename.to_a
 
         latest = site.data['versions'].detect { |v| v['release'] == parts[1] }
 
