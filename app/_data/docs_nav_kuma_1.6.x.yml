@@ -1,6 +1,5 @@
 product: kuma
 release: 1.6.x
-generate: true
 items:
   - title: Introduction
     group: true
