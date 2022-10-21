@@ -1,6 +1,6 @@
 export default class Sidebar {
   constructor() {
-    this.elem = document.getElementById('sidebar');
+    this.elem = document.querySelector('.theme-container:not(.no-sidebar) #sidebar');
 
     if (this.elem !== null) {
 

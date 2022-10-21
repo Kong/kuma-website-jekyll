@@ -68,13 +68,17 @@
   </head>
   <body>
     <div id="app">
-      <div class="theme-container {{ page.themeContainerClasses }}">
+      <div class="theme-container {{ page.themeContainerClasses }} {{ layout.themeContainerClasses }}">
 
         {% unless page.id == 'page-404' %}
           {% include navbar.html %}
         {% endunless %}
 
         <div class="content-wrapper">
+          <div class="sidebar-wrapper">
+            {% include sidebar.html %}
+          </div>
+
           {{ content }}
         </div>
 
