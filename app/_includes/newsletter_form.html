@@ -27,7 +27,11 @@
 
     <div class="form-success tip custom-block hidden">
       <p class="custom-block-title">Thank you!</p>
-      <p>You're now signed up for the {{ site.title }} newsletter.</p>
+      {% if include.success %}
+        <p>{{ include.sucess }}</p>
+      {% else %}
+        <p>You're now signed up for the {{ site.title }} newsletter.</p>
+      {% endif %}
     </div>
 
     <div class="form-error danger custom-block hidden">

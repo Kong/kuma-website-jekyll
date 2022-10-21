@@ -2,8 +2,12 @@ import axios from 'axios'
 import { ajax } from 'jquery'
 
 export default class Form {
-  constructor() {
-    this.elem = document.querySelector('.form-wrapper form');
+  constructor(form) {
+    if (form) {
+      this.elem = form;
+    } else {
+      this.elem = document.querySelector('.form-wrapper form');
+    }
 
     if (this.elem !== null) {
       this.setupInputs();
