@@ -23,6 +23,7 @@ import '@/javascripts/newsletter_waves'
 import '@/javascripts/carousels'
 import '@/javascripts/version_selector'
 import '@/javascripts/search'
+import '@/javascripts/prism'
 
 document.addEventListener('DOMContentLoaded', (event) => {
   new Sidebar();

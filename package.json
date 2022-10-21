@@ -10,9 +10,10 @@
     "@kongponents/ktabs": "^0.1.2",
     "@kongponents/styles": "^0.2.0",
     "animejs": "^3.1.0",
-    "slick-carousel": "^1.8.1",
+    "axios": "^0.21.2",
     "jquery": "^3.5.1",
-    "axios": "^0.21.2"
+    "prismjs": "^1.29.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "sass": "^1.55.0",

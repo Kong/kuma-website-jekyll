@@ -87,6 +87,7 @@ div[class*='language-'] {
   }
 
   pre,
+  pre[class*='language-'],
   div[class*='language-'] {
     background-color: $codeBgColor;
 
@@ -134,8 +135,8 @@ div[class~='language-yaml']:before {
   position: static !important;
 }
 
-div[class~='language-sh'], 
-div[class~='language-shell'], 
+div[class~='language-sh'],
+div[class~='language-shell'],
 div[class~='language-bash'] {
   > pre > code:before {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -144,4 +145,8 @@ div[class~='language-bash'] {
     font-size: 0.9rem;
     color: #333;
   }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace !important;
 }

@@ -177,3 +177,9 @@ div[class~='language-bash']:before {
 div[class~='language-php']:before {
   content: 'php';
 }
+
+.line-numbers .line-numbers-rows {
+  border: none !important;
+  left: -4.8em !important;
+}
+
