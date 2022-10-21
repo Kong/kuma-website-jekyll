@@ -9,6 +9,10 @@ layout: default
   {% include version_alert.html %}
 
   <div class="theme-default-content content__default">
+    {% if page.doc %}
+      <h1 id="{{ page.title | downcase | handleize }}">{{ page.title }}</h1>
+    {% endif %}
+
     {{ content }}
   </div>
 
