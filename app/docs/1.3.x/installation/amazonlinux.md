@@ -20,7 +20,7 @@ Finally you can follow the [Quickstart](#_4-quickstart) to take it from here and
 Run the following script to automatically detect the operating system and download Kuma:
 
 <div class="language-sh">
-<pre><code>yum install -y tar gzip
+<pre class="no-line-numbers"><code>yum install -y tar gzip
 curl -L https://kuma.io/installer.sh | VERSION={{ page.latest_version }} sh -</code></pre>
 </div>
 

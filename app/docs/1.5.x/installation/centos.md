@@ -16,7 +16,7 @@ Finally you can follow the [Quickstart](#_4-quickstart) to take it from here and
 Run the following script to automatically detect the operating system and download Kuma:
 
 <div class="language-sh">
-<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latest_version }} sh -</code></pre>
+<pre class="no-line-numbers"><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latest_version }} sh -</code></pre>
 </div>
 
 or you can <a href="https://download.konghq.com/mesh-alpine/kuma-{{ page.latest_version }}-centos-amd64.tar.gz">download</a> the distribution manually.

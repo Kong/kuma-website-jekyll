@@ -83,7 +83,7 @@ mtls:
 You can run the following script to automatically detect the operating system and download Kuma:
 
 <div class="language-sh">
-<pre><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latest_version }} sh -</code></pre>
+<pre class="no-line-numbers"><code>curl -L https://kuma.io/installer.sh | VERSION={{ page.latest_version }} sh -</code></pre>
 </div>
 
 or you can download the distribution manually:
