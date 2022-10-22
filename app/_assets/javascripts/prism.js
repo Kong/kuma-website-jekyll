@@ -16,17 +16,6 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.min.css'
 
 import '@/styles/prismjs/prism-vs.scss'
 
-Prism.hooks.add('complete', (env) => {
-  const pre = env.element.parentNode;
-
-  if (env.element.querySelector('.line-numbers-rows')) {
-    let wrapper  = document.createElement('div');
-    wrapper.classList.add('line-numbers-mode', env.element.className);
-    pre.parentNode.insertBefore(wrapper, pre);
-    wrapper.appendChild(pre);
-  }
-});
-
 Prism.highlightAll();
 
 document.addEventListener('DOMContentLoaded', (event) => {
