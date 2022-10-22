@@ -1,5 +1,7 @@
 module Jekyll
   class Warning < Liquid::Block
+    alias_method :render_block, :render
+
     def initialize(tag_name, markup, options)
       super
 
@@ -7,7 +9,9 @@ module Jekyll
     end
 
     def render(context)
-      content = Kramdown::Document.new(super).to_html
+      site = context.registers[:site]
+      converter = site.find_converter_instance(::Jekyll::Converters::Markdown)
+      content = converter.convert(render_block(context))
 
       <<~TIP
         <div class="custom-block warning">
