@@ -158,5 +158,22 @@
  }
 
  .copy-to-clipboard-button {
-   background-color: rgb(78, 25, 153) !important;
+   background: none !important;
+   box-shadow: none !important;
+
+   > span:nth-child(2) {
+     bottom: 7.5px;
+   }
+
+   &[data-copy-state='copy'] span:nth-child(2) {
+     display: none;
+   }
+   &[data-copy-state='copy-success'] span:nth-child(2) {
+     color: #393a34;
+     position: absolute;
+     font-size: 13.6px;
+     line-height: 6.8px;
+     right: 50px;
+     transition: opacity .5s;
+   }
  }
