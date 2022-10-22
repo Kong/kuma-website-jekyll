@@ -3,9 +3,9 @@ title: Traffic Permissions
 ---
 # Traffic Permissions
 
-:::tip
+{% tip %}
 Traffic Permissions is an inbound policy. Dataplanes whose configuration is modified are in the `destinations` matcher.
-:::
+{% endtip %}
 
 This policy provides access control rules to define the traffic that is allowed within the [Mesh](/docs/{{ page.version }}/policies/mesh). 
 
