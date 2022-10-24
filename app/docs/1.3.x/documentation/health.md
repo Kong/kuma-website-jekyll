@@ -1,7 +1,6 @@
 ---
 title: Health checks
 ---
-# Health checks
 
 Health is an extremely important part of the microservice architecture, load balancers rely on the 
 health status of the service while picking endpoint from load balancer set. Also, users want the service state to be 

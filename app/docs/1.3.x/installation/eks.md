@@ -1,7 +1,6 @@
 ---
 title: AWS EKS
 ---
-# AWS EKS
 
 To install and run Kuma on AWS EKS execute the following steps:
 

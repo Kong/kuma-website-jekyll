@@ -2,8 +2,6 @@
 title: How Kuma works
 ---
 
-# How Kuma works
-
 When building any modern digital application, we will inevitably introduce services that will communicate with each other by making requests on the network.
 
 <center>

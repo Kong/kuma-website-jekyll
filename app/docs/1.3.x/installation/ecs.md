@@ -1,7 +1,6 @@
 ---
 title: AWS ECS
 ---
-# AWS ECS
 
 To install and run Kuma on AWS ECS execute the following steps:
 
