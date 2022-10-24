@@ -1,7 +1,6 @@
 ---
 title: Docker
 ---
-# Docker
 
 To install and run Kuma on Docker execute the following steps:
 

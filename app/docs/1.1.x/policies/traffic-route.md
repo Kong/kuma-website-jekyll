@@ -1,7 +1,6 @@
 ---
 title: Traffic Route
 ---
-# Traffic Route
 
 This policy allows us to configure routing rules for L4 traffic running in our [Mesh](/docs/{{ page.version }}/policies/mesh). This policy provides support for weighted routing and can be used to implement versioning across our services as well as deployment strategies like blue/green and canary.
 

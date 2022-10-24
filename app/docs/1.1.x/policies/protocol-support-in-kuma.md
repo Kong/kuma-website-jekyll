@@ -1,7 +1,6 @@
 ---
 title: Protocol support in Kuma
 ---
-# Protocol support in Kuma
 
 At its core, `Kuma` distinguishes between the following major categories of traffic: `http`, `grpc`, `kafka` and opaque `tcp` traffic.
 

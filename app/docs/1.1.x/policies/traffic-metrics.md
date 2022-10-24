@@ -1,7 +1,6 @@
 ---
 title: Traffic Metrics
 ---
-# Traffic Metrics
 
 `Kuma` facilitates consistent traffic metrics across all dataplanes in your mesh.
 

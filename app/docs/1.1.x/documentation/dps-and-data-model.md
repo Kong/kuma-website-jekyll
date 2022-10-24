@@ -1,7 +1,6 @@
 ---
 title: DPs and Data Model
 ---
-# DPs and Data Model
 
 When Kuma (`kuma-cp`) runs, it waits for the data plane proxies to connect and register themselves. In order for a data plane proxy to successfully run, there must exist at least one [`Mesh`](/docs/{{ page.version }}/policies/mesh) in Kuma. By default the system generates a `default` Mesh when the control-plane is run for the first time.
 

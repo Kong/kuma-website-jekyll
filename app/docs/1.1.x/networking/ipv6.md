@@ -1,7 +1,6 @@
 ---
 title: IPv6 support
 ---
-# IPv6 support
 
 All Kuma entitites do support running in mixed IPv4 and IPv6 environments as well as pure IPv6 setup. This includes
 Global and Remote control planes, the Data plane proxy, the accompanying iptables scripts and the CNI. All major deployment

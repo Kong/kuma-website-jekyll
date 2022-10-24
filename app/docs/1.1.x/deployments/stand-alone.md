@@ -1,7 +1,6 @@
 ---
 title: Set up a standalone deployment
 ---
-# Set up a standalone deployment
 
 This is the simplest deployment mode for Kuma, and the default one.
 

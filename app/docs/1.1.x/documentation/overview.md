@@ -1,7 +1,6 @@
 ---
 title: Overview
 ---
-# Overview
 
 As we have [already learned](/docs/{{ page.version }}/documentation/introduction), Kuma is a universal control plane that can run across both modern environments like Kubernetes and more traditional VM-based ones.
 
