@@ -1,7 +1,6 @@
 ---
 title: Control-Plane configuration
 ---
-# Control-Plane configuration
 Here are all options to configure the control-plane:
 
 ```yaml

@@ -1,7 +1,6 @@
 ---
 title: kumactl get zoneegresses
 ---
-## kumactl get zoneegresses
 
 Show ZoneEgress
 

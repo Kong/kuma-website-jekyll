@@ -1,7 +1,6 @@
 ---
 title: Secure access across Kuma components
 ---
-# Secure access across Kuma components 
 
 This page explains how secure access is provided across a Kuma deployment:
 

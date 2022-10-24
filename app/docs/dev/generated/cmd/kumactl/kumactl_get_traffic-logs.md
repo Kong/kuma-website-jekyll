@@ -1,7 +1,6 @@
 ---
 title: kumactl get traffic-logs
 ---
-## kumactl get traffic-logs
 
 Show TrafficLog
 

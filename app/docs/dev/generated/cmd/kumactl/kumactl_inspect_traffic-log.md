@@ -1,7 +1,6 @@
 ---
 title: kumactl inspect traffic-log
 ---
-## kumactl inspect traffic-log
 
 Inspect TrafficLog
 

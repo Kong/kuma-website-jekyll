@@ -1,7 +1,6 @@
 ---
 title: Kuma CNI
 ---
-# Kuma CNI
 
 The operation of the Kuma data plane proxy,
 precludes that all the relevant inbound and outbound traffic on the host (or container)

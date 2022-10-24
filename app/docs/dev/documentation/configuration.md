@@ -1,7 +1,6 @@
 ---
 title: Control Plane Configuration
 ---
-# Control Plane Configuration
 
 ## Modifying the configuration
 

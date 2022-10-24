@@ -1,7 +1,6 @@
 ---
 title: kumactl inspect
 ---
-## kumactl inspect
 
 Inspect Kuma resources
 

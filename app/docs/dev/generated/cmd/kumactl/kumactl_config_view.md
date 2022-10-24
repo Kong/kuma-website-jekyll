@@ -1,7 +1,6 @@
 ---
 title: kumactl config view
 ---
-## kumactl config view
 
 Show kumactl config
 

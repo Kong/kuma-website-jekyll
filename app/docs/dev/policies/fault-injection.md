@@ -1,7 +1,6 @@
 ---
 title: Fault Injection
 ---
-# Fault Injection
 
 {% tip %}
 Fault Injection is an inbound policy. Dataplanes whose configuration is modified are in the `destinations` matcher.

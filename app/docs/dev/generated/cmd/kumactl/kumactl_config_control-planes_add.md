@@ -1,7 +1,6 @@
 ---
 title: kumactl config control-planes add
 ---
-## kumactl config control-planes add
 
 Add a Control Plane
 

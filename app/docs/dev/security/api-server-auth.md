@@ -1,7 +1,6 @@
 ---
 title: API server authentication
 ---
-# API server authentication
 
 Kuma exposes API server on [ports](/docs/{{ page.version }}/networking/networking) `5681` and `5682` (protected by TLS).
 

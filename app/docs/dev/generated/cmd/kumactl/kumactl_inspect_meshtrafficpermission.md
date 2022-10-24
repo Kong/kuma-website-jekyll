@@ -1,7 +1,6 @@
 ---
 title: kumactl inspect meshtrafficpermission
 ---
-## kumactl inspect meshtrafficpermission
 
 Inspect MeshTrafficPermission
 

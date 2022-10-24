@@ -1,7 +1,6 @@
 ---
 title: kumactl get meshtrafficpermission
 ---
-## kumactl get meshtrafficpermission
 
 Show a single MeshTrafficPermission resource
 

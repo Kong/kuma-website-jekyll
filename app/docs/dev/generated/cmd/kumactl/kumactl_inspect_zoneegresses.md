@@ -1,7 +1,6 @@
 ---
 title: kumactl inspect zoneegresses
 ---
-## kumactl inspect zoneegresses
 
 Inspect Zone Egresses
 

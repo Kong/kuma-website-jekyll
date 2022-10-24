@@ -1,7 +1,6 @@
 ---
 title: kuma-cp run
 ---
-## kuma-cp run
 
 Launch Control Plane
 

@@ -1,7 +1,6 @@
 ---
 title: kumactl install
 ---
-## kumactl install
 
 Install various Kuma components.
 

@@ -1,7 +1,6 @@
 ---
 title: kuma-cp migrate up
 ---
-## kuma-cp migrate up
 
 Apply the newest schema changes to the database.
 

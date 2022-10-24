@@ -1,7 +1,6 @@
 ---
 title: Secrets
 ---
-# Secrets
 
 The `Secret` resource enables users to store sensitive data.
 Sensitive information is anything a user considers non-public, e.g.:

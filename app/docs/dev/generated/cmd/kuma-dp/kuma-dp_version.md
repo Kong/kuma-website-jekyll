@@ -1,7 +1,6 @@
 ---
 title: kuma-dp version
 ---
-## kuma-dp version
 
 Print version
 
