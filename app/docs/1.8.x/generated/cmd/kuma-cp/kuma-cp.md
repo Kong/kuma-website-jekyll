@@ -1,7 +1,6 @@
 ---
 title: kuma-cp
 ---
-## kuma-cp
 
 Universal Control Plane for Envoy-based Service Mesh
 

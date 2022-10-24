@@ -1,7 +1,6 @@
 ---
 title: Rate Limit
 ---
-# Rate Limit
 
 {% tip %}
 Rate Limit is an inbound policy. Dataplanes whose configuration is modified are in the `destinations` matcher.

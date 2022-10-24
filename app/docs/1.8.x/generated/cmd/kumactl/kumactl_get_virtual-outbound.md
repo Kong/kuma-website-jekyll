@@ -1,7 +1,6 @@
 ---
 title: kumactl get virtual-outbound
 ---
-## kumactl get virtual-outbound
 
 Show a single VirtualOutbound resource
 

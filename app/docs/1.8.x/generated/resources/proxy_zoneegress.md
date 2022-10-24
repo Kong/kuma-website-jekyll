@@ -1,7 +1,6 @@
 ---
 title: ZoneEgress
 ---
-## ZoneEgress
 
 - `zone` (optional)
 

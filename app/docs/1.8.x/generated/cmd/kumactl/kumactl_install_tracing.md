@@ -1,7 +1,6 @@
 ---
 title: kumactl install tracing
 ---
-## kumactl install tracing
 
 Install Tracing backend in Kubernetes cluster (Jaeger)
 

@@ -1,7 +1,6 @@
 ---
 title: Mutual TLS
 ---
-# Mutual TLS
 
 This policy enables automatic encrypted mTLS traffic for all the services in a [`Mesh`](/docs/{{ page.version }}/policies/mesh), as well as assigning an identity to every data plane proxy. Kuma supports different types of CA backends as well as automatic certificate rotation.
 

@@ -1,7 +1,6 @@
 ---
 title: kumactl get secret
 ---
-## kumactl get secret
 
 Show a single Secret resource
 

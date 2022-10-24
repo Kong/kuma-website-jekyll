@@ -1,7 +1,6 @@
 ---
 title: kumactl inspect zones
 ---
-## kumactl inspect zones
 
 Inspect Zones
 

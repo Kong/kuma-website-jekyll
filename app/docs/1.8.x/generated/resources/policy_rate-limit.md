@@ -1,7 +1,6 @@
 ---
 title: RateLimit
 ---
-## RateLimit
 
 - `sources` (required, repeated)
 

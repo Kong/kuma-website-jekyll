@@ -1,7 +1,6 @@
 ---
 title: Traffic Route
 ---
-# Traffic Route
 
 {% tip %}
 Traffic Route is an outbound policy. Dataplanes whose configuration is modified are in the `sources` matcher.

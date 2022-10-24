@@ -1,7 +1,6 @@
 ---
 title: Traffic Permissions
 ---
-# Traffic Permissions
 
 {% tip %}
 Traffic Permissions is an inbound policy. Dataplanes whose configuration is modified are in the `destinations` matcher.

@@ -1,7 +1,6 @@
 ---
 title: Timeout
 ---
-# Timeout
 
 {% tip %}
 Timeout is an outbound policy. Dataplanes whose configuration is modified are in the `sources` matcher.

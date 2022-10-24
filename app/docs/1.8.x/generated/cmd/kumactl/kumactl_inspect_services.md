@@ -1,7 +1,6 @@
 ---
 title: kumactl inspect services
 ---
-## kumactl inspect services
 
 Inspect Services
 

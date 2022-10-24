@@ -1,7 +1,6 @@
 ---
 title: Overview
 ---
-# Overview
 
 This sections gives an overview of a Kuma service mesh.
 It also covers how to start integrating your services into your mesh.

@@ -1,7 +1,6 @@
 ---
 title: kumactl completion zsh
 ---
-## kumactl completion zsh
 
 Output shell completions for zsh
 

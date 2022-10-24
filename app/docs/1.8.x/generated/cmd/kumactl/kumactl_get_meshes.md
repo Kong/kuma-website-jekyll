@@ -1,7 +1,6 @@
 ---
 title: kumactl get meshes
 ---
-## kumactl get meshes
 
 Show Mesh
 

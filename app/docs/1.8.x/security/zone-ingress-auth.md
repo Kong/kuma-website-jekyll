@@ -1,7 +1,6 @@
 ---
 title: Zone ingress authentication
 ---
-# Zone ingress authentication
 
 To obtain a configuration from the control plane,
 a zone ingress must authenticate itself.

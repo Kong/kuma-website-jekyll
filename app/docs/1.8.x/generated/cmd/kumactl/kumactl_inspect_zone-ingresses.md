@@ -1,7 +1,6 @@
 ---
 title: kumactl inspect zone-ingresses
 ---
-## kumactl inspect zone-ingresses
 
 Inspect Zone Ingresses
 

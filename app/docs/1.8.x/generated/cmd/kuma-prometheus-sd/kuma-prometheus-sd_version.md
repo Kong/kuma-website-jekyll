@@ -1,7 +1,6 @@
 ---
 title: kuma-prometheus-sd version
 ---
-## kuma-prometheus-sd version
 
 Print version
 

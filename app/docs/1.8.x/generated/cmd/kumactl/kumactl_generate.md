@@ -1,7 +1,6 @@
 ---
 title: kumactl generate
 ---
-## kumactl generate
 
 Generate resources, tokens, etc
 

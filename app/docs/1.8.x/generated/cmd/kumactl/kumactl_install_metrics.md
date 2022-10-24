@@ -1,7 +1,6 @@
 ---
 title: kumactl install metrics
 ---
-## kumactl install metrics
 
 Install Metrics backend in Kubernetes cluster (Prometheus + Grafana)
 
