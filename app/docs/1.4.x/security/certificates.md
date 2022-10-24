@@ -1,7 +1,6 @@
 ---
 title: Secure access across services
 ---
-# Secure access across services
 
 This page explains how secure access is provided across a Kuma deployment:
 

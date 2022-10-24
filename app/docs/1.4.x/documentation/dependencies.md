@@ -1,7 +1,6 @@
 ---
 title: Dependencies
 ---
-# Dependencies
 
 Kuma (`kuma-cp`) is one single executable written in GoLang that can be installed anywhere, hence why it's both universal and simple to deploy. 
 

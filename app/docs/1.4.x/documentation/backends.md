@@ -1,7 +1,6 @@
 ---
 title: Backends
 ---
-# Backends
 
 As explained in the [Overview](/docs/{{ page.version }}/documentation/overview), when Kuma (`kuma-cp`) is up and running it needs to store data somewhere. The data will include the state, the policies configured, the data plane proxy status, and so on.
 
