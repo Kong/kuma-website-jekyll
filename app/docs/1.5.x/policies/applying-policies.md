@@ -1,7 +1,6 @@
 ---
 title: Applying Policies
 ---
-# Applying Policies
 
 Once installed, Kuma can be configured via its policies. You can apply policies with [`kumactl`](/docs/{{ page.version }}/documentation/cli) on Universal, and with `kubectl` on Kubernetes. Regardless of what environment you use, you can always read the latest Kuma state with [`kumactl`](/docs/{{ page.version }}/documentation/cli) on both environments.
 

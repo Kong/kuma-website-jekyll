@@ -1,7 +1,6 @@
 ---
 title: API Server Authentication
 ---
-# API Server Authentication
 
 By default, Kuma exposes API Server on [ports](/docs/{{ page.version }}/networking/networking) `5681` and `5682` (protected by builtin TLS). This server is used for actions like
 * Accessing policies and objects

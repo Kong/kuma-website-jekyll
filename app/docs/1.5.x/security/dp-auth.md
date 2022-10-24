@@ -1,7 +1,6 @@
 ---
 title: Data plane proxy authentication
 ---
-# Data plane proxy authentication
 
 To obtain a configuration from the control-plane, a data plane proxy must authenticate itself. There are several authentication methods availble.
 

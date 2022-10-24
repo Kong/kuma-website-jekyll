@@ -1,7 +1,6 @@
 ---
 title: How Kuma chooses the right policy to apply
 ---
-# How Kuma chooses the right policy to apply
 
 At any single moment, there might be multiple policies (of the same type) that match a connection between `sources` and `destinations` `Dataplane`s.
 

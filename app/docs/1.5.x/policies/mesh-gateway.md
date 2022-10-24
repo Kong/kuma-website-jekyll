@@ -1,7 +1,6 @@
 ---
 title: MeshGateway
 ---
-# MeshGateway
 
 `MeshGateway` is a policy used to configure [Kuma's builtin gateway](/docs/{{ page.version }}/documentation/gateway#builtin).
 It is used in combination with [`MeshGatewayRoute`](/docs/{{ page.version }}/policies/mesh-gateway-route).

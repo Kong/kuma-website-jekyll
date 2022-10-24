@@ -1,7 +1,6 @@
 ---
 title: macOS
 ---
-# macOS
 
 To install and run Kuma on macOS execute the following steps:
 

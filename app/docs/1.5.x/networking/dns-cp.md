@@ -1,7 +1,6 @@
 ---
 title: DNS in the control plane
 ---
-# DNS in the control plane
 
 {% warning %}
 This is deprecated way of handling Kuma DNS that will be removed in the future versions of Kuma. Consider using [DNS embedded in kuma-dp](/docs/{{ page.version }}/networking/dns)

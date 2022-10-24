@@ -1,7 +1,6 @@
 ---
 title: Helm
 ---
-# Helm
 
 To install and run Kuma on Kubernetes with Helm charts execute the following steps:
 

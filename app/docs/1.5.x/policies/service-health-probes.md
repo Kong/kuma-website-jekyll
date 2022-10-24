@@ -1,7 +1,6 @@
 ---
 title: Service Health Probes
 ---
-# Service Health Probes
 
 Kuma is able to track the status of the Envoy proxy. If grpc stream with Envoy is disconnected then Kuma considers this 
 proxy as offline, but we still send the traffic regardless of that, because this status is designed to track the connection
