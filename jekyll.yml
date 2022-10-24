@@ -8,6 +8,8 @@ kramdown:
   syntax_highlighter_opts:
     css_class: "highlight"
     guess_lang: true
+    span:
+      disable: true
 incremental: true
 
 # Site settings
