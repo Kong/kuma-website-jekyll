@@ -1,7 +1,6 @@
 ---
 title: Retry
 ---
-# Retry
 
 {% tip %}
 Retry is an outbound policy. Dataplanes whose configuration is modified are in the `sources` matcher.

@@ -1,7 +1,6 @@
 ---
 title: kumactl get zone
 ---
-## kumactl get zone
 
 Show a single Zone resource
 

@@ -1,7 +1,6 @@
 ---
 title: Standalone deployment
 ---
-# Standalone deployment
 
 ## About
 

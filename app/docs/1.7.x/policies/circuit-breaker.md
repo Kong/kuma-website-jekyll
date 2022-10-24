@@ -1,7 +1,6 @@
 ---
 title: Circuit Breaker
 ---
-# Circuit Breaker
 
 {% tip %}
 Circuit Breaker is an outbound policy. Dataplanes whose configuration is modified are in the `sources` matcher.

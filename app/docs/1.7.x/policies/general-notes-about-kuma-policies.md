@@ -1,7 +1,6 @@
 ---
 title: General notes about Kuma policies
 ---
-# General notes about Kuma policies
 
 Policies applied to data plane proxies all follow the same basic structure:
 

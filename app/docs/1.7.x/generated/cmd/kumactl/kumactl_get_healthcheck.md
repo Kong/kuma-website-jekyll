@@ -1,7 +1,6 @@
 ---
 title: kumactl get healthcheck
 ---
-## kumactl get healthcheck
 
 Show a single HealthCheck resource
 

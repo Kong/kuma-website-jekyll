@@ -1,7 +1,6 @@
 ---
 title: kumactl get retry
 ---
-## kumactl get retry
 
 Show a single Retry resource
 

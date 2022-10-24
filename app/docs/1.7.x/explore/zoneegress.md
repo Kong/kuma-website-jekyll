@@ -1,7 +1,6 @@
 ---
 title: Zone Egress
 ---
-# Zone Egress
 
 `ZoneEgress` proxy is used when it is required to isolate outgoing traffic (to services in other
 zones or [external services](/docs/{{ page.version }}/policies/external-services) in the local zone).

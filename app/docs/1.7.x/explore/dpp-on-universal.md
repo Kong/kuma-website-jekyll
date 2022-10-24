@@ -1,7 +1,6 @@
 ---
 title: Data plane on Universal
 ---
-# Data plane on Universal
 
 As mentioned previously in universal you need to create a dataplane definition and pass it to the `kuma-dp run` command.
 

@@ -1,7 +1,6 @@
 ---
 title: kumactl get healthchecks
 ---
-## kumactl get healthchecks
 
 Show HealthCheck
 

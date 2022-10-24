@@ -1,7 +1,6 @@
 ---
 title: kumactl inspect meshes
 ---
-## kumactl inspect meshes
 
 Inspect Meshes
 

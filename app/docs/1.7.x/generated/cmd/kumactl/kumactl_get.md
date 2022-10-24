@@ -1,7 +1,6 @@
 ---
 title: kumactl get
 ---
-## kumactl get
 
 Show Kuma resources
 

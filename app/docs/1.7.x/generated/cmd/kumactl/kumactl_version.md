@@ -1,7 +1,6 @@
 ---
 title: kumactl version
 ---
-## kumactl version
 
 Print version
 

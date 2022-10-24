@@ -1,7 +1,6 @@
 ---
 title: Upgrades
 ---
-# Upgrades
 
 Since Kuma 1.4.x upgrades can be performed up to two minor versions. Examples:
 * You can upgrade from `1.5.x` to `1.6.x`

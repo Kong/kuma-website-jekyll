@@ -1,7 +1,6 @@
 ---
 title: kuma-cp version
 ---
-## kuma-cp version
 
 Print version
 

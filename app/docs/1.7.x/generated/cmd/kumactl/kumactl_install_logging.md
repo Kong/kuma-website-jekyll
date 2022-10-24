@@ -1,7 +1,6 @@
 ---
 title: kumactl install logging
 ---
-## kumactl install logging
 
 Install Logging backend in Kubernetes cluster (Loki)
 

@@ -1,7 +1,6 @@
 ---
 title: kumactl get traffic-route
 ---
-## kumactl get traffic-route
 
 Show a single TrafficRoute resource
 
