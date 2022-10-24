@@ -1,7 +1,6 @@
 ---
 title: kumactl install dns
 ---
-## kumactl install dns
 
 Install DNS to Kubernetes
 

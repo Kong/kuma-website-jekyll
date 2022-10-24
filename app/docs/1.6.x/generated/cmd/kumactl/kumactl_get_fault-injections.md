@@ -1,7 +1,6 @@
 ---
 title: kumactl get fault-injections
 ---
-## kumactl get fault-injections
 
 Show FaultInjection
 

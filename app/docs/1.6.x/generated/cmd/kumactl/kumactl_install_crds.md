@@ -1,7 +1,6 @@
 ---
 title: kumactl install crds
 ---
-## kumactl install crds
 
 Install Kuma Custom Resource Definitions on Kubernetes
 

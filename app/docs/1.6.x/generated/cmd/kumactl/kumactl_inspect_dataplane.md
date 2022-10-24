@@ -1,7 +1,6 @@
 ---
 title: kumactl inspect dataplane
 ---
-## kumactl inspect dataplane
 
 Inspect Dataplane
 

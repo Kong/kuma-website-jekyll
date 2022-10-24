@@ -1,7 +1,6 @@
 ---
 title: kumactl install demo
 ---
-## kumactl install demo
 
 Install Kuma demo on Kubernetes
 

@@ -1,7 +1,6 @@
 ---
 title: kumactl delete
 ---
-## kumactl delete
 
 Delete Kuma resources
 

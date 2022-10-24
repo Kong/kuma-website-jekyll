@@ -1,7 +1,6 @@
 ---
 title: kumactl get proxytemplate
 ---
-## kumactl get proxytemplate
 
 Show a single ProxyTemplate resource
 

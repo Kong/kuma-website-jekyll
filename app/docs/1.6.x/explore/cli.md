@@ -1,7 +1,6 @@
 ---
 title: CLI
 ---
-# CLI
 
 Kuma ships in a bundle that includes a few executables:
 

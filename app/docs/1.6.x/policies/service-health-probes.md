@@ -1,7 +1,6 @@
 ---
 title: Service Health Probes
 ---
-# Service Health Probes
 
 Kuma is able to track the status of the Envoy proxy and the underlying app.
 

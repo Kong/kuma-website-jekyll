@@ -1,7 +1,6 @@
 ---
 title: kumactl generate tls-certificate
 ---
-## kumactl generate tls-certificate
 
 Generate a TLS certificate
 

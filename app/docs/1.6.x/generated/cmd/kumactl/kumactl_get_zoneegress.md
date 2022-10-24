@@ -1,7 +1,6 @@
 ---
 title: kumactl get zoneegress
 ---
-## kumactl get zoneegress
 
 Show a single ZoneEgress resource
 

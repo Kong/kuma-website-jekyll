@@ -1,7 +1,6 @@
 ---
 title: kumactl generate zone-ingress-token
 ---
-## kumactl generate zone-ingress-token
 
 Generate Zone Ingress Token
 

@@ -1,7 +1,6 @@
 ---
 title: Kubernetes Gateway API
 ---
-# Kubernetes Gateway API
 
 Kuma supports configuring [Built-in Gateway](/docs/{{ page.version }}/explore/gateway) using [Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/).
 

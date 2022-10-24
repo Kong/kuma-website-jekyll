@@ -1,7 +1,6 @@
 ---
 title: kumactl get global-secrets
 ---
-## kumactl get global-secrets
 
 Show GlobalSecret
 

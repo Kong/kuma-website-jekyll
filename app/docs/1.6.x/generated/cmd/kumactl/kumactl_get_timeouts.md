@@ -1,7 +1,6 @@
 ---
 title: kumactl get timeouts
 ---
-## kumactl get timeouts
 
 Show Timeout
 

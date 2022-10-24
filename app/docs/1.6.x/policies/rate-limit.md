@@ -1,7 +1,6 @@
 ---
 title: Rate Limit
 ---
-# Rate Limit
 
 The `RateLimit` policy leverages
 Envoy's [local rate limiting](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/local_rate_limit_filter)

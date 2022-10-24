@@ -1,7 +1,6 @@
 ---
 title: kumactl get meshgateway
 ---
-## kumactl get meshgateway
 
 Show a single MeshGateway resource
 

@@ -1,7 +1,6 @@
 ---
 title: kumactl get zone-ingress
 ---
-## kumactl get zone-ingress
 
 Show a single ZoneIngress resource
 

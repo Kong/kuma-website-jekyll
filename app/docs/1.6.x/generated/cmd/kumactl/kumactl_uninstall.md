@@ -1,7 +1,6 @@
 ---
 title: kumactl uninstall
 ---
-## kumactl uninstall
 
 Uninstall various Kuma components.
 

@@ -1,7 +1,6 @@
 ---
 title: kumactl install transparent-proxy
 ---
-## kumactl install transparent-proxy
 
 Install Transparent Proxy pre-requisites on the host
 

@@ -1,7 +1,6 @@
 ---
 title: kumactl generate zone-token
 ---
-## kumactl generate zone-token
 
 Generate Zone Token
 

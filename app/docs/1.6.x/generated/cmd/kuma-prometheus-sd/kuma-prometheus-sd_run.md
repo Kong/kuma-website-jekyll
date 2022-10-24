@@ -1,7 +1,6 @@
 ---
 title: kuma-prometheus-sd run
 ---
-## kuma-prometheus-sd run
 
 Launch Kuma Prometheus SD adapter
 

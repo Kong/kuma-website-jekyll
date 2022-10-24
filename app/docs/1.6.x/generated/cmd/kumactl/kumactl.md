@@ -1,7 +1,6 @@
 ---
 title: kumactl
 ---
-## kumactl
 
 Management tool for Kuma
 

@@ -1,7 +1,6 @@
 ---
 title: Traffic Log
 ---
-# Traffic Log
 
 With `TrafficLog` policy you can easily set up access logs on every data-plane in a [`Mesh`](/docs/{{ page.version }}/policies/mesh).
 

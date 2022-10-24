@@ -1,7 +1,6 @@
 ---
 title: kumactl get meshgatewayroutes
 ---
-## kumactl get meshgatewayroutes
 
 Show MeshGatewayRoute
 

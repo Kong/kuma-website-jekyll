@@ -1,7 +1,6 @@
 ---
 title: kuma-dp
 ---
-## kuma-dp
 
 Dataplane manager for Envoy-based Service Mesh
 

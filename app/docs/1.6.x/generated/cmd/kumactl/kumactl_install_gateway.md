@@ -1,7 +1,6 @@
 ---
 title: kumactl install gateway
 ---
-## kumactl install gateway
 
 Install ingress gateway on Kubernetes
 

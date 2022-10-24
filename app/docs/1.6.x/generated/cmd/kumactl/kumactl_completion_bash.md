@@ -1,7 +1,6 @@
 ---
 title: kumactl completion bash
 ---
-## kumactl completion bash
 
 Output shell completions for bash
 

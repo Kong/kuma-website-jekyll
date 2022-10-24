@@ -1,7 +1,6 @@
 ---
 title: kuma-dp run
 ---
-## kuma-dp run
 
 Launch Dataplane (Envoy)
 

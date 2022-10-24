@@ -1,7 +1,6 @@
 ---
 title: kumactl config control-planes switch
 ---
-## kumactl config control-planes switch
 
 Switch active Control Plane
 

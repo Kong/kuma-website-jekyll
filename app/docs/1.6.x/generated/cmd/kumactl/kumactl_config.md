@@ -1,7 +1,6 @@
 ---
 title: kumactl config
 ---
-## kumactl config
 
 Manage kumactl config
 
