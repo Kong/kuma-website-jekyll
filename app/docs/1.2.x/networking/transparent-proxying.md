@@ -1,7 +1,6 @@
 ---
 title: Transparent Proxying
 ---
-# Transparent Proxying
 
 In order to interecept traffic from and to a service through a `kuma-dp` data plane proxy instance, Kuma utilizes a variety of patterns.
 

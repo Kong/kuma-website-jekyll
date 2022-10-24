@@ -1,7 +1,6 @@
 ---
 title: Annotations in Kubernetes mode
 ---
-# Annotations in Kubernetes mode
 
 This page provide a complete list of all the annotations you can specify when you run Kuma in Kubernetes mode.
 

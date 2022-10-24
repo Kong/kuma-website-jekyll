@@ -1,7 +1,6 @@
 ---
 title: General notes about Kuma policies
 ---
-# General notes about Kuma policies
 
 You may have already noticed that most `Kuma` policies have very similar structure, namely
 

@@ -1,7 +1,6 @@
 ---
 title: Traffic Permissions
 ---
-# Traffic Permissions
 
 This policy provides access control rules to define the traffic that is allowed within the [Mesh](/docs/{{ page.version }}/policies/mesh). 
 

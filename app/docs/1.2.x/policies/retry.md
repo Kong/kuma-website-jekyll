@@ -1,7 +1,6 @@
 ---
 title: Retry
 ---
-# Retry
 
 This policy enables Kuma to know how to behave if there is a failed scenario (i.e. HTTP request) which could be retried.
 
