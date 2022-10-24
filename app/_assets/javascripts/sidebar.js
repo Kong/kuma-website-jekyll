@@ -76,7 +76,7 @@ export default class Sidebar {
     }
 
     let activeElement = this.elem
-      .querySelector(`a[href^='${currentPath}']`);
+      .querySelector(`a[href='${currentPath}']`);
 
     if (activeElement !== null) {
       activeElement.classList
