@@ -1,9 +1,8 @@
 ---
+title: Red Hat
 ---
 
-# RedHat
-
-To install and run Kuma on RedHat (**x86_64**) execute the following steps:
+To install and run Kuma on Red Hat (**x86_64**) execute the following steps:
 
 * [1. Download Kuma](#_1-download-kuma)
 * [2. Run Kuma](#_2-run-kuma)

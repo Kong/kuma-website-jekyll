@@ -1,8 +1,6 @@
 ---
-title: Introduction to Kuma
+title: Overview
 ---
-
-# Overview
 
 Kuma is a platform agnostic open-source control plane for service mesh and microservices management, with support for Kubernetes, VM, and bare metal environments.
 

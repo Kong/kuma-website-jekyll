@@ -1,8 +1,6 @@
 ---
-title: Overview
+title: Welcome to Kuma
 ---
-
-# Welcome to Kuma
 
 Welcome to the official documentation for Kuma, a modern distributed **Control Plane** with a bundled Envoy Proxy integration.
 

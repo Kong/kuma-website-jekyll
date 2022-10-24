@@ -1,8 +1,6 @@
 ---
-title: Explore Kuma on Universal
+title: Set up and explore the Universal demo app
 ---
-
-# Set up and explore the Universal demo app
 
 To start learning how Kuma works, you can download and run a simple demo application that consists of two services:
 

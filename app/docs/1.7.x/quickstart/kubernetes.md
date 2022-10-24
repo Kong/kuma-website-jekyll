@@ -1,8 +1,6 @@
 ---
-title: Explore Kuma on Kubernetes
+title: Set up and explore the Kubernetes demo app
 ---
-
-# Set up and explore the Kubernetes demo app
 
 To start learning how Kuma works, you can download and run a simple demo application that consists of two services:
 

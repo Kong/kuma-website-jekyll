@@ -1,8 +1,6 @@
 ---
-title: Introduction
+title: Documentation
 ---
-
-# Documentation
 
 {% tip %}
 **Need help?** Installing and using Kuma should be as easy as possible. [Contact and chat](/community) with the community in real-time if you get stuck or need clarifications. We are here to help.

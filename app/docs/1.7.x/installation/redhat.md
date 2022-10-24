@@ -1,8 +1,7 @@
 ---
+title: Red Hat
 os: rhel
 arch: amd64
 ---
-
-# Debian
 
 {% include snippets/install_os.md %}

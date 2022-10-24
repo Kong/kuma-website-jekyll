@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Contribute
 ---
 
 There are multiple ways to make an impact in Kuma

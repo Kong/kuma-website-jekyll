@@ -2,8 +2,6 @@
 title: Multi-zone deployment
 ---
 
-## About
-
 Kuma supports running your service mesh in multiple zones. It is even possible to run with a mix of Kubernetes and Universal zones. Your mesh environment can include multiple isolated service meshes (multi-tenancy), and workloads running in different regions, on different clouds, or in different datacenters. A zone can be a Kubernetes cluster, a VPC, or any other deployment you need to include in the same distributed mesh environment.
 The only condition is that all the data planes running within the zone must be able to connect to the other data planes in this same zone.
 

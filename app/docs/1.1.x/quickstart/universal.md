@@ -1,8 +1,6 @@
 ---
-title: Explore Kuma on Universal
+title: Quickstart in Universal Mode
 ---
-
-# Quickstart in Universal Mode
 
 Congratulations! After [installing](/install) Kuma, you can get up and running with a few easy steps.
 

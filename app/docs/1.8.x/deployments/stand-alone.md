@@ -2,8 +2,6 @@
 title: Standalone deployment
 ---
 
-## About
-
 This is the simplest deployment mode for Kuma, and the default one.
 
 * **Control plane**: There is one deployment of the control plane that can be scaled horizontally.

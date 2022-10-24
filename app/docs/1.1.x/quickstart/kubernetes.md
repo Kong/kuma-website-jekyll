@@ -1,8 +1,6 @@
 ---
-title: Explore Kuma on Kubernetes
+title: Quickstart in Kubernetes Mode
 ---
-
-# Quickstart in Kubernetes Mode
 
 Congratulations! After [installing](/install) Kuma, you can get up and running with a few easy steps.
 
